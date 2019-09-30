@@ -1,0 +1,672 @@
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.SystemClock_Config,"ax",%progbits
+  18              		.align	1
+  19              		.global	SystemClock_Config
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv4-sp-d16
+  26              	SystemClock_Config:
+  27              	.LFB131:
+  28              		.file 1 "Src/main.c"
+   1:Src/main.c    **** /* USER CODE BEGIN Header */
+   2:Src/main.c    **** /**
+   3:Src/main.c    ****   ******************************************************************************
+   4:Src/main.c    ****   * @file           : main.c
+   5:Src/main.c    ****   * @brief          : Main program body
+   6:Src/main.c    ****   ******************************************************************************
+   7:Src/main.c    ****   * @attention
+   8:Src/main.c    ****   *
+   9:Src/main.c    ****   * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
+  10:Src/main.c    ****   * All rights reserved.</center></h2>
+  11:Src/main.c    ****   *
+  12:Src/main.c    ****   * This software component is licensed by ST under BSD 3-Clause license,
+  13:Src/main.c    ****   * the "License"; You may not use this file except in compliance with the
+  14:Src/main.c    ****   * License. You may obtain a copy of the License at:
+  15:Src/main.c    ****   *                        opensource.org/licenses/BSD-3-Clause
+  16:Src/main.c    ****   *
+  17:Src/main.c    ****   ******************************************************************************
+  18:Src/main.c    ****   */
+  19:Src/main.c    **** /* USER CODE END Header */
+  20:Src/main.c    **** 
+  21:Src/main.c    **** /* Includes ------------------------------------------------------------------*/
+  22:Src/main.c    **** #include "main.h"
+  23:Src/main.c    **** #include "adc.h"
+  24:Src/main.c    **** #include "can.h"
+  25:Src/main.c    **** #include "dma.h"
+  26:Src/main.c    **** #include "spi.h"
+  27:Src/main.c    **** #include "tim.h"
+  28:Src/main.c    **** #include "usart.h"
+  29:Src/main.c    **** #include "gpio.h"
+  30:Src/main.c    **** 
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s 			page 2
+
+
+  31:Src/main.c    **** /* Private includes ----------------------------------------------------------*/
+  32:Src/main.c    **** /* USER CODE BEGIN Includes */
+  33:Src/main.c    **** #include "foc.h"
+  34:Src/main.c    **** /* USER CODE END Includes */
+  35:Src/main.c    **** 
+  36:Src/main.c    **** /* Private typedef -----------------------------------------------------------*/
+  37:Src/main.c    **** /* USER CODE BEGIN PTD */
+  38:Src/main.c    **** 
+  39:Src/main.c    **** /* USER CODE END PTD */
+  40:Src/main.c    **** 
+  41:Src/main.c    **** /* Private define ------------------------------------------------------------*/
+  42:Src/main.c    **** /* USER CODE BEGIN PD */
+  43:Src/main.c    **** 
+  44:Src/main.c    **** /* USER CODE END PD */
+  45:Src/main.c    **** 
+  46:Src/main.c    **** /* Private macro -------------------------------------------------------------*/
+  47:Src/main.c    **** /* USER CODE BEGIN PM */
+  48:Src/main.c    **** 
+  49:Src/main.c    **** /* USER CODE END PM */
+  50:Src/main.c    **** 
+  51:Src/main.c    **** /* Private variables ---------------------------------------------------------*/
+  52:Src/main.c    **** 
+  53:Src/main.c    **** /* USER CODE BEGIN PV */
+  54:Src/main.c    **** 
+  55:Src/main.c    **** /* USER CODE END PV */
+  56:Src/main.c    **** 
+  57:Src/main.c    **** /* Private function prototypes -----------------------------------------------*/
+  58:Src/main.c    **** void SystemClock_Config(void);
+  59:Src/main.c    **** /* USER CODE BEGIN PFP */
+  60:Src/main.c    **** 
+  61:Src/main.c    **** /* USER CODE END PFP */
+  62:Src/main.c    **** 
+  63:Src/main.c    **** /* Private user code ---------------------------------------------------------*/
+  64:Src/main.c    **** /* USER CODE BEGIN 0 */
+  65:Src/main.c    **** uint8_t ms_2_flag;
+  66:Src/main.c    **** /* USER CODE END 0 */
+  67:Src/main.c    **** 
+  68:Src/main.c    **** /**
+  69:Src/main.c    ****   * @brief  The application entry point.
+  70:Src/main.c    ****   * @retval int
+  71:Src/main.c    ****   */
+  72:Src/main.c    **** int main(void)
+  73:Src/main.c    **** {
+  74:Src/main.c    ****   /* USER CODE BEGIN 1 */
+  75:Src/main.c    **** 
+  76:Src/main.c    ****   /* USER CODE END 1 */
+  77:Src/main.c    ****   
+  78:Src/main.c    **** 
+  79:Src/main.c    ****   /* MCU Configuration--------------------------------------------------------*/
+  80:Src/main.c    **** 
+  81:Src/main.c    ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  82:Src/main.c    ****   HAL_Init();
+  83:Src/main.c    **** 
+  84:Src/main.c    ****   /* USER CODE BEGIN Init */
+  85:Src/main.c    **** 
+  86:Src/main.c    ****   /* USER CODE END Init */
+  87:Src/main.c    **** 
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s 			page 3
+
+
+  88:Src/main.c    ****   /* Configure the system clock */
+  89:Src/main.c    ****   SystemClock_Config();
+  90:Src/main.c    **** 
+  91:Src/main.c    ****   /* USER CODE BEGIN SysInit */
+  92:Src/main.c    **** 
+  93:Src/main.c    ****   /* USER CODE END SysInit */
+  94:Src/main.c    **** 
+  95:Src/main.c    ****   /* Initialize all configured peripherals */
+  96:Src/main.c    ****   MX_GPIO_Init();
+  97:Src/main.c    ****   MX_DMA_Init();
+  98:Src/main.c    ****   MX_ADC1_Init();
+  99:Src/main.c    ****   MX_CAN1_Init();
+ 100:Src/main.c    ****   MX_SPI3_Init();
+ 101:Src/main.c    ****   MX_TIM4_Init();
+ 102:Src/main.c    ****   MX_TIM8_Init();
+ 103:Src/main.c    ****   MX_USART3_UART_Init();
+ 104:Src/main.c    ****   MX_TIM6_Init();
+ 105:Src/main.c    ****   MX_TIM7_Init();
+ 106:Src/main.c    ****   MX_ADC2_Init();
+ 107:Src/main.c    ****   /* USER CODE BEGIN 2 */
+ 108:Src/main.c    **** 
+ 109:Src/main.c    ****   Foc_Init(1);
+ 110:Src/main.c    **** 
+ 111:Src/main.c    **** 
+ 112:Src/main.c    ****   /* USER CODE END 2 */
+ 113:Src/main.c    **** 
+ 114:Src/main.c    ****   /* Infinite loop */
+ 115:Src/main.c    ****   /* USER CODE BEGIN WHILE */
+ 116:Src/main.c    ****   while (1)
+ 117:Src/main.c    ****   {
+ 118:Src/main.c    ****     /* USER CODE END WHILE */
+ 119:Src/main.c    ****       if(ms_2_flag){
+ 120:Src/main.c    ****         ms_2_flag=0;
+ 121:Src/main.c    ****         /*
+ 122:Src/main.c    ****         HAL_ADC_Start(&hadc1);
+ 123:Src/main.c    ****         HAL_ADC_Start(&hadc2);
+ 124:Src/main.c    ****         HAL_ADC_PollForConversion(&hadc1,10);
+ 125:Src/main.c    ****         HAL_ADC_PollForConversion(&hadc2,10);
+ 126:Src/main.c    ****         ADC_Values_Raw[0]=HAL_ADC_GetValue(&hadc1);
+ 127:Src/main.c    ****         ADC_Values_Raw[1]=HAL_ADC_GetValue(&hadc2);
+ 128:Src/main.c    ****         HAL_ADC_Stop(&hadc1);
+ 129:Src/main.c    ****         HAL_ADC_Stop(&hadc2);
+ 130:Src/main.c    ****         */
+ 131:Src/main.c    ****         send_wave(ADC_Values_Raw[0],ADC_Values_Raw[1],ADC_Values_Raw2[0],ADC_Values_Raw2[1]);
+ 132:Src/main.c    ****       }
+ 133:Src/main.c    ****     /* USER CODE BEGIN 3 */
+ 134:Src/main.c    ****   }
+ 135:Src/main.c    ****   /* USER CODE END 3 */
+ 136:Src/main.c    **** }
+ 137:Src/main.c    **** 
+ 138:Src/main.c    **** /**
+ 139:Src/main.c    ****   * @brief System Clock Configuration
+ 140:Src/main.c    ****   * @retval None
+ 141:Src/main.c    ****   */
+ 142:Src/main.c    **** void SystemClock_Config(void)
+ 143:Src/main.c    **** {
+  29              		.loc 1 143 1 view -0
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s 			page 4
+
+
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 80
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 30B5     		push	{r4, r5, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 12
+  36              		.cfi_offset 4, -12
+  37              		.cfi_offset 5, -8
+  38              		.cfi_offset 14, -4
+  39 0002 95B0     		sub	sp, sp, #84
+  40              	.LCFI1:
+  41              		.cfi_def_cfa_offset 96
+ 144:Src/main.c    ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  42              		.loc 1 144 3 view .LVU1
+  43              		.loc 1 144 22 is_stmt 0 view .LVU2
+  44 0004 3022     		movs	r2, #48
+  45 0006 0021     		movs	r1, #0
+  46 0008 08A8     		add	r0, sp, #32
+  47 000a FFF7FEFF 		bl	memset
+  48              	.LVL0:
+ 145:Src/main.c    ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  49              		.loc 1 145 3 is_stmt 1 view .LVU3
+  50              		.loc 1 145 22 is_stmt 0 view .LVU4
+  51 000e 0024     		movs	r4, #0
+  52 0010 0394     		str	r4, [sp, #12]
+  53 0012 0494     		str	r4, [sp, #16]
+  54 0014 0594     		str	r4, [sp, #20]
+  55 0016 0694     		str	r4, [sp, #24]
+  56 0018 0794     		str	r4, [sp, #28]
+ 146:Src/main.c    **** 
+ 147:Src/main.c    ****   /** Configure the main internal regulator output voltage 
+ 148:Src/main.c    ****   */
+ 149:Src/main.c    ****   __HAL_RCC_PWR_CLK_ENABLE();
+  57              		.loc 1 149 3 is_stmt 1 view .LVU5
+  58              	.LBB2:
+  59              		.loc 1 149 3 view .LVU6
+  60 001a 0194     		str	r4, [sp, #4]
+  61              		.loc 1 149 3 view .LVU7
+  62 001c 1B4B     		ldr	r3, .L3
+  63 001e 1A6C     		ldr	r2, [r3, #64]
+  64 0020 42F08052 		orr	r2, r2, #268435456
+  65 0024 1A64     		str	r2, [r3, #64]
+  66              		.loc 1 149 3 view .LVU8
+  67 0026 1B6C     		ldr	r3, [r3, #64]
+  68 0028 03F08053 		and	r3, r3, #268435456
+  69 002c 0193     		str	r3, [sp, #4]
+  70              		.loc 1 149 3 view .LVU9
+  71 002e 019B     		ldr	r3, [sp, #4]
+  72              	.LBE2:
+ 150:Src/main.c    ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+  73              		.loc 1 150 3 view .LVU10
+  74              	.LBB3:
+  75              		.loc 1 150 3 view .LVU11
+  76 0030 0294     		str	r4, [sp, #8]
+  77              		.loc 1 150 3 view .LVU12
+  78 0032 174B     		ldr	r3, .L3+4
+  79 0034 1A68     		ldr	r2, [r3]
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s 			page 5
+
+
+  80 0036 42F48042 		orr	r2, r2, #16384
+  81 003a 1A60     		str	r2, [r3]
+  82              		.loc 1 150 3 view .LVU13
+  83 003c 1B68     		ldr	r3, [r3]
+  84 003e 03F48043 		and	r3, r3, #16384
+  85 0042 0293     		str	r3, [sp, #8]
+  86              		.loc 1 150 3 view .LVU14
+  87 0044 029B     		ldr	r3, [sp, #8]
+  88              	.LBE3:
+ 151:Src/main.c    ****   /** Initializes the CPU, AHB and APB busses clocks 
+ 152:Src/main.c    ****   */
+ 153:Src/main.c    ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  89              		.loc 1 153 3 view .LVU15
+  90              		.loc 1 153 36 is_stmt 0 view .LVU16
+  91 0046 0123     		movs	r3, #1
+  92 0048 0893     		str	r3, [sp, #32]
+ 154:Src/main.c    ****   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  93              		.loc 1 154 3 is_stmt 1 view .LVU17
+  94              		.loc 1 154 30 is_stmt 0 view .LVU18
+  95 004a 4FF48033 		mov	r3, #65536
+  96 004e 0993     		str	r3, [sp, #36]
+ 155:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  97              		.loc 1 155 3 is_stmt 1 view .LVU19
+  98              		.loc 1 155 34 is_stmt 0 view .LVU20
+  99 0050 0225     		movs	r5, #2
+ 100 0052 0E95     		str	r5, [sp, #56]
+ 156:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+ 101              		.loc 1 156 3 is_stmt 1 view .LVU21
+ 102              		.loc 1 156 35 is_stmt 0 view .LVU22
+ 103 0054 4FF48003 		mov	r3, #4194304
+ 104 0058 0F93     		str	r3, [sp, #60]
+ 157:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLM = 4;
+ 105              		.loc 1 157 3 is_stmt 1 view .LVU23
+ 106              		.loc 1 157 30 is_stmt 0 view .LVU24
+ 107 005a 0423     		movs	r3, #4
+ 108 005c 1093     		str	r3, [sp, #64]
+ 158:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLN = 168;
+ 109              		.loc 1 158 3 is_stmt 1 view .LVU25
+ 110              		.loc 1 158 30 is_stmt 0 view .LVU26
+ 111 005e A822     		movs	r2, #168
+ 112 0060 1192     		str	r2, [sp, #68]
+ 159:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
+ 113              		.loc 1 159 3 is_stmt 1 view .LVU27
+ 114              		.loc 1 159 30 is_stmt 0 view .LVU28
+ 115 0062 1295     		str	r5, [sp, #72]
+ 160:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLQ = 4;
+ 116              		.loc 1 160 3 is_stmt 1 view .LVU29
+ 117              		.loc 1 160 30 is_stmt 0 view .LVU30
+ 118 0064 1393     		str	r3, [sp, #76]
+ 161:Src/main.c    ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 119              		.loc 1 161 3 is_stmt 1 view .LVU31
+ 120              		.loc 1 161 7 is_stmt 0 view .LVU32
+ 121 0066 08A8     		add	r0, sp, #32
+ 122 0068 FFF7FEFF 		bl	HAL_RCC_OscConfig
+ 123              	.LVL1:
+ 162:Src/main.c    ****   {
+ 163:Src/main.c    ****     Error_Handler();
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s 			page 6
+
+
+ 164:Src/main.c    ****   }
+ 165:Src/main.c    ****   /** Initializes the CPU, AHB and APB busses clocks 
+ 166:Src/main.c    ****   */
+ 167:Src/main.c    ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+ 124              		.loc 1 167 3 is_stmt 1 view .LVU33
+ 125              		.loc 1 167 31 is_stmt 0 view .LVU34
+ 126 006c 0F23     		movs	r3, #15
+ 127 006e 0393     		str	r3, [sp, #12]
+ 168:Src/main.c    ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 169:Src/main.c    ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+ 128              		.loc 1 169 3 is_stmt 1 view .LVU35
+ 129              		.loc 1 169 34 is_stmt 0 view .LVU36
+ 130 0070 0495     		str	r5, [sp, #16]
+ 170:Src/main.c    ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 131              		.loc 1 170 3 is_stmt 1 view .LVU37
+ 132              		.loc 1 170 35 is_stmt 0 view .LVU38
+ 133 0072 0594     		str	r4, [sp, #20]
+ 171:Src/main.c    ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
+ 134              		.loc 1 171 3 is_stmt 1 view .LVU39
+ 135              		.loc 1 171 36 is_stmt 0 view .LVU40
+ 136 0074 4FF4A053 		mov	r3, #5120
+ 137 0078 0693     		str	r3, [sp, #24]
+ 172:Src/main.c    ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
+ 138              		.loc 1 172 3 is_stmt 1 view .LVU41
+ 139              		.loc 1 172 36 is_stmt 0 view .LVU42
+ 140 007a 4FF48053 		mov	r3, #4096
+ 141 007e 0793     		str	r3, [sp, #28]
+ 173:Src/main.c    **** 
+ 174:Src/main.c    ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)
+ 142              		.loc 1 174 3 is_stmt 1 view .LVU43
+ 143              		.loc 1 174 7 is_stmt 0 view .LVU44
+ 144 0080 0521     		movs	r1, #5
+ 145 0082 03A8     		add	r0, sp, #12
+ 146 0084 FFF7FEFF 		bl	HAL_RCC_ClockConfig
+ 147              	.LVL2:
+ 175:Src/main.c    ****   {
+ 176:Src/main.c    ****     Error_Handler();
+ 177:Src/main.c    ****   }
+ 178:Src/main.c    **** }
+ 148              		.loc 1 178 1 view .LVU45
+ 149 0088 15B0     		add	sp, sp, #84
+ 150              	.LCFI2:
+ 151              		.cfi_def_cfa_offset 12
+ 152              		@ sp needed
+ 153 008a 30BD     		pop	{r4, r5, pc}
+ 154              	.L4:
+ 155              		.align	2
+ 156              	.L3:
+ 157 008c 00380240 		.word	1073887232
+ 158 0090 00700040 		.word	1073770496
+ 159              		.cfi_endproc
+ 160              	.LFE131:
+ 162              		.section	.text.main,"ax",%progbits
+ 163              		.align	1
+ 164              		.global	main
+ 165              		.syntax unified
+ 166              		.thumb
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s 			page 7
+
+
+ 167              		.thumb_func
+ 168              		.fpu fpv4-sp-d16
+ 170              	main:
+ 171              	.LFB130:
+  73:Src/main.c    ****   /* USER CODE BEGIN 1 */
+ 172              		.loc 1 73 1 is_stmt 1 view -0
+ 173              		.cfi_startproc
+ 174              		@ Volatile: function does not return.
+ 175              		@ args = 0, pretend = 0, frame = 0
+ 176              		@ frame_needed = 0, uses_anonymous_args = 0
+ 177 0000 08B5     		push	{r3, lr}
+ 178              	.LCFI3:
+ 179              		.cfi_def_cfa_offset 8
+ 180              		.cfi_offset 3, -8
+ 181              		.cfi_offset 14, -4
+  82:Src/main.c    **** 
+ 182              		.loc 1 82 3 view .LVU47
+ 183 0002 FFF7FEFF 		bl	HAL_Init
+ 184              	.LVL3:
+  89:Src/main.c    **** 
+ 185              		.loc 1 89 3 view .LVU48
+ 186 0006 FFF7FEFF 		bl	SystemClock_Config
+ 187              	.LVL4:
+  96:Src/main.c    ****   MX_DMA_Init();
+ 188              		.loc 1 96 3 view .LVU49
+ 189 000a FFF7FEFF 		bl	MX_GPIO_Init
+ 190              	.LVL5:
+  97:Src/main.c    ****   MX_ADC1_Init();
+ 191              		.loc 1 97 3 view .LVU50
+ 192 000e FFF7FEFF 		bl	MX_DMA_Init
+ 193              	.LVL6:
+  98:Src/main.c    ****   MX_CAN1_Init();
+ 194              		.loc 1 98 3 view .LVU51
+ 195 0012 FFF7FEFF 		bl	MX_ADC1_Init
+ 196              	.LVL7:
+  99:Src/main.c    ****   MX_SPI3_Init();
+ 197              		.loc 1 99 3 view .LVU52
+ 198 0016 FFF7FEFF 		bl	MX_CAN1_Init
+ 199              	.LVL8:
+ 100:Src/main.c    ****   MX_TIM4_Init();
+ 200              		.loc 1 100 3 view .LVU53
+ 201 001a FFF7FEFF 		bl	MX_SPI3_Init
+ 202              	.LVL9:
+ 101:Src/main.c    ****   MX_TIM8_Init();
+ 203              		.loc 1 101 3 view .LVU54
+ 204 001e FFF7FEFF 		bl	MX_TIM4_Init
+ 205              	.LVL10:
+ 102:Src/main.c    ****   MX_USART3_UART_Init();
+ 206              		.loc 1 102 3 view .LVU55
+ 207 0022 FFF7FEFF 		bl	MX_TIM8_Init
+ 208              	.LVL11:
+ 103:Src/main.c    ****   MX_TIM6_Init();
+ 209              		.loc 1 103 3 view .LVU56
+ 210 0026 FFF7FEFF 		bl	MX_USART3_UART_Init
+ 211              	.LVL12:
+ 104:Src/main.c    ****   MX_TIM7_Init();
+ 212              		.loc 1 104 3 view .LVU57
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s 			page 8
+
+
+ 213 002a FFF7FEFF 		bl	MX_TIM6_Init
+ 214              	.LVL13:
+ 105:Src/main.c    ****   MX_ADC2_Init();
+ 215              		.loc 1 105 3 view .LVU58
+ 216 002e FFF7FEFF 		bl	MX_TIM7_Init
+ 217              	.LVL14:
+ 106:Src/main.c    ****   /* USER CODE BEGIN 2 */
+ 218              		.loc 1 106 3 view .LVU59
+ 219 0032 FFF7FEFF 		bl	MX_ADC2_Init
+ 220              	.LVL15:
+ 109:Src/main.c    **** 
+ 221              		.loc 1 109 3 view .LVU60
+ 222 0036 B7EE000A 		vmov.f32	s0, #1.0e+0
+ 223 003a FFF7FEFF 		bl	Foc_Init
+ 224              	.LVL16:
+ 225 003e 1AE0     		b	.L6
+ 226              	.L9:
+ 120:Src/main.c    ****         /*
+ 227              		.loc 1 120 9 view .LVU61
+ 120:Src/main.c    ****         /*
+ 228              		.loc 1 120 18 is_stmt 0 view .LVU62
+ 229 0040 0F4B     		ldr	r3, .L10
+ 230 0042 0022     		movs	r2, #0
+ 231 0044 1A70     		strb	r2, [r3]
+ 131:Src/main.c    ****       }
+ 232              		.loc 1 131 9 is_stmt 1 view .LVU63
+ 131:Src/main.c    ****       }
+ 233              		.loc 1 131 33 is_stmt 0 view .LVU64
+ 234 0046 0F4B     		ldr	r3, .L10+4
+ 235 0048 1A88     		ldrh	r2, [r3]
+ 236 004a 00EE102A 		vmov	s0, r2	@ int
+ 131:Src/main.c    ****       }
+ 237              		.loc 1 131 51 view .LVU65
+ 238 004e 5B88     		ldrh	r3, [r3, #2]
+ 239 0050 00EE903A 		vmov	s1, r3	@ int
+ 131:Src/main.c    ****       }
+ 240              		.loc 1 131 70 view .LVU66
+ 241 0054 0C4B     		ldr	r3, .L10+8
+ 242 0056 1A88     		ldrh	r2, [r3]
+ 243 0058 01EE102A 		vmov	s2, r2	@ int
+ 131:Src/main.c    ****       }
+ 244              		.loc 1 131 89 view .LVU67
+ 245 005c 5B88     		ldrh	r3, [r3, #2]
+ 246 005e 01EE903A 		vmov	s3, r3	@ int
+ 131:Src/main.c    ****       }
+ 247              		.loc 1 131 9 view .LVU68
+ 248 0062 F8EE611A 		vcvt.f32.u32	s3, s3
+ 249 0066 B8EE411A 		vcvt.f32.u32	s2, s2
+ 250 006a F8EE600A 		vcvt.f32.u32	s1, s1
+ 251 006e B8EE400A 		vcvt.f32.u32	s0, s0
+ 252 0072 FFF7FEFF 		bl	send_wave
+ 253              	.LVL17:
+ 254              	.L6:
+ 116:Src/main.c    ****   {
+ 255              		.loc 1 116 3 is_stmt 1 view .LVU69
+ 119:Src/main.c    ****         ms_2_flag=0;
+ 256              		.loc 1 119 7 view .LVU70
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s 			page 9
+
+
+ 119:Src/main.c    ****         ms_2_flag=0;
+ 257              		.loc 1 119 10 is_stmt 0 view .LVU71
+ 258 0076 024B     		ldr	r3, .L10
+ 259 0078 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 119:Src/main.c    ****         ms_2_flag=0;
+ 260              		.loc 1 119 9 view .LVU72
+ 261 007a 002B     		cmp	r3, #0
+ 262 007c FBD0     		beq	.L6
+ 263 007e DFE7     		b	.L9
+ 264              	.L11:
+ 265              		.align	2
+ 266              	.L10:
+ 267 0080 00000000 		.word	ms_2_flag
+ 268 0084 00000000 		.word	ADC_Values_Raw
+ 269 0088 00000000 		.word	ADC_Values_Raw2
+ 270              		.cfi_endproc
+ 271              	.LFE130:
+ 273              		.section	.text.MS_IRQ_Handler,"ax",%progbits
+ 274              		.align	1
+ 275              		.global	MS_IRQ_Handler
+ 276              		.syntax unified
+ 277              		.thumb
+ 278              		.thumb_func
+ 279              		.fpu fpv4-sp-d16
+ 281              	MS_IRQ_Handler:
+ 282              	.LFB132:
+ 179:Src/main.c    **** 
+ 180:Src/main.c    **** /* USER CODE BEGIN 4 */
+ 181:Src/main.c    **** void MS_IRQ_Handler(){
+ 283              		.loc 1 181 22 is_stmt 1 view -0
+ 284              		.cfi_startproc
+ 285              		@ args = 0, pretend = 0, frame = 0
+ 286              		@ frame_needed = 0, uses_anonymous_args = 0
+ 287              		@ link register save eliminated.
+ 182:Src/main.c    ****   static ms_cnt;
+ 288              		.loc 1 182 3 view .LVU74
+ 183:Src/main.c    ****   ms_cnt++;
+ 289              		.loc 1 183 3 view .LVU75
+ 290              		.loc 1 183 9 is_stmt 0 view .LVU76
+ 291 0000 064A     		ldr	r2, .L15
+ 292 0002 1368     		ldr	r3, [r2]
+ 293 0004 0133     		adds	r3, r3, #1
+ 294 0006 1360     		str	r3, [r2]
+ 184:Src/main.c    ****   if(ms_cnt==2){
+ 295              		.loc 1 184 3 is_stmt 1 view .LVU77
+ 296              		.loc 1 184 5 is_stmt 0 view .LVU78
+ 297 0008 022B     		cmp	r3, #2
+ 298 000a 00D0     		beq	.L14
+ 299              	.L12:
+ 185:Src/main.c    ****     ms_cnt=0;
+ 186:Src/main.c    ****     ms_2_flag=1;
+ 187:Src/main.c    ****   }
+ 188:Src/main.c    **** }
+ 300              		.loc 1 188 1 view .LVU79
+ 301 000c 7047     		bx	lr
+ 302              	.L14:
+ 185:Src/main.c    ****     ms_cnt=0;
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s 			page 10
+
+
+ 303              		.loc 1 185 5 is_stmt 1 view .LVU80
+ 185:Src/main.c    ****     ms_cnt=0;
+ 304              		.loc 1 185 11 is_stmt 0 view .LVU81
+ 305 000e 1346     		mov	r3, r2
+ 306 0010 0022     		movs	r2, #0
+ 307 0012 1A60     		str	r2, [r3]
+ 186:Src/main.c    ****   }
+ 308              		.loc 1 186 5 is_stmt 1 view .LVU82
+ 186:Src/main.c    ****   }
+ 309              		.loc 1 186 14 is_stmt 0 view .LVU83
+ 310 0014 024B     		ldr	r3, .L15+4
+ 311 0016 0122     		movs	r2, #1
+ 312 0018 1A70     		strb	r2, [r3]
+ 313              		.loc 1 188 1 view .LVU84
+ 314 001a F7E7     		b	.L12
+ 315              	.L16:
+ 316              		.align	2
+ 317              	.L15:
+ 318 001c 00000000 		.word	.LANCHOR0
+ 319 0020 00000000 		.word	ms_2_flag
+ 320              		.cfi_endproc
+ 321              	.LFE132:
+ 323              		.section	.text.Error_Handler,"ax",%progbits
+ 324              		.align	1
+ 325              		.global	Error_Handler
+ 326              		.syntax unified
+ 327              		.thumb
+ 328              		.thumb_func
+ 329              		.fpu fpv4-sp-d16
+ 331              	Error_Handler:
+ 332              	.LFB133:
+ 189:Src/main.c    **** /* USER CODE END 4 */
+ 190:Src/main.c    **** 
+ 191:Src/main.c    **** /**
+ 192:Src/main.c    ****   * @brief  This function is executed in case of error occurrence.
+ 193:Src/main.c    ****   * @retval None
+ 194:Src/main.c    ****   */
+ 195:Src/main.c    **** void Error_Handler(void)
+ 196:Src/main.c    **** {
+ 333              		.loc 1 196 1 is_stmt 1 view -0
+ 334              		.cfi_startproc
+ 335              		@ args = 0, pretend = 0, frame = 0
+ 336              		@ frame_needed = 0, uses_anonymous_args = 0
+ 337              		@ link register save eliminated.
+ 197:Src/main.c    ****   /* USER CODE BEGIN Error_Handler_Debug */
+ 198:Src/main.c    ****   /* User can add his own implementation to report the HAL error return state */
+ 199:Src/main.c    **** 
+ 200:Src/main.c    ****   /* USER CODE END Error_Handler_Debug */
+ 201:Src/main.c    **** }
+ 338              		.loc 1 201 1 view .LVU86
+ 339 0000 7047     		bx	lr
+ 340              		.cfi_endproc
+ 341              	.LFE133:
+ 343              		.comm	ms_2_flag,1,1
+ 344              		.section	.bss.ms_cnt.8498,"aw",%nobits
+ 345              		.align	2
+ 346              		.set	.LANCHOR0,. + 0
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s 			page 11
+
+
+ 349              	ms_cnt.8498:
+ 350 0000 00000000 		.space	4
+ 351              		.text
+ 352              	.Letext0:
+ 353              		.file 2 "c:\\arm_gcc\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 354              		.file 3 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 355              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 356              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 357              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 358              		.file 7 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
+ 359              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 360              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
+ 361              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
+ 362              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 363              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h"
+ 364              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h"
+ 365              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h"
+ 366              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 367              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 368              		.file 17 "Inc/adc.h"
+ 369              		.file 18 "Inc/can.h"
+ 370              		.file 19 "Inc/spi.h"
+ 371              		.file 20 "Inc/tim.h"
+ 372              		.file 21 "Inc/usart.h"
+ 373              		.file 22 "Inc/foc.h"
+ 374              		.file 23 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 375              		.file 24 "Inc/gpio.h"
+ 376              		.file 25 "Inc/dma.h"
+ 377              		.file 26 "<built-in>"
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s 			page 12
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s:18     .text.SystemClock_Config:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s:26     .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s:157    .text.SystemClock_Config:0000008c $d
+C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s:163    .text.main:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s:170    .text.main:00000000 main
+C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s:267    .text.main:00000080 $d
+                            *COM*:00000001 ms_2_flag
+C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s:274    .text.MS_IRQ_Handler:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s:281    .text.MS_IRQ_Handler:00000000 MS_IRQ_Handler
+C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s:318    .text.MS_IRQ_Handler:0000001c $d
+C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s:324    .text.Error_Handler:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s:331    .text.Error_Handler:00000000 Error_Handler
+C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s:345    .bss.ms_cnt.8498:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccXiWOSc.s:349    .bss.ms_cnt.8498:00000000 ms_cnt.8498
+
+UNDEFINED SYMBOLS
+memset
+HAL_RCC_OscConfig
+HAL_RCC_ClockConfig
+HAL_Init
+MX_GPIO_Init
+MX_DMA_Init
+MX_ADC1_Init
+MX_CAN1_Init
+MX_SPI3_Init
+MX_TIM4_Init
+MX_TIM8_Init
+MX_USART3_UART_Init
+MX_TIM6_Init
+MX_TIM7_Init
+MX_ADC2_Init
+Foc_Init
+send_wave
+ADC_Values_Raw
+ADC_Values_Raw2
