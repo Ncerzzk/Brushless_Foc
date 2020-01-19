@@ -116,7 +116,7 @@ void MX_TIM8_Init(void)
   htim8.Instance = TIM8;
   htim8.Init.Prescaler = 0;
   htim8.Init.CounterMode = TIM_COUNTERMODE_CENTERALIGNED2;
-  htim8.Init.Period = 2625;
+  htim8.Init.Period = 3360;   // 25K   168M/25K/2;
   htim8.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim8.Init.RepetitionCounter = 1;
   htim8.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;

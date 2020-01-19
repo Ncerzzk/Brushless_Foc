@@ -133,7 +133,7 @@ void get_t(float theta,float * t1,float *t2){
     //theta_f=(float)theta*2.0f*PI/360;
     arm_sin_cos_f32(theta,&y,&x);
     x*=0.86f;
-    y*=0.86f;
+    y*=0.86f;   // sqrt(3)/2 没错
     //x=0.86f*cosf(theta_f);
     //y=0.86f*sinf(theta_f);
     temp_t1=u2.y*x/(u1.x*u2.y-u2.x*u1.y)-(u2.x*y)/(u1.x*u2.y-u2.x*u1.y);
