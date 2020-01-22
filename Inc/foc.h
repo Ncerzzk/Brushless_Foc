@@ -4,4 +4,5 @@
 void Foc_Init(float rps);
 extern uint16_t ADC_Values_Raw[];
 extern uint16_t ADC_Values_Raw2[];
+void Theta_Handler();
 #endif

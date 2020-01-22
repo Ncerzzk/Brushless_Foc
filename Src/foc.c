@@ -38,6 +38,13 @@ Uvect_Mos U7={1,1,1,0};
 
 Uvect_Mos *Uvects[6]={&U1,&U2,&U3,&U4,&U5,&U6};
 
+CCR_Duty CCR_Dutys={0};
+static float theta=0;
+float RPS=6;   // 转速
+
+#define TIM7_FREQ   1000
+#define TIM8_FREQ   200000
+
 void UVects_Init(){
     for(int i=0;i<6;++i){
         float v_theta=Uvects[i]->theta;
@@ -57,13 +64,14 @@ void Foc_Init(float rps){
     //TIM7->PSC=PSC;
     interupt_time=rps*PAIRS*PART_NUM;
     PSC=1281/interupt_time;
-    TIM8->ARR=168000000/(PSC+1)/interupt_time/2;
-    TIM8->PSC=PSC;
-    //TIM8->ARR=6200;
-    //TIM8->PSC=0;
+    TIM8->ARR=168000000/TIM8_FREQ/2;
+//  TIM8->ARR=168000000/(PSC+1)/interupt_time/2;
+//   TIM8->PSC=PSC;
+
     
 
     UVects_Init();
+    /*
     HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_1);
     HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_2);
     HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_3);
@@ -71,10 +79,13 @@ void Foc_Init(float rps){
     HAL_TIMEx_PWMN_Start(&htim8,TIM_CHANNEL_1);
     HAL_TIMEx_PWMN_Start(&htim8,TIM_CHANNEL_2);
     HAL_TIMEx_PWMN_Start(&htim8,TIM_CHANNEL_3);
-    //HAL_TIM_Base_Start_IT(&htim7);
+    */
+
+    TIM7->ARR=84000000/TIM7_FREQ-1;
+    HAL_TIM_Base_Start_IT(&htim7);
 
     //ADC
-    HAL_ADC_Start_DMA(&hadc1,(uint32_t *)ADC_Values_Raw,2);
+   // HAL_ADC_Start_DMA(&hadc1,(uint32_t *)ADC_Values_Raw,2);
     HAL_ADC_Start_DMA(&hadc2,(uint32_t *)ADC_Values_Raw2,3);
     HAL_TIM_Base_Start_IT(&htim8);
 }
@@ -159,7 +170,7 @@ CCR_Duty get_ccr_duty(float t1,float t2,Uvect_Mos u1,Uvect_Mos u2){
 
 // 一次theta增量为360/PART_NUM
 #define delta_theta 360.0f/PART_NUM
-static float theta=0;
+
 void svpwm(){
     CCR_Duty ccr_duty;
     Uvect_Mos u1,u2;
@@ -185,14 +196,88 @@ void svpwm(){
     //HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
 }
 
+void SVPWM_Step(CCR_Duty duty){
+    TIM8->CCR1=duty.ccrc*TIM8->ARR;
+    TIM8->CCR2=duty.ccrb*TIM8->ARR;
+    TIM8->CCR3=duty.ccra*TIM8->ARR;
+}
+
 
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 
     if(htim->Instance==TIM7){
-        //svpwm();
+        Theta_Handler();
     }
     if(htim->Instance==TIM8){
-            svpwm();
+            //svpwm();
+        SVPWM_Step(CCR_Dutys);
     }
 }
+
+
+void SVPWM_Normal_CalT1T2(float alpha,float beta,uint8_t area,float *t1,float *t2){
+    float temp=0;
+    switch(area){
+        case 1:
+            *t1=alpha - 0.57735f*beta;
+            *t2=1.1547f*beta;
+        break;
+        case 2:
+            *t1=alpha + 0.57735f*beta;
+            *t2=0.57735f*beta - alpha;
+            break;
+        case 3:
+            *t1=1.1547f*beta;
+            *t2=-alpha - 0.57735f*beta;
+            break;
+        case 4:
+            *t1=0.57735f*beta - alpha;
+            *t2=- 1.1547f*beta;
+            break;
+        case 5:
+            temp=- 0.57735f*beta;
+            *t1=temp-alpha;
+            *t2=temp+alpha;
+            break;
+        case 6:
+            *t1=-1.1547f*beta;
+            *t2=alpha + 0.57735f*beta;
+            break;
+    }
+}
+
+
+//#define dealtK PAIRS*360.0f/TIM7_FREQ
+#define dealtK 360.0f/TIM7_FREQ
+void Theta_Handler(){
+    Uvect_Mos u1,u2;
+    float t1,t2;
+    float x,y;
+    float dealt=RPS*dealtK;
+    theta+=dealt;
+    if(theta>360){
+        theta=(int)theta%360;
+    }
+    
+    uint8_t area=get_area((int)theta); 
+    get_area_u(area,&u1,&u2);
+    //get_t(theta,&t1,&t2);
+    arm_sin_cos_f32(theta,&y,&x);
+    x*=0.86f;
+    y*=0.86f;   // sqrt(3)/2 没错
+    SVPWM_Normal_CalT1T2(x,y,area,&t1,&t2);
+    CCR_Dutys=get_ccr_duty(t1,t2,u1,u2);
+}
+
+void SVPWM_Normal(float alpha,float beta){
+    // 幅度不能超过sqrt(3)/2
+}
+
+ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
+     if(hadc->Instance==ADC1){
+
+     }else if(hadc->Instance==ADC2){
+         
+     }
+ }

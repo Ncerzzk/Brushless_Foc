@@ -63,6 +63,7 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 uint8_t ms_2_flag;
+uint8_t Init_OK=0;
 /* USER CODE END 0 */
 
 /**
@@ -107,7 +108,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   Foc_Init(1);
-
+  Init_OK=1;
 
   /* USER CODE END 2 */
 
@@ -180,7 +181,12 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 void MS_IRQ_Handler(){
   static ms_cnt;
+
+  if(!Init_OK){
+    return ;
+  }
   ms_cnt++;
+  //Theta_Handler();
   if(ms_cnt==2){
     ms_cnt=0;
     ms_2_flag=1;
