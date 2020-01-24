@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 1
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -26,60 +26,67 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 1
   23              		.thumb_func
   24              		.fpu fpv4-sp-d16
   26              	UVects_Init:
-  27              	.LFB163:
+  27              	.LFB166:
   28              		.file 1 "Src/foc.c"
    1:Src/foc.c     **** #include "foc.h"
    2:Src/foc.c     **** #include "tim.h"
    3:Src/foc.c     **** #include "math.h"
    4:Src/foc.c     **** #include "arm_math.h"
    5:Src/foc.c     **** #include "adc.h"
-   6:Src/foc.c     **** 
-   7:Src/foc.c     **** 
-   8:Src/foc.c     **** #define PAIRS   7   //Pole of Pairs
-   9:Src/foc.c     **** #define PART_NUM   3072 // 多少细分 
-  10:Src/foc.c     **** #define MIN(a,b)    a<b?a:b
-  11:Src/foc.c     **** 
-  12:Src/foc.c     **** uint16_t ADC_Values_Raw[4];
-  13:Src/foc.c     **** uint16_t ADC_Values_Raw2[4];
-  14:Src/foc.c     **** //#define PI  3.1415926f
-  15:Src/foc.c     **** typedef struct{
-  16:Src/foc.c     ****     uint8_t a;
-  17:Src/foc.c     ****     uint8_t b;
-  18:Src/foc.c     ****     uint8_t c;
-  19:Src/foc.c     ****     float theta;
-  20:Src/foc.c     ****     float x;
-  21:Src/foc.c     ****     float y;
-  22:Src/foc.c     **** }Uvect_Mos;
-  23:Src/foc.c     **** 
-  24:Src/foc.c     **** typedef struct{
-  25:Src/foc.c     ****     float ccra;
-  26:Src/foc.c     ****     float ccrb;
-  27:Src/foc.c     ****     float ccrc;
-  28:Src/foc.c     **** }CCR_Duty;
-  29:Src/foc.c     **** 
-  30:Src/foc.c     **** Uvect_Mos U0={0,0,0,0};
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 2
+   6:Src/foc.c     **** #include "as5047.h"
+   7:Src/foc.c     **** #include "uart_ext.h"
+   8:Src/foc.c     **** 
+   9:Src/foc.c     **** #define PAIRS   7   //Pole of Pairs
+  10:Src/foc.c     **** #define PART_NUM   3072 // 多少细分 
+  11:Src/foc.c     **** #define MIN(a,b)    a<b?a:b
+  12:Src/foc.c     **** 
+  13:Src/foc.c     **** uint16_t ADC_Values_Raw[4];
+  14:Src/foc.c     **** uint16_t ADC_Values_Raw2[4];
+  15:Src/foc.c     **** //#define PI  3.1415926f
+  16:Src/foc.c     **** typedef struct{
+  17:Src/foc.c     ****     uint8_t a;
+  18:Src/foc.c     ****     uint8_t b;
+  19:Src/foc.c     ****     uint8_t c;
+  20:Src/foc.c     ****     float theta;
+  21:Src/foc.c     ****     float x;
+  22:Src/foc.c     ****     float y;
+  23:Src/foc.c     **** }Uvect_Mos;
+  24:Src/foc.c     **** 
+  25:Src/foc.c     **** typedef struct{
+  26:Src/foc.c     ****     float ccra;
+  27:Src/foc.c     ****     float ccrb;
+  28:Src/foc.c     ****     float ccrc;
+  29:Src/foc.c     **** }CCR_Duty;
+  30:Src/foc.c     **** 
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 2
 
 
-  31:Src/foc.c     **** Uvect_Mos U4={1,0,0,0};
-  32:Src/foc.c     **** Uvect_Mos U6={1,1,0,PI/3};
-  33:Src/foc.c     **** Uvect_Mos U2={0,1,0,PI/3*2};
-  34:Src/foc.c     **** Uvect_Mos U3={0,1,1,PI};
-  35:Src/foc.c     **** Uvect_Mos U1={0,0,1,PI/3*4};
-  36:Src/foc.c     **** Uvect_Mos U5={1,0,1,PI/3*5};
-  37:Src/foc.c     **** Uvect_Mos U7={1,1,1,0};
-  38:Src/foc.c     **** 
-  39:Src/foc.c     **** Uvect_Mos *Uvects[6]={&U1,&U2,&U3,&U4,&U5,&U6};
-  40:Src/foc.c     **** 
-  41:Src/foc.c     **** CCR_Duty CCR_Dutys={0};
-  42:Src/foc.c     **** static float theta=0;
-  43:Src/foc.c     **** float RPS=6;   // 转速
-  44:Src/foc.c     **** 
-  45:Src/foc.c     **** #define TIM7_FREQ   1000
-  46:Src/foc.c     **** #define TIM8_FREQ   200000
+  31:Src/foc.c     **** Uvect_Mos U0={0,0,0,0};
+  32:Src/foc.c     **** Uvect_Mos U4={1,0,0,0};
+  33:Src/foc.c     **** Uvect_Mos U6={1,1,0,PI/3};
+  34:Src/foc.c     **** Uvect_Mos U2={0,1,0,PI/3*2};
+  35:Src/foc.c     **** Uvect_Mos U3={0,1,1,PI};
+  36:Src/foc.c     **** Uvect_Mos U1={0,0,1,PI/3*4};
+  37:Src/foc.c     **** Uvect_Mos U5={1,0,1,PI/3*5};
+  38:Src/foc.c     **** Uvect_Mos U7={1,1,1,0};
+  39:Src/foc.c     **** 
+  40:Src/foc.c     **** Uvect_Mos *Uvects[6]={&U1,&U2,&U3,&U4,&U5,&U6};
+  41:Src/foc.c     **** 
+  42:Src/foc.c     **** CCR_Duty CCR_Dutys={0};
+  43:Src/foc.c     **** static float theta=0;
+  44:Src/foc.c     **** float RPS=6;   // 转速
+  45:Src/foc.c     **** 
+  46:Src/foc.c     **** float Position_Degree;
   47:Src/foc.c     **** 
-  48:Src/foc.c     **** void UVects_Init(){
-  29              		.loc 1 48 19 view -0
+  48:Src/foc.c     **** float Position_Offset=215.793457f;
+  49:Src/foc.c     **** 
+  50:Src/foc.c     **** #define TIM7_FREQ   1000
+  51:Src/foc.c     **** #define TIM8_FREQ   20000
+  52:Src/foc.c     **** 
+  53:Src/foc.c     **** #define DRIVE
+  54:Src/foc.c     **** 
+  55:Src/foc.c     **** void UVects_Init(){
+  29              		.loc 1 55 19 view -0
   30              		.cfi_startproc
   31              		@ args = 0, pretend = 0, frame = 0
   32              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -95,65 +102,65 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 1
   42              		.cfi_def_cfa_offset 24
   43              		.cfi_offset 80, -24
   44              		.cfi_offset 81, -20
-  49:Src/foc.c     ****     for(int i=0;i<6;++i){
-  45              		.loc 1 49 5 view .LVU1
+  56:Src/foc.c     ****     for(int i=0;i<6;++i){
+  45              		.loc 1 56 5 view .LVU1
   46              	.LBB2:
-  47              		.loc 1 49 9 view .LVU2
+  47              		.loc 1 56 9 view .LVU2
   48              	.LVL0:
-  49              		.loc 1 49 13 is_stmt 0 view .LVU3
+  49              		.loc 1 56 13 is_stmt 0 view .LVU3
   50 0006 0024     		movs	r4, #0
   51              	.LVL1:
   52              	.L2:
-  53              		.loc 1 49 17 is_stmt 1 discriminator 1 view .LVU4
-  54              		.loc 1 49 5 is_stmt 0 discriminator 1 view .LVU5
+  53              		.loc 1 56 17 is_stmt 1 discriminator 1 view .LVU4
+  54              		.loc 1 56 5 is_stmt 0 discriminator 1 view .LVU5
   55 0008 052C     		cmp	r4, #5
   56 000a 14DC     		bgt	.L5
   57              	.LBB3:
-  50:Src/foc.c     ****         float v_theta=Uvects[i]->theta;
-  58              		.loc 1 50 9 is_stmt 1 discriminator 3 view .LVU6
-  59              		.loc 1 50 29 is_stmt 0 discriminator 3 view .LVU7
+  57:Src/foc.c     ****         float v_theta=Uvects[i]->theta;
+  58              		.loc 1 57 9 is_stmt 1 discriminator 3 view .LVU6
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 3
+
+
+  59              		.loc 1 57 29 is_stmt 0 discriminator 3 view .LVU7
   60 000c 0B4D     		ldr	r5, .L6
   61 000e 55F82460 		ldr	r6, [r5, r4, lsl #2]
-  62              		.loc 1 50 15 discriminator 3 view .LVU8
+  62              		.loc 1 57 15 discriminator 3 view .LVU8
   63 0012 96ED018A 		vldr.32	s16, [r6, #4]
   64              	.LVL2:
-  51:Src/foc.c     ****         Uvects[i]->x=cosf(v_theta);
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 3
-
-
-  65              		.loc 1 51 9 is_stmt 1 discriminator 3 view .LVU9
-  66              		.loc 1 51 22 is_stmt 0 discriminator 3 view .LVU10
+  58:Src/foc.c     ****         Uvects[i]->x=cosf(v_theta);
+  65              		.loc 1 58 9 is_stmt 1 discriminator 3 view .LVU9
+  66              		.loc 1 58 22 is_stmt 0 discriminator 3 view .LVU10
   67 0016 B0EE480A 		vmov.f32	s0, s16
   68 001a FFF7FEFF 		bl	cosf
   69              	.LVL3:
-  70              		.loc 1 51 21 discriminator 3 view .LVU11
+  70              		.loc 1 58 21 discriminator 3 view .LVU11
   71 001e 86ED020A 		vstr.32	s0, [r6, #8]
-  52:Src/foc.c     ****         Uvects[i]->y=sinf(v_theta);
-  72              		.loc 1 52 9 is_stmt 1 discriminator 3 view .LVU12
-  73              		.loc 1 52 15 is_stmt 0 discriminator 3 view .LVU13
+  59:Src/foc.c     ****         Uvects[i]->y=sinf(v_theta);
+  72              		.loc 1 59 9 is_stmt 1 discriminator 3 view .LVU12
+  73              		.loc 1 59 15 is_stmt 0 discriminator 3 view .LVU13
   74 0022 55F82450 		ldr	r5, [r5, r4, lsl #2]
-  75              		.loc 1 52 22 discriminator 3 view .LVU14
+  75              		.loc 1 59 22 discriminator 3 view .LVU14
   76 0026 B0EE480A 		vmov.f32	s0, s16
   77 002a FFF7FEFF 		bl	sinf
   78              	.LVL4:
-  79              		.loc 1 52 21 discriminator 3 view .LVU15
+  79              		.loc 1 59 21 discriminator 3 view .LVU15
   80 002e 85ED030A 		vstr.32	s0, [r5, #12]
   81              	.LBE3:
-  49:Src/foc.c     ****         float v_theta=Uvects[i]->theta;
-  82              		.loc 1 49 21 is_stmt 1 discriminator 3 view .LVU16
+  56:Src/foc.c     ****         float v_theta=Uvects[i]->theta;
+  82              		.loc 1 56 21 is_stmt 1 discriminator 3 view .LVU16
   83 0032 0134     		adds	r4, r4, #1
   84              	.LVL5:
-  49:Src/foc.c     ****         float v_theta=Uvects[i]->theta;
-  85              		.loc 1 49 21 is_stmt 0 discriminator 3 view .LVU17
+  56:Src/foc.c     ****         float v_theta=Uvects[i]->theta;
+  85              		.loc 1 56 21 is_stmt 0 discriminator 3 view .LVU17
   86 0034 E8E7     		b	.L2
   87              	.LVL6:
   88              	.L5:
-  49:Src/foc.c     ****         float v_theta=Uvects[i]->theta;
-  89              		.loc 1 49 21 discriminator 3 view .LVU18
+  56:Src/foc.c     ****         float v_theta=Uvects[i]->theta;
+  89              		.loc 1 56 21 discriminator 3 view .LVU18
   90              	.LBE2:
-  53:Src/foc.c     ****     }
-  54:Src/foc.c     **** }
-  91              		.loc 1 54 1 view .LVU19
+  60:Src/foc.c     ****     }
+  61:Src/foc.c     **** }
+  91              		.loc 1 61 1 view .LVU19
   92 0036 BDEC028B 		vldm	sp!, {d8}
   93              	.LCFI2:
   94              		.cfi_restore 80
@@ -162,963 +169,961 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 1
   97 003a 70BD     		pop	{r4, r5, r6, pc}
   98              	.LVL7:
   99              	.L7:
- 100              		.loc 1 54 1 view .LVU20
+ 100              		.loc 1 61 1 view .LVU20
  101              		.align	2
  102              	.L6:
  103 003c 00000000 		.word	.LANCHOR0
  104              		.cfi_endproc
- 105              	.LFE163:
+ 105              	.LFE166:
  107              		.section	.text.Foc_Init,"ax",%progbits
  108              		.align	1
  109              		.global	Foc_Init
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 4
+
+
  110              		.syntax unified
  111              		.thumb
  112              		.thumb_func
  113              		.fpu fpv4-sp-d16
  115              	Foc_Init:
  116              	.LVL8:
- 117              	.LFB164:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 4
-
-
-  55:Src/foc.c     **** 
-  56:Src/foc.c     **** void Foc_Init(float rps){
- 118              		.loc 1 56 25 is_stmt 1 view -0
+ 117              	.LFB167:
+  62:Src/foc.c     **** 
+  63:Src/foc.c     **** void Foc_Init(float rps){
+ 118              		.loc 1 63 25 is_stmt 1 view -0
  119              		.cfi_startproc
  120              		@ args = 0, pretend = 0, frame = 0
  121              		@ frame_needed = 0, uses_anonymous_args = 0
- 122              		.loc 1 56 25 is_stmt 0 view .LVU22
- 123 0000 08B5     		push	{r3, lr}
+ 122              		.loc 1 63 25 is_stmt 0 view .LVU22
+ 123 0000 10B5     		push	{r4, lr}
  124              	.LCFI3:
  125              		.cfi_def_cfa_offset 8
- 126              		.cfi_offset 3, -8
+ 126              		.cfi_offset 4, -8
  127              		.cfi_offset 14, -4
-  57:Src/foc.c     ****     // rps unit is r/s
-  58:Src/foc.c     ****     int interupt_time=0;
- 128              		.loc 1 58 5 is_stmt 1 view .LVU23
+  64:Src/foc.c     ****     // rps unit is r/s
+  65:Src/foc.c     ****     int interupt_time=0;
+ 128              		.loc 1 65 5 is_stmt 1 view .LVU23
  129              	.LVL9:
-  59:Src/foc.c     ****     int PSC=0;
- 130              		.loc 1 59 5 view .LVU24
-  60:Src/foc.c     **** 
-  61:Src/foc.c     ****     //interupt_time=rps*PAIRS*PART_NUM;
-  62:Src/foc.c     ****     //PSC=1281/interupt_time;    //84000000/65535/interrupt_time
-  63:Src/foc.c     ****     //TIM7->ARR=84000000/(PSC+1)/interupt_time;
-  64:Src/foc.c     ****     //TIM7->PSC=PSC;
-  65:Src/foc.c     ****     interupt_time=rps*PAIRS*PART_NUM;
- 131              		.loc 1 65 5 view .LVU25
-  66:Src/foc.c     ****     PSC=1281/interupt_time;
- 132              		.loc 1 66 5 view .LVU26
-  67:Src/foc.c     ****     TIM8->ARR=168000000/TIM8_FREQ/2;
- 133              		.loc 1 67 5 view .LVU27
- 134              		.loc 1 67 14 is_stmt 0 view .LVU28
- 135 0002 0A4B     		ldr	r3, .L10
- 136 0004 4FF4D272 		mov	r2, #420
+  66:Src/foc.c     ****     int PSC=0;
+ 130              		.loc 1 66 5 view .LVU24
+  67:Src/foc.c     **** 
+  68:Src/foc.c     ****     //interupt_time=rps*PAIRS*PART_NUM;
+  69:Src/foc.c     ****     //PSC=1281/interupt_time;    //84000000/65535/interrupt_time
+  70:Src/foc.c     ****     //TIM7->ARR=84000000/(PSC+1)/interupt_time;
+  71:Src/foc.c     ****     //TIM7->PSC=PSC;
+  72:Src/foc.c     ****     interupt_time=rps*PAIRS*PART_NUM;
+ 131              		.loc 1 72 5 view .LVU25
+  73:Src/foc.c     ****     PSC=1281/interupt_time;
+ 132              		.loc 1 73 5 view .LVU26
+  74:Src/foc.c     ****     TIM8->ARR=168000000/TIM8_FREQ/2;
+ 133              		.loc 1 74 5 view .LVU27
+ 134              		.loc 1 74 14 is_stmt 0 view .LVU28
+ 135 0002 174B     		ldr	r3, .L10
+ 136 0004 41F26802 		movw	r2, #4200
  137 0008 DA62     		str	r2, [r3, #44]
-  68:Src/foc.c     **** //  TIM8->ARR=168000000/(PSC+1)/interupt_time/2;
-  69:Src/foc.c     **** //   TIM8->PSC=PSC;
-  70:Src/foc.c     **** 
-  71:Src/foc.c     ****     
-  72:Src/foc.c     **** 
-  73:Src/foc.c     ****     UVects_Init();
- 138              		.loc 1 73 5 is_stmt 1 view .LVU29
+  75:Src/foc.c     **** //  TIM8->ARR=168000000/(PSC+1)/interupt_time/2;
+  76:Src/foc.c     **** //   TIM8->PSC=PSC;
+  77:Src/foc.c     **** 
+  78:Src/foc.c     ****     
+  79:Src/foc.c     **** 
+  80:Src/foc.c     ****     UVects_Init();
+ 138              		.loc 1 80 5 is_stmt 1 view .LVU29
  139 000a FFF7FEFF 		bl	UVects_Init
  140              	.LVL10:
-  74:Src/foc.c     ****     /*
-  75:Src/foc.c     ****     HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_1);
-  76:Src/foc.c     ****     HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_2);
-  77:Src/foc.c     ****     HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_3);
-  78:Src/foc.c     **** 
-  79:Src/foc.c     ****     HAL_TIMEx_PWMN_Start(&htim8,TIM_CHANNEL_1);
-  80:Src/foc.c     ****     HAL_TIMEx_PWMN_Start(&htim8,TIM_CHANNEL_2);
-  81:Src/foc.c     ****     HAL_TIMEx_PWMN_Start(&htim8,TIM_CHANNEL_3);
-  82:Src/foc.c     ****     */
-  83:Src/foc.c     **** 
-  84:Src/foc.c     ****     TIM7->ARR=84000000/TIM7_FREQ-1;
- 141              		.loc 1 84 5 view .LVU30
- 142              		.loc 1 84 14 is_stmt 0 view .LVU31
- 143 000e 084B     		ldr	r3, .L10+4
- 144 0010 084A     		ldr	r2, .L10+8
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 5
+  81:Src/foc.c     **** #ifdef DRIVE 
+  82:Src/foc.c     ****     HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_1);
+ 141              		.loc 1 82 5 view .LVU30
+ 142 000e 154C     		ldr	r4, .L10+4
+ 143 0010 0021     		movs	r1, #0
+ 144 0012 2046     		mov	r0, r4
+ 145 0014 FFF7FEFF 		bl	HAL_TIM_PWM_Start
+ 146              	.LVL11:
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 5
 
 
- 145 0012 DA62     		str	r2, [r3, #44]
-  85:Src/foc.c     ****     HAL_TIM_Base_Start_IT(&htim7);
- 146              		.loc 1 85 5 is_stmt 1 view .LVU32
- 147 0014 0848     		ldr	r0, .L10+12
- 148 0016 FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
- 149              	.LVL11:
-  86:Src/foc.c     **** 
-  87:Src/foc.c     ****     //ADC
-  88:Src/foc.c     ****    // HAL_ADC_Start_DMA(&hadc1,(uint32_t *)ADC_Values_Raw,2);
-  89:Src/foc.c     ****     HAL_ADC_Start_DMA(&hadc2,(uint32_t *)ADC_Values_Raw2,3);
- 150              		.loc 1 89 5 view .LVU33
- 151 001a 0322     		movs	r2, #3
- 152 001c 0749     		ldr	r1, .L10+16
- 153 001e 0848     		ldr	r0, .L10+20
- 154 0020 FFF7FEFF 		bl	HAL_ADC_Start_DMA
- 155              	.LVL12:
-  90:Src/foc.c     ****     HAL_TIM_Base_Start_IT(&htim8);
- 156              		.loc 1 90 5 view .LVU34
- 157 0024 0748     		ldr	r0, .L10+24
- 158 0026 FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
- 159              	.LVL13:
-  91:Src/foc.c     **** }
- 160              		.loc 1 91 1 is_stmt 0 view .LVU35
- 161 002a 08BD     		pop	{r3, pc}
- 162              	.L11:
- 163              		.align	2
- 164              	.L10:
- 165 002c 00040140 		.word	1073808384
- 166 0030 00140040 		.word	1073746944
- 167 0034 1F480100 		.word	83999
- 168 0038 00000000 		.word	htim7
- 169 003c 00000000 		.word	ADC_Values_Raw2
- 170 0040 00000000 		.word	hadc2
- 171 0044 00000000 		.word	htim8
- 172              		.cfi_endproc
- 173              	.LFE164:
- 175              		.section	.text.get_area,"ax",%progbits
- 176              		.align	1
- 177              		.global	get_area
- 178              		.syntax unified
- 179              		.thumb
- 180              		.thumb_func
- 181              		.fpu fpv4-sp-d16
- 183              	get_area:
- 184              	.LVL14:
- 185              	.LFB165:
+  83:Src/foc.c     ****     HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_2);
+ 147              		.loc 1 83 5 view .LVU31
+ 148 0018 0421     		movs	r1, #4
+ 149 001a 2046     		mov	r0, r4
+ 150 001c FFF7FEFF 		bl	HAL_TIM_PWM_Start
+ 151              	.LVL12:
+  84:Src/foc.c     ****     HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_3);
+ 152              		.loc 1 84 5 view .LVU32
+ 153 0020 0821     		movs	r1, #8
+ 154 0022 2046     		mov	r0, r4
+ 155 0024 FFF7FEFF 		bl	HAL_TIM_PWM_Start
+ 156              	.LVL13:
+  85:Src/foc.c     **** 
+  86:Src/foc.c     ****     HAL_TIMEx_PWMN_Start(&htim8,TIM_CHANNEL_1);
+ 157              		.loc 1 86 5 view .LVU33
+ 158 0028 0021     		movs	r1, #0
+ 159 002a 2046     		mov	r0, r4
+ 160 002c FFF7FEFF 		bl	HAL_TIMEx_PWMN_Start
+ 161              	.LVL14:
+  87:Src/foc.c     ****     HAL_TIMEx_PWMN_Start(&htim8,TIM_CHANNEL_2);
+ 162              		.loc 1 87 5 view .LVU34
+ 163 0030 0421     		movs	r1, #4
+ 164 0032 2046     		mov	r0, r4
+ 165 0034 FFF7FEFF 		bl	HAL_TIMEx_PWMN_Start
+ 166              	.LVL15:
+  88:Src/foc.c     ****     HAL_TIMEx_PWMN_Start(&htim8,TIM_CHANNEL_3);
+ 167              		.loc 1 88 5 view .LVU35
+ 168 0038 0821     		movs	r1, #8
+ 169 003a 2046     		mov	r0, r4
+ 170 003c FFF7FEFF 		bl	HAL_TIMEx_PWMN_Start
+ 171              	.LVL16:
+  89:Src/foc.c     **** #endif
+  90:Src/foc.c     ****     TIM7->ARR=84000000/TIM7_FREQ-1;
+ 172              		.loc 1 90 5 view .LVU36
+ 173              		.loc 1 90 14 is_stmt 0 view .LVU37
+ 174 0040 094B     		ldr	r3, .L10+8
+ 175 0042 0A4A     		ldr	r2, .L10+12
+ 176 0044 DA62     		str	r2, [r3, #44]
+  91:Src/foc.c     ****     HAL_TIM_Base_Start_IT(&htim7);
+ 177              		.loc 1 91 5 is_stmt 1 view .LVU38
+ 178 0046 0A48     		ldr	r0, .L10+16
+ 179 0048 FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
+ 180              	.LVL17:
   92:Src/foc.c     **** 
-  93:Src/foc.c     **** uint8_t get_area(uint32_t now_theta){
- 186              		.loc 1 93 37 is_stmt 1 view -0
- 187              		.cfi_startproc
- 188              		@ args = 0, pretend = 0, frame = 0
- 189              		@ frame_needed = 0, uses_anonymous_args = 0
- 190              		@ link register save eliminated.
-  94:Src/foc.c     ****     return now_theta/60+1;
- 191              		.loc 1 94 5 view .LVU37
- 192              		.loc 1 94 21 is_stmt 0 view .LVU38
- 193 0000 034B     		ldr	r3, .L13
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 6
+  93:Src/foc.c     ****     //ADC
+  94:Src/foc.c     ****    // HAL_ADC_Start_DMA(&hadc1,(uint32_t *)ADC_Values_Raw,2);
+  95:Src/foc.c     ****     HAL_ADC_Start_DMA(&hadc2,(uint32_t *)ADC_Values_Raw2,3);
+ 181              		.loc 1 95 5 view .LVU39
+ 182 004c 0322     		movs	r2, #3
+ 183 004e 0949     		ldr	r1, .L10+20
+ 184 0050 0948     		ldr	r0, .L10+24
+ 185 0052 FFF7FEFF 		bl	HAL_ADC_Start_DMA
+ 186              	.LVL18:
+  96:Src/foc.c     ****     HAL_TIM_Base_Start_IT(&htim8);
+ 187              		.loc 1 96 5 view .LVU40
+ 188 0056 2046     		mov	r0, r4
+ 189 0058 FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 6
 
 
- 194 0002 A3FB0030 		umull	r3, r0, r3, r0
- 195              	.LVL15:
- 196              		.loc 1 94 21 view .LVU39
- 197 0006 4009     		lsrs	r0, r0, #5
- 198              		.loc 1 94 24 view .LVU40
- 199 0008 0130     		adds	r0, r0, #1
-  95:Src/foc.c     **** }
- 200              		.loc 1 95 1 view .LVU41
- 201 000a C0B2     		uxtb	r0, r0
- 202 000c 7047     		bx	lr
- 203              	.L14:
- 204 000e 00BF     		.align	2
- 205              	.L13:
- 206 0010 89888888 		.word	-2004318071
- 207              		.cfi_endproc
- 208              	.LFE165:
- 210              		.section	.text.get_area_u,"ax",%progbits
- 211              		.align	1
- 212              		.global	get_area_u
- 213              		.syntax unified
- 214              		.thumb
- 215              		.thumb_func
- 216              		.fpu fpv4-sp-d16
- 218              	get_area_u:
- 219              	.LVL16:
- 220              	.LFB166:
-  96:Src/foc.c     **** 
-  97:Src/foc.c     **** void get_area_u(uint8_t area,Uvect_Mos *u1,Uvect_Mos *u2){
- 221              		.loc 1 97 58 is_stmt 1 view -0
- 222              		.cfi_startproc
- 223              		@ args = 0, pretend = 0, frame = 0
- 224              		@ frame_needed = 0, uses_anonymous_args = 0
- 225              		@ link register save eliminated.
- 226              		.loc 1 97 58 is_stmt 0 view .LVU43
- 227 0000 30B4     		push	{r4, r5}
- 228              	.LCFI4:
- 229              		.cfi_def_cfa_offset 8
- 230              		.cfi_offset 4, -8
- 231              		.cfi_offset 5, -4
- 232 0002 0D46     		mov	r5, r1
- 233 0004 1446     		mov	r4, r2
-  98:Src/foc.c     ****     switch (area)
- 234              		.loc 1 98 5 is_stmt 1 view .LVU44
- 235 0006 0138     		subs	r0, r0, #1
- 236              	.LVL17:
- 237              		.loc 1 98 5 is_stmt 0 view .LVU45
- 238 0008 0528     		cmp	r0, #5
- 239 000a 0CD8     		bhi	.L15
- 240 000c DFE800F0 		tbb	[pc, r0]
- 241              	.L18:
- 242 0010 03       		.byte	(.L23-.L18)/2
- 243 0011 0D       		.byte	(.L22-.L18)/2
- 244 0012 16       		.byte	(.L21-.L18)/2
- 245 0013 1F       		.byte	(.L20-.L18)/2
- 246 0014 28       		.byte	(.L19-.L18)/2
- 247 0015 31       		.byte	(.L17-.L18)/2
- 248              		.p2align 1
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 7
+ 190              	.LVL19:
+  97:Src/foc.c     **** }
+ 191              		.loc 1 97 1 is_stmt 0 view .LVU41
+ 192 005c 10BD     		pop	{r4, pc}
+ 193              	.L11:
+ 194 005e 00BF     		.align	2
+ 195              	.L10:
+ 196 0060 00040140 		.word	1073808384
+ 197 0064 00000000 		.word	htim8
+ 198 0068 00140040 		.word	1073746944
+ 199 006c 1F480100 		.word	83999
+ 200 0070 00000000 		.word	htim7
+ 201 0074 00000000 		.word	ADC_Values_Raw2
+ 202 0078 00000000 		.word	hadc2
+ 203              		.cfi_endproc
+ 204              	.LFE167:
+ 206              		.section	.text.get_area,"ax",%progbits
+ 207              		.align	1
+ 208              		.global	get_area
+ 209              		.syntax unified
+ 210              		.thumb
+ 211              		.thumb_func
+ 212              		.fpu fpv4-sp-d16
+ 214              	get_area:
+ 215              	.LVL20:
+ 216              	.LFB168:
+  98:Src/foc.c     **** 
+  99:Src/foc.c     **** uint8_t get_area(uint32_t now_theta){
+ 217              		.loc 1 99 37 is_stmt 1 view -0
+ 218              		.cfi_startproc
+ 219              		@ args = 0, pretend = 0, frame = 0
+ 220              		@ frame_needed = 0, uses_anonymous_args = 0
+ 221              		@ link register save eliminated.
+ 100:Src/foc.c     ****     return now_theta/60+1;
+ 222              		.loc 1 100 5 view .LVU43
+ 223              		.loc 1 100 21 is_stmt 0 view .LVU44
+ 224 0000 034B     		ldr	r3, .L13
+ 225 0002 A3FB0030 		umull	r3, r0, r3, r0
+ 226              	.LVL21:
+ 227              		.loc 1 100 21 view .LVU45
+ 228 0006 4009     		lsrs	r0, r0, #5
+ 229              		.loc 1 100 24 view .LVU46
+ 230 0008 0130     		adds	r0, r0, #1
+ 101:Src/foc.c     **** }
+ 231              		.loc 1 101 1 view .LVU47
+ 232 000a C0B2     		uxtb	r0, r0
+ 233 000c 7047     		bx	lr
+ 234              	.L14:
+ 235 000e 00BF     		.align	2
+ 236              	.L13:
+ 237 0010 89888888 		.word	-2004318071
+ 238              		.cfi_endproc
+ 239              	.LFE168:
+ 241              		.section	.text.get_area_u,"ax",%progbits
+ 242              		.align	1
+ 243              		.global	get_area_u
+ 244              		.syntax unified
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 7
 
 
- 249              	.L23:
-  99:Src/foc.c     ****     {
- 100:Src/foc.c     ****     case 1:
- 101:Src/foc.c     ****         *u1=U4;
- 250              		.loc 1 101 9 is_stmt 1 view .LVU46
- 251              		.loc 1 101 12 is_stmt 0 view .LVU47
- 252 0016 1B4B     		ldr	r3, .L25
- 253 0018 0FCB     		ldm	r3, {r0, r1, r2, r3}
- 254              	.LVL18:
- 255              		.loc 1 101 12 view .LVU48
- 256 001a 85E80F00 		stm	r5, {r0, r1, r2, r3}
- 102:Src/foc.c     ****         *u2=U6;
- 257              		.loc 1 102 9 is_stmt 1 view .LVU49
- 258              		.loc 1 102 12 is_stmt 0 view .LVU50
- 259 001e 1A4B     		ldr	r3, .L25+4
- 260 0020 0FCB     		ldm	r3, {r0, r1, r2, r3}
- 261 0022 84E80F00 		stm	r4, {r0, r1, r2, r3}
- 103:Src/foc.c     ****         break;
- 262              		.loc 1 103 9 is_stmt 1 view .LVU51
- 263              	.L15:
- 104:Src/foc.c     ****     case 2:
- 105:Src/foc.c     ****         *u1=U6;
- 106:Src/foc.c     ****         *u2=U2;
- 107:Src/foc.c     ****         break;
- 108:Src/foc.c     ****     case 3:
- 109:Src/foc.c     ****         *u1=U2;
- 110:Src/foc.c     ****         *u2=U3;
- 111:Src/foc.c     ****         break;
- 112:Src/foc.c     ****     case 4:
- 113:Src/foc.c     ****         *u1=U3;
- 114:Src/foc.c     ****         *u2=U1;
- 115:Src/foc.c     ****         break;
- 116:Src/foc.c     ****     case 5:
- 117:Src/foc.c     ****         *u1=U1;
- 118:Src/foc.c     ****         *u2=U5;
- 119:Src/foc.c     ****         break;
- 120:Src/foc.c     ****     case 6:
- 121:Src/foc.c     ****         *u1=U5;
- 122:Src/foc.c     ****         *u2=U4;
- 123:Src/foc.c     ****         break;
- 124:Src/foc.c     ****     default:
+ 245              		.thumb
+ 246              		.thumb_func
+ 247              		.fpu fpv4-sp-d16
+ 249              	get_area_u:
+ 250              	.LVL22:
+ 251              	.LFB169:
+ 102:Src/foc.c     **** 
+ 103:Src/foc.c     **** void get_area_u(uint8_t area,Uvect_Mos *u1,Uvect_Mos *u2){
+ 252              		.loc 1 103 58 is_stmt 1 view -0
+ 253              		.cfi_startproc
+ 254              		@ args = 0, pretend = 0, frame = 0
+ 255              		@ frame_needed = 0, uses_anonymous_args = 0
+ 256              		@ link register save eliminated.
+ 257              		.loc 1 103 58 is_stmt 0 view .LVU49
+ 258 0000 30B4     		push	{r4, r5}
+ 259              	.LCFI4:
+ 260              		.cfi_def_cfa_offset 8
+ 261              		.cfi_offset 4, -8
+ 262              		.cfi_offset 5, -4
+ 263 0002 0D46     		mov	r5, r1
+ 264 0004 1446     		mov	r4, r2
+ 104:Src/foc.c     ****     switch (area)
+ 265              		.loc 1 104 5 is_stmt 1 view .LVU50
+ 266 0006 0138     		subs	r0, r0, #1
+ 267              	.LVL23:
+ 268              		.loc 1 104 5 is_stmt 0 view .LVU51
+ 269 0008 0528     		cmp	r0, #5
+ 270 000a 0CD8     		bhi	.L15
+ 271 000c DFE800F0 		tbb	[pc, r0]
+ 272              	.L18:
+ 273 0010 03       		.byte	(.L23-.L18)/2
+ 274 0011 0D       		.byte	(.L22-.L18)/2
+ 275 0012 16       		.byte	(.L21-.L18)/2
+ 276 0013 1F       		.byte	(.L20-.L18)/2
+ 277 0014 28       		.byte	(.L19-.L18)/2
+ 278 0015 31       		.byte	(.L17-.L18)/2
+ 279              		.p2align 1
+ 280              	.L23:
+ 105:Src/foc.c     ****     {
+ 106:Src/foc.c     ****     case 1:
+ 107:Src/foc.c     ****         *u1=U4;
+ 281              		.loc 1 107 9 is_stmt 1 view .LVU52
+ 282              		.loc 1 107 12 is_stmt 0 view .LVU53
+ 283 0016 1B4B     		ldr	r3, .L25
+ 284 0018 0FCB     		ldm	r3, {r0, r1, r2, r3}
+ 285              	.LVL24:
+ 286              		.loc 1 107 12 view .LVU54
+ 287 001a 85E80F00 		stm	r5, {r0, r1, r2, r3}
+ 108:Src/foc.c     ****         *u2=U6;
+ 288              		.loc 1 108 9 is_stmt 1 view .LVU55
+ 289              		.loc 1 108 12 is_stmt 0 view .LVU56
+ 290 001e 1A4B     		ldr	r3, .L25+4
+ 291 0020 0FCB     		ldm	r3, {r0, r1, r2, r3}
+ 292 0022 84E80F00 		stm	r4, {r0, r1, r2, r3}
+ 109:Src/foc.c     ****         break;
+ 293              		.loc 1 109 9 is_stmt 1 view .LVU57
+ 294              	.L15:
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 8
+
+
+ 110:Src/foc.c     ****     case 2:
+ 111:Src/foc.c     ****         *u1=U6;
+ 112:Src/foc.c     ****         *u2=U2;
+ 113:Src/foc.c     ****         break;
+ 114:Src/foc.c     ****     case 3:
+ 115:Src/foc.c     ****         *u1=U2;
+ 116:Src/foc.c     ****         *u2=U3;
+ 117:Src/foc.c     ****         break;
+ 118:Src/foc.c     ****     case 4:
+ 119:Src/foc.c     ****         *u1=U3;
+ 120:Src/foc.c     ****         *u2=U1;
+ 121:Src/foc.c     ****         break;
+ 122:Src/foc.c     ****     case 5:
+ 123:Src/foc.c     ****         *u1=U1;
+ 124:Src/foc.c     ****         *u2=U5;
  125:Src/foc.c     ****         break;
- 126:Src/foc.c     ****     }
- 127:Src/foc.c     **** }
- 264              		.loc 1 127 1 is_stmt 0 view .LVU52
- 265 0026 30BC     		pop	{r4, r5}
- 266              	.LCFI5:
- 267              		.cfi_remember_state
- 268              		.cfi_restore 5
- 269              		.cfi_restore 4
- 270              		.cfi_def_cfa_offset 0
- 271              	.LVL19:
- 272              		.loc 1 127 1 view .LVU53
- 273 0028 7047     		bx	lr
- 274              	.LVL20:
- 275              	.L22:
- 276              	.LCFI6:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 8
+ 126:Src/foc.c     ****     case 6:
+ 127:Src/foc.c     ****         *u1=U5;
+ 128:Src/foc.c     ****         *u2=U4;
+ 129:Src/foc.c     ****         break;
+ 130:Src/foc.c     ****     default:
+ 131:Src/foc.c     ****         break;
+ 132:Src/foc.c     ****     }
+ 133:Src/foc.c     **** }
+ 295              		.loc 1 133 1 is_stmt 0 view .LVU58
+ 296 0026 30BC     		pop	{r4, r5}
+ 297              	.LCFI5:
+ 298              		.cfi_remember_state
+ 299              		.cfi_restore 5
+ 300              		.cfi_restore 4
+ 301              		.cfi_def_cfa_offset 0
+ 302              	.LVL25:
+ 303              		.loc 1 133 1 view .LVU59
+ 304 0028 7047     		bx	lr
+ 305              	.LVL26:
+ 306              	.L22:
+ 307              	.LCFI6:
+ 308              		.cfi_restore_state
+ 111:Src/foc.c     ****         *u2=U2;
+ 309              		.loc 1 111 9 is_stmt 1 view .LVU60
+ 111:Src/foc.c     ****         *u2=U2;
+ 310              		.loc 1 111 12 is_stmt 0 view .LVU61
+ 311 002a 174B     		ldr	r3, .L25+4
+ 312 002c 0FCB     		ldm	r3, {r0, r1, r2, r3}
+ 313              	.LVL27:
+ 111:Src/foc.c     ****         *u2=U2;
+ 314              		.loc 1 111 12 view .LVU62
+ 315 002e 85E80F00 		stm	r5, {r0, r1, r2, r3}
+ 112:Src/foc.c     ****         break;
+ 316              		.loc 1 112 9 is_stmt 1 view .LVU63
+ 112:Src/foc.c     ****         break;
+ 317              		.loc 1 112 12 is_stmt 0 view .LVU64
+ 318 0032 164B     		ldr	r3, .L25+8
+ 319 0034 0FCB     		ldm	r3, {r0, r1, r2, r3}
+ 320 0036 84E80F00 		stm	r4, {r0, r1, r2, r3}
+ 113:Src/foc.c     ****     case 3:
+ 321              		.loc 1 113 9 is_stmt 1 view .LVU65
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 9
 
 
- 277              		.cfi_restore_state
- 105:Src/foc.c     ****         *u2=U2;
- 278              		.loc 1 105 9 is_stmt 1 view .LVU54
- 105:Src/foc.c     ****         *u2=U2;
- 279              		.loc 1 105 12 is_stmt 0 view .LVU55
- 280 002a 174B     		ldr	r3, .L25+4
- 281 002c 0FCB     		ldm	r3, {r0, r1, r2, r3}
- 282              	.LVL21:
- 105:Src/foc.c     ****         *u2=U2;
- 283              		.loc 1 105 12 view .LVU56
- 284 002e 85E80F00 		stm	r5, {r0, r1, r2, r3}
- 106:Src/foc.c     ****         break;
- 285              		.loc 1 106 9 is_stmt 1 view .LVU57
- 106:Src/foc.c     ****         break;
- 286              		.loc 1 106 12 is_stmt 0 view .LVU58
- 287 0032 164B     		ldr	r3, .L25+8
- 288 0034 0FCB     		ldm	r3, {r0, r1, r2, r3}
- 289 0036 84E80F00 		stm	r4, {r0, r1, r2, r3}
- 107:Src/foc.c     ****     case 3:
- 290              		.loc 1 107 9 is_stmt 1 view .LVU59
- 291 003a F4E7     		b	.L15
- 292              	.LVL22:
- 293              	.L21:
- 109:Src/foc.c     ****         *u2=U3;
- 294              		.loc 1 109 9 view .LVU60
- 109:Src/foc.c     ****         *u2=U3;
- 295              		.loc 1 109 12 is_stmt 0 view .LVU61
- 296 003c 134B     		ldr	r3, .L25+8
- 297 003e 0FCB     		ldm	r3, {r0, r1, r2, r3}
- 298              	.LVL23:
- 109:Src/foc.c     ****         *u2=U3;
- 299              		.loc 1 109 12 view .LVU62
- 300 0040 85E80F00 		stm	r5, {r0, r1, r2, r3}
- 110:Src/foc.c     ****         break;
- 301              		.loc 1 110 9 is_stmt 1 view .LVU63
- 110:Src/foc.c     ****         break;
- 302              		.loc 1 110 12 is_stmt 0 view .LVU64
- 303 0044 124B     		ldr	r3, .L25+12
- 304 0046 0FCB     		ldm	r3, {r0, r1, r2, r3}
- 305 0048 84E80F00 		stm	r4, {r0, r1, r2, r3}
- 111:Src/foc.c     ****     case 4:
- 306              		.loc 1 111 9 is_stmt 1 view .LVU65
- 307 004c EBE7     		b	.L15
- 308              	.LVL24:
- 309              	.L20:
- 113:Src/foc.c     ****         *u2=U1;
- 310              		.loc 1 113 9 view .LVU66
- 113:Src/foc.c     ****         *u2=U1;
- 311              		.loc 1 113 12 is_stmt 0 view .LVU67
- 312 004e 104B     		ldr	r3, .L25+12
- 313 0050 0FCB     		ldm	r3, {r0, r1, r2, r3}
- 314              	.LVL25:
- 113:Src/foc.c     ****         *u2=U1;
- 315              		.loc 1 113 12 view .LVU68
- 316 0052 85E80F00 		stm	r5, {r0, r1, r2, r3}
- 114:Src/foc.c     ****         break;
- 317              		.loc 1 114 9 is_stmt 1 view .LVU69
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 9
+ 322 003a F4E7     		b	.L15
+ 323              	.LVL28:
+ 324              	.L21:
+ 115:Src/foc.c     ****         *u2=U3;
+ 325              		.loc 1 115 9 view .LVU66
+ 115:Src/foc.c     ****         *u2=U3;
+ 326              		.loc 1 115 12 is_stmt 0 view .LVU67
+ 327 003c 134B     		ldr	r3, .L25+8
+ 328 003e 0FCB     		ldm	r3, {r0, r1, r2, r3}
+ 329              	.LVL29:
+ 115:Src/foc.c     ****         *u2=U3;
+ 330              		.loc 1 115 12 view .LVU68
+ 331 0040 85E80F00 		stm	r5, {r0, r1, r2, r3}
+ 116:Src/foc.c     ****         break;
+ 332              		.loc 1 116 9 is_stmt 1 view .LVU69
+ 116:Src/foc.c     ****         break;
+ 333              		.loc 1 116 12 is_stmt 0 view .LVU70
+ 334 0044 124B     		ldr	r3, .L25+12
+ 335 0046 0FCB     		ldm	r3, {r0, r1, r2, r3}
+ 336 0048 84E80F00 		stm	r4, {r0, r1, r2, r3}
+ 117:Src/foc.c     ****     case 4:
+ 337              		.loc 1 117 9 is_stmt 1 view .LVU71
+ 338 004c EBE7     		b	.L15
+ 339              	.LVL30:
+ 340              	.L20:
+ 119:Src/foc.c     ****         *u2=U1;
+ 341              		.loc 1 119 9 view .LVU72
+ 119:Src/foc.c     ****         *u2=U1;
+ 342              		.loc 1 119 12 is_stmt 0 view .LVU73
+ 343 004e 104B     		ldr	r3, .L25+12
+ 344 0050 0FCB     		ldm	r3, {r0, r1, r2, r3}
+ 345              	.LVL31:
+ 119:Src/foc.c     ****         *u2=U1;
+ 346              		.loc 1 119 12 view .LVU74
+ 347 0052 85E80F00 		stm	r5, {r0, r1, r2, r3}
+ 120:Src/foc.c     ****         break;
+ 348              		.loc 1 120 9 is_stmt 1 view .LVU75
+ 120:Src/foc.c     ****         break;
+ 349              		.loc 1 120 12 is_stmt 0 view .LVU76
+ 350 0056 0F4B     		ldr	r3, .L25+16
+ 351 0058 0FCB     		ldm	r3, {r0, r1, r2, r3}
+ 352 005a 84E80F00 		stm	r4, {r0, r1, r2, r3}
+ 121:Src/foc.c     ****     case 5:
+ 353              		.loc 1 121 9 is_stmt 1 view .LVU77
+ 354 005e E2E7     		b	.L15
+ 355              	.LVL32:
+ 356              	.L19:
+ 123:Src/foc.c     ****         *u2=U5;
+ 357              		.loc 1 123 9 view .LVU78
+ 123:Src/foc.c     ****         *u2=U5;
+ 358              		.loc 1 123 12 is_stmt 0 view .LVU79
+ 359 0060 0C4B     		ldr	r3, .L25+16
+ 360 0062 0FCB     		ldm	r3, {r0, r1, r2, r3}
+ 361              	.LVL33:
+ 123:Src/foc.c     ****         *u2=U5;
+ 362              		.loc 1 123 12 view .LVU80
+ 363 0064 85E80F00 		stm	r5, {r0, r1, r2, r3}
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 10
 
 
- 114:Src/foc.c     ****         break;
- 318              		.loc 1 114 12 is_stmt 0 view .LVU70
- 319 0056 0F4B     		ldr	r3, .L25+16
- 320 0058 0FCB     		ldm	r3, {r0, r1, r2, r3}
- 321 005a 84E80F00 		stm	r4, {r0, r1, r2, r3}
- 115:Src/foc.c     ****     case 5:
- 322              		.loc 1 115 9 is_stmt 1 view .LVU71
- 323 005e E2E7     		b	.L15
- 324              	.LVL26:
- 325              	.L19:
- 117:Src/foc.c     ****         *u2=U5;
- 326              		.loc 1 117 9 view .LVU72
- 117:Src/foc.c     ****         *u2=U5;
- 327              		.loc 1 117 12 is_stmt 0 view .LVU73
- 328 0060 0C4B     		ldr	r3, .L25+16
- 329 0062 0FCB     		ldm	r3, {r0, r1, r2, r3}
- 330              	.LVL27:
- 117:Src/foc.c     ****         *u2=U5;
- 331              		.loc 1 117 12 view .LVU74
- 332 0064 85E80F00 		stm	r5, {r0, r1, r2, r3}
- 118:Src/foc.c     ****         break;
- 333              		.loc 1 118 9 is_stmt 1 view .LVU75
- 118:Src/foc.c     ****         break;
- 334              		.loc 1 118 12 is_stmt 0 view .LVU76
- 335 0068 0B4B     		ldr	r3, .L25+20
- 336 006a 0FCB     		ldm	r3, {r0, r1, r2, r3}
- 337 006c 84E80F00 		stm	r4, {r0, r1, r2, r3}
- 119:Src/foc.c     ****     case 6:
- 338              		.loc 1 119 9 is_stmt 1 view .LVU77
- 339 0070 D9E7     		b	.L15
- 340              	.LVL28:
- 341              	.L17:
- 121:Src/foc.c     ****         *u2=U4;
- 342              		.loc 1 121 9 view .LVU78
- 121:Src/foc.c     ****         *u2=U4;
- 343              		.loc 1 121 12 is_stmt 0 view .LVU79
- 344 0072 094B     		ldr	r3, .L25+20
- 345 0074 0FCB     		ldm	r3, {r0, r1, r2, r3}
- 346              	.LVL29:
- 121:Src/foc.c     ****         *u2=U4;
- 347              		.loc 1 121 12 view .LVU80
- 348 0076 85E80F00 		stm	r5, {r0, r1, r2, r3}
- 122:Src/foc.c     ****         break;
- 349              		.loc 1 122 9 is_stmt 1 view .LVU81
- 122:Src/foc.c     ****         break;
- 350              		.loc 1 122 12 is_stmt 0 view .LVU82
- 351 007a 024B     		ldr	r3, .L25
- 352 007c 0FCB     		ldm	r3, {r0, r1, r2, r3}
- 353 007e 84E80F00 		stm	r4, {r0, r1, r2, r3}
- 123:Src/foc.c     ****     default:
- 354              		.loc 1 123 9 is_stmt 1 view .LVU83
- 355              		.loc 1 127 1 is_stmt 0 view .LVU84
- 356 0082 D0E7     		b	.L15
- 357              	.L26:
- 358              		.align	2
- 359              	.L25:
- 360 0084 00000000 		.word	.LANCHOR1
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 10
+ 124:Src/foc.c     ****         break;
+ 364              		.loc 1 124 9 is_stmt 1 view .LVU81
+ 124:Src/foc.c     ****         break;
+ 365              		.loc 1 124 12 is_stmt 0 view .LVU82
+ 366 0068 0B4B     		ldr	r3, .L25+20
+ 367 006a 0FCB     		ldm	r3, {r0, r1, r2, r3}
+ 368 006c 84E80F00 		stm	r4, {r0, r1, r2, r3}
+ 125:Src/foc.c     ****     case 6:
+ 369              		.loc 1 125 9 is_stmt 1 view .LVU83
+ 370 0070 D9E7     		b	.L15
+ 371              	.LVL34:
+ 372              	.L17:
+ 127:Src/foc.c     ****         *u2=U4;
+ 373              		.loc 1 127 9 view .LVU84
+ 127:Src/foc.c     ****         *u2=U4;
+ 374              		.loc 1 127 12 is_stmt 0 view .LVU85
+ 375 0072 094B     		ldr	r3, .L25+20
+ 376 0074 0FCB     		ldm	r3, {r0, r1, r2, r3}
+ 377              	.LVL35:
+ 127:Src/foc.c     ****         *u2=U4;
+ 378              		.loc 1 127 12 view .LVU86
+ 379 0076 85E80F00 		stm	r5, {r0, r1, r2, r3}
+ 128:Src/foc.c     ****         break;
+ 380              		.loc 1 128 9 is_stmt 1 view .LVU87
+ 128:Src/foc.c     ****         break;
+ 381              		.loc 1 128 12 is_stmt 0 view .LVU88
+ 382 007a 024B     		ldr	r3, .L25
+ 383 007c 0FCB     		ldm	r3, {r0, r1, r2, r3}
+ 384 007e 84E80F00 		stm	r4, {r0, r1, r2, r3}
+ 129:Src/foc.c     ****     default:
+ 385              		.loc 1 129 9 is_stmt 1 view .LVU89
+ 386              		.loc 1 133 1 is_stmt 0 view .LVU90
+ 387 0082 D0E7     		b	.L15
+ 388              	.L26:
+ 389              		.align	2
+ 390              	.L25:
+ 391 0084 00000000 		.word	.LANCHOR1
+ 392 0088 00000000 		.word	.LANCHOR2
+ 393 008c 00000000 		.word	.LANCHOR3
+ 394 0090 00000000 		.word	.LANCHOR4
+ 395 0094 00000000 		.word	.LANCHOR5
+ 396 0098 00000000 		.word	.LANCHOR6
+ 397              		.cfi_endproc
+ 398              	.LFE169:
+ 400              		.section	.text.get_t,"ax",%progbits
+ 401              		.align	1
+ 402              		.global	get_t
+ 403              		.syntax unified
+ 404              		.thumb
+ 405              		.thumb_func
+ 406              		.fpu fpv4-sp-d16
+ 408              	get_t:
+ 409              	.LVL36:
+ 410              	.LFB170:
+ 134:Src/foc.c     **** 
+ 135:Src/foc.c     **** 
+ 136:Src/foc.c     **** /*
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 11
 
 
- 361 0088 00000000 		.word	.LANCHOR2
- 362 008c 00000000 		.word	.LANCHOR3
- 363 0090 00000000 		.word	.LANCHOR4
- 364 0094 00000000 		.word	.LANCHOR5
- 365 0098 00000000 		.word	.LANCHOR6
- 366              		.cfi_endproc
- 367              	.LFE166:
- 369              		.section	.text.get_t,"ax",%progbits
- 370              		.align	1
- 371              		.global	get_t
- 372              		.syntax unified
- 373              		.thumb
- 374              		.thumb_func
- 375              		.fpu fpv4-sp-d16
- 377              	get_t:
- 378              	.LVL30:
- 379              	.LFB167:
- 128:Src/foc.c     **** 
- 129:Src/foc.c     **** void get_t(float theta,float * t1,float *t2){
- 380              		.loc 1 129 45 is_stmt 1 view -0
- 381              		.cfi_startproc
- 382              		@ args = 0, pretend = 0, frame = 40
- 383              		@ frame_needed = 0, uses_anonymous_args = 0
- 384              		.loc 1 129 45 is_stmt 0 view .LVU86
- 385 0000 30B5     		push	{r4, r5, lr}
- 386              	.LCFI7:
- 387              		.cfi_def_cfa_offset 12
- 388              		.cfi_offset 4, -12
- 389              		.cfi_offset 5, -8
- 390              		.cfi_offset 14, -4
- 391 0002 2DED028B 		vpush.64	{d8}
- 392              	.LCFI8:
- 393              		.cfi_def_cfa_offset 20
- 394              		.cfi_offset 80, -20
- 395              		.cfi_offset 81, -16
- 396 0006 8BB0     		sub	sp, sp, #44
- 397              	.LCFI9:
- 398              		.cfi_def_cfa_offset 64
- 399 0008 B0EE408A 		vmov.f32	s16, s0
- 400 000c 0546     		mov	r5, r0
- 401 000e 0C46     		mov	r4, r1
- 130:Src/foc.c     **** /*
- 131:Src/foc.c     **** /       u2y x               u2x y       \
- 132:Src/foc.c     **** | ----------------- - ----------------- |
- 133:Src/foc.c     **** | u1x u2y - u2x u1y   u1x u2y - u2x u1y |
- 134:Src/foc.c     **** |                                       |
- 135:Src/foc.c     **** |       u1x y               u1y x       |
- 136:Src/foc.c     **** | ----------------- - ----------------- |
- 137:Src/foc.c     **** \ u1x u2y - u2x u1y   u1x u2y - u2x u1y /
- 138:Src/foc.c     **** */
- 139:Src/foc.c     ****     float temp_t1,temp_t2;
- 402              		.loc 1 139 5 is_stmt 1 view .LVU87
- 140:Src/foc.c     ****     float theta_f;  // 单位为rad
- 403              		.loc 1 140 5 view .LVU88
- 141:Src/foc.c     ****     Uvect_Mos u1,u2;
- 404              		.loc 1 141 5 view .LVU89
- 142:Src/foc.c     ****     float x,y;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 11
+ 137:Src/foc.c     ****     根据theta来计算相邻两个矢量的作用时间的函数，
+ 138:Src/foc.c     ****     因为用到除法次数多了一点，目前暂时废弃。
+ 139:Src/foc.c     **** */
+ 140:Src/foc.c     **** void get_t(float theta,float * t1,float *t2){
+ 411              		.loc 1 140 45 is_stmt 1 view -0
+ 412              		.cfi_startproc
+ 413              		@ args = 0, pretend = 0, frame = 40
+ 414              		@ frame_needed = 0, uses_anonymous_args = 0
+ 415              		.loc 1 140 45 is_stmt 0 view .LVU92
+ 416 0000 30B5     		push	{r4, r5, lr}
+ 417              	.LCFI7:
+ 418              		.cfi_def_cfa_offset 12
+ 419              		.cfi_offset 4, -12
+ 420              		.cfi_offset 5, -8
+ 421              		.cfi_offset 14, -4
+ 422 0002 2DED028B 		vpush.64	{d8}
+ 423              	.LCFI8:
+ 424              		.cfi_def_cfa_offset 20
+ 425              		.cfi_offset 80, -20
+ 426              		.cfi_offset 81, -16
+ 427 0006 8BB0     		sub	sp, sp, #44
+ 428              	.LCFI9:
+ 429              		.cfi_def_cfa_offset 64
+ 430 0008 B0EE408A 		vmov.f32	s16, s0
+ 431 000c 0546     		mov	r5, r0
+ 432 000e 0C46     		mov	r4, r1
+ 141:Src/foc.c     **** /*
+ 142:Src/foc.c     **** /       u2y x               u2x y       \
+ 143:Src/foc.c     **** | ----------------- - ----------------- |
+ 144:Src/foc.c     **** | u1x u2y - u2x u1y   u1x u2y - u2x u1y |
+ 145:Src/foc.c     **** |                                       |
+ 146:Src/foc.c     **** |       u1x y               u1y x       |
+ 147:Src/foc.c     **** | ----------------- - ----------------- |
+ 148:Src/foc.c     **** \ u1x u2y - u2x u1y   u1x u2y - u2x u1y /
+ 149:Src/foc.c     **** */
+ 150:Src/foc.c     ****     float temp_t1,temp_t2;
+ 433              		.loc 1 150 5 is_stmt 1 view .LVU93
+ 151:Src/foc.c     ****     float theta_f;  // 单位为rad
+ 434              		.loc 1 151 5 view .LVU94
+ 152:Src/foc.c     ****     Uvect_Mos u1,u2;
+ 435              		.loc 1 152 5 view .LVU95
+ 153:Src/foc.c     ****     float x,y;
+ 436              		.loc 1 153 5 view .LVU96
+ 154:Src/foc.c     ****     get_area_u(get_area(theta),&u1,&u2);
+ 437              		.loc 1 154 5 view .LVU97
+ 438 0010 FCEEC07A 		vcvt.u32.f32	s15, s0
+ 439 0014 17EE900A 		vmov	r0, s15	@ int
+ 440              	.LVL37:
+ 441              		.loc 1 154 5 is_stmt 0 view .LVU98
+ 442 0018 FFF7FEFF 		bl	get_area
+ 443              	.LVL38:
+ 444              		.loc 1 154 5 view .LVU99
+ 445 001c 02AA     		add	r2, sp, #8
+ 446 001e 06A9     		add	r1, sp, #24
+ 447 0020 FFF7FEFF 		bl	get_area_u
+ 448              	.LVL39:
+ 155:Src/foc.c     ****     //theta_f=(float)theta*2.0f*PI/360;
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 12
 
 
- 405              		.loc 1 142 5 view .LVU90
- 143:Src/foc.c     ****     get_area_u(get_area(theta),&u1,&u2);
- 406              		.loc 1 143 5 view .LVU91
- 407 0010 FCEEC07A 		vcvt.u32.f32	s15, s0
- 408 0014 17EE900A 		vmov	r0, s15	@ int
- 409              	.LVL31:
- 410              		.loc 1 143 5 is_stmt 0 view .LVU92
- 411 0018 FFF7FEFF 		bl	get_area
- 412              	.LVL32:
- 413              		.loc 1 143 5 view .LVU93
- 414 001c 02AA     		add	r2, sp, #8
- 415 001e 06A9     		add	r1, sp, #24
- 416 0020 FFF7FEFF 		bl	get_area_u
- 417              	.LVL33:
- 144:Src/foc.c     ****     //theta_f=(float)theta*2.0f*PI/360;
- 145:Src/foc.c     ****     arm_sin_cos_f32(theta,&y,&x);
- 418              		.loc 1 145 5 is_stmt 1 view .LVU94
- 419 0024 01A9     		add	r1, sp, #4
- 420 0026 6846     		mov	r0, sp
- 421 0028 B0EE480A 		vmov.f32	s0, s16
- 422 002c FFF7FEFF 		bl	arm_sin_cos_f32
- 423              	.LVL34:
- 146:Src/foc.c     ****     x*=0.86f;
- 424              		.loc 1 146 5 view .LVU95
- 425              		.loc 1 146 6 is_stmt 0 view .LVU96
- 426 0030 DFED197A 		vldr.32	s15, .L29
- 427 0034 9DED017A 		vldr.32	s14, [sp, #4]
- 428 0038 27EE277A 		vmul.f32	s14, s14, s15
- 147:Src/foc.c     ****     y*=0.86f;   // sqrt(3)/2 没错
- 429              		.loc 1 147 5 is_stmt 1 view .LVU97
- 430              		.loc 1 147 6 is_stmt 0 view .LVU98
- 431 003c DDED006A 		vldr.32	s13, [sp]
- 432 0040 66EEA76A 		vmul.f32	s13, s13, s15
- 148:Src/foc.c     ****     //x=0.86f*cosf(theta_f);
- 149:Src/foc.c     ****     //y=0.86f*sinf(theta_f);
- 150:Src/foc.c     ****     temp_t1=u2.y*x/(u1.x*u2.y-u2.x*u1.y)-(u2.x*y)/(u1.x*u2.y-u2.x*u1.y);
- 433              		.loc 1 150 5 is_stmt 1 view .LVU99
- 434              		.loc 1 150 15 is_stmt 0 view .LVU100
- 435 0044 DDED057A 		vldr.32	s15, [sp, #20]
- 436              		.loc 1 150 17 view .LVU101
- 437 0048 27EE274A 		vmul.f32	s8, s14, s15
- 438              		.loc 1 150 23 view .LVU102
- 439 004c DDED084A 		vldr.32	s9, [sp, #32]
- 440              		.loc 1 150 25 view .LVU103
- 441 0050 67EEA47A 		vmul.f32	s15, s15, s9
- 442              		.loc 1 150 33 view .LVU104
- 443 0054 9DED046A 		vldr.32	s12, [sp, #16]
- 444              		.loc 1 150 38 view .LVU105
- 445 0058 9DED095A 		vldr.32	s10, [sp, #36]
- 446              		.loc 1 150 35 view .LVU106
- 447 005c 66EE055A 		vmul.f32	s11, s12, s10
- 448              		.loc 1 150 30 view .LVU107
- 449 0060 77EEE57A 		vsub.f32	s15, s15, s11
- 450              		.loc 1 150 19 view .LVU108
- 451 0064 C4EE275A 		vdiv.f32	s11, s8, s15
- 452              		.loc 1 150 47 view .LVU109
- 453 0068 26EE866A 		vmul.f32	s12, s13, s12
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 12
+ 156:Src/foc.c     ****     arm_sin_cos_f32(theta,&y,&x);
+ 449              		.loc 1 156 5 is_stmt 1 view .LVU100
+ 450 0024 01A9     		add	r1, sp, #4
+ 451 0026 6846     		mov	r0, sp
+ 452 0028 B0EE480A 		vmov.f32	s0, s16
+ 453 002c FFF7FEFF 		bl	arm_sin_cos_f32
+ 454              	.LVL40:
+ 157:Src/foc.c     ****     x*=0.86f;
+ 455              		.loc 1 157 5 view .LVU101
+ 456              		.loc 1 157 6 is_stmt 0 view .LVU102
+ 457 0030 DFED197A 		vldr.32	s15, .L29
+ 458 0034 9DED017A 		vldr.32	s14, [sp, #4]
+ 459 0038 27EE277A 		vmul.f32	s14, s14, s15
+ 158:Src/foc.c     ****     y*=0.86f;   // sqrt(3)/2 没错
+ 460              		.loc 1 158 5 is_stmt 1 view .LVU103
+ 461              		.loc 1 158 6 is_stmt 0 view .LVU104
+ 462 003c DDED006A 		vldr.32	s13, [sp]
+ 463 0040 66EEA76A 		vmul.f32	s13, s13, s15
+ 159:Src/foc.c     ****     //x=0.86f*cosf(theta_f);
+ 160:Src/foc.c     ****     //y=0.86f*sinf(theta_f);
+ 161:Src/foc.c     ****     temp_t1=u2.y*x/(u1.x*u2.y-u2.x*u1.y)-(u2.x*y)/(u1.x*u2.y-u2.x*u1.y);
+ 464              		.loc 1 161 5 is_stmt 1 view .LVU105
+ 465              		.loc 1 161 15 is_stmt 0 view .LVU106
+ 466 0044 DDED057A 		vldr.32	s15, [sp, #20]
+ 467              		.loc 1 161 17 view .LVU107
+ 468 0048 27EE274A 		vmul.f32	s8, s14, s15
+ 469              		.loc 1 161 23 view .LVU108
+ 470 004c DDED084A 		vldr.32	s9, [sp, #32]
+ 471              		.loc 1 161 25 view .LVU109
+ 472 0050 67EEA47A 		vmul.f32	s15, s15, s9
+ 473              		.loc 1 161 33 view .LVU110
+ 474 0054 9DED046A 		vldr.32	s12, [sp, #16]
+ 475              		.loc 1 161 38 view .LVU111
+ 476 0058 9DED095A 		vldr.32	s10, [sp, #36]
+ 477              		.loc 1 161 35 view .LVU112
+ 478 005c 66EE055A 		vmul.f32	s11, s12, s10
+ 479              		.loc 1 161 30 view .LVU113
+ 480 0060 77EEE57A 		vsub.f32	s15, s15, s11
+ 481              		.loc 1 161 19 view .LVU114
+ 482 0064 C4EE275A 		vdiv.f32	s11, s8, s15
+ 483              		.loc 1 161 47 view .LVU115
+ 484 0068 26EE866A 		vmul.f32	s12, s13, s12
+ 485              		.loc 1 161 50 view .LVU116
+ 486 006c 86EE274A 		vdiv.f32	s8, s12, s15
+ 487              		.loc 1 161 12 view .LVU117
+ 488 0070 75EEC45A 		vsub.f32	s11, s11, s8
+ 489              	.LVL41:
+ 162:Src/foc.c     ****     temp_t2=u1.x*y/(u1.x*u2.y-u2.x*u1.y)-(u1.y*x)/(u1.x*u2.y-u2.x*u1.y);
+ 490              		.loc 1 162 5 is_stmt 1 view .LVU118
+ 491              		.loc 1 162 17 is_stmt 0 view .LVU119
+ 492 0074 66EEA46A 		vmul.f32	s13, s13, s9
+ 493              		.loc 1 162 19 view .LVU120
+ 494 0078 86EEA76A 		vdiv.f32	s12, s13, s15
+ 495              		.loc 1 162 47 view .LVU121
+ 496 007c 27EE057A 		vmul.f32	s14, s14, s10
+ 497              		.loc 1 162 50 view .LVU122
+ 498 0080 C7EE276A 		vdiv.f32	s13, s14, s15
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 13
 
 
- 454              		.loc 1 150 50 view .LVU110
- 455 006c 86EE274A 		vdiv.f32	s8, s12, s15
- 456              		.loc 1 150 12 view .LVU111
- 457 0070 75EEC45A 		vsub.f32	s11, s11, s8
- 458              	.LVL35:
- 151:Src/foc.c     ****     temp_t2=u1.x*y/(u1.x*u2.y-u2.x*u1.y)-(u1.y*x)/(u1.x*u2.y-u2.x*u1.y);
- 459              		.loc 1 151 5 is_stmt 1 view .LVU112
- 460              		.loc 1 151 17 is_stmt 0 view .LVU113
- 461 0074 66EEA46A 		vmul.f32	s13, s13, s9
- 462              		.loc 1 151 19 view .LVU114
- 463 0078 86EEA76A 		vdiv.f32	s12, s13, s15
- 464              		.loc 1 151 47 view .LVU115
- 465 007c 27EE057A 		vmul.f32	s14, s14, s10
- 466              		.loc 1 151 50 view .LVU116
- 467 0080 C7EE276A 		vdiv.f32	s13, s14, s15
- 468              		.loc 1 151 12 view .LVU117
- 469 0084 76EE667A 		vsub.f32	s15, s12, s13
- 470              	.LVL36:
- 152:Src/foc.c     **** 
- 153:Src/foc.c     ****     *t1=temp_t1;
- 471              		.loc 1 153 5 is_stmt 1 view .LVU118
- 472              		.loc 1 153 8 is_stmt 0 view .LVU119
- 473 0088 C5ED005A 		vstr.32	s11, [r5]
- 154:Src/foc.c     ****     *t2=temp_t2;
- 474              		.loc 1 154 5 is_stmt 1 view .LVU120
- 475              		.loc 1 154 8 is_stmt 0 view .LVU121
- 476 008c C4ED007A 		vstr.32	s15, [r4]
- 155:Src/foc.c     **** 
- 156:Src/foc.c     **** }
- 477              		.loc 1 156 1 view .LVU122
- 478 0090 0BB0     		add	sp, sp, #44
- 479              	.LCFI10:
- 480              		.cfi_def_cfa_offset 20
- 481              		@ sp needed
- 482 0092 BDEC028B 		vldm	sp!, {d8}
- 483              	.LCFI11:
- 484              		.cfi_restore 80
- 485              		.cfi_restore 81
- 486              		.cfi_def_cfa_offset 12
- 487              	.LVL37:
- 488              		.loc 1 156 1 view .LVU123
- 489 0096 30BD     		pop	{r4, r5, pc}
- 490              	.LVL38:
- 491              	.L30:
- 492              		.loc 1 156 1 view .LVU124
- 493              		.align	2
- 494              	.L29:
- 495 0098 F6285C3F 		.word	1063004406
- 496              		.cfi_endproc
- 497              	.LFE167:
- 499              		.section	.text.get_ccr_duty,"ax",%progbits
- 500              		.align	1
- 501              		.global	get_ccr_duty
- 502              		.syntax unified
- 503              		.thumb
- 504              		.thumb_func
- 505              		.fpu fpv4-sp-d16
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 13
-
-
- 507              	get_ccr_duty:
- 508              	.LVL39:
- 509              	.LFB168:
- 157:Src/foc.c     **** 
- 158:Src/foc.c     **** CCR_Duty get_ccr_duty(float t1,float t2,Uvect_Mos u1,Uvect_Mos u2){
- 510              		.loc 1 158 67 is_stmt 1 view -0
- 511              		.cfi_startproc
- 512              		@ args = 16, pretend = 0, frame = 56
- 513              		@ frame_needed = 0, uses_anonymous_args = 0
- 514              		@ link register save eliminated.
- 515              		.loc 1 158 67 is_stmt 0 view .LVU126
- 516 0000 10B4     		push	{r4}
- 517              	.LCFI12:
- 518              		.cfi_def_cfa_offset 4
- 519              		.cfi_offset 4, -4
- 520 0002 8FB0     		sub	sp, sp, #60
- 521              	.LCFI13:
- 522              		.cfi_def_cfa_offset 64
- 523 0004 04AC     		add	r4, sp, #16
- 524 0006 84E80F00 		stm	r4, {r0, r1, r2, r3}
- 159:Src/foc.c     ****     float t0,t3;
- 525              		.loc 1 159 5 is_stmt 1 view .LVU127
- 160:Src/foc.c     ****     CCR_Duty result;
- 526              		.loc 1 160 5 view .LVU128
- 161:Src/foc.c     ****     t0=(1-t1-t2)/2;
- 527              		.loc 1 161 5 view .LVU129
- 528              		.loc 1 161 10 is_stmt 0 view .LVU130
- 529 000a F7EE007A 		vmov.f32	s15, #1.0e+0
- 530 000e 77EEC07A 		vsub.f32	s15, s15, s0
- 531              		.loc 1 161 13 view .LVU131
- 532 0012 77EEE07A 		vsub.f32	s15, s15, s1
- 533              		.loc 1 161 7 view .LVU132
- 534 0016 B6EE007A 		vmov.f32	s14, #5.0e-1
- 535 001a 27EE877A 		vmul.f32	s14, s15, s14
- 536              	.LVL40:
- 162:Src/foc.c     ****     t3=t0;
- 537              		.loc 1 162 5 is_stmt 1 view .LVU133
+ 499              		.loc 1 162 12 view .LVU123
+ 500 0084 76EE667A 		vsub.f32	s15, s12, s13
+ 501              	.LVL42:
  163:Src/foc.c     **** 
- 164:Src/foc.c     ****     result.ccra=U7.a*t3+u1.a*t1+u2.a*t2;
- 538              		.loc 1 164 5 view .LVU134
- 539              		.loc 1 164 19 is_stmt 0 view .LVU135
- 540 001e 344B     		ldr	r3, .L33
- 541 0020 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
- 542 0022 07EE902A 		vmov	s15, r2	@ int
- 543              		.loc 1 164 21 view .LVU136
- 544 0026 F8EEE77A 		vcvt.f32.s32	s15, s15
- 545 002a 67EE877A 		vmul.f32	s15, s15, s14
- 546              		.loc 1 164 27 view .LVU137
- 547 002e 9DF81020 		ldrb	r2, [sp, #16]	@ zero_extendqisi2
- 548 0032 06EE902A 		vmov	s13, r2	@ int
- 549              		.loc 1 164 29 view .LVU138
- 550 0036 F8EEE66A 		vcvt.f32.s32	s13, s13
- 551 003a 66EE806A 		vmul.f32	s13, s13, s0
- 552              		.loc 1 164 24 view .LVU139
- 553 003e 77EEA67A 		vadd.f32	s15, s15, s13
- 554              		.loc 1 164 35 view .LVU140
- 555 0042 9DF84020 		ldrb	r2, [sp, #64]	@ zero_extendqisi2
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 14
+ 164:Src/foc.c     ****     *t1=temp_t1;
+ 502              		.loc 1 164 5 is_stmt 1 view .LVU124
+ 503              		.loc 1 164 8 is_stmt 0 view .LVU125
+ 504 0088 C5ED005A 		vstr.32	s11, [r5]
+ 165:Src/foc.c     ****     *t2=temp_t2;
+ 505              		.loc 1 165 5 is_stmt 1 view .LVU126
+ 506              		.loc 1 165 8 is_stmt 0 view .LVU127
+ 507 008c C4ED007A 		vstr.32	s15, [r4]
+ 166:Src/foc.c     **** 
+ 167:Src/foc.c     **** }
+ 508              		.loc 1 167 1 view .LVU128
+ 509 0090 0BB0     		add	sp, sp, #44
+ 510              	.LCFI10:
+ 511              		.cfi_def_cfa_offset 20
+ 512              		@ sp needed
+ 513 0092 BDEC028B 		vldm	sp!, {d8}
+ 514              	.LCFI11:
+ 515              		.cfi_restore 80
+ 516              		.cfi_restore 81
+ 517              		.cfi_def_cfa_offset 12
+ 518              	.LVL43:
+ 519              		.loc 1 167 1 view .LVU129
+ 520 0096 30BD     		pop	{r4, r5, pc}
+ 521              	.LVL44:
+ 522              	.L30:
+ 523              		.loc 1 167 1 view .LVU130
+ 524              		.align	2
+ 525              	.L29:
+ 526 0098 F6285C3F 		.word	1063004406
+ 527              		.cfi_endproc
+ 528              	.LFE170:
+ 530              		.section	.text.get_ccr_duty,"ax",%progbits
+ 531              		.align	1
+ 532              		.global	get_ccr_duty
+ 533              		.syntax unified
+ 534              		.thumb
+ 535              		.thumb_func
+ 536              		.fpu fpv4-sp-d16
+ 538              	get_ccr_duty:
+ 539              	.LVL45:
+ 540              	.LFB171:
+ 168:Src/foc.c     **** 
+ 169:Src/foc.c     **** CCR_Duty get_ccr_duty(float t1,float t2,Uvect_Mos u1,Uvect_Mos u2){
+ 541              		.loc 1 169 67 is_stmt 1 view -0
+ 542              		.cfi_startproc
+ 543              		@ args = 16, pretend = 0, frame = 56
+ 544              		@ frame_needed = 0, uses_anonymous_args = 0
+ 545              		@ link register save eliminated.
+ 546              		.loc 1 169 67 is_stmt 0 view .LVU132
+ 547 0000 10B4     		push	{r4}
+ 548              	.LCFI12:
+ 549              		.cfi_def_cfa_offset 4
+ 550              		.cfi_offset 4, -4
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 14
 
 
- 556 0046 06EE902A 		vmov	s13, r2	@ int
- 557              		.loc 1 164 37 view .LVU141
- 558 004a F8EEE66A 		vcvt.f32.s32	s13, s13
- 559 004e 66EEA06A 		vmul.f32	s13, s13, s1
- 560              		.loc 1 164 32 view .LVU142
- 561 0052 77EEA67A 		vadd.f32	s15, s15, s13
- 562              		.loc 1 164 16 view .LVU143
- 563 0056 CDED087A 		vstr.32	s15, [sp, #32]
- 165:Src/foc.c     ****     result.ccrb=U7.b*t3+u1.b*t1+u2.b*t2;
- 564              		.loc 1 165 5 is_stmt 1 view .LVU144
- 565              		.loc 1 165 19 is_stmt 0 view .LVU145
- 566 005a 5A78     		ldrb	r2, [r3, #1]	@ zero_extendqisi2
- 567 005c 07EE902A 		vmov	s15, r2	@ int
- 568              		.loc 1 165 21 view .LVU146
- 569 0060 F8EEE77A 		vcvt.f32.s32	s15, s15
- 570 0064 67EE877A 		vmul.f32	s15, s15, s14
- 571              		.loc 1 165 27 view .LVU147
- 572 0068 9DF81120 		ldrb	r2, [sp, #17]	@ zero_extendqisi2
- 573 006c 06EE902A 		vmov	s13, r2	@ int
- 574              		.loc 1 165 29 view .LVU148
- 575 0070 F8EEE66A 		vcvt.f32.s32	s13, s13
- 576 0074 66EE806A 		vmul.f32	s13, s13, s0
- 577              		.loc 1 165 24 view .LVU149
- 578 0078 77EEA67A 		vadd.f32	s15, s15, s13
- 579              		.loc 1 165 35 view .LVU150
- 580 007c 9DF84120 		ldrb	r2, [sp, #65]	@ zero_extendqisi2
- 581 0080 06EE902A 		vmov	s13, r2	@ int
- 582              		.loc 1 165 37 view .LVU151
- 583 0084 F8EEE66A 		vcvt.f32.s32	s13, s13
- 584 0088 66EEA06A 		vmul.f32	s13, s13, s1
- 585              		.loc 1 165 32 view .LVU152
- 586 008c 77EEA67A 		vadd.f32	s15, s15, s13
- 587              		.loc 1 165 16 view .LVU153
- 588 0090 CDED097A 		vstr.32	s15, [sp, #36]
- 166:Src/foc.c     ****     result.ccrc=U7.c*t3+u1.c*t1+u2.c*t2;
- 589              		.loc 1 166 5 is_stmt 1 view .LVU154
- 590              		.loc 1 166 19 is_stmt 0 view .LVU155
- 591 0094 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
- 592 0096 07EE903A 		vmov	s15, r3	@ int
- 593              		.loc 1 166 21 view .LVU156
- 594 009a F8EEE77A 		vcvt.f32.s32	s15, s15
- 595 009e 67EE877A 		vmul.f32	s15, s15, s14
- 596              		.loc 1 166 27 view .LVU157
- 597 00a2 9DF81230 		ldrb	r3, [sp, #18]	@ zero_extendqisi2
- 598 00a6 07EE103A 		vmov	s14, r3	@ int
- 599              	.LVL41:
- 600              		.loc 1 166 29 view .LVU158
- 601 00aa B8EEC77A 		vcvt.f32.s32	s14, s14
- 602 00ae 27EE000A 		vmul.f32	s0, s14, s0
- 603              	.LVL42:
- 604              		.loc 1 166 24 view .LVU159
- 605 00b2 37EE800A 		vadd.f32	s0, s15, s0
- 606              		.loc 1 166 35 view .LVU160
- 607 00b6 9DF84230 		ldrb	r3, [sp, #66]	@ zero_extendqisi2
- 608 00ba 07EE903A 		vmov	s15, r3	@ int
- 609              		.loc 1 166 37 view .LVU161
- 610 00be F8EEE77A 		vcvt.f32.s32	s15, s15
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 15
+ 551 0002 8FB0     		sub	sp, sp, #60
+ 552              	.LCFI13:
+ 553              		.cfi_def_cfa_offset 64
+ 554 0004 04AC     		add	r4, sp, #16
+ 555 0006 84E80F00 		stm	r4, {r0, r1, r2, r3}
+ 170:Src/foc.c     ****     float t0,t3;
+ 556              		.loc 1 170 5 is_stmt 1 view .LVU133
+ 171:Src/foc.c     ****     CCR_Duty result;
+ 557              		.loc 1 171 5 view .LVU134
+ 172:Src/foc.c     ****     t0=(1-t1-t2)/2;
+ 558              		.loc 1 172 5 view .LVU135
+ 559              		.loc 1 172 10 is_stmt 0 view .LVU136
+ 560 000a F7EE007A 		vmov.f32	s15, #1.0e+0
+ 561 000e 77EEC07A 		vsub.f32	s15, s15, s0
+ 562              		.loc 1 172 13 view .LVU137
+ 563 0012 77EEE07A 		vsub.f32	s15, s15, s1
+ 564              		.loc 1 172 7 view .LVU138
+ 565 0016 B6EE007A 		vmov.f32	s14, #5.0e-1
+ 566 001a 27EE877A 		vmul.f32	s14, s15, s14
+ 567              	.LVL46:
+ 173:Src/foc.c     ****     t3=t0;
+ 568              		.loc 1 173 5 is_stmt 1 view .LVU139
+ 174:Src/foc.c     **** 
+ 175:Src/foc.c     ****     result.ccra=U7.a*t3+u1.a*t1+u2.a*t2;
+ 569              		.loc 1 175 5 view .LVU140
+ 570              		.loc 1 175 19 is_stmt 0 view .LVU141
+ 571 001e 344B     		ldr	r3, .L33
+ 572 0020 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 573 0022 07EE902A 		vmov	s15, r2	@ int
+ 574              		.loc 1 175 21 view .LVU142
+ 575 0026 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 576 002a 67EE877A 		vmul.f32	s15, s15, s14
+ 577              		.loc 1 175 27 view .LVU143
+ 578 002e 9DF81020 		ldrb	r2, [sp, #16]	@ zero_extendqisi2
+ 579 0032 06EE902A 		vmov	s13, r2	@ int
+ 580              		.loc 1 175 29 view .LVU144
+ 581 0036 F8EEE66A 		vcvt.f32.s32	s13, s13
+ 582 003a 66EE806A 		vmul.f32	s13, s13, s0
+ 583              		.loc 1 175 24 view .LVU145
+ 584 003e 77EEA67A 		vadd.f32	s15, s15, s13
+ 585              		.loc 1 175 35 view .LVU146
+ 586 0042 9DF84020 		ldrb	r2, [sp, #64]	@ zero_extendqisi2
+ 587 0046 06EE902A 		vmov	s13, r2	@ int
+ 588              		.loc 1 175 37 view .LVU147
+ 589 004a F8EEE66A 		vcvt.f32.s32	s13, s13
+ 590 004e 66EEA06A 		vmul.f32	s13, s13, s1
+ 591              		.loc 1 175 32 view .LVU148
+ 592 0052 77EEA67A 		vadd.f32	s15, s15, s13
+ 593              		.loc 1 175 16 view .LVU149
+ 594 0056 CDED087A 		vstr.32	s15, [sp, #32]
+ 176:Src/foc.c     ****     result.ccrb=U7.b*t3+u1.b*t1+u2.b*t2;
+ 595              		.loc 1 176 5 is_stmt 1 view .LVU150
+ 596              		.loc 1 176 19 is_stmt 0 view .LVU151
+ 597 005a 5A78     		ldrb	r2, [r3, #1]	@ zero_extendqisi2
+ 598 005c 07EE902A 		vmov	s15, r2	@ int
+ 599              		.loc 1 176 21 view .LVU152
+ 600 0060 F8EEE77A 		vcvt.f32.s32	s15, s15
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 15
 
 
- 611 00c2 67EEA00A 		vmul.f32	s1, s15, s1
- 612              	.LVL43:
- 613              		.loc 1 166 32 view .LVU162
- 614 00c6 70EE200A 		vadd.f32	s1, s0, s1
- 615              		.loc 1 166 16 view .LVU163
- 616 00ca CDED0A0A 		vstr.32	s1, [sp, #40]
- 167:Src/foc.c     **** 
- 168:Src/foc.c     ****     return result;
- 617              		.loc 1 168 5 is_stmt 1 view .LVU164
- 618              		.loc 1 168 12 is_stmt 0 view .LVU165
- 619 00ce 08AB     		add	r3, sp, #32
- 620 00d0 93E80700 		ldm	r3, {r0, r1, r2}
- 621 00d4 0EAB     		add	r3, sp, #56
- 622 00d6 03E90700 		stmdb	r3, {r0, r1, r2}
- 169:Src/foc.c     **** }
- 623              		.loc 1 169 1 view .LVU166
- 624 00da 9DED0B0A 		vldr.32	s0, [sp, #44]
- 625 00de DDED0C0A 		vldr.32	s1, [sp, #48]
- 626 00e2 9DED0D1A 		vldr.32	s2, [sp, #52]
- 627 00e6 0FB0     		add	sp, sp, #60
- 628              	.LCFI14:
- 629              		.cfi_def_cfa_offset 4
- 630              		@ sp needed
- 631 00e8 5DF8044B 		ldr	r4, [sp], #4
- 632              	.LCFI15:
- 633              		.cfi_restore 4
- 634              		.cfi_def_cfa_offset 0
- 635 00ec 7047     		bx	lr
- 636              	.L34:
- 637 00ee 00BF     		.align	2
- 638              	.L33:
- 639 00f0 00000000 		.word	.LANCHOR7
- 640              		.cfi_endproc
- 641              	.LFE168:
- 643              		.section	.text.svpwm,"ax",%progbits
- 644              		.align	1
- 645              		.global	svpwm
- 646              		.syntax unified
- 647              		.thumb
- 648              		.thumb_func
- 649              		.fpu fpv4-sp-d16
- 651              	svpwm:
- 652              	.LFB169:
- 170:Src/foc.c     **** 
- 171:Src/foc.c     **** // 一次theta增量为360/PART_NUM
- 172:Src/foc.c     **** #define delta_theta 360.0f/PART_NUM
- 173:Src/foc.c     **** 
- 174:Src/foc.c     **** void svpwm(){
- 653              		.loc 1 174 13 is_stmt 1 view -0
- 654              		.cfi_startproc
- 655              		@ args = 0, pretend = 0, frame = 56
- 656              		@ frame_needed = 0, uses_anonymous_args = 0
- 657 0000 70B5     		push	{r4, r5, r6, lr}
- 658              	.LCFI16:
- 659              		.cfi_def_cfa_offset 16
- 660              		.cfi_offset 4, -16
- 661              		.cfi_offset 5, -12
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 16
+ 601 0064 67EE877A 		vmul.f32	s15, s15, s14
+ 602              		.loc 1 176 27 view .LVU153
+ 603 0068 9DF81120 		ldrb	r2, [sp, #17]	@ zero_extendqisi2
+ 604 006c 06EE902A 		vmov	s13, r2	@ int
+ 605              		.loc 1 176 29 view .LVU154
+ 606 0070 F8EEE66A 		vcvt.f32.s32	s13, s13
+ 607 0074 66EE806A 		vmul.f32	s13, s13, s0
+ 608              		.loc 1 176 24 view .LVU155
+ 609 0078 77EEA67A 		vadd.f32	s15, s15, s13
+ 610              		.loc 1 176 35 view .LVU156
+ 611 007c 9DF84120 		ldrb	r2, [sp, #65]	@ zero_extendqisi2
+ 612 0080 06EE902A 		vmov	s13, r2	@ int
+ 613              		.loc 1 176 37 view .LVU157
+ 614 0084 F8EEE66A 		vcvt.f32.s32	s13, s13
+ 615 0088 66EEA06A 		vmul.f32	s13, s13, s1
+ 616              		.loc 1 176 32 view .LVU158
+ 617 008c 77EEA67A 		vadd.f32	s15, s15, s13
+ 618              		.loc 1 176 16 view .LVU159
+ 619 0090 CDED097A 		vstr.32	s15, [sp, #36]
+ 177:Src/foc.c     ****     result.ccrc=U7.c*t3+u1.c*t1+u2.c*t2;
+ 620              		.loc 1 177 5 is_stmt 1 view .LVU160
+ 621              		.loc 1 177 19 is_stmt 0 view .LVU161
+ 622 0094 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
+ 623 0096 07EE903A 		vmov	s15, r3	@ int
+ 624              		.loc 1 177 21 view .LVU162
+ 625 009a F8EEE77A 		vcvt.f32.s32	s15, s15
+ 626 009e 67EE877A 		vmul.f32	s15, s15, s14
+ 627              		.loc 1 177 27 view .LVU163
+ 628 00a2 9DF81230 		ldrb	r3, [sp, #18]	@ zero_extendqisi2
+ 629 00a6 07EE103A 		vmov	s14, r3	@ int
+ 630              	.LVL47:
+ 631              		.loc 1 177 29 view .LVU164
+ 632 00aa B8EEC77A 		vcvt.f32.s32	s14, s14
+ 633 00ae 27EE000A 		vmul.f32	s0, s14, s0
+ 634              	.LVL48:
+ 635              		.loc 1 177 24 view .LVU165
+ 636 00b2 37EE800A 		vadd.f32	s0, s15, s0
+ 637              		.loc 1 177 35 view .LVU166
+ 638 00b6 9DF84230 		ldrb	r3, [sp, #66]	@ zero_extendqisi2
+ 639 00ba 07EE903A 		vmov	s15, r3	@ int
+ 640              		.loc 1 177 37 view .LVU167
+ 641 00be F8EEE77A 		vcvt.f32.s32	s15, s15
+ 642 00c2 67EEA00A 		vmul.f32	s1, s15, s1
+ 643              	.LVL49:
+ 644              		.loc 1 177 32 view .LVU168
+ 645 00c6 70EE200A 		vadd.f32	s1, s0, s1
+ 646              		.loc 1 177 16 view .LVU169
+ 647 00ca CDED0A0A 		vstr.32	s1, [sp, #40]
+ 178:Src/foc.c     **** 
+ 179:Src/foc.c     ****     return result;
+ 648              		.loc 1 179 5 is_stmt 1 view .LVU170
+ 649              		.loc 1 179 12 is_stmt 0 view .LVU171
+ 650 00ce 08AB     		add	r3, sp, #32
+ 651 00d0 93E80700 		ldm	r3, {r0, r1, r2}
+ 652 00d4 0EAB     		add	r3, sp, #56
+ 653 00d6 03E90700 		stmdb	r3, {r0, r1, r2}
+ 180:Src/foc.c     **** }
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 16
 
 
- 662              		.cfi_offset 6, -8
- 663              		.cfi_offset 14, -4
- 664 0002 92B0     		sub	sp, sp, #72
- 665              	.LCFI17:
- 666              		.cfi_def_cfa_offset 88
- 175:Src/foc.c     ****     CCR_Duty ccr_duty;
- 667              		.loc 1 175 5 view .LVU168
- 176:Src/foc.c     ****     Uvect_Mos u1,u2;
- 668              		.loc 1 176 5 view .LVU169
- 177:Src/foc.c     ****     
- 178:Src/foc.c     ****     float t1,t2;
- 669              		.loc 1 178 5 view .LVU170
- 179:Src/foc.c     ****     //HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
- 180:Src/foc.c     ****     uint8_t area=get_area((int)theta); 
- 670              		.loc 1 180 5 view .LVU171
- 671              		.loc 1 180 27 is_stmt 0 view .LVU172
- 672 0004 304C     		ldr	r4, .L40
- 673 0006 D4ED007A 		vldr.32	s15, [r4]
- 674              		.loc 1 180 18 view .LVU173
- 675 000a FDEEE77A 		vcvt.s32.f32	s15, s15
- 676 000e 17EE900A 		vmov	r0, s15	@ int
- 677 0012 FFF7FEFF 		bl	get_area
- 678              	.LVL44:
- 181:Src/foc.c     ****     get_area_u(area,&u1,&u2);
- 679              		.loc 1 181 5 is_stmt 1 view .LVU174
- 680 0016 07AE     		add	r6, sp, #28
- 681 0018 0BAD     		add	r5, sp, #44
- 682 001a 3246     		mov	r2, r6
- 683 001c 2946     		mov	r1, r5
- 684 001e FFF7FEFF 		bl	get_area_u
- 685              	.LVL45:
- 182:Src/foc.c     ****     get_t(theta,&t1,&t2);
- 686              		.loc 1 182 5 view .LVU175
- 687 0022 05A9     		add	r1, sp, #20
- 688 0024 06A8     		add	r0, sp, #24
- 689 0026 94ED000A 		vldr.32	s0, [r4]
- 690 002a FFF7FEFF 		bl	get_t
- 691              	.LVL46:
- 183:Src/foc.c     ****     ccr_duty=get_ccr_duty(t1,t2,u1,u2);
- 692              		.loc 1 183 5 view .LVU176
- 693              		.loc 1 183 14 is_stmt 0 view .LVU177
- 694 002e 96E80F00 		ldm	r6, {r0, r1, r2, r3}
- 695 0032 8DE80F00 		stm	sp, {r0, r1, r2, r3}
- 696 0036 95E80F00 		ldm	r5, {r0, r1, r2, r3}
- 697 003a DDED050A 		vldr.32	s1, [sp, #20]
- 698 003e 9DED060A 		vldr.32	s0, [sp, #24]
- 699 0042 FFF7FEFF 		bl	get_ccr_duty
- 700              	.LVL47:
- 701 0046 8DED0F0A 		vstr.32	s0, [sp, #60]
- 702 004a CDED100A 		vstr.32	s1, [sp, #64]
- 703 004e 8DED111A 		vstr.32	s2, [sp, #68]
- 184:Src/foc.c     **** 
- 185:Src/foc.c     ****     TIM8->CCR1=(ccr_duty.ccrc)*TIM8->ARR;
- 704              		.loc 1 185 5 is_stmt 1 view .LVU178
- 705              		.loc 1 185 36 is_stmt 0 view .LVU179
- 706 0052 1E4B     		ldr	r3, .L40+4
- 707 0054 D3ED0B7A 		vldr.32	s15, [r3, #44]	@ int
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 17
+ 654              		.loc 1 180 1 view .LVU172
+ 655 00da 9DED0B0A 		vldr.32	s0, [sp, #44]
+ 656 00de DDED0C0A 		vldr.32	s1, [sp, #48]
+ 657 00e2 9DED0D1A 		vldr.32	s2, [sp, #52]
+ 658 00e6 0FB0     		add	sp, sp, #60
+ 659              	.LCFI14:
+ 660              		.cfi_def_cfa_offset 4
+ 661              		@ sp needed
+ 662 00e8 5DF8044B 		ldr	r4, [sp], #4
+ 663              	.LCFI15:
+ 664              		.cfi_restore 4
+ 665              		.cfi_def_cfa_offset 0
+ 666 00ec 7047     		bx	lr
+ 667              	.L34:
+ 668 00ee 00BF     		.align	2
+ 669              	.L33:
+ 670 00f0 00000000 		.word	.LANCHOR7
+ 671              		.cfi_endproc
+ 672              	.LFE171:
+ 674              		.section	.text.SVPWM_Step,"ax",%progbits
+ 675              		.align	1
+ 676              		.global	SVPWM_Step
+ 677              		.syntax unified
+ 678              		.thumb
+ 679              		.thumb_func
+ 680              		.fpu fpv4-sp-d16
+ 682              	SVPWM_Step:
+ 683              	.LFB172:
+ 181:Src/foc.c     **** 
+ 182:Src/foc.c     **** void SVPWM_Step(CCR_Duty duty){
+ 684              		.loc 1 182 31 is_stmt 1 view -0
+ 685              		.cfi_startproc
+ 686              		@ args = 0, pretend = 0, frame = 16
+ 687              		@ frame_needed = 0, uses_anonymous_args = 0
+ 688              		@ link register save eliminated.
+ 689 0000 84B0     		sub	sp, sp, #16
+ 690              	.LCFI16:
+ 691              		.cfi_def_cfa_offset 16
+ 692 0002 8DED010A 		vstr.32	s0, [sp, #4]
+ 693 0006 CDED020A 		vstr.32	s1, [sp, #8]
+ 694 000a 8DED031A 		vstr.32	s2, [sp, #12]
+ 183:Src/foc.c     ****     TIM8->CCR1=duty.ccrc*TIM8->ARR;
+ 695              		.loc 1 183 5 view .LVU174
+ 696              		.loc 1 183 30 is_stmt 0 view .LVU175
+ 697 000e 124B     		ldr	r3, .L37
+ 698 0010 D3ED0B7A 		vldr.32	s15, [r3, #44]	@ int
+ 699              		.loc 1 183 25 view .LVU176
+ 700 0014 F8EE677A 		vcvt.f32.u32	s15, s15
+ 701 0018 27EE811A 		vmul.f32	s2, s15, s2
+ 702              		.loc 1 183 15 view .LVU177
+ 703 001c BCEEC11A 		vcvt.u32.f32	s2, s2
+ 704 0020 83ED0D1A 		vstr.32	s2, [r3, #52]	@ int
+ 184:Src/foc.c     ****     TIM8->CCR2=duty.ccrb*TIM8->ARR;
+ 705              		.loc 1 184 5 is_stmt 1 view .LVU178
+ 706              		.loc 1 184 30 is_stmt 0 view .LVU179
+ 707 0024 D3ED0B7A 		vldr.32	s15, [r3, #44]	@ int
+ 708              		.loc 1 184 25 view .LVU180
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 17
 
 
- 708              		.loc 1 185 31 view .LVU180
- 709 0058 F8EE677A 		vcvt.f32.u32	s15, s15
- 710 005c 27EE811A 		vmul.f32	s2, s15, s2
- 711              		.loc 1 185 15 view .LVU181
- 712 0060 BCEEC11A 		vcvt.u32.f32	s2, s2
- 713 0064 83ED0D1A 		vstr.32	s2, [r3, #52]	@ int
- 186:Src/foc.c     ****     TIM8->CCR2=(ccr_duty.ccrb)*TIM8->ARR;
- 714              		.loc 1 186 5 is_stmt 1 view .LVU182
- 715              		.loc 1 186 36 is_stmt 0 view .LVU183
- 716 0068 D3ED0B7A 		vldr.32	s15, [r3, #44]	@ int
- 717              		.loc 1 186 31 view .LVU184
- 718 006c F8EE677A 		vcvt.f32.u32	s15, s15
- 719 0070 9DED107A 		vldr.32	s14, [sp, #64]
- 720 0074 67EE877A 		vmul.f32	s15, s15, s14
- 721              		.loc 1 186 15 view .LVU185
- 722 0078 FCEEE77A 		vcvt.u32.f32	s15, s15
- 723 007c C3ED0E7A 		vstr.32	s15, [r3, #56]	@ int
- 187:Src/foc.c     ****     TIM8->CCR3=(ccr_duty.ccra)*TIM8->ARR;
- 724              		.loc 1 187 5 is_stmt 1 view .LVU186
- 725              		.loc 1 187 36 is_stmt 0 view .LVU187
- 726 0080 D3ED0B7A 		vldr.32	s15, [r3, #44]	@ int
- 727              		.loc 1 187 31 view .LVU188
- 728 0084 F8EE677A 		vcvt.f32.u32	s15, s15
- 729 0088 9DED0F7A 		vldr.32	s14, [sp, #60]
- 730 008c 67EE877A 		vmul.f32	s15, s15, s14
- 731              		.loc 1 187 15 view .LVU189
- 732 0090 FCEEE77A 		vcvt.u32.f32	s15, s15
- 733 0094 C3ED0F7A 		vstr.32	s15, [r3, #60]	@ int
- 188:Src/foc.c     ****     ///uint32_t temp=MIN(TIM8->CCR1,TIM8->CCR2);
- 189:Src/foc.c     ****     //temp=MIN(temp,TIM8->CCR3);   // for trig adc!
- 190:Src/foc.c     ****     TIM8->CCR4=1;
- 734              		.loc 1 190 5 is_stmt 1 view .LVU190
- 735              		.loc 1 190 15 is_stmt 0 view .LVU191
- 736 0098 0122     		movs	r2, #1
- 737 009a 1A64     		str	r2, [r3, #64]
- 191:Src/foc.c     **** 
- 192:Src/foc.c     ****     theta+=delta_theta;
- 738              		.loc 1 192 5 is_stmt 1 view .LVU192
- 739              		.loc 1 192 10 is_stmt 0 view .LVU193
- 740 009c D4ED007A 		vldr.32	s15, [r4]
- 741 00a0 9FED0B7A 		vldr.32	s14, .L40+8
- 742 00a4 77EE877A 		vadd.f32	s15, s15, s14
- 743 00a8 C4ED007A 		vstr.32	s15, [r4]
- 193:Src/foc.c     ****     if(theta>=360){
- 744              		.loc 1 193 5 is_stmt 1 view .LVU194
- 745              		.loc 1 193 7 is_stmt 0 view .LVU195
- 746 00ac 9FED097A 		vldr.32	s14, .L40+12
- 747 00b0 F4EEC77A 		vcmpe.f32	s15, s14
- 748 00b4 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
- 749 00b8 03DB     		blt	.L35
- 194:Src/foc.c     ****         theta-=360;
- 750              		.loc 1 194 9 is_stmt 1 view .LVU196
- 751              		.loc 1 194 14 is_stmt 0 view .LVU197
- 752 00ba 77EEC77A 		vsub.f32	s15, s15, s14
- 753 00be C4ED007A 		vstr.32	s15, [r4]
- 754              	.L35:
- 195:Src/foc.c     ****     }
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 18
+ 709 0028 F8EE677A 		vcvt.f32.u32	s15, s15
+ 710 002c 9DED027A 		vldr.32	s14, [sp, #8]
+ 711 0030 67EE877A 		vmul.f32	s15, s15, s14
+ 712              		.loc 1 184 15 view .LVU181
+ 713 0034 FCEEE77A 		vcvt.u32.f32	s15, s15
+ 714 0038 C3ED0E7A 		vstr.32	s15, [r3, #56]	@ int
+ 185:Src/foc.c     ****     TIM8->CCR3=duty.ccra*TIM8->ARR;
+ 715              		.loc 1 185 5 is_stmt 1 view .LVU182
+ 716              		.loc 1 185 30 is_stmt 0 view .LVU183
+ 717 003c D3ED0B7A 		vldr.32	s15, [r3, #44]	@ int
+ 718              		.loc 1 185 25 view .LVU184
+ 719 0040 F8EE677A 		vcvt.f32.u32	s15, s15
+ 720 0044 9DED017A 		vldr.32	s14, [sp, #4]
+ 721 0048 67EE877A 		vmul.f32	s15, s15, s14
+ 722              		.loc 1 185 15 view .LVU185
+ 723 004c FCEEE77A 		vcvt.u32.f32	s15, s15
+ 724 0050 C3ED0F7A 		vstr.32	s15, [r3, #60]	@ int
+ 186:Src/foc.c     **** }
+ 725              		.loc 1 186 1 view .LVU186
+ 726 0054 04B0     		add	sp, sp, #16
+ 727              	.LCFI17:
+ 728              		.cfi_def_cfa_offset 0
+ 729              		@ sp needed
+ 730 0056 7047     		bx	lr
+ 731              	.L38:
+ 732              		.align	2
+ 733              	.L37:
+ 734 0058 00040140 		.word	1073808384
+ 735              		.cfi_endproc
+ 736              	.LFE172:
+ 738              		.global	__aeabi_f2d
+ 739              		.section	.rodata.Set_to_U4.str1.4,"aMS",%progbits,1
+ 740              		.align	2
+ 741              	.LC0:
+ 742 0000 706F7369 		.ascii	"position:%f \015\012\000"
+ 742      74696F6E 
+ 742      3A256620 
+ 742      0D0A00
+ 743              		.section	.text.Set_to_U4,"ax",%progbits
+ 744              		.align	1
+ 745              		.global	Set_to_U4
+ 746              		.syntax unified
+ 747              		.thumb
+ 748              		.thumb_func
+ 749              		.fpu fpv4-sp-d16
+ 751              	Set_to_U4:
+ 752              	.LVL50:
+ 753              	.LFB173:
+ 187:Src/foc.c     **** 
+ 188:Src/foc.c     **** /*
+ 189:Src/foc.c     ****     将电压矢量设置为U4，并持续一段时间
+ 190:Src/foc.c     **** */
+ 191:Src/foc.c     **** void Set_to_U4(uint8_t t){
+ 754              		.loc 1 191 26 is_stmt 1 view -0
+ 755              		.cfi_startproc
+ 756              		@ args = 0, pretend = 0, frame = 16
+ 757              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 18
 
 
- 196:Src/foc.c     ****     //HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
- 197:Src/foc.c     **** }
- 755              		.loc 1 197 1 view .LVU198
- 756 00c2 12B0     		add	sp, sp, #72
- 757              	.LCFI18:
- 758              		.cfi_def_cfa_offset 16
- 759              		@ sp needed
- 760 00c4 70BD     		pop	{r4, r5, r6, pc}
- 761              	.L41:
- 762 00c6 00BF     		.align	2
- 763              	.L40:
- 764 00c8 00000000 		.word	.LANCHOR8
- 765 00cc 00040140 		.word	1073808384
- 766 00d0 0000F03D 		.word	1039138816
- 767 00d4 0000B443 		.word	1135869952
- 768              		.cfi_endproc
- 769              	.LFE169:
- 771              		.section	.text.SVPWM_Step,"ax",%progbits
- 772              		.align	1
- 773              		.global	SVPWM_Step
- 774              		.syntax unified
- 775              		.thumb
- 776              		.thumb_func
- 777              		.fpu fpv4-sp-d16
- 779              	SVPWM_Step:
- 780              	.LFB170:
- 198:Src/foc.c     **** 
- 199:Src/foc.c     **** void SVPWM_Step(CCR_Duty duty){
- 781              		.loc 1 199 31 is_stmt 1 view -0
- 782              		.cfi_startproc
- 783              		@ args = 0, pretend = 0, frame = 16
- 784              		@ frame_needed = 0, uses_anonymous_args = 0
- 785              		@ link register save eliminated.
- 786 0000 84B0     		sub	sp, sp, #16
- 787              	.LCFI19:
- 788              		.cfi_def_cfa_offset 16
- 789 0002 8DED010A 		vstr.32	s0, [sp, #4]
- 790 0006 CDED020A 		vstr.32	s1, [sp, #8]
- 791 000a 8DED031A 		vstr.32	s2, [sp, #12]
- 200:Src/foc.c     ****     TIM8->CCR1=duty.ccrc*TIM8->ARR;
- 792              		.loc 1 200 5 view .LVU200
- 793              		.loc 1 200 30 is_stmt 0 view .LVU201
- 794 000e 124B     		ldr	r3, .L44
- 795 0010 D3ED0B7A 		vldr.32	s15, [r3, #44]	@ int
- 796              		.loc 1 200 25 view .LVU202
- 797 0014 F8EE677A 		vcvt.f32.u32	s15, s15
- 798 0018 27EE811A 		vmul.f32	s2, s15, s2
- 799              		.loc 1 200 15 view .LVU203
- 800 001c BCEEC11A 		vcvt.u32.f32	s2, s2
- 801 0020 83ED0D1A 		vstr.32	s2, [r3, #52]	@ int
- 201:Src/foc.c     ****     TIM8->CCR2=duty.ccrb*TIM8->ARR;
- 802              		.loc 1 201 5 is_stmt 1 view .LVU204
- 803              		.loc 1 201 30 is_stmt 0 view .LVU205
- 804 0024 D3ED0B7A 		vldr.32	s15, [r3, #44]	@ int
- 805              		.loc 1 201 25 view .LVU206
- 806 0028 F8EE677A 		vcvt.f32.u32	s15, s15
- 807 002c 9DED027A 		vldr.32	s14, [sp, #8]
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 19
+ 758              		.loc 1 191 26 is_stmt 0 view .LVU188
+ 759 0000 10B5     		push	{r4, lr}
+ 760              	.LCFI18:
+ 761              		.cfi_def_cfa_offset 8
+ 762              		.cfi_offset 4, -8
+ 763              		.cfi_offset 14, -4
+ 764 0002 84B0     		sub	sp, sp, #16
+ 765              	.LCFI19:
+ 766              		.cfi_def_cfa_offset 24
+ 767 0004 0446     		mov	r4, r0
+ 192:Src/foc.c     ****     CCR_Duty temp_duty={0};
+ 768              		.loc 1 192 5 is_stmt 1 view .LVU189
+ 193:Src/foc.c     ****     temp_duty.ccra=U4.a;
+ 769              		.loc 1 193 5 view .LVU190
+ 770              		.loc 1 193 22 is_stmt 0 view .LVU191
+ 771 0006 194B     		ldr	r3, .L41
+ 772 0008 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 773 000a 00EE102A 		vmov	s0, r2	@ int
+ 194:Src/foc.c     ****     temp_duty.ccrb=U4.b;
+ 774              		.loc 1 194 5 is_stmt 1 view .LVU192
+ 775              		.loc 1 194 22 is_stmt 0 view .LVU193
+ 776 000e 5A78     		ldrb	r2, [r3, #1]	@ zero_extendqisi2
+ 777 0010 00EE902A 		vmov	s1, r2	@ int
+ 195:Src/foc.c     ****     temp_duty.ccrc=U4.c;
+ 778              		.loc 1 195 5 is_stmt 1 view .LVU194
+ 779              		.loc 1 195 22 is_stmt 0 view .LVU195
+ 780 0014 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
+ 781 0016 01EE103A 		vmov	s2, r3	@ int
+ 196:Src/foc.c     ****     SVPWM_Step(temp_duty);
+ 782              		.loc 1 196 5 is_stmt 1 view .LVU196
+ 783 001a B8EE400A 		vcvt.f32.u32	s0, s0
+ 784 001e F8EE600A 		vcvt.f32.u32	s1, s1
+ 785 0022 B8EE411A 		vcvt.f32.u32	s2, s2
+ 786 0026 FFF7FEFF 		bl	SVPWM_Step
+ 787              	.LVL51:
+ 197:Src/foc.c     ****     HAL_Delay(t);
+ 788              		.loc 1 197 5 view .LVU197
+ 789 002a 2046     		mov	r0, r4
+ 790 002c FFF7FEFF 		bl	HAL_Delay
+ 791              	.LVL52:
+ 198:Src/foc.c     ****     temp_duty.ccra=U0.a;
+ 792              		.loc 1 198 5 view .LVU198
+ 793              		.loc 1 198 22 is_stmt 0 view .LVU199
+ 794 0030 0F4B     		ldr	r3, .L41+4
+ 795 0032 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 796 0034 00EE102A 		vmov	s0, r2	@ int
+ 199:Src/foc.c     ****     temp_duty.ccrb=U0.b;
+ 797              		.loc 1 199 5 is_stmt 1 view .LVU200
+ 798              		.loc 1 199 22 is_stmt 0 view .LVU201
+ 799 0038 5A78     		ldrb	r2, [r3, #1]	@ zero_extendqisi2
+ 800 003a 00EE902A 		vmov	s1, r2	@ int
+ 200:Src/foc.c     ****     temp_duty.ccrc=U0.c;
+ 801              		.loc 1 200 5 is_stmt 1 view .LVU202
+ 802              		.loc 1 200 22 is_stmt 0 view .LVU203
+ 803 003e 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
+ 804 0040 01EE103A 		vmov	s2, r3	@ int
+ 201:Src/foc.c     ****     SVPWM_Step(temp_duty);    
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 19
 
 
- 808 0030 67EE877A 		vmul.f32	s15, s15, s14
- 809              		.loc 1 201 15 view .LVU207
- 810 0034 FCEEE77A 		vcvt.u32.f32	s15, s15
- 811 0038 C3ED0E7A 		vstr.32	s15, [r3, #56]	@ int
- 202:Src/foc.c     ****     TIM8->CCR3=duty.ccra*TIM8->ARR;
- 812              		.loc 1 202 5 is_stmt 1 view .LVU208
- 813              		.loc 1 202 30 is_stmt 0 view .LVU209
- 814 003c D3ED0B7A 		vldr.32	s15, [r3, #44]	@ int
- 815              		.loc 1 202 25 view .LVU210
- 816 0040 F8EE677A 		vcvt.f32.u32	s15, s15
- 817 0044 9DED017A 		vldr.32	s14, [sp, #4]
- 818 0048 67EE877A 		vmul.f32	s15, s15, s14
- 819              		.loc 1 202 15 view .LVU211
- 820 004c FCEEE77A 		vcvt.u32.f32	s15, s15
- 821 0050 C3ED0F7A 		vstr.32	s15, [r3, #60]	@ int
+ 805              		.loc 1 201 5 is_stmt 1 view .LVU204
+ 806 0044 B8EE400A 		vcvt.f32.u32	s0, s0
+ 807 0048 F8EE600A 		vcvt.f32.u32	s1, s1
+ 808 004c B8EE411A 		vcvt.f32.u32	s2, s2
+ 809 0050 FFF7FEFF 		bl	SVPWM_Step
+ 810              	.LVL53:
+ 202:Src/foc.c     ****     uprintf("position:%f \r\n",Position_Degree);
+ 811              		.loc 1 202 5 view .LVU205
+ 812 0054 074B     		ldr	r3, .L41+8
+ 813 0056 1868     		ldr	r0, [r3]	@ float
+ 814 0058 FFF7FEFF 		bl	__aeabi_f2d
+ 815              	.LVL54:
+ 816 005c 0246     		mov	r2, r0
+ 817 005e 0B46     		mov	r3, r1
+ 818 0060 0548     		ldr	r0, .L41+12
+ 819 0062 FFF7FEFF 		bl	uprintf
+ 820              	.LVL55:
  203:Src/foc.c     **** }
- 822              		.loc 1 203 1 view .LVU212
- 823 0054 04B0     		add	sp, sp, #16
- 824              	.LCFI20:
- 825              		.cfi_def_cfa_offset 0
- 826              		@ sp needed
- 827 0056 7047     		bx	lr
- 828              	.L45:
- 829              		.align	2
- 830              	.L44:
- 831 0058 00040140 		.word	1073808384
- 832              		.cfi_endproc
- 833              	.LFE170:
- 835              		.section	.text.SVPWM_Normal_CalT1T2,"ax",%progbits
- 836              		.align	1
- 837              		.global	SVPWM_Normal_CalT1T2
- 838              		.syntax unified
- 839              		.thumb
- 840              		.thumb_func
- 841              		.fpu fpv4-sp-d16
- 843              	SVPWM_Normal_CalT1T2:
- 844              	.LVL48:
- 845              	.LFB172:
+ 821              		.loc 1 203 1 is_stmt 0 view .LVU206
+ 822 0066 04B0     		add	sp, sp, #16
+ 823              	.LCFI20:
+ 824              		.cfi_def_cfa_offset 8
+ 825              		@ sp needed
+ 826 0068 10BD     		pop	{r4, pc}
+ 827              	.L42:
+ 828 006a 00BF     		.align	2
+ 829              	.L41:
+ 830 006c 00000000 		.word	.LANCHOR1
+ 831 0070 00000000 		.word	.LANCHOR8
+ 832 0074 00000000 		.word	Position_Degree
+ 833 0078 00000000 		.word	.LC0
+ 834              		.cfi_endproc
+ 835              	.LFE173:
+ 837              		.section	.text.SVPWM_Normal_CalT1T2,"ax",%progbits
+ 838              		.align	1
+ 839              		.global	SVPWM_Normal_CalT1T2
+ 840              		.syntax unified
+ 841              		.thumb
+ 842              		.thumb_func
+ 843              		.fpu fpv4-sp-d16
+ 845              	SVPWM_Normal_CalT1T2:
+ 846              	.LVL56:
+ 847              	.LFB175:
  204:Src/foc.c     **** 
  205:Src/foc.c     **** 
  206:Src/foc.c     **** 
@@ -1133,743 +1138,841 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 1
  215:Src/foc.c     ****     }
  216:Src/foc.c     **** }
  217:Src/foc.c     **** 
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 20
+
+
  218:Src/foc.c     **** 
  219:Src/foc.c     **** void SVPWM_Normal_CalT1T2(float alpha,float beta,uint8_t area,float *t1,float *t2){
- 846              		.loc 1 219 83 is_stmt 1 view -0
- 847              		.cfi_startproc
- 848              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 20
-
-
- 849              		@ frame_needed = 0, uses_anonymous_args = 0
- 850              		@ link register save eliminated.
+ 848              		.loc 1 219 83 is_stmt 1 view -0
+ 849              		.cfi_startproc
+ 850              		@ args = 0, pretend = 0, frame = 0
+ 851              		@ frame_needed = 0, uses_anonymous_args = 0
+ 852              		@ link register save eliminated.
  220:Src/foc.c     ****     float temp=0;
- 851              		.loc 1 220 5 view .LVU214
+ 853              		.loc 1 220 5 view .LVU208
  221:Src/foc.c     ****     switch(area){
- 852              		.loc 1 221 5 view .LVU215
- 853 0000 0138     		subs	r0, r0, #1
- 854              	.LVL49:
- 855              		.loc 1 221 5 is_stmt 0 view .LVU216
- 856 0002 0528     		cmp	r0, #5
- 857 0004 5BD8     		bhi	.L46
- 858 0006 DFE800F0 		tbb	[pc, r0]
- 859              	.L49:
- 860 000a 03       		.byte	(.L54-.L49)/2
- 861 000b 12       		.byte	(.L53-.L49)/2
- 862 000c 1F       		.byte	(.L52-.L49)/2
- 863 000d 30       		.byte	(.L51-.L49)/2
- 864 000e 3F       		.byte	(.L50-.L49)/2
- 865 000f 4C       		.byte	(.L48-.L49)/2
- 866              		.p2align 1
- 867              	.L54:
+ 854              		.loc 1 221 5 view .LVU209
+ 855 0000 0138     		subs	r0, r0, #1
+ 856              	.LVL57:
+ 857              		.loc 1 221 5 is_stmt 0 view .LVU210
+ 858 0002 0528     		cmp	r0, #5
+ 859 0004 5BD8     		bhi	.L43
+ 860 0006 DFE800F0 		tbb	[pc, r0]
+ 861              	.L46:
+ 862 000a 03       		.byte	(.L51-.L46)/2
+ 863 000b 12       		.byte	(.L50-.L46)/2
+ 864 000c 1F       		.byte	(.L49-.L46)/2
+ 865 000d 30       		.byte	(.L48-.L46)/2
+ 866 000e 3F       		.byte	(.L47-.L46)/2
+ 867 000f 4C       		.byte	(.L45-.L46)/2
+ 868              		.p2align 1
+ 869              	.L51:
  222:Src/foc.c     ****         case 1:
  223:Src/foc.c     ****             *t1=alpha - 0.57735f*beta;
- 868              		.loc 1 223 13 is_stmt 1 view .LVU217
- 869              		.loc 1 223 33 is_stmt 0 view .LVU218
- 870 0010 DFED2B7A 		vldr.32	s15, .L55
- 871 0014 60EEA77A 		vmul.f32	s15, s1, s15
- 872              		.loc 1 223 23 view .LVU219
- 873 0018 30EE670A 		vsub.f32	s0, s0, s15
- 874              	.LVL50:
- 875              		.loc 1 223 16 view .LVU220
- 876 001c 81ED000A 		vstr.32	s0, [r1]
+ 870              		.loc 1 223 13 is_stmt 1 view .LVU211
+ 871              		.loc 1 223 33 is_stmt 0 view .LVU212
+ 872 0010 DFED2B7A 		vldr.32	s15, .L52
+ 873 0014 60EEA77A 		vmul.f32	s15, s1, s15
+ 874              		.loc 1 223 23 view .LVU213
+ 875 0018 30EE670A 		vsub.f32	s0, s0, s15
+ 876              	.LVL58:
+ 877              		.loc 1 223 16 view .LVU214
+ 878 001c 81ED000A 		vstr.32	s0, [r1]
  224:Src/foc.c     ****             *t2=1.1547f*beta;
- 877              		.loc 1 224 13 is_stmt 1 view .LVU221
- 878              		.loc 1 224 24 is_stmt 0 view .LVU222
- 879 0020 DFED287A 		vldr.32	s15, .L55+4
- 880 0024 60EEA70A 		vmul.f32	s1, s1, s15
- 881              	.LVL51:
- 882              		.loc 1 224 16 view .LVU223
- 883 0028 C2ED000A 		vstr.32	s1, [r2]
+ 879              		.loc 1 224 13 is_stmt 1 view .LVU215
+ 880              		.loc 1 224 24 is_stmt 0 view .LVU216
+ 881 0020 DFED287A 		vldr.32	s15, .L52+4
+ 882 0024 60EEA70A 		vmul.f32	s1, s1, s15
+ 883              	.LVL59:
+ 884              		.loc 1 224 16 view .LVU217
+ 885 0028 C2ED000A 		vstr.32	s1, [r2]
  225:Src/foc.c     ****         break;
- 884              		.loc 1 225 9 is_stmt 1 view .LVU224
- 885 002c 7047     		bx	lr
- 886              	.LVL52:
- 887              	.L53:
+ 886              		.loc 1 225 9 is_stmt 1 view .LVU218
+ 887 002c 7047     		bx	lr
+ 888              	.LVL60:
+ 889              	.L50:
  226:Src/foc.c     ****         case 2:
  227:Src/foc.c     ****             *t1=alpha + 0.57735f*beta;
- 888              		.loc 1 227 13 view .LVU225
- 889              		.loc 1 227 33 is_stmt 0 view .LVU226
- 890 002e DFED247A 		vldr.32	s15, .L55
- 891 0032 60EEA70A 		vmul.f32	s1, s1, s15
- 892              	.LVL53:
- 893              		.loc 1 227 23 view .LVU227
- 894 0036 70EE807A 		vadd.f32	s15, s1, s0
- 895              		.loc 1 227 16 view .LVU228
- 896 003a C1ED007A 		vstr.32	s15, [r1]
+ 890              		.loc 1 227 13 view .LVU219
+ 891              		.loc 1 227 33 is_stmt 0 view .LVU220
+ 892 002e DFED247A 		vldr.32	s15, .L52
+ 893 0032 60EEA70A 		vmul.f32	s1, s1, s15
+ 894              	.LVL61:
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 21
+
+
+ 895              		.loc 1 227 23 view .LVU221
+ 896 0036 70EE807A 		vadd.f32	s15, s1, s0
+ 897              		.loc 1 227 16 view .LVU222
+ 898 003a C1ED007A 		vstr.32	s15, [r1]
  228:Src/foc.c     ****             *t2=0.57735f*beta - alpha;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 21
-
-
- 897              		.loc 1 228 13 is_stmt 1 view .LVU229
- 898              		.loc 1 228 31 is_stmt 0 view .LVU230
- 899 003e 70EEC00A 		vsub.f32	s1, s1, s0
- 900              		.loc 1 228 16 view .LVU231
- 901 0042 C2ED000A 		vstr.32	s1, [r2]
+ 899              		.loc 1 228 13 is_stmt 1 view .LVU223
+ 900              		.loc 1 228 31 is_stmt 0 view .LVU224
+ 901 003e 70EEC00A 		vsub.f32	s1, s1, s0
+ 902              		.loc 1 228 16 view .LVU225
+ 903 0042 C2ED000A 		vstr.32	s1, [r2]
  229:Src/foc.c     ****             break;
- 902              		.loc 1 229 13 is_stmt 1 view .LVU232
- 903 0046 7047     		bx	lr
- 904              	.LVL54:
- 905              	.L52:
+ 904              		.loc 1 229 13 is_stmt 1 view .LVU226
+ 905 0046 7047     		bx	lr
+ 906              	.LVL62:
+ 907              	.L49:
  230:Src/foc.c     ****         case 3:
  231:Src/foc.c     ****             *t1=1.1547f*beta;
- 906              		.loc 1 231 13 view .LVU233
- 907              		.loc 1 231 24 is_stmt 0 view .LVU234
- 908 0048 DFED1E7A 		vldr.32	s15, .L55+4
- 909 004c 60EEA77A 		vmul.f32	s15, s1, s15
- 910              		.loc 1 231 16 view .LVU235
- 911 0050 C1ED007A 		vstr.32	s15, [r1]
+ 908              		.loc 1 231 13 view .LVU227
+ 909              		.loc 1 231 24 is_stmt 0 view .LVU228
+ 910 0048 DFED1E7A 		vldr.32	s15, .L52+4
+ 911 004c 60EEA77A 		vmul.f32	s15, s1, s15
+ 912              		.loc 1 231 16 view .LVU229
+ 913 0050 C1ED007A 		vstr.32	s15, [r1]
  232:Src/foc.c     ****             *t2=-alpha - 0.57735f*beta;
- 912              		.loc 1 232 13 is_stmt 1 view .LVU236
- 913              		.loc 1 232 17 is_stmt 0 view .LVU237
- 914 0054 B1EE400A 		vneg.f32	s0, s0
- 915              	.LVL55:
- 916              		.loc 1 232 34 view .LVU238
- 917 0058 DFED197A 		vldr.32	s15, .L55
- 918 005c 60EEA70A 		vmul.f32	s1, s1, s15
- 919              	.LVL56:
- 920              		.loc 1 232 24 view .LVU239
- 921 0060 70EE600A 		vsub.f32	s1, s0, s1
- 922              		.loc 1 232 16 view .LVU240
- 923 0064 C2ED000A 		vstr.32	s1, [r2]
+ 914              		.loc 1 232 13 is_stmt 1 view .LVU230
+ 915              		.loc 1 232 17 is_stmt 0 view .LVU231
+ 916 0054 B1EE400A 		vneg.f32	s0, s0
+ 917              	.LVL63:
+ 918              		.loc 1 232 34 view .LVU232
+ 919 0058 DFED197A 		vldr.32	s15, .L52
+ 920 005c 60EEA70A 		vmul.f32	s1, s1, s15
+ 921              	.LVL64:
+ 922              		.loc 1 232 24 view .LVU233
+ 923 0060 70EE600A 		vsub.f32	s1, s0, s1
+ 924              		.loc 1 232 16 view .LVU234
+ 925 0064 C2ED000A 		vstr.32	s1, [r2]
  233:Src/foc.c     ****             break;
- 924              		.loc 1 233 13 is_stmt 1 view .LVU241
- 925 0068 7047     		bx	lr
- 926              	.LVL57:
- 927              	.L51:
+ 926              		.loc 1 233 13 is_stmt 1 view .LVU235
+ 927 0068 7047     		bx	lr
+ 928              	.LVL65:
+ 929              	.L48:
  234:Src/foc.c     ****         case 4:
  235:Src/foc.c     ****             *t1=0.57735f*beta - alpha;
- 928              		.loc 1 235 13 view .LVU242
- 929              		.loc 1 235 25 is_stmt 0 view .LVU243
- 930 006a DFED157A 		vldr.32	s15, .L55
- 931 006e 60EEA77A 		vmul.f32	s15, s1, s15
- 932              		.loc 1 235 31 view .LVU244
- 933 0072 37EEC00A 		vsub.f32	s0, s15, s0
- 934              	.LVL58:
- 935              		.loc 1 235 16 view .LVU245
- 936 0076 81ED000A 		vstr.32	s0, [r1]
+ 930              		.loc 1 235 13 view .LVU236
+ 931              		.loc 1 235 25 is_stmt 0 view .LVU237
+ 932 006a DFED157A 		vldr.32	s15, .L52
+ 933 006e 60EEA77A 		vmul.f32	s15, s1, s15
+ 934              		.loc 1 235 31 view .LVU238
+ 935 0072 37EEC00A 		vsub.f32	s0, s15, s0
+ 936              	.LVL66:
+ 937              		.loc 1 235 16 view .LVU239
+ 938 0076 81ED000A 		vstr.32	s0, [r1]
  236:Src/foc.c     ****             *t2=- 1.1547f*beta;
- 937              		.loc 1 236 13 is_stmt 1 view .LVU246
- 938              		.loc 1 236 26 is_stmt 0 view .LVU247
- 939 007a DFED137A 		vldr.32	s15, .L55+8
- 940 007e 60EEA70A 		vmul.f32	s1, s1, s15
- 941              	.LVL59:
- 942              		.loc 1 236 16 view .LVU248
- 943 0082 C2ED000A 		vstr.32	s1, [r2]
+ 939              		.loc 1 236 13 is_stmt 1 view .LVU240
+ 940              		.loc 1 236 26 is_stmt 0 view .LVU241
+ 941 007a DFED137A 		vldr.32	s15, .L52+8
+ 942 007e 60EEA70A 		vmul.f32	s1, s1, s15
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 22
+
+
+ 943              	.LVL67:
+ 944              		.loc 1 236 16 view .LVU242
+ 945 0082 C2ED000A 		vstr.32	s1, [r2]
  237:Src/foc.c     ****             break;
- 944              		.loc 1 237 13 is_stmt 1 view .LVU249
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 22
-
-
- 945 0086 7047     		bx	lr
- 946              	.LVL60:
- 947              	.L50:
+ 946              		.loc 1 237 13 is_stmt 1 view .LVU243
+ 947 0086 7047     		bx	lr
+ 948              	.LVL68:
+ 949              	.L47:
  238:Src/foc.c     ****         case 5:
  239:Src/foc.c     ****             temp=- 0.57735f*beta;
- 948              		.loc 1 239 13 view .LVU250
- 949              		.loc 1 239 17 is_stmt 0 view .LVU251
- 950 0088 DFED107A 		vldr.32	s15, .L55+12
- 951 008c 60EEA70A 		vmul.f32	s1, s1, s15
- 952              	.LVL61:
+ 950              		.loc 1 239 13 view .LVU244
+ 951              		.loc 1 239 17 is_stmt 0 view .LVU245
+ 952 0088 DFED107A 		vldr.32	s15, .L52+12
+ 953 008c 60EEA70A 		vmul.f32	s1, s1, s15
+ 954              	.LVL69:
  240:Src/foc.c     ****             *t1=temp-alpha;
- 953              		.loc 1 240 13 is_stmt 1 view .LVU252
- 954              		.loc 1 240 21 is_stmt 0 view .LVU253
- 955 0090 70EEC07A 		vsub.f32	s15, s1, s0
- 956              		.loc 1 240 16 view .LVU254
- 957 0094 C1ED007A 		vstr.32	s15, [r1]
+ 955              		.loc 1 240 13 is_stmt 1 view .LVU246
+ 956              		.loc 1 240 21 is_stmt 0 view .LVU247
+ 957 0090 70EEC07A 		vsub.f32	s15, s1, s0
+ 958              		.loc 1 240 16 view .LVU248
+ 959 0094 C1ED007A 		vstr.32	s15, [r1]
  241:Src/foc.c     ****             *t2=temp+alpha;
- 958              		.loc 1 241 13 is_stmt 1 view .LVU255
- 959              		.loc 1 241 21 is_stmt 0 view .LVU256
- 960 0098 70EE200A 		vadd.f32	s1, s0, s1
- 961              	.LVL62:
- 962              		.loc 1 241 16 view .LVU257
- 963 009c C2ED000A 		vstr.32	s1, [r2]
+ 960              		.loc 1 241 13 is_stmt 1 view .LVU249
+ 961              		.loc 1 241 21 is_stmt 0 view .LVU250
+ 962 0098 70EE200A 		vadd.f32	s1, s0, s1
+ 963              	.LVL70:
+ 964              		.loc 1 241 16 view .LVU251
+ 965 009c C2ED000A 		vstr.32	s1, [r2]
  242:Src/foc.c     ****             break;
- 964              		.loc 1 242 13 is_stmt 1 view .LVU258
- 965 00a0 7047     		bx	lr
- 966              	.LVL63:
- 967              	.L48:
+ 966              		.loc 1 242 13 is_stmt 1 view .LVU252
+ 967 00a0 7047     		bx	lr
+ 968              	.LVL71:
+ 969              	.L45:
  243:Src/foc.c     ****         case 6:
  244:Src/foc.c     ****             *t1=-1.1547f*beta;
- 968              		.loc 1 244 13 view .LVU259
- 969              		.loc 1 244 25 is_stmt 0 view .LVU260
- 970 00a2 DFED097A 		vldr.32	s15, .L55+8
- 971 00a6 60EEA77A 		vmul.f32	s15, s1, s15
- 972              		.loc 1 244 16 view .LVU261
- 973 00aa C1ED007A 		vstr.32	s15, [r1]
+ 970              		.loc 1 244 13 view .LVU253
+ 971              		.loc 1 244 25 is_stmt 0 view .LVU254
+ 972 00a2 DFED097A 		vldr.32	s15, .L52+8
+ 973 00a6 60EEA77A 		vmul.f32	s15, s1, s15
+ 974              		.loc 1 244 16 view .LVU255
+ 975 00aa C1ED007A 		vstr.32	s15, [r1]
  245:Src/foc.c     ****             *t2=alpha + 0.57735f*beta;
- 974              		.loc 1 245 13 is_stmt 1 view .LVU262
- 975              		.loc 1 245 33 is_stmt 0 view .LVU263
- 976 00ae DFED047A 		vldr.32	s15, .L55
- 977 00b2 60EEA77A 		vmul.f32	s15, s1, s15
- 978              		.loc 1 245 23 view .LVU264
- 979 00b6 77EE800A 		vadd.f32	s1, s15, s0
- 980              	.LVL64:
- 981              		.loc 1 245 16 view .LVU265
- 982 00ba C2ED000A 		vstr.32	s1, [r2]
+ 976              		.loc 1 245 13 is_stmt 1 view .LVU256
+ 977              		.loc 1 245 33 is_stmt 0 view .LVU257
+ 978 00ae DFED047A 		vldr.32	s15, .L52
+ 979 00b2 60EEA77A 		vmul.f32	s15, s1, s15
+ 980              		.loc 1 245 23 view .LVU258
+ 981 00b6 77EE800A 		vadd.f32	s1, s15, s0
+ 982              	.LVL72:
+ 983              		.loc 1 245 16 view .LVU259
+ 984 00ba C2ED000A 		vstr.32	s1, [r2]
  246:Src/foc.c     ****             break;
- 983              		.loc 1 246 13 is_stmt 1 view .LVU266
- 984              	.L46:
+ 985              		.loc 1 246 13 is_stmt 1 view .LVU260
+ 986              	.L43:
  247:Src/foc.c     ****     }
  248:Src/foc.c     **** }
- 985              		.loc 1 248 1 is_stmt 0 view .LVU267
- 986 00be 7047     		bx	lr
- 987              	.L56:
- 988              		.align	2
- 989              	.L55:
- 990 00c0 36CD133F 		.word	1058262326
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 23
+ 987              		.loc 1 248 1 is_stmt 0 view .LVU261
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 23
 
 
- 991 00c4 36CD933F 		.word	1066650934
- 992 00c8 36CD93BF 		.word	-1080832714
- 993 00cc 36CD13BF 		.word	-1089221322
- 994              		.cfi_endproc
- 995              	.LFE172:
- 997              		.section	.text.Theta_Handler,"ax",%progbits
- 998              		.align	1
- 999              		.global	Theta_Handler
- 1000              		.syntax unified
- 1001              		.thumb
- 1002              		.thumb_func
- 1003              		.fpu fpv4-sp-d16
- 1005              	Theta_Handler:
- 1006              	.LFB173:
+ 988 00be 7047     		bx	lr
+ 989              	.L53:
+ 990              		.align	2
+ 991              	.L52:
+ 992 00c0 36CD133F 		.word	1058262326
+ 993 00c4 36CD933F 		.word	1066650934
+ 994 00c8 36CD93BF 		.word	-1080832714
+ 995 00cc 36CD13BF 		.word	-1089221322
+ 996              		.cfi_endproc
+ 997              	.LFE175:
+ 999              		.section	.text.HAL_ADC_ConvCpltCallback,"ax",%progbits
+ 1000              		.align	1
+ 1001              		.global	HAL_ADC_ConvCpltCallback
+ 1002              		.syntax unified
+ 1003              		.thumb
+ 1004              		.thumb_func
+ 1005              		.fpu fpv4-sp-d16
+ 1007              	HAL_ADC_ConvCpltCallback:
+ 1008              	.LVL73:
+ 1009              	.LFB177:
  249:Src/foc.c     **** 
  250:Src/foc.c     **** 
  251:Src/foc.c     **** //#define dealtK PAIRS*360.0f/TIM7_FREQ
  252:Src/foc.c     **** #define dealtK 360.0f/TIM7_FREQ
  253:Src/foc.c     **** void Theta_Handler(){
- 1007              		.loc 1 253 21 is_stmt 1 view -0
- 1008              		.cfi_startproc
- 1009              		@ args = 0, pretend = 0, frame = 48
- 1010              		@ frame_needed = 0, uses_anonymous_args = 0
- 1011 0000 F0B5     		push	{r4, r5, r6, r7, lr}
- 1012              	.LCFI21:
- 1013              		.cfi_def_cfa_offset 20
- 1014              		.cfi_offset 4, -20
- 1015              		.cfi_offset 5, -16
- 1016              		.cfi_offset 6, -12
- 1017              		.cfi_offset 7, -8
- 1018              		.cfi_offset 14, -4
- 1019 0002 91B0     		sub	sp, sp, #68
- 1020              	.LCFI22:
- 1021              		.cfi_def_cfa_offset 88
  254:Src/foc.c     ****     Uvect_Mos u1,u2;
- 1022              		.loc 1 254 5 view .LVU269
  255:Src/foc.c     ****     float t1,t2;
- 1023              		.loc 1 255 5 view .LVU270
  256:Src/foc.c     ****     float x,y;
- 1024              		.loc 1 256 5 view .LVU271
  257:Src/foc.c     ****     float dealt=RPS*dealtK;
- 1025              		.loc 1 257 5 view .LVU272
- 1026              		.loc 1 257 20 is_stmt 0 view .LVU273
- 1027 0004 354B     		ldr	r3, .L62
- 1028 0006 93ED007A 		vldr.32	s14, [r3]
- 1029 000a DFED356A 		vldr.32	s13, .L62+4
- 1030 000e 27EE267A 		vmul.f32	s14, s14, s13
- 1031              		.loc 1 257 11 view .LVU274
- 1032 0012 9FED346A 		vldr.32	s12, .L62+8
- 1033 0016 C7EE067A 		vdiv.f32	s15, s14, s12
- 1034              	.LVL65:
- 258:Src/foc.c     ****     theta+=dealt;
- 1035              		.loc 1 258 5 is_stmt 1 view .LVU275
- 1036              		.loc 1 258 10 is_stmt 0 view .LVU276
- 1037 001a 334B     		ldr	r3, .L62+12
- 1038 001c 93ED007A 		vldr.32	s14, [r3]
- 1039 0020 77EE877A 		vadd.f32	s15, s15, s14
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 24
+ 258:Src/foc.c     **** 
+ 259:Src/foc.c     ****     Position_Degree=Get_Position_Rad_Dgree(1);
+ 260:Src/foc.c     ****     Foc();
+ 261:Src/foc.c     ****     /*
+ 262:Src/foc.c     ****     theta+=dealt;
+ 263:Src/foc.c     ****     if(theta>360){
+ 264:Src/foc.c     ****         theta=(int)theta%360;
+ 265:Src/foc.c     ****     }
+ 266:Src/foc.c     ****     
+ 267:Src/foc.c     ****     uint8_t area=get_area((int)theta); 
+ 268:Src/foc.c     ****     get_area_u(area,&u1,&u2);
+ 269:Src/foc.c     ****     //get_t(theta,&t1,&t2);
+ 270:Src/foc.c     ****     arm_sin_cos_f32(theta,&y,&x);
+ 271:Src/foc.c     ****     x*=0.86f;
+ 272:Src/foc.c     ****     y*=0.86f;   // sqrt(3)/2 没错
+ 273:Src/foc.c     ****     SVPWM_Normal_CalT1T2(x,y,area,&t1,&t2);
+ 274:Src/foc.c     ****     CCR_Dutys=get_ccr_duty(t1,t2,u1,u2);
+ 275:Src/foc.c     ****     */
+ 276:Src/foc.c     **** }
+ 277:Src/foc.c     **** 
+ 278:Src/foc.c     **** 
+ 279:Src/foc.c     ****  void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
+ 1010              		.loc 1 279 56 is_stmt 1 view -0
+ 1011              		.cfi_startproc
+ 1012              		@ args = 0, pretend = 0, frame = 0
+ 1013              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1014              		@ link register save eliminated.
+ 280:Src/foc.c     ****      if(hadc->Instance==ADC1){
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 24
 
 
- 1040              	.LVL66:
- 1041              		.loc 1 258 10 view .LVU277
- 1042 0024 C3ED007A 		vstr.32	s15, [r3]
- 259:Src/foc.c     ****     if(theta>360){
- 1043              		.loc 1 259 5 is_stmt 1 view .LVU278
- 1044              		.loc 1 259 7 is_stmt 0 view .LVU279
- 1045 0028 F4EEE67A 		vcmpe.f32	s15, s13
- 1046 002c F1EE10FA 		vmrs	APSR_nzcv, FPSCR
- 1047 0030 15DD     		ble	.L58
- 260:Src/foc.c     ****         theta=(int)theta%360;
- 1048              		.loc 1 260 9 is_stmt 1 view .LVU280
- 1049              		.loc 1 260 15 is_stmt 0 view .LVU281
- 1050 0032 FDEEE77A 		vcvt.s32.f32	s15, s15
- 1051 0036 17EE903A 		vmov	r3, s15	@ int
- 1052              		.loc 1 260 25 view .LVU282
- 1053 003a 2C4A     		ldr	r2, .L62+16
- 1054 003c 82FB0312 		smull	r1, r2, r2, r3
- 1055 0040 D118     		adds	r1, r2, r3
- 1056 0042 DA17     		asrs	r2, r3, #31
- 1057 0044 C2EB2122 		rsb	r2, r2, r1, asr #8
- 1058 0048 4FF4B471 		mov	r1, #360
- 1059 004c 01FB1232 		mls	r2, r1, r2, r3
- 1060              		.loc 1 260 14 view .LVU283
- 1061 0050 07EE902A 		vmov	s15, r2	@ int
- 1062 0054 F8EEE77A 		vcvt.f32.s32	s15, s15
- 1063 0058 234B     		ldr	r3, .L62+12
- 1064 005a C3ED007A 		vstr.32	s15, [r3]
- 1065              	.L58:
- 261:Src/foc.c     ****     }
- 262:Src/foc.c     ****     
- 263:Src/foc.c     ****     uint8_t area=get_area((int)theta); 
- 1066              		.loc 1 263 5 is_stmt 1 view .LVU284
- 1067              		.loc 1 263 27 is_stmt 0 view .LVU285
- 1068 005e 224F     		ldr	r7, .L62+12
- 1069 0060 D7ED007A 		vldr.32	s15, [r7]
- 1070              		.loc 1 263 18 view .LVU286
- 1071 0064 FDEEE77A 		vcvt.s32.f32	s15, s15
- 1072 0068 17EE900A 		vmov	r0, s15	@ int
- 1073 006c FFF7FEFF 		bl	get_area
- 1074              	.LVL67:
- 1075              		.loc 1 263 18 view .LVU287
- 1076 0070 0646     		mov	r6, r0
- 1077              	.LVL68:
- 264:Src/foc.c     ****     get_area_u(area,&u1,&u2);
- 1078              		.loc 1 264 5 is_stmt 1 view .LVU288
- 1079 0072 08AD     		add	r5, sp, #32
- 1080 0074 0CAC     		add	r4, sp, #48
- 1081 0076 2A46     		mov	r2, r5
- 1082 0078 2146     		mov	r1, r4
- 1083 007a FFF7FEFF 		bl	get_area_u
- 1084              	.LVL69:
- 265:Src/foc.c     ****     //get_t(theta,&t1,&t2);
- 266:Src/foc.c     ****     arm_sin_cos_f32(theta,&y,&x);
- 1085              		.loc 1 266 5 view .LVU289
- 1086 007e 05A9     		add	r1, sp, #20
- 1087 0080 04A8     		add	r0, sp, #16
- 1088 0082 97ED000A 		vldr.32	s0, [r7]
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 25
+ 1015              		.loc 1 280 6 view .LVU263
+ 281:Src/foc.c     **** 
+ 282:Src/foc.c     ****      }else if(hadc->Instance==ADC2){
+ 283:Src/foc.c     ****          
+ 284:Src/foc.c     ****      }
+ 1016              		.loc 1 284 6 view .LVU264
+ 285:Src/foc.c     ****  }
+ 1017              		.loc 1 285 2 is_stmt 0 view .LVU265
+ 1018 0000 7047     		bx	lr
+ 1019              		.cfi_endproc
+ 1020              	.LFE177:
+ 1022              		.section	.text.Foc,"ax",%progbits
+ 1023              		.align	1
+ 1024              		.global	Foc
+ 1025              		.syntax unified
+ 1026              		.thumb
+ 1027              		.thumb_func
+ 1028              		.fpu fpv4-sp-d16
+ 1030              	Foc:
+ 1031              	.LFB178:
+ 286:Src/foc.c     **** 
+ 287:Src/foc.c     ****  void Foc(){
+ 1032              		.loc 1 287 12 is_stmt 1 view -0
+ 1033              		.cfi_startproc
+ 1034              		@ args = 0, pretend = 0, frame = 48
+ 1035              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1036 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 1037              	.LCFI21:
+ 1038              		.cfi_def_cfa_offset 20
+ 1039              		.cfi_offset 4, -20
+ 1040              		.cfi_offset 5, -16
+ 1041              		.cfi_offset 6, -12
+ 1042              		.cfi_offset 7, -8
+ 1043              		.cfi_offset 14, -4
+ 1044 0002 91B0     		sub	sp, sp, #68
+ 1045              	.LCFI22:
+ 1046              		.cfi_def_cfa_offset 88
+ 288:Src/foc.c     ****          Uvect_Mos u1,u2;
+ 1047              		.loc 1 288 10 view .LVU267
+ 289:Src/foc.c     ****     float t1,t2;
+ 1048              		.loc 1 289 5 view .LVU268
+ 290:Src/foc.c     ****     float x,y;
+ 1049              		.loc 1 290 5 view .LVU269
+ 291:Src/foc.c     **** 
+ 292:Src/foc.c     ****      float electric_position=(-1*Position_Degree+360);
+ 1050              		.loc 1 292 6 view .LVU270
+ 1051              		.loc 1 292 49 is_stmt 0 view .LVU271
+ 1052 0004 2F4B     		ldr	r3, .L59
+ 1053 0006 D3ED007A 		vldr.32	s15, [r3]
+ 1054              		.loc 1 292 12 view .LVU272
+ 1055 000a 9FED2F7A 		vldr.32	s14, .L59+4
+ 1056 000e 77EE677A 		vsub.f32	s15, s14, s15
+ 1057              	.LVL74:
+ 293:Src/foc.c     ****      float electric_position_offset=(-1*Position_Offset+360);
+ 1058              		.loc 1 293 6 is_stmt 1 view .LVU273
+ 1059              		.loc 1 293 56 is_stmt 0 view .LVU274
+ 1060 0012 2E4B     		ldr	r3, .L59+8
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 25
 
 
- 1089 0086 FFF7FEFF 		bl	arm_sin_cos_f32
- 1090              	.LVL70:
- 267:Src/foc.c     ****     x*=0.86f;
- 1091              		.loc 1 267 5 view .LVU290
- 1092              		.loc 1 267 6 is_stmt 0 view .LVU291
- 1093 008a DFED197A 		vldr.32	s15, .L62+20
- 1094 008e 9DED050A 		vldr.32	s0, [sp, #20]
- 1095 0092 20EE270A 		vmul.f32	s0, s0, s15
- 1096 0096 8DED050A 		vstr.32	s0, [sp, #20]
- 268:Src/foc.c     ****     y*=0.86f;   // sqrt(3)/2 没错
- 1097              		.loc 1 268 5 is_stmt 1 view .LVU292
- 1098              		.loc 1 268 6 is_stmt 0 view .LVU293
- 1099 009a DDED040A 		vldr.32	s1, [sp, #16]
- 1100 009e 60EEA70A 		vmul.f32	s1, s1, s15
- 1101 00a2 CDED040A 		vstr.32	s1, [sp, #16]
- 269:Src/foc.c     ****     SVPWM_Normal_CalT1T2(x,y,area,&t1,&t2);
- 1102              		.loc 1 269 5 is_stmt 1 view .LVU294
- 1103 00a6 06AA     		add	r2, sp, #24
- 1104 00a8 07A9     		add	r1, sp, #28
- 1105 00aa 3046     		mov	r0, r6
- 1106 00ac FFF7FEFF 		bl	SVPWM_Normal_CalT1T2
- 1107              	.LVL71:
- 270:Src/foc.c     ****     CCR_Dutys=get_ccr_duty(t1,t2,u1,u2);
- 1108              		.loc 1 270 5 view .LVU295
- 1109              		.loc 1 270 15 is_stmt 0 view .LVU296
- 1110 00b0 95E80F00 		ldm	r5, {r0, r1, r2, r3}
- 1111 00b4 8DE80F00 		stm	sp, {r0, r1, r2, r3}
- 1112 00b8 94E80F00 		ldm	r4, {r0, r1, r2, r3}
- 1113 00bc DDED060A 		vldr.32	s1, [sp, #24]
- 1114 00c0 9DED070A 		vldr.32	s0, [sp, #28]
- 1115 00c4 FFF7FEFF 		bl	get_ccr_duty
- 1116              	.LVL72:
- 1117 00c8 0A4B     		ldr	r3, .L62+24
- 1118 00ca 83ED000A 		vstr.32	s0, [r3]
- 1119 00ce C3ED010A 		vstr.32	s1, [r3, #4]
- 1120 00d2 83ED021A 		vstr.32	s2, [r3, #8]
- 271:Src/foc.c     **** }
- 1121              		.loc 1 271 1 view .LVU297
- 1122 00d6 11B0     		add	sp, sp, #68
- 1123              	.LCFI23:
- 1124              		.cfi_def_cfa_offset 20
- 1125              		@ sp needed
- 1126 00d8 F0BD     		pop	{r4, r5, r6, r7, pc}
- 1127              	.LVL73:
- 1128              	.L63:
- 1129              		.loc 1 271 1 view .LVU298
- 1130 00da 00BF     		.align	2
- 1131              	.L62:
- 1132 00dc 00000000 		.word	.LANCHOR9
- 1133 00e0 0000B443 		.word	1135869952
- 1134 00e4 00007A44 		.word	1148846080
- 1135 00e8 00000000 		.word	.LANCHOR8
- 1136 00ec B7600BB6 		.word	-1240768329
- 1137 00f0 F6285C3F 		.word	1063004406
- 1138 00f4 00000000 		.word	.LANCHOR10
- 1139              		.cfi_endproc
- 1140              	.LFE173:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 26
+ 1061 0014 D3ED006A 		vldr.32	s13, [r3]
+ 1062              		.loc 1 293 12 view .LVU275
+ 1063 0018 37EE667A 		vsub.f32	s14, s14, s13
+ 1064              	.LVL75:
+ 294:Src/foc.c     **** 
+ 295:Src/foc.c     ****      int32_t sub=(int32_t)(electric_position-electric_position_offset);
+ 1065              		.loc 1 295 6 is_stmt 1 view .LVU276
+ 1066              		.loc 1 295 45 is_stmt 0 view .LVU277
+ 1067 001c 77EEC77A 		vsub.f32	s15, s15, s14
+ 1068              	.LVL76:
+ 1069              		.loc 1 295 14 view .LVU278
+ 1070 0020 FDEEE77A 		vcvt.s32.f32	s15, s15
+ 1071 0024 17EE903A 		vmov	r3, s15	@ int
+ 1072              	.LVL77:
+ 296:Src/foc.c     ****     if(sub<0){
+ 1073              		.loc 1 296 5 is_stmt 1 view .LVU279
+ 1074              		.loc 1 296 7 is_stmt 0 view .LVU280
+ 1075 0028 002B     		cmp	r3, #0
+ 1076 002a 47DB     		blt	.L58
+ 1077              	.L56:
+ 297:Src/foc.c     ****         sub+=360;
+ 298:Src/foc.c     ****     }
+ 299:Src/foc.c     ****     sub*=PAIRS;
+ 1078              		.loc 1 299 5 is_stmt 1 view .LVU281
+ 1079              		.loc 1 299 8 is_stmt 0 view .LVU282
+ 1080 002c C3EBC303 		rsb	r3, r3, r3, lsl #3
+ 1081              	.LVL78:
+ 300:Src/foc.c     ****     sub+=90;
+ 1082              		.loc 1 300 5 is_stmt 1 view .LVU283
+ 1083              		.loc 1 300 8 is_stmt 0 view .LVU284
+ 1084 0030 5A33     		adds	r3, r3, #90
+ 1085              	.LVL79:
+ 301:Src/foc.c     **** 
+ 302:Src/foc.c     ****     sub%=360;
+ 1086              		.loc 1 302 5 is_stmt 1 view .LVU285
+ 1087              		.loc 1 302 8 is_stmt 0 view .LVU286
+ 1088 0032 274C     		ldr	r4, .L59+12
+ 1089 0034 84FB0324 		smull	r2, r4, r4, r3
+ 1090 0038 E218     		adds	r2, r4, r3
+ 1091 003a DC17     		asrs	r4, r3, #31
+ 1092 003c C4EB2224 		rsb	r4, r4, r2, asr #8
+ 1093 0040 4FF4B472 		mov	r2, #360
+ 1094 0044 02FB1434 		mls	r4, r2, r4, r3
+ 1095              	.LVL80:
+ 303:Src/foc.c     **** 
+ 304:Src/foc.c     ****     uint8_t area=get_area(sub); 
+ 1096              		.loc 1 304 5 is_stmt 1 view .LVU287
+ 1097              		.loc 1 304 18 is_stmt 0 view .LVU288
+ 1098 0048 2046     		mov	r0, r4
+ 1099 004a FFF7FEFF 		bl	get_area
+ 1100              	.LVL81:
+ 1101              		.loc 1 304 18 view .LVU289
+ 1102 004e 0746     		mov	r7, r0
+ 1103              	.LVL82:
+ 305:Src/foc.c     ****     get_area_u(area,&u1,&u2);
+ 1104              		.loc 1 305 5 is_stmt 1 view .LVU290
+ 1105 0050 08AE     		add	r6, sp, #32
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 26
 
 
- 1142              		.section	.text.HAL_TIM_PeriodElapsedCallback,"ax",%progbits
- 1143              		.align	1
- 1144              		.global	HAL_TIM_PeriodElapsedCallback
- 1145              		.syntax unified
- 1146              		.thumb
- 1147              		.thumb_func
- 1148              		.fpu fpv4-sp-d16
- 1150              	HAL_TIM_PeriodElapsedCallback:
- 1151              	.LVL74:
- 1152              	.LFB171:
- 207:Src/foc.c     **** 
- 1153              		.loc 1 207 60 is_stmt 1 view -0
- 1154              		.cfi_startproc
- 1155              		@ args = 0, pretend = 0, frame = 0
- 1156              		@ frame_needed = 0, uses_anonymous_args = 0
- 207:Src/foc.c     **** 
- 1157              		.loc 1 207 60 is_stmt 0 view .LVU300
- 1158 0000 10B5     		push	{r4, lr}
- 1159              	.LCFI24:
- 1160              		.cfi_def_cfa_offset 8
- 1161              		.cfi_offset 4, -8
- 1162              		.cfi_offset 14, -4
- 1163 0002 0446     		mov	r4, r0
- 209:Src/foc.c     ****         Theta_Handler();
- 1164              		.loc 1 209 5 is_stmt 1 view .LVU301
- 209:Src/foc.c     ****         Theta_Handler();
- 1165              		.loc 1 209 12 is_stmt 0 view .LVU302
- 1166 0004 0268     		ldr	r2, [r0]
- 209:Src/foc.c     ****         Theta_Handler();
- 1167              		.loc 1 209 7 view .LVU303
- 1168 0006 0A4B     		ldr	r3, .L70
- 1169 0008 9A42     		cmp	r2, r3
- 1170 000a 04D0     		beq	.L68
- 1171              	.LVL75:
- 1172              	.L65:
- 212:Src/foc.c     ****             //svpwm();
- 1173              		.loc 1 212 5 is_stmt 1 view .LVU304
- 212:Src/foc.c     ****             //svpwm();
- 1174              		.loc 1 212 12 is_stmt 0 view .LVU305
- 1175 000c 2268     		ldr	r2, [r4]
- 212:Src/foc.c     ****             //svpwm();
- 1176              		.loc 1 212 7 view .LVU306
- 1177 000e 094B     		ldr	r3, .L70+4
- 1178 0010 9A42     		cmp	r2, r3
- 1179 0012 03D0     		beq	.L69
- 1180              	.L64:
- 216:Src/foc.c     **** 
- 1181              		.loc 1 216 1 view .LVU307
- 1182 0014 10BD     		pop	{r4, pc}
- 1183              	.LVL76:
- 1184              	.L68:
- 210:Src/foc.c     ****     }
- 1185              		.loc 1 210 9 is_stmt 1 view .LVU308
- 1186 0016 FFF7FEFF 		bl	Theta_Handler
- 1187              	.LVL77:
- 210:Src/foc.c     ****     }
- 1188              		.loc 1 210 9 is_stmt 0 view .LVU309
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 27
+ 1106 0052 0CAD     		add	r5, sp, #48
+ 1107 0054 3246     		mov	r2, r6
+ 1108 0056 2946     		mov	r1, r5
+ 1109 0058 FFF7FEFF 		bl	get_area_u
+ 1110              	.LVL83:
+ 306:Src/foc.c     ****     //get_t(theta,&t1,&t2);
+ 307:Src/foc.c     ****     arm_sin_cos_f32(sub,&y,&x);
+ 1111              		.loc 1 307 5 view .LVU291
+ 1112 005c 05A9     		add	r1, sp, #20
+ 1113 005e 04A8     		add	r0, sp, #16
+ 1114 0060 07EE904A 		vmov	s15, r4	@ int
+ 1115 0064 B8EEE70A 		vcvt.f32.s32	s0, s15
+ 1116 0068 FFF7FEFF 		bl	arm_sin_cos_f32
+ 1117              	.LVL84:
+ 308:Src/foc.c     ****     x*=0.86f;
+ 1118              		.loc 1 308 5 view .LVU292
+ 1119              		.loc 1 308 6 is_stmt 0 view .LVU293
+ 1120 006c DFED197A 		vldr.32	s15, .L59+16
+ 1121 0070 9DED050A 		vldr.32	s0, [sp, #20]
+ 1122 0074 20EE270A 		vmul.f32	s0, s0, s15
+ 1123 0078 8DED050A 		vstr.32	s0, [sp, #20]
+ 309:Src/foc.c     ****     y*=0.86f;   // sqrt(3)/2 没错
+ 1124              		.loc 1 309 5 is_stmt 1 view .LVU294
+ 1125              		.loc 1 309 6 is_stmt 0 view .LVU295
+ 1126 007c DDED040A 		vldr.32	s1, [sp, #16]
+ 1127 0080 60EEA70A 		vmul.f32	s1, s1, s15
+ 1128 0084 CDED040A 		vstr.32	s1, [sp, #16]
+ 310:Src/foc.c     ****     SVPWM_Normal_CalT1T2(x,y,area,&t1,&t2);
+ 1129              		.loc 1 310 5 is_stmt 1 view .LVU296
+ 1130 0088 06AA     		add	r2, sp, #24
+ 1131 008a 07A9     		add	r1, sp, #28
+ 1132 008c 3846     		mov	r0, r7
+ 1133 008e FFF7FEFF 		bl	SVPWM_Normal_CalT1T2
+ 1134              	.LVL85:
+ 311:Src/foc.c     ****     CCR_Dutys=get_ccr_duty(t1,t2,u1,u2);
+ 1135              		.loc 1 311 5 view .LVU297
+ 1136              		.loc 1 311 15 is_stmt 0 view .LVU298
+ 1137 0092 96E80F00 		ldm	r6, {r0, r1, r2, r3}
+ 1138 0096 8DE80F00 		stm	sp, {r0, r1, r2, r3}
+ 1139 009a 95E80F00 		ldm	r5, {r0, r1, r2, r3}
+ 1140 009e DDED060A 		vldr.32	s1, [sp, #24]
+ 1141 00a2 9DED070A 		vldr.32	s0, [sp, #28]
+ 1142 00a6 FFF7FEFF 		bl	get_ccr_duty
+ 1143              	.LVL86:
+ 1144 00aa 0B4B     		ldr	r3, .L59+20
+ 1145 00ac 83ED000A 		vstr.32	s0, [r3]
+ 1146 00b0 C3ED010A 		vstr.32	s1, [r3, #4]
+ 1147 00b4 83ED021A 		vstr.32	s2, [r3, #8]
+ 312:Src/foc.c     ****         
+ 313:Src/foc.c     ****  }...
+ 1148              		.loc 1 313 2 view .LVU299
+ 1149 00b8 11B0     		add	sp, sp, #68
+ 1150              	.LCFI23:
+ 1151              		.cfi_remember_state
+ 1152              		.cfi_def_cfa_offset 20
+ 1153              		@ sp needed
+ 1154 00ba F0BD     		pop	{r4, r5, r6, r7, pc}
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 27
 
 
- 1189 001a F7E7     		b	.L65
- 1190              	.L69:
- 214:Src/foc.c     ****     }
- 1191              		.loc 1 214 9 is_stmt 1 view .LVU310
- 1192 001c 064B     		ldr	r3, .L70+8
- 1193 001e 93ED000A 		vldr.32	s0, [r3]
- 1194 0022 D3ED010A 		vldr.32	s1, [r3, #4]
- 1195 0026 93ED021A 		vldr.32	s2, [r3, #8]
- 1196 002a FFF7FEFF 		bl	SVPWM_Step
- 1197              	.LVL78:
- 216:Src/foc.c     **** 
- 1198              		.loc 1 216 1 is_stmt 0 view .LVU311
- 1199 002e F1E7     		b	.L64
- 1200              	.L71:
- 1201              		.align	2
- 1202              	.L70:
- 1203 0030 00140040 		.word	1073746944
- 1204 0034 00040140 		.word	1073808384
- 1205 0038 00000000 		.word	.LANCHOR10
- 1206              		.cfi_endproc
- 1207              	.LFE171:
- 1209              		.section	.text.SVPWM_Normal,"ax",%progbits
- 1210              		.align	1
- 1211              		.global	SVPWM_Normal
- 1212              		.syntax unified
- 1213              		.thumb
- 1214              		.thumb_func
- 1215              		.fpu fpv4-sp-d16
- 1217              	SVPWM_Normal:
- 1218              	.LVL79:
- 1219              	.LFB174:
- 272:Src/foc.c     **** 
- 273:Src/foc.c     **** void SVPWM_Normal(float alpha,float beta){
- 1220              		.loc 1 273 42 is_stmt 1 view -0
- 1221              		.cfi_startproc
- 1222              		@ args = 0, pretend = 0, frame = 0
- 1223              		@ frame_needed = 0, uses_anonymous_args = 0
- 1224              		@ link register save eliminated.
- 274:Src/foc.c     ****     // 幅度不能超过sqrt(3)/2
- 275:Src/foc.c     **** }
- 1225              		.loc 1 275 1 view .LVU313
- 1226 0000 7047     		bx	lr
- 1227              		.cfi_endproc
- 1228              	.LFE174:
- 1230              		.section	.text.HAL_ADC_ConvCpltCallback,"ax",%progbits
- 1231              		.align	1
- 1232              		.global	HAL_ADC_ConvCpltCallback
- 1233              		.syntax unified
- 1234              		.thumb
- 1235              		.thumb_func
- 1236              		.fpu fpv4-sp-d16
- 1238              	HAL_ADC_ConvCpltCallback:
- 1239              	.LVL80:
- 1240              	.LFB175:
- 276:Src/foc.c     **** 
- 277:Src/foc.c     ****  void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
- 1241              		.loc 1 277 56 view -0
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 28
+ 1155              	.LVL87:
+ 1156              	.L58:
+ 1157              	.LCFI24:
+ 1158              		.cfi_restore_state
+ 297:Src/foc.c     ****         sub+=360;
+ 1159              		.loc 1 297 9 is_stmt 1 view .LVU300
+ 297:Src/foc.c     ****         sub+=360;
+ 1160              		.loc 1 297 12 is_stmt 0 view .LVU301
+ 1161 00bc 03F5B473 		add	r3, r3, #360
+ 1162              	.LVL88:
+ 297:Src/foc.c     ****         sub+=360;
+ 1163              		.loc 1 297 12 view .LVU302
+ 1164 00c0 B4E7     		b	.L56
+ 1165              	.L60:
+ 1166 00c2 00BF     		.align	2
+ 1167              	.L59:
+ 1168 00c4 00000000 		.word	Position_Degree
+ 1169 00c8 0000B443 		.word	1135869952
+ 1170 00cc 00000000 		.word	.LANCHOR9
+ 1171 00d0 B7600BB6 		.word	-1240768329
+ 1172 00d4 F6285C3F 		.word	1063004406
+ 1173 00d8 00000000 		.word	.LANCHOR10
+ 1174              		.cfi_endproc
+ 1175              	.LFE178:
+ 1177              		.section	.text.Theta_Handler,"ax",%progbits
+ 1178              		.align	1
+ 1179              		.global	Theta_Handler
+ 1180              		.syntax unified
+ 1181              		.thumb
+ 1182              		.thumb_func
+ 1183              		.fpu fpv4-sp-d16
+ 1185              	Theta_Handler:
+ 1186              	.LFB176:
+ 253:Src/foc.c     **** void Theta_Handler(){
+ 1187              		.loc 1 253 21 is_stmt 1 view -0
+ 1188              		.cfi_startproc
+ 1189              		@ args = 0, pretend = 0, frame = 0
+ 1190              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1191 0000 08B5     		push	{r3, lr}
+ 1192              	.LCFI25:
+ 1193              		.cfi_def_cfa_offset 8
+ 1194              		.cfi_offset 3, -8
+ 1195              		.cfi_offset 14, -4
+ 254:Src/foc.c     ****     Uvect_Mos u1,u2;
+ 1196              		.loc 1 254 5 view .LVU304
+ 255:Src/foc.c     ****     float t1,t2;
+ 1197              		.loc 1 255 5 view .LVU305
+ 256:Src/foc.c     ****     float x,y;
+ 1198              		.loc 1 256 5 view .LVU306
+ 257:Src/foc.c     ****     float dealt=RPS*dealtK;
+ 1199              		.loc 1 257 5 view .LVU307
+ 1200              	.LVL89:
+ 259:Src/foc.c     ****     Position_Degree=Get_Position_Rad_Dgree(1);
+ 1201              		.loc 1 259 5 view .LVU308
+ 259:Src/foc.c     ****     Position_Degree=Get_Position_Rad_Dgree(1);
+ 1202              		.loc 1 259 21 is_stmt 0 view .LVU309
+ 1203 0002 0120     		movs	r0, #1
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 28
 
 
- 1242              		.cfi_startproc
- 1243              		@ args = 0, pretend = 0, frame = 0
- 1244              		@ frame_needed = 0, uses_anonymous_args = 0
- 1245              		@ link register save eliminated.
- 278:Src/foc.c     ****      if(hadc->Instance==ADC1){
- 1246              		.loc 1 278 6 view .LVU315
- 279:Src/foc.c     **** 
- 280:Src/foc.c     ****      }else if(hadc->Instance==ADC2){
- 281:Src/foc.c     ****          
- 282:Src/foc.c     ****      }
- 1247              		.loc 1 282 6 view .LVU316
- 283:Src/foc.c     ****  }...
- 1248              		.loc 1 283 2 is_stmt 0 view .LVU317
- 1249 0000 7047     		bx	lr
- 1250              		.cfi_endproc
- 1251              	.LFE175:
- 1253              		.global	RPS
- 1254              		.global	CCR_Dutys
- 1255              		.global	Uvects
- 1256              		.global	U7
- 1257              		.global	U5
- 1258              		.global	U1
- 1259              		.global	U3
- 1260              		.global	U2
- 1261              		.global	U6
- 1262              		.global	U4
- 1263              		.global	U0
- 1264              		.comm	ADC_Values_Raw2,8,4
- 1265              		.comm	ADC_Values_Raw,8,4
- 1266              		.section	.bss.CCR_Dutys,"aw",%nobits
- 1267              		.align	2
- 1268              		.set	.LANCHOR10,. + 0
- 1271              	CCR_Dutys:
- 1272 0000 00000000 		.space	12
- 1272      00000000 
- 1272      00000000 
- 1273              		.section	.bss.U0,"aw",%nobits
- 1274              		.align	2
- 1277              	U0:
- 1278 0000 00000000 		.space	16
- 1278      00000000 
- 1278      00000000 
- 1278      00000000 
- 1279              		.section	.bss.theta,"aw",%nobits
+ 1204 0004 FFF7FEFF 		bl	Get_Position_Rad_Dgree
+ 1205              	.LVL90:
+ 259:Src/foc.c     ****     Position_Degree=Get_Position_Rad_Dgree(1);
+ 1206              		.loc 1 259 20 view .LVU310
+ 1207 0008 024B     		ldr	r3, .L63
+ 1208 000a 83ED000A 		vstr.32	s0, [r3]
+ 260:Src/foc.c     ****     Foc();
+ 1209              		.loc 1 260 5 is_stmt 1 view .LVU311
+ 1210 000e FFF7FEFF 		bl	Foc
+ 1211              	.LVL91:
+ 276:Src/foc.c     **** }
+ 1212              		.loc 1 276 1 is_stmt 0 view .LVU312
+ 1213 0012 08BD     		pop	{r3, pc}
+ 1214              	.L64:
+ 1215              		.align	2
+ 1216              	.L63:
+ 1217 0014 00000000 		.word	Position_Degree
+ 1218              		.cfi_endproc
+ 1219              	.LFE176:
+ 1221              		.section	.text.HAL_TIM_PeriodElapsedCallback,"ax",%progbits
+ 1222              		.align	1
+ 1223              		.global	HAL_TIM_PeriodElapsedCallback
+ 1224              		.syntax unified
+ 1225              		.thumb
+ 1226              		.thumb_func
+ 1227              		.fpu fpv4-sp-d16
+ 1229              	HAL_TIM_PeriodElapsedCallback:
+ 1230              	.LVL92:
+ 1231              	.LFB174:
+ 207:Src/foc.c     **** void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+ 1232              		.loc 1 207 60 is_stmt 1 view -0
+ 1233              		.cfi_startproc
+ 1234              		@ args = 0, pretend = 0, frame = 0
+ 1235              		@ frame_needed = 0, uses_anonymous_args = 0
+ 207:Src/foc.c     **** void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+ 1236              		.loc 1 207 60 is_stmt 0 view .LVU314
+ 1237 0000 10B5     		push	{r4, lr}
+ 1238              	.LCFI26:
+ 1239              		.cfi_def_cfa_offset 8
+ 1240              		.cfi_offset 4, -8
+ 1241              		.cfi_offset 14, -4
+ 1242 0002 0446     		mov	r4, r0
+ 209:Src/foc.c     ****     if(htim->Instance==TIM7){
+ 1243              		.loc 1 209 5 is_stmt 1 view .LVU315
+ 209:Src/foc.c     ****     if(htim->Instance==TIM7){
+ 1244              		.loc 1 209 12 is_stmt 0 view .LVU316
+ 1245 0004 0268     		ldr	r2, [r0]
+ 209:Src/foc.c     ****     if(htim->Instance==TIM7){
+ 1246              		.loc 1 209 7 view .LVU317
+ 1247 0006 0A4B     		ldr	r3, .L71
+ 1248 0008 9A42     		cmp	r2, r3
+ 1249 000a 04D0     		beq	.L69
+ 1250              	.LVL93:
+ 1251              	.L66:
+ 212:Src/foc.c     ****     if(htim->Instance==TIM8){
+ 1252              		.loc 1 212 5 is_stmt 1 view .LVU318
+ 212:Src/foc.c     ****     if(htim->Instance==TIM8){
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 29
+
+
+ 1253              		.loc 1 212 12 is_stmt 0 view .LVU319
+ 1254 000c 2268     		ldr	r2, [r4]
+ 212:Src/foc.c     ****     if(htim->Instance==TIM8){
+ 1255              		.loc 1 212 7 view .LVU320
+ 1256 000e 094B     		ldr	r3, .L71+4
+ 1257 0010 9A42     		cmp	r2, r3
+ 1258 0012 03D0     		beq	.L70
+ 1259              	.L65:
+ 216:Src/foc.c     **** }
+ 1260              		.loc 1 216 1 view .LVU321
+ 1261 0014 10BD     		pop	{r4, pc}
+ 1262              	.LVL94:
+ 1263              	.L69:
+ 210:Src/foc.c     ****         Theta_Handler();
+ 1264              		.loc 1 210 9 is_stmt 1 view .LVU322
+ 1265 0016 FFF7FEFF 		bl	Theta_Handler
+ 1266              	.LVL95:
+ 210:Src/foc.c     ****         Theta_Handler();
+ 1267              		.loc 1 210 9 is_stmt 0 view .LVU323
+ 1268 001a F7E7     		b	.L66
+ 1269              	.L70:
+ 214:Src/foc.c     ****         SVPWM_Step(CCR_Dutys);
+ 1270              		.loc 1 214 9 is_stmt 1 view .LVU324
+ 1271 001c 064B     		ldr	r3, .L71+8
+ 1272 001e 93ED000A 		vldr.32	s0, [r3]
+ 1273 0022 D3ED010A 		vldr.32	s1, [r3, #4]
+ 1274 0026 93ED021A 		vldr.32	s2, [r3, #8]
+ 1275 002a FFF7FEFF 		bl	SVPWM_Step
+ 1276              	.LVL96:
+ 216:Src/foc.c     **** }
+ 1277              		.loc 1 216 1 is_stmt 0 view .LVU325
+ 1278 002e F1E7     		b	.L65
+ 1279              	.L72:
  1280              		.align	2
- 1281              		.set	.LANCHOR8,. + 0
- 1284              	theta:
- 1285 0000 00000000 		.space	4
- 1286              		.section	.data.RPS,"aw"
- 1287              		.align	2
- 1288              		.set	.LANCHOR9,. + 0
- 1291              	RPS:
- 1292 0000 0000C040 		.word	1086324736
- 1293              		.section	.data.U1,"aw"
- 1294              		.align	2
- 1295              		.set	.LANCHOR5,. + 0
- 1298              	U1:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 29
+ 1281              	.L71:
+ 1282 0030 00140040 		.word	1073746944
+ 1283 0034 00040140 		.word	1073808384
+ 1284 0038 00000000 		.word	.LANCHOR10
+ 1285              		.cfi_endproc
+ 1286              	.LFE174:
+ 1288              		.global	Position_Offset
+ 1289              		.comm	Position_Degree,4,4
+ 1290              		.global	RPS
+ 1291              		.global	CCR_Dutys
+ 1292              		.global	Uvects
+ 1293              		.global	U7
+ 1294              		.global	U5
+ 1295              		.global	U1
+ 1296              		.global	U3
+ 1297              		.global	U2
+ 1298              		.global	U6
+ 1299              		.global	U4
+ 1300              		.global	U0
+ 1301              		.comm	ADC_Values_Raw2,8,4
+ 1302              		.comm	ADC_Values_Raw,8,4
+ 1303              		.section	.bss.CCR_Dutys,"aw",%nobits
+ 1304              		.align	2
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 30
 
 
- 1299 0000 00       		.byte	0
- 1300 0001 00       		.byte	0
- 1301 0002 01       		.byte	1
- 1302 0003 00       		.space	1
- 1303 0004 920A8640 		.word	1082526354
- 1304 0008 00000000 		.space	8
- 1304      00000000 
- 1305              		.section	.data.U2,"aw"
- 1306              		.align	2
- 1307              		.set	.LANCHOR3,. + 0
- 1310              	U2:
- 1311 0000 00       		.byte	0
- 1312 0001 01       		.byte	1
- 1313 0002 00       		.byte	0
- 1314 0003 00       		.space	1
- 1315 0004 920A0640 		.word	1074137746
- 1316 0008 00000000 		.space	8
+ 1305              		.set	.LANCHOR10,. + 0
+ 1308              	CCR_Dutys:
+ 1309 0000 00000000 		.space	12
+ 1309      00000000 
+ 1309      00000000 
+ 1310              		.section	.bss.U0,"aw",%nobits
+ 1311              		.align	2
+ 1312              		.set	.LANCHOR8,. + 0
+ 1315              	U0:
+ 1316 0000 00000000 		.space	16
  1316      00000000 
- 1317              		.section	.data.U3,"aw"
+ 1316      00000000 
+ 1316      00000000 
+ 1317              		.section	.data.Position_Offset,"aw"
  1318              		.align	2
- 1319              		.set	.LANCHOR4,. + 0
- 1322              	U3:
- 1323 0000 00       		.byte	0
- 1324 0001 01       		.byte	1
- 1325 0002 01       		.byte	1
- 1326 0003 00       		.space	1
- 1327 0004 DB0F4940 		.word	1078530011
- 1328 0008 00000000 		.space	8
- 1328      00000000 
- 1329              		.section	.data.U4,"aw"
- 1330              		.align	2
- 1331              		.set	.LANCHOR1,. + 0
- 1334              	U4:
- 1335 0000 01       		.byte	1
- 1336 0001 00       		.byte	0
- 1337 0002 00       		.byte	0
- 1338 0003 00       		.space	1
- 1339 0004 00000000 		.word	0
- 1340 0008 00000000 		.space	8
- 1340      00000000 
- 1341              		.section	.data.U5,"aw"
- 1342              		.align	2
- 1343              		.set	.LANCHOR6,. + 0
- 1346              	U5:
- 1347 0000 01       		.byte	1
- 1348 0001 00       		.byte	0
- 1349 0002 01       		.byte	1
- 1350 0003 00       		.space	1
- 1351 0004 368DA740 		.word	1084722486
- 1352 0008 00000000 		.space	8
- 1352      00000000 
- 1353              		.section	.data.U6,"aw"
- 1354              		.align	2
- 1355              		.set	.LANCHOR2,. + 0
- 1358              	U6:
- 1359 0000 01       		.byte	1
- 1360 0001 01       		.byte	1
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 30
+ 1319              		.set	.LANCHOR9,. + 0
+ 1322              	Position_Offset:
+ 1323 0000 20CB5743 		.word	1129827104
+ 1324              		.section	.data.RPS,"aw"
+ 1325              		.align	2
+ 1328              	RPS:
+ 1329 0000 0000C040 		.word	1086324736
+ 1330              		.section	.data.U1,"aw"
+ 1331              		.align	2
+ 1332              		.set	.LANCHOR5,. + 0
+ 1335              	U1:
+ 1336 0000 00       		.byte	0
+ 1337 0001 00       		.byte	0
+ 1338 0002 01       		.byte	1
+ 1339 0003 00       		.space	1
+ 1340 0004 920A8640 		.word	1082526354
+ 1341 0008 00000000 		.space	8
+ 1341      00000000 
+ 1342              		.section	.data.U2,"aw"
+ 1343              		.align	2
+ 1344              		.set	.LANCHOR3,. + 0
+ 1347              	U2:
+ 1348 0000 00       		.byte	0
+ 1349 0001 01       		.byte	1
+ 1350 0002 00       		.byte	0
+ 1351 0003 00       		.space	1
+ 1352 0004 920A0640 		.word	1074137746
+ 1353 0008 00000000 		.space	8
+ 1353      00000000 
+ 1354              		.section	.data.U3,"aw"
+ 1355              		.align	2
+ 1356              		.set	.LANCHOR4,. + 0
+ 1359              	U3:
+ 1360 0000 00       		.byte	0
+ 1361 0001 01       		.byte	1
+ 1362 0002 01       		.byte	1
+ 1363 0003 00       		.space	1
+ 1364 0004 DB0F4940 		.word	1078530011
+ 1365 0008 00000000 		.space	8
+ 1365      00000000 
+ 1366              		.section	.data.U4,"aw"
+ 1367              		.align	2
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 31
 
 
- 1361 0002 00       		.byte	0
- 1362 0003 00       		.space	1
- 1363 0004 920A863F 		.word	1065749138
- 1364 0008 00000000 		.space	8
- 1364      00000000 
- 1365              		.section	.data.U7,"aw"
- 1366              		.align	2
- 1367              		.set	.LANCHOR7,. + 0
- 1370              	U7:
- 1371 0000 01       		.byte	1
- 1372 0001 01       		.byte	1
- 1373 0002 01       		.byte	1
- 1374 0003 00       		.space	1
- 1375 0004 00000000 		.word	0
- 1376 0008 00000000 		.space	8
- 1376      00000000 
- 1377              		.section	.data.Uvects,"aw"
- 1378              		.align	2
- 1379              		.set	.LANCHOR0,. + 0
- 1382              	Uvects:
- 1383 0000 00000000 		.word	U1
- 1384 0004 00000000 		.word	U2
- 1385 0008 00000000 		.word	U3
- 1386 000c 00000000 		.word	U4
- 1387 0010 00000000 		.word	U5
- 1388 0014 00000000 		.word	U6
- 1389              		.text
- 1390              	.Letext0:
- 1391              		.file 2 "c:\\arm_gcc\\arm-none-eabi\\include\\machine\\_default_types.h"
- 1392              		.file 3 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_stdint.h"
- 1393              		.file 4 "Inc/foc.h"
- 1394              		.file 5 "Drivers/CMSIS/Include/core_cm4.h"
- 1395              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 1396              		.file 7 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
- 1397              		.file 8 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
- 1398              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 1399              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 1400              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h"
- 1401              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
- 1402              		.file 13 "Inc/tim.h"
- 1403              		.file 14 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\lock.h"
- 1404              		.file 15 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_types.h"
- 1405              		.file 16 "c:\\arm_gcc\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h"
- 1406              		.file 17 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\reent.h"
- 1407              		.file 18 "c:\\arm_gcc\\arm-none-eabi\\include\\math.h"
- 1408              		.file 19 "Inc/adc.h"
- 1409              		.file 20 "Drivers/CMSIS/Include/arm_math.h"
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 31
+ 1368              		.set	.LANCHOR1,. + 0
+ 1371              	U4:
+ 1372 0000 01       		.byte	1
+ 1373 0001 00       		.byte	0
+ 1374 0002 00       		.byte	0
+ 1375 0003 00       		.space	1
+ 1376 0004 00000000 		.word	0
+ 1377 0008 00000000 		.space	8
+ 1377      00000000 
+ 1378              		.section	.data.U5,"aw"
+ 1379              		.align	2
+ 1380              		.set	.LANCHOR6,. + 0
+ 1383              	U5:
+ 1384 0000 01       		.byte	1
+ 1385 0001 00       		.byte	0
+ 1386 0002 01       		.byte	1
+ 1387 0003 00       		.space	1
+ 1388 0004 368DA740 		.word	1084722486
+ 1389 0008 00000000 		.space	8
+ 1389      00000000 
+ 1390              		.section	.data.U6,"aw"
+ 1391              		.align	2
+ 1392              		.set	.LANCHOR2,. + 0
+ 1395              	U6:
+ 1396 0000 01       		.byte	1
+ 1397 0001 01       		.byte	1
+ 1398 0002 00       		.byte	0
+ 1399 0003 00       		.space	1
+ 1400 0004 920A863F 		.word	1065749138
+ 1401 0008 00000000 		.space	8
+ 1401      00000000 
+ 1402              		.section	.data.U7,"aw"
+ 1403              		.align	2
+ 1404              		.set	.LANCHOR7,. + 0
+ 1407              	U7:
+ 1408 0000 01       		.byte	1
+ 1409 0001 01       		.byte	1
+ 1410 0002 01       		.byte	1
+ 1411 0003 00       		.space	1
+ 1412 0004 00000000 		.word	0
+ 1413 0008 00000000 		.space	8
+ 1413      00000000 
+ 1414              		.section	.data.Uvects,"aw"
+ 1415              		.align	2
+ 1416              		.set	.LANCHOR0,. + 0
+ 1419              	Uvects:
+ 1420 0000 00000000 		.word	U1
+ 1421 0004 00000000 		.word	U2
+ 1422 0008 00000000 		.word	U3
+ 1423 000c 00000000 		.word	U4
+ 1424 0010 00000000 		.word	U5
+ 1425 0014 00000000 		.word	U6
+ 1426              		.text
+ 1427              	.Letext0:
+ 1428              		.file 2 "c:\\arm_gcc\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 1429              		.file 3 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 1430              		.file 4 "Inc/foc.h"
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 32
+
+
+ 1431              		.file 5 "Drivers/CMSIS/Include/core_cm4.h"
+ 1432              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 1433              		.file 7 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 1434              		.file 8 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
+ 1435              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 1436              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 1437              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h"
+ 1438              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 1439              		.file 13 "Inc/tim.h"
+ 1440              		.file 14 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\lock.h"
+ 1441              		.file 15 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_types.h"
+ 1442              		.file 16 "c:\\arm_gcc\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h"
+ 1443              		.file 17 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\reent.h"
+ 1444              		.file 18 "c:\\arm_gcc\\arm-none-eabi\\include\\math.h"
+ 1445              		.file 19 "Inc/adc.h"
+ 1446              		.file 20 "c:\\arm_gcc\\arm-none-eabi\\include\\stdlib.h"
+ 1447              		.file 21 "mylib/uart_ext.h"
+ 1448              		.file 22 "Drivers/CMSIS/Include/arm_math.h"
+ 1449              		.file 23 "mylib/as5047.h"
+ 1450              		.file 24 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 1451              		.file 25 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h"
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 33
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 foc.c
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:18     .text.UVects_Init:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:26     .text.UVects_Init:00000000 UVects_Init
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:103    .text.UVects_Init:0000003c $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:108    .text.Foc_Init:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:115    .text.Foc_Init:00000000 Foc_Init
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:165    .text.Foc_Init:0000002c $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:18     .text.UVects_Init:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:26     .text.UVects_Init:00000000 UVects_Init
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:103    .text.UVects_Init:0000003c $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:108    .text.Foc_Init:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:115    .text.Foc_Init:00000000 Foc_Init
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:196    .text.Foc_Init:00000060 $d
                             *COM*:00000008 ADC_Values_Raw2
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:176    .text.get_area:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:183    .text.get_area:00000000 get_area
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:206    .text.get_area:00000010 $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:211    .text.get_area_u:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:218    .text.get_area_u:00000000 get_area_u
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:242    .text.get_area_u:00000010 $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:248    .text.get_area_u:00000016 $t
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:360    .text.get_area_u:00000084 $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:370    .text.get_t:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:377    .text.get_t:00000000 get_t
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:495    .text.get_t:00000098 $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:500    .text.get_ccr_duty:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:507    .text.get_ccr_duty:00000000 get_ccr_duty
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:639    .text.get_ccr_duty:000000f0 $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:644    .text.svpwm:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:651    .text.svpwm:00000000 svpwm
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:764    .text.svpwm:000000c8 $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:772    .text.SVPWM_Step:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:779    .text.SVPWM_Step:00000000 SVPWM_Step
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:831    .text.SVPWM_Step:00000058 $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:836    .text.SVPWM_Normal_CalT1T2:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:843    .text.SVPWM_Normal_CalT1T2:00000000 SVPWM_Normal_CalT1T2
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:860    .text.SVPWM_Normal_CalT1T2:0000000a $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:866    .text.SVPWM_Normal_CalT1T2:00000010 $t
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:990    .text.SVPWM_Normal_CalT1T2:000000c0 $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:998    .text.Theta_Handler:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1005   .text.Theta_Handler:00000000 Theta_Handler
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1132   .text.Theta_Handler:000000dc $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1143   .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1150   .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1203   .text.HAL_TIM_PeriodElapsedCallback:00000030 $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1210   .text.SVPWM_Normal:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1217   .text.SVPWM_Normal:00000000 SVPWM_Normal
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1231   .text.HAL_ADC_ConvCpltCallback:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1238   .text.HAL_ADC_ConvCpltCallback:00000000 HAL_ADC_ConvCpltCallback
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1291   .data.RPS:00000000 RPS
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1271   .bss.CCR_Dutys:00000000 CCR_Dutys
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1382   .data.Uvects:00000000 Uvects
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1370   .data.U7:00000000 U7
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1346   .data.U5:00000000 U5
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1298   .data.U1:00000000 U1
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1322   .data.U3:00000000 U3
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1310   .data.U2:00000000 U2
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1358   .data.U6:00000000 U6
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1334   .data.U4:00000000 U4
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1277   .bss.U0:00000000 U0
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:207    .text.get_area:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:214    .text.get_area:00000000 get_area
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:237    .text.get_area:00000010 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:242    .text.get_area_u:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:249    .text.get_area_u:00000000 get_area_u
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:273    .text.get_area_u:00000010 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:279    .text.get_area_u:00000016 $t
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:391    .text.get_area_u:00000084 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:401    .text.get_t:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:408    .text.get_t:00000000 get_t
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:526    .text.get_t:00000098 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:531    .text.get_ccr_duty:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:538    .text.get_ccr_duty:00000000 get_ccr_duty
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:670    .text.get_ccr_duty:000000f0 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:675    .text.SVPWM_Step:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:682    .text.SVPWM_Step:00000000 SVPWM_Step
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:734    .text.SVPWM_Step:00000058 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:740    .rodata.Set_to_U4.str1.4:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:744    .text.Set_to_U4:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:751    .text.Set_to_U4:00000000 Set_to_U4
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:830    .text.Set_to_U4:0000006c $d
+                            *COM*:00000004 Position_Degree
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:838    .text.SVPWM_Normal_CalT1T2:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:845    .text.SVPWM_Normal_CalT1T2:00000000 SVPWM_Normal_CalT1T2
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:862    .text.SVPWM_Normal_CalT1T2:0000000a $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:868    .text.SVPWM_Normal_CalT1T2:00000010 $t
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:992    .text.SVPWM_Normal_CalT1T2:000000c0 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1000   .text.HAL_ADC_ConvCpltCallback:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1007   .text.HAL_ADC_ConvCpltCallback:00000000 HAL_ADC_ConvCpltCallback
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1023   .text.Foc:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1030   .text.Foc:00000000 Foc
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1168   .text.Foc:000000c4 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1178   .text.Theta_Handler:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1185   .text.Theta_Handler:00000000 Theta_Handler
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1217   .text.Theta_Handler:00000014 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1222   .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1229   .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1282   .text.HAL_TIM_PeriodElapsedCallback:00000030 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1322   .data.Position_Offset:00000000 Position_Offset
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1328   .data.RPS:00000000 RPS
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1308   .bss.CCR_Dutys:00000000 CCR_Dutys
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1419   .data.Uvects:00000000 Uvects
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1407   .data.U7:00000000 U7
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1383   .data.U5:00000000 U5
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1335   .data.U1:00000000 U1
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1359   .data.U3:00000000 U3
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1347   .data.U2:00000000 U2
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1395   .data.U6:00000000 U6
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s 			page 34
+
+
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1371   .data.U4:00000000 U4
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1315   .bss.U0:00000000 U0
                             *COM*:00000008 ADC_Values_Raw
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1267   .bss.CCR_Dutys:00000000 $d
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s 			page 32
-
-
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1274   .bss.U0:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1280   .bss.theta:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1284   .bss.theta:00000000 theta
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1287   .data.RPS:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1294   .data.U1:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1306   .data.U2:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1318   .data.U3:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1330   .data.U4:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1342   .data.U5:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1354   .data.U6:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1366   .data.U7:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\cc9UWIgi.s:1378   .data.Uvects:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1304   .bss.CCR_Dutys:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1311   .bss.U0:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1318   .data.Position_Offset:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1325   .data.RPS:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1331   .data.U1:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1343   .data.U2:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1355   .data.U3:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1367   .data.U4:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1379   .data.U5:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1391   .data.U6:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1403   .data.U7:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccZJwfhh.s:1415   .data.Uvects:00000000 $d
 
 UNDEFINED SYMBOLS
 cosf
 sinf
+HAL_TIM_PWM_Start
+HAL_TIMEx_PWMN_Start
 HAL_TIM_Base_Start_IT
 HAL_ADC_Start_DMA
+htim8
 htim7
 hadc2
-htim8
 arm_sin_cos_f32
+__aeabi_f2d
+HAL_Delay
+uprintf
+Get_Position_Rad_Dgree

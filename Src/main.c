@@ -31,6 +31,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "foc.h"
+#include "as5047.h"
+#include "uart_ext.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -106,10 +108,10 @@ int main(void)
   MX_TIM7_Init();
   MX_ADC2_Init();
   /* USER CODE BEGIN 2 */
-
+  debug_uart_init(&huart3,DMA,DMA);
   Foc_Init(1);
   Init_OK=1;
-
+  uprintf("hello,world!\r\n");
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -117,6 +119,9 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+    if(buffer_rx_OK){
+      UART_Command_Analize_And_Call();
+    }
       if(ms_2_flag){
         ms_2_flag=0;
         /*
@@ -129,7 +134,7 @@ int main(void)
         HAL_ADC_Stop(&hadc1);
         HAL_ADC_Stop(&hadc2);
         */
-        send_wave(ADC_Values_Raw[0],ADC_Values_Raw[1],ADC_Values_Raw2[0],ADC_Values_Raw2[1]);
+        //send_wave(ADC_Values_Raw[0],ADC_Values_Raw[1],ADC_Values_Raw2[0],Position_Degree);
       }
     /* USER CODE BEGIN 3 */
   }

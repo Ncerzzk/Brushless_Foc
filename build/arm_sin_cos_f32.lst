@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s 			page 1
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s 			page 1
   27:Src/arm_sin_cos_f32.c **** * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
   28:Src/arm_sin_cos_f32.c **** * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
   29:Src/arm_sin_cos_f32.c **** * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s 			page 2
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 2
 
 
   30:Src/arm_sin_cos_f32.c **** * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s 			page 1
   84:Src/arm_sin_cos_f32.c **** void arm_sin_cos_f32(
   85:Src/arm_sin_cos_f32.c ****   float32_t theta,
   86:Src/arm_sin_cos_f32.c ****   float32_t * pSinVal,
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s 			page 3
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 3
 
 
   87:Src/arm_sin_cos_f32.c ****   float32_t * pCosVal)
@@ -178,25 +178,25 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s 			page 1
   62              		.loc 1 108 13 is_stmt 0 view .LVU14
   63 0018 F8EEE77A 		vcvt.f32.s32	s15, s15
   64              	.LVL3:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s 			page 4
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 4
 
 
   65              		.loc 1 108 6 view .LVU15
-  66 001c 30EE670A 		vsub.f32	s0, s0, s15
+  66 001c 70EE677A 		vsub.f32	s15, s0, s15
   67              	.LVL4:
  109:Src/arm_sin_cos_f32.c **** 
  110:Src/arm_sin_cos_f32.c ****   /* Calculation of index of the table */
  111:Src/arm_sin_cos_f32.c ****   findex = (float32_t) FAST_MATH_TABLE_SIZE * in;
   68              		.loc 1 111 3 is_stmt 1 view .LVU16
   69              		.loc 1 111 10 is_stmt 0 view .LVU17
-  70 0020 DFED3F7A 		vldr.32	s15, .L7+4
-  71 0024 20EE270A 		vmul.f32	s0, s0, s15
+  70 0020 9FED3F0A 		vldr.32	s0, .L7+4
+  71 0024 67EE807A 		vmul.f32	s15, s15, s0
   72              	.LVL5:
  112:Src/arm_sin_cos_f32.c ****   indexS = ((uint16_t)findex) & 0x1ff;
   73              		.loc 1 112 3 is_stmt 1 view .LVU18
   74              		.loc 1 112 13 is_stmt 0 view .LVU19
-  75 0028 FCEEC07A 		vcvt.u32.f32	s15, s0
-  76 002c 17EE903A 		vmov	r3, s15	@ int
+  75 0028 BCEEE77A 		vcvt.u32.f32	s14, s15
+  76 002c 17EE103A 		vmov	r3, s14	@ int
   77              		.loc 1 112 10 view .LVU20
   78 0030 C3F30803 		ubfx	r3, r3, #0, #9
   79              	.LVL6:
@@ -212,10 +212,10 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s 			page 1
  116:Src/arm_sin_cos_f32.c ****   fract = findex - (float32_t) indexS;
   86              		.loc 1 116 3 is_stmt 1 view .LVU24
   87              		.loc 1 116 20 is_stmt 0 view .LVU25
-  88 003c 07EE903A 		vmov	s15, r3	@ int
-  89 0040 F8EE677A 		vcvt.f32.u32	s15, s15
+  88 003c 07EE103A 		vmov	s14, r3	@ int
+  89 0040 B8EE477A 		vcvt.f32.u32	s14, s14
   90              		.loc 1 116 9 view .LVU26
-  91 0044 30EE670A 		vsub.f32	s0, s0, s15
+  91 0044 77EEC77A 		vsub.f32	s15, s15, s14
   92              	.LVL8:
  117:Src/arm_sin_cos_f32.c **** 
  118:Src/arm_sin_cos_f32.c ****   /* Read two nearest values of input value from the cos & sin tables */
@@ -224,7 +224,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s 			page 1
   94              		.loc 1 119 6 is_stmt 0 view .LVU28
   95 0048 364C     		ldr	r4, .L7+8
   96 004a 04EB8205 		add	r5, r4, r2, lsl #2
-  97 004e D5ED006A 		vldr.32	s13, [r5]
+  97 004e 95ED006A 		vldr.32	s12, [r5]
   98              	.LVL9:
  120:Src/arm_sin_cos_f32.c ****   f2 = sinTable_f32[indexC+1];
   99              		.loc 1 120 3 is_stmt 1 view .LVU29
@@ -235,18 +235,18 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s 			page 1
  104 0054 04EB8202 		add	r2, r4, r2, lsl #2
  105              	.LVL11:
  106              		.loc 1 120 6 view .LVU32
- 107 0058 D2ED003A 		vldr.32	s7, [r2]
+ 107 0058 92ED003A 		vldr.32	s6, [r2]
  108              	.LVL12:
  121:Src/arm_sin_cos_f32.c ****   d1 = -sinTable_f32[indexS+0];
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s 			page 5
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 5
 
 
  109              		.loc 1 121 3 is_stmt 1 view .LVU33
  110              		.loc 1 121 21 is_stmt 0 view .LVU34
  111 005c 04EB8302 		add	r2, r4, r3, lsl #2
- 112 0060 D2ED004A 		vldr.32	s9, [r2]
+ 112 0060 92ED004A 		vldr.32	s8, [r2]
  113              		.loc 1 121 6 view .LVU35
- 114 0064 B1EE645A 		vneg.f32	s10, s9
+ 114 0064 F1EE444A 		vneg.f32	s9, s8
  115              	.LVL13:
  122:Src/arm_sin_cos_f32.c ****   d2 = -sinTable_f32[indexS+1];
  116              		.loc 1 122 3 is_stmt 1 view .LVU36
@@ -257,7 +257,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s 			page 1
  121 006a 04EB8303 		add	r3, r4, r3, lsl #2
  122              	.LVL15:
  123              		.loc 1 122 21 view .LVU39
- 124 006e 93ED007A 		vldr.32	s14, [r3]
+ 124 006e D3ED006A 		vldr.32	s13, [r3]
  125              	.LVL16:
  123:Src/arm_sin_cos_f32.c **** 
  124:Src/arm_sin_cos_f32.c ****   Dn = 0.0122718463030f; // delta between the two points (fixed), in this case 2*pi/FAST_MATH_TABLE
@@ -265,64 +265,64 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s 			page 1
  125:Src/arm_sin_cos_f32.c ****   Df = f2 - f1; // delta between the values of the functions
  127              		.loc 1 125 3 view .LVU41
  128              		.loc 1 125 6 is_stmt 0 view .LVU42
- 129 0072 33EEE66A 		vsub.f32	s12, s7, s13
+ 129 0072 73EE465A 		vsub.f32	s11, s6, s12
  130              	.LVL17:
  126:Src/arm_sin_cos_f32.c ****   temp = Dn*(d1 + d2) - 2*Df;
  131              		.loc 1 126 3 is_stmt 1 view .LVU43
  132              		.loc 1 126 12 is_stmt 0 view .LVU44
- 133 0076 75EE477A 		vsub.f32	s15, s10, s14
- 134 007a DFED2B5A 		vldr.32	s11, .L7+12
- 135 007e 67EEA57A 		vmul.f32	s15, s15, s11
+ 133 0076 34EEE67A 		vsub.f32	s14, s9, s13
+ 134 007a 9FED2B5A 		vldr.32	s10, .L7+12
+ 135 007e 27EE057A 		vmul.f32	s14, s14, s10
  136              		.loc 1 126 26 view .LVU45
- 137 0082 36EE064A 		vadd.f32	s8, s12, s12
+ 137 0082 75EEA53A 		vadd.f32	s7, s11, s11
  138              		.loc 1 126 8 view .LVU46
- 139 0086 77EEC47A 		vsub.f32	s15, s15, s8
+ 139 0086 37EE637A 		vsub.f32	s14, s14, s7
  140              	.LVL18:
  127:Src/arm_sin_cos_f32.c ****   temp = fract*temp + (3*Df - (d2 + 2*d1)*Dn);
  141              		.loc 1 127 3 is_stmt 1 view .LVU47
  142              		.loc 1 127 15 is_stmt 0 view .LVU48
- 143 008a 60EE277A 		vmul.f32	s15, s0, s15
+ 143 008a 27EE877A 		vmul.f32	s14, s15, s14
  144              	.LVL19:
  145              		.loc 1 127 25 view .LVU49
- 146 008e B0EE083A 		vmov.f32	s6, #3.0e+0
- 147 0092 26EE036A 		vmul.f32	s12, s12, s6
+ 146 008e F0EE082A 		vmov.f32	s5, #3.0e+0
+ 147 0092 65EEA25A 		vmul.f32	s11, s11, s5
  148              	.LVL20:
  149              		.loc 1 127 38 view .LVU50
- 150 0096 35EE054A 		vadd.f32	s8, s10, s10
+ 150 0096 74EEA43A 		vadd.f32	s7, s9, s9
  151              	.LVL21:
  152              		.loc 1 127 42 view .LVU51
- 153 009a 34EE474A 		vsub.f32	s8, s8, s14
- 154 009e 24EE254A 		vmul.f32	s8, s8, s11
+ 153 009a 73EEE63A 		vsub.f32	s7, s7, s13
+ 154 009e 63EE853A 		vmul.f32	s7, s7, s10
  155              		.loc 1 127 29 view .LVU52
- 156 00a2 36EE446A 		vsub.f32	s12, s12, s8
+ 156 00a2 75EEE35A 		vsub.f32	s11, s11, s7
  157              		.loc 1 127 8 view .LVU53
- 158 00a6 77EE867A 		vadd.f32	s15, s15, s12
+ 158 00a6 37EE257A 		vadd.f32	s14, s14, s11
  159              	.LVL22:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s 			page 6
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 6
 
 
  128:Src/arm_sin_cos_f32.c ****   temp = fract*temp + d1*Dn;
  160              		.loc 1 128 3 is_stmt 1 view .LVU54
  161              		.loc 1 128 15 is_stmt 0 view .LVU55
- 162 00aa 60EE277A 		vmul.f32	s15, s0, s15
+ 162 00aa 27EE877A 		vmul.f32	s14, s15, s14
  163              	.LVL23:
  164              		.loc 1 128 25 view .LVU56
- 165 00ae 25EE255A 		vmul.f32	s10, s10, s11
+ 165 00ae 64EE854A 		vmul.f32	s9, s9, s10
  166              	.LVL24:
  167              		.loc 1 128 8 view .LVU57
- 168 00b2 77EE857A 		vadd.f32	s15, s15, s10
+ 168 00b2 37EE247A 		vadd.f32	s14, s14, s9
  169              	.LVL25:
  129:Src/arm_sin_cos_f32.c **** 
  130:Src/arm_sin_cos_f32.c ****   /* Calculation of cosine value */
  131:Src/arm_sin_cos_f32.c ****   *pCosVal = fract*temp + f1;
  170              		.loc 1 131 3 is_stmt 1 view .LVU58
  171              		.loc 1 131 19 is_stmt 0 view .LVU59
- 172 00b6 60EE277A 		vmul.f32	s15, s0, s15
+ 172 00b6 27EE877A 		vmul.f32	s14, s15, s14
  173              	.LVL26:
  174              		.loc 1 131 25 view .LVU60
- 175 00ba 77EEA67A 		vadd.f32	s15, s15, s13
+ 175 00ba 37EE067A 		vadd.f32	s14, s14, s12
  176              		.loc 1 131 12 view .LVU61
- 177 00be C1ED007A 		vstr.32	s15, [r1]
+ 177 00be 81ED007A 		vstr.32	s14, [r1]
  132:Src/arm_sin_cos_f32.c ****   
  133:Src/arm_sin_cos_f32.c ****   /* Read two nearest values of input value from the cos & sin tables */
  134:Src/arm_sin_cos_f32.c ****   f1 = sinTable_f32[indexS+0];
@@ -338,65 +338,65 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s 			page 1
  139:Src/arm_sin_cos_f32.c ****   Df = f2 - f1; // delta between the values of the functions
  183              		.loc 1 139 3 view .LVU66
  184              		.loc 1 139 6 is_stmt 0 view .LVU67
- 185 00c2 37EE647A 		vsub.f32	s14, s14, s9
+ 185 00c2 76EEC46A 		vsub.f32	s13, s13, s8
  186              	.LVL28:
  140:Src/arm_sin_cos_f32.c ****   temp = Dn*(d1 + d2) - 2*Df;
  187              		.loc 1 140 3 is_stmt 1 view .LVU68
  188              		.loc 1 140 17 is_stmt 0 view .LVU69
- 189 00c6 76EEA37A 		vadd.f32	s15, s13, s7
+ 189 00c6 36EE037A 		vadd.f32	s14, s12, s6
  190              		.loc 1 140 12 view .LVU70
- 191 00ca 67EEA57A 		vmul.f32	s15, s15, s11
+ 191 00ca 27EE057A 		vmul.f32	s14, s14, s10
  192              		.loc 1 140 26 view .LVU71
- 193 00ce 37EE076A 		vadd.f32	s12, s14, s14
+ 193 00ce 76EEA65A 		vadd.f32	s11, s13, s13
  194              	.LVL29:
  195              		.loc 1 140 8 view .LVU72
- 196 00d2 77EEC67A 		vsub.f32	s15, s15, s12
+ 196 00d2 37EE657A 		vsub.f32	s14, s14, s11
  197              	.LVL30:
  141:Src/arm_sin_cos_f32.c ****   temp = fract*temp + (3*Df - (d2 + 2*d1)*Dn);
  198              		.loc 1 141 3 is_stmt 1 view .LVU73
  199              		.loc 1 141 15 is_stmt 0 view .LVU74
- 200 00d6 60EE277A 		vmul.f32	s15, s0, s15
+ 200 00d6 27EE877A 		vmul.f32	s14, s15, s14
  201              	.LVL31:
  202              		.loc 1 141 25 view .LVU75
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s 			page 7
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 7
 
 
- 203 00da 27EE037A 		vmul.f32	s14, s14, s6
+ 203 00da 66EEA26A 		vmul.f32	s13, s13, s5
  204              	.LVL32:
  205              		.loc 1 141 38 view .LVU76
- 206 00de 36EEA66A 		vadd.f32	s12, s13, s13
+ 206 00de 76EE065A 		vadd.f32	s11, s12, s12
  207              	.LVL33:
  208              		.loc 1 141 35 view .LVU77
- 209 00e2 36EE236A 		vadd.f32	s12, s12, s7
+ 209 00e2 75EE835A 		vadd.f32	s11, s11, s6
  210              		.loc 1 141 42 view .LVU78
- 211 00e6 26EE256A 		vmul.f32	s12, s12, s11
+ 211 00e6 65EE855A 		vmul.f32	s11, s11, s10
  212              		.loc 1 141 29 view .LVU79
- 213 00ea 37EE467A 		vsub.f32	s14, s14, s12
+ 213 00ea 76EEE56A 		vsub.f32	s13, s13, s11
  214              		.loc 1 141 8 view .LVU80
- 215 00ee 77EE877A 		vadd.f32	s15, s15, s14
+ 215 00ee 37EE267A 		vadd.f32	s14, s14, s13
  216              	.LVL34:
  142:Src/arm_sin_cos_f32.c ****   temp = fract*temp + d1*Dn;
  217              		.loc 1 142 3 is_stmt 1 view .LVU81
  218              		.loc 1 142 15 is_stmt 0 view .LVU82
- 219 00f2 60EE277A 		vmul.f32	s15, s0, s15
+ 219 00f2 27EE877A 		vmul.f32	s14, s15, s14
  220              	.LVL35:
  221              		.loc 1 142 25 view .LVU83
- 222 00f6 66EEA56A 		vmul.f32	s13, s13, s11
+ 222 00f6 26EE056A 		vmul.f32	s12, s12, s10
  223              	.LVL36:
  224              		.loc 1 142 8 view .LVU84
- 225 00fa 77EEA67A 		vadd.f32	s15, s15, s13
+ 225 00fa 37EE067A 		vadd.f32	s14, s14, s12
  226              	.LVL37:
  143:Src/arm_sin_cos_f32.c ****   
  144:Src/arm_sin_cos_f32.c ****   /* Calculation of sine value */
  145:Src/arm_sin_cos_f32.c ****   *pSinVal = fract*temp + f1;
  227              		.loc 1 145 3 is_stmt 1 view .LVU85
  228              		.loc 1 145 19 is_stmt 0 view .LVU86
- 229 00fe 20EE270A 		vmul.f32	s0, s0, s15
+ 229 00fe 67EE877A 		vmul.f32	s15, s15, s14
  230              	.LVL38:
  231              		.loc 1 145 25 view .LVU87
- 232 0102 34EE800A 		vadd.f32	s0, s9, s0
+ 232 0102 74EE277A 		vadd.f32	s15, s8, s15
  233              		.loc 1 145 12 view .LVU88
- 234 0106 80ED000A 		vstr.32	s0, [r0]
+ 234 0106 C0ED007A 		vstr.32	s15, [r0]
  146:Src/arm_sin_cos_f32.c **** }
  235              		.loc 1 146 1 view .LVU89
  236 010a 30BC     		pop	{r4, r5}
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s 			page 1
  250              		.loc 1 105 6 is_stmt 0 view .LVU92
  251 010e 17EE903A 		vmov	r3, s15	@ int
  252 0112 013B     		subs	r3, r3, #1
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s 			page 8
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 8
 
 
  253 0114 07EE903A 		vmov	s15, r3	@ int
@@ -439,21 +439,21 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s 			page 1
  268              	.Letext0:
  269              		.file 2 "c:\\arm_gcc\\arm-none-eabi\\include\\machine\\_default_types.h"
  270              		.file 3 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_stdint.h"
- 271              		.file 4 "c:\\arm_gcc\\lib\\gcc\\arm-none-eabi\\8.3.1\\include\\stddef.h"
+ 271              		.file 4 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\lock.h"
  272              		.file 5 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_types.h"
- 273              		.file 6 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\reent.h"
- 274              		.file 7 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\lock.h"
+ 273              		.file 6 "c:\\arm_gcc\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h"
+ 274              		.file 7 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\reent.h"
  275              		.file 8 "c:\\arm_gcc\\arm-none-eabi\\include\\math.h"
  276              		.file 9 "Drivers/CMSIS/Include/arm_math.h"
  277              		.file 10 "Inc/arm_common_tables.h"
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s 			page 9
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 arm_sin_cos_f32.c
-C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s:18     .text.arm_sin_cos_f32:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s:26     .text.arm_sin_cos_f32:00000000 arm_sin_cos_f32
-C:\Users\ncer\AppData\Local\Temp\cc20KAsj.s:260    .text.arm_sin_cos_f32:0000011c $d
+C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s:18     .text.arm_sin_cos_f32:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s:26     .text.arm_sin_cos_f32:00000000 arm_sin_cos_f32
+C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s:260    .text.arm_sin_cos_f32:0000011c $d
 
 UNDEFINED SYMBOLS
 sinTable_f32

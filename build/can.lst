@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s 			page 1
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccN9THwO.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s 			page 1
   28:Src/can.c     **** 
   29:Src/can.c     **** /* CAN1 init function */
   30:Src/can.c     **** void MX_CAN1_Init(void)
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s 			page 2
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccN9THwO.s 			page 2
 
 
   31:Src/can.c     **** {
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s 			page 1
   71 001c C376     		strb	r3, [r0, #27]
   43:Src/can.c     ****   hcan1.Init.ReceiveFifoLocked = DISABLE;
   72              		.loc 1 43 3 is_stmt 1 view .LVU21
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s 			page 3
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccN9THwO.s 			page 3
 
 
   73              		.loc 1 43 32 is_stmt 0 view .LVU22
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s 			page 1
  118              	.LCFI1:
  119              		.cfi_def_cfa_offset 4
  120              		.cfi_offset 14, -4
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s 			page 4
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccN9THwO.s 			page 4
 
 
  121 0002 89B0     		sub	sp, sp, #36
@@ -199,7 +199,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s 			page 1
  133              		.loc 1 56 15 is_stmt 0 view .LVU36
  134 0010 0268     		ldr	r2, [r0]
  135              		.loc 1 56 5 view .LVU37
- 136 0012 154B     		ldr	r3, .L11
+ 136 0012 164B     		ldr	r3, .L11
  137 0014 9A42     		cmp	r2, r3
  138 0016 02D0     		beq	.L10
  139              	.LVL3:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s 			page 1
  148              	.LVL4:
  149              	.L10:
  150              	.LCFI4:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s 			page 5
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccN9THwO.s 			page 5
 
 
  151              		.cfi_restore_state
@@ -247,127 +247,134 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s 			page 1
  153              	.LBB2:
   62:Src/can.c     ****   
  154              		.loc 1 62 5 view .LVU40
- 155 001e 0021     		movs	r1, #0
- 156 0020 0191     		str	r1, [sp, #4]
+ 155 001e 0022     		movs	r2, #0
+ 156 0020 0192     		str	r2, [sp, #4]
   62:Src/can.c     ****   
  157              		.loc 1 62 5 view .LVU41
  158 0022 03F5EA33 		add	r3, r3, #119808
- 159 0026 1A6C     		ldr	r2, [r3, #64]
- 160 0028 42F00072 		orr	r2, r2, #33554432
- 161 002c 1A64     		str	r2, [r3, #64]
+ 159 0026 196C     		ldr	r1, [r3, #64]
+ 160 0028 41F00071 		orr	r1, r1, #33554432
+ 161 002c 1964     		str	r1, [r3, #64]
   62:Src/can.c     ****   
  162              		.loc 1 62 5 view .LVU42
- 163 002e 1A6C     		ldr	r2, [r3, #64]
- 164 0030 02F00072 		and	r2, r2, #33554432
- 165 0034 0192     		str	r2, [sp, #4]
+ 163 002e 196C     		ldr	r1, [r3, #64]
+ 164 0030 01F00071 		and	r1, r1, #33554432
+ 165 0034 0191     		str	r1, [sp, #4]
   62:Src/can.c     ****   
  166              		.loc 1 62 5 view .LVU43
- 167 0036 019A     		ldr	r2, [sp, #4]
+ 167 0036 0199     		ldr	r1, [sp, #4]
  168              	.LBE2:
+  62:Src/can.c     ****   
+ 169              		.loc 1 62 5 view .LVU44
   64:Src/can.c     ****     /**CAN1 GPIO Configuration    
- 169              		.loc 1 64 5 view .LVU44
- 170              	.LBB3:
+ 170              		.loc 1 64 5 view .LVU45
+ 171              	.LBB3:
   64:Src/can.c     ****     /**CAN1 GPIO Configuration    
- 171              		.loc 1 64 5 view .LVU45
- 172 0038 0291     		str	r1, [sp, #8]
+ 172              		.loc 1 64 5 view .LVU46
+ 173 0038 0292     		str	r2, [sp, #8]
   64:Src/can.c     ****     /**CAN1 GPIO Configuration    
- 173              		.loc 1 64 5 view .LVU46
- 174 003a 1A6B     		ldr	r2, [r3, #48]
- 175 003c 42F00102 		orr	r2, r2, #1
- 176 0040 1A63     		str	r2, [r3, #48]
+ 174              		.loc 1 64 5 view .LVU47
+ 175 003a 196B     		ldr	r1, [r3, #48]
+ 176 003c 41F00101 		orr	r1, r1, #1
+ 177 0040 1963     		str	r1, [r3, #48]
   64:Src/can.c     ****     /**CAN1 GPIO Configuration    
- 177              		.loc 1 64 5 view .LVU47
- 178 0042 1B6B     		ldr	r3, [r3, #48]
- 179 0044 03F00103 		and	r3, r3, #1
- 180 0048 0293     		str	r3, [sp, #8]
+ 178              		.loc 1 64 5 view .LVU48
+ 179 0042 1B6B     		ldr	r3, [r3, #48]
+ 180 0044 03F00103 		and	r3, r3, #1
+ 181 0048 0293     		str	r3, [sp, #8]
   64:Src/can.c     ****     /**CAN1 GPIO Configuration    
- 181              		.loc 1 64 5 view .LVU48
- 182 004a 029B     		ldr	r3, [sp, #8]
- 183              	.LBE3:
+ 182              		.loc 1 64 5 view .LVU49
+ 183 004a 029B     		ldr	r3, [sp, #8]
+ 184              	.LBE3:
+  64:Src/can.c     ****     /**CAN1 GPIO Configuration    
+ 185              		.loc 1 64 5 view .LVU50
   69:Src/can.c     ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
- 184              		.loc 1 69 5 view .LVU49
+ 186              		.loc 1 69 5 view .LVU51
   69:Src/can.c     ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
- 185              		.loc 1 69 25 is_stmt 0 view .LVU50
- 186 004c 4FF4C053 		mov	r3, #6144
- 187 0050 0393     		str	r3, [sp, #12]
+ 187              		.loc 1 69 25 is_stmt 0 view .LVU52
+ 188 004c 4FF4C053 		mov	r3, #6144
+ 189 0050 0393     		str	r3, [sp, #12]
   70:Src/can.c     ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
- 188              		.loc 1 70 5 is_stmt 1 view .LVU51
+ 190              		.loc 1 70 5 is_stmt 1 view .LVU53
   70:Src/can.c     ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
- 189              		.loc 1 70 26 is_stmt 0 view .LVU52
- 190 0052 0223     		movs	r3, #2
- 191 0054 0493     		str	r3, [sp, #16]
+ 191              		.loc 1 70 26 is_stmt 0 view .LVU54
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccN9THwO.s 			page 6
+
+
+ 192 0052 0223     		movs	r3, #2
+ 193 0054 0493     		str	r3, [sp, #16]
   71:Src/can.c     ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
- 192              		.loc 1 71 5 is_stmt 1 view .LVU53
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s 			page 6
-
-
+ 194              		.loc 1 71 5 is_stmt 1 view .LVU55
+  71:Src/can.c     ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+ 195              		.loc 1 71 26 is_stmt 0 view .LVU56
+ 196 0056 0592     		str	r2, [sp, #20]
   72:Src/can.c     ****     GPIO_InitStruct.Alternate = GPIO_AF9_CAN1;
- 193              		.loc 1 72 5 view .LVU54
+ 197              		.loc 1 72 5 is_stmt 1 view .LVU57
   72:Src/can.c     ****     GPIO_InitStruct.Alternate = GPIO_AF9_CAN1;
- 194              		.loc 1 72 27 is_stmt 0 view .LVU55
- 195 0056 0323     		movs	r3, #3
- 196 0058 0693     		str	r3, [sp, #24]
+ 198              		.loc 1 72 27 is_stmt 0 view .LVU58
+ 199 0058 0323     		movs	r3, #3
+ 200 005a 0693     		str	r3, [sp, #24]
   73:Src/can.c     ****     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
- 197              		.loc 1 73 5 is_stmt 1 view .LVU56
+ 201              		.loc 1 73 5 is_stmt 1 view .LVU59
   73:Src/can.c     ****     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
- 198              		.loc 1 73 31 is_stmt 0 view .LVU57
- 199 005a 0923     		movs	r3, #9
- 200 005c 0793     		str	r3, [sp, #28]
+ 202              		.loc 1 73 31 is_stmt 0 view .LVU60
+ 203 005c 0923     		movs	r3, #9
+ 204 005e 0793     		str	r3, [sp, #28]
   74:Src/can.c     **** 
- 201              		.loc 1 74 5 is_stmt 1 view .LVU58
- 202 005e 03A9     		add	r1, sp, #12
- 203 0060 0248     		ldr	r0, .L11+4
- 204              	.LVL5:
+ 205              		.loc 1 74 5 is_stmt 1 view .LVU61
+ 206 0060 03A9     		add	r1, sp, #12
+ 207 0062 0348     		ldr	r0, .L11+4
+ 208              	.LVL5:
   74:Src/can.c     **** 
- 205              		.loc 1 74 5 is_stmt 0 view .LVU59
- 206 0062 FFF7FEFF 		bl	HAL_GPIO_Init
- 207              	.LVL6:
- 208              		.loc 1 80 1 view .LVU60
- 209 0066 D7E7     		b	.L7
- 210              	.L12:
- 211              		.align	2
- 212              	.L11:
- 213 0068 00640040 		.word	1073767424
- 214 006c 00000240 		.word	1073872896
- 215              		.cfi_endproc
- 216              	.LFE131:
- 218              		.section	.text.HAL_CAN_MspDeInit,"ax",%progbits
- 219              		.align	1
- 220              		.global	HAL_CAN_MspDeInit
- 221              		.syntax unified
- 222              		.thumb
- 223              		.thumb_func
- 224              		.fpu fpv4-sp-d16
- 226              	HAL_CAN_MspDeInit:
- 227              	.LVL7:
- 228              	.LFB132:
+ 209              		.loc 1 74 5 is_stmt 0 view .LVU62
+ 210 0064 FFF7FEFF 		bl	HAL_GPIO_Init
+ 211              	.LVL6:
+ 212              		.loc 1 80 1 view .LVU63
+ 213 0068 D6E7     		b	.L7
+ 214              	.L12:
+ 215 006a 00BF     		.align	2
+ 216              	.L11:
+ 217 006c 00640040 		.word	1073767424
+ 218 0070 00000240 		.word	1073872896
+ 219              		.cfi_endproc
+ 220              	.LFE131:
+ 222              		.section	.text.HAL_CAN_MspDeInit,"ax",%progbits
+ 223              		.align	1
+ 224              		.global	HAL_CAN_MspDeInit
+ 225              		.syntax unified
+ 226              		.thumb
+ 227              		.thumb_func
+ 228              		.fpu fpv4-sp-d16
+ 230              	HAL_CAN_MspDeInit:
+ 231              	.LVL7:
+ 232              	.LFB132:
   81:Src/can.c     **** 
   82:Src/can.c     **** void HAL_CAN_MspDeInit(CAN_HandleTypeDef* canHandle)
   83:Src/can.c     **** {
- 229              		.loc 1 83 1 is_stmt 1 view -0
- 230              		.cfi_startproc
- 231              		@ args = 0, pretend = 0, frame = 0
- 232              		@ frame_needed = 0, uses_anonymous_args = 0
- 233              		.loc 1 83 1 is_stmt 0 view .LVU62
- 234 0000 08B5     		push	{r3, lr}
- 235              	.LCFI5:
- 236              		.cfi_def_cfa_offset 8
- 237              		.cfi_offset 3, -8
- 238              		.cfi_offset 14, -4
+ 233              		.loc 1 83 1 is_stmt 1 view -0
+ 234              		.cfi_startproc
+ 235              		@ args = 0, pretend = 0, frame = 0
+ 236              		@ frame_needed = 0, uses_anonymous_args = 0
+ 237              		.loc 1 83 1 is_stmt 0 view .LVU65
+ 238 0000 08B5     		push	{r3, lr}
+ 239              	.LCFI5:
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccN9THwO.s 			page 7
+
+
+ 240              		.cfi_def_cfa_offset 8
+ 241              		.cfi_offset 3, -8
+ 242              		.cfi_offset 14, -4
   84:Src/can.c     **** 
   85:Src/can.c     ****   if(canHandle->Instance==CAN1)
- 239              		.loc 1 85 3 is_stmt 1 view .LVU63
- 240              		.loc 1 85 15 is_stmt 0 view .LVU64
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s 			page 7
-
-
- 241 0002 0268     		ldr	r2, [r0]
- 242              		.loc 1 85 5 view .LVU65
- 243 0004 074B     		ldr	r3, .L17
- 244 0006 9A42     		cmp	r2, r3
- 245 0008 00D0     		beq	.L16
- 246              	.LVL8:
- 247              	.L13:
+ 243              		.loc 1 85 3 is_stmt 1 view .LVU66
+ 244              		.loc 1 85 15 is_stmt 0 view .LVU67
+ 245 0002 0268     		ldr	r2, [r0]
+ 246              		.loc 1 85 5 view .LVU68
+ 247 0004 074B     		ldr	r3, .L17
+ 248 0006 9A42     		cmp	r2, r3
+ 249 0008 00D0     		beq	.L16
+ 250              	.LVL8:
+ 251              	.L13:
   86:Src/can.c     ****   {
   87:Src/can.c     ****   /* USER CODE BEGIN CAN1_MspDeInit 0 */
   88:Src/can.c     **** 
@@ -386,67 +393,67 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s 			page 1
  101:Src/can.c     ****   /* USER CODE END CAN1_MspDeInit 1 */
  102:Src/can.c     ****   }
  103:Src/can.c     **** } 
- 248              		.loc 1 103 1 view .LVU66
- 249 000a 08BD     		pop	{r3, pc}
- 250              	.LVL9:
- 251              	.L16:
+ 252              		.loc 1 103 1 view .LVU69
+ 253 000a 08BD     		pop	{r3, pc}
+ 254              	.LVL9:
+ 255              	.L16:
   91:Src/can.c     ****   
- 252              		.loc 1 91 5 is_stmt 1 view .LVU67
- 253 000c 064A     		ldr	r2, .L17+4
- 254 000e 136C     		ldr	r3, [r2, #64]
- 255 0010 23F00073 		bic	r3, r3, #33554432
- 256 0014 1364     		str	r3, [r2, #64]
+ 256              		.loc 1 91 5 is_stmt 1 view .LVU70
+ 257 000c 064A     		ldr	r2, .L17+4
+ 258 000e 136C     		ldr	r3, [r2, #64]
+ 259 0010 23F00073 		bic	r3, r3, #33554432
+ 260 0014 1364     		str	r3, [r2, #64]
   97:Src/can.c     **** 
- 257              		.loc 1 97 5 view .LVU68
- 258 0016 4FF4C051 		mov	r1, #6144
- 259 001a 0448     		ldr	r0, .L17+8
- 260              	.LVL10:
+ 261              		.loc 1 97 5 view .LVU71
+ 262 0016 4FF4C051 		mov	r1, #6144
+ 263 001a 0448     		ldr	r0, .L17+8
+ 264              	.LVL10:
   97:Src/can.c     **** 
- 261              		.loc 1 97 5 is_stmt 0 view .LVU69
- 262 001c FFF7FEFF 		bl	HAL_GPIO_DeInit
- 263              	.LVL11:
- 264              		.loc 1 103 1 view .LVU70
- 265 0020 F3E7     		b	.L13
- 266              	.L18:
- 267 0022 00BF     		.align	2
- 268              	.L17:
- 269 0024 00640040 		.word	1073767424
- 270 0028 00380240 		.word	1073887232
- 271 002c 00000240 		.word	1073872896
- 272              		.cfi_endproc
- 273              	.LFE132:
- 275              		.comm	hcan1,40,4
- 276              		.text
- 277              	.Letext0:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s 			page 8
+ 265              		.loc 1 97 5 is_stmt 0 view .LVU72
+ 266 001c FFF7FEFF 		bl	HAL_GPIO_DeInit
+ 267              	.LVL11:
+ 268              		.loc 1 103 1 view .LVU73
+ 269 0020 F3E7     		b	.L13
+ 270              	.L18:
+ 271 0022 00BF     		.align	2
+ 272              	.L17:
+ 273 0024 00640040 		.word	1073767424
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccN9THwO.s 			page 8
 
 
- 278              		.file 2 "c:\\arm_gcc\\arm-none-eabi\\include\\machine\\_default_types.h"
- 279              		.file 3 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_stdint.h"
- 280              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 281              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 282              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
- 283              		.file 7 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
- 284              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 285              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
- 286              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h"
- 287              		.file 11 "Inc/can.h"
- 288              		.file 12 "Inc/main.h"
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s 			page 9
+ 274 0028 00380240 		.word	1073887232
+ 275 002c 00000240 		.word	1073872896
+ 276              		.cfi_endproc
+ 277              	.LFE132:
+ 279              		.comm	hcan1,40,4
+ 280              		.text
+ 281              	.Letext0:
+ 282              		.file 2 "c:\\arm_gcc\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 283              		.file 3 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 284              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 285              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 286              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 287              		.file 7 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
+ 288              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 289              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 290              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h"
+ 291              		.file 11 "Inc/can.h"
+ 292              		.file 12 "Inc/main.h"
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccN9THwO.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 can.c
-C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s:18     .text.MX_CAN1_Init:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s:26     .text.MX_CAN1_Init:00000000 MX_CAN1_Init
-C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s:96     .text.MX_CAN1_Init:00000030 $d
+C:\Users\ncer\AppData\Local\Temp\ccN9THwO.s:18     .text.MX_CAN1_Init:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccN9THwO.s:26     .text.MX_CAN1_Init:00000000 MX_CAN1_Init
+C:\Users\ncer\AppData\Local\Temp\ccN9THwO.s:96     .text.MX_CAN1_Init:00000030 $d
                             *COM*:00000028 hcan1
-C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s:102    .text.HAL_CAN_MspInit:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s:109    .text.HAL_CAN_MspInit:00000000 HAL_CAN_MspInit
-C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s:213    .text.HAL_CAN_MspInit:00000068 $d
-C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s:219    .text.HAL_CAN_MspDeInit:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s:226    .text.HAL_CAN_MspDeInit:00000000 HAL_CAN_MspDeInit
-C:\Users\ncer\AppData\Local\Temp\ccx0BnU1.s:269    .text.HAL_CAN_MspDeInit:00000024 $d
+C:\Users\ncer\AppData\Local\Temp\ccN9THwO.s:102    .text.HAL_CAN_MspInit:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccN9THwO.s:109    .text.HAL_CAN_MspInit:00000000 HAL_CAN_MspInit
+C:\Users\ncer\AppData\Local\Temp\ccN9THwO.s:217    .text.HAL_CAN_MspInit:0000006c $d
+C:\Users\ncer\AppData\Local\Temp\ccN9THwO.s:223    .text.HAL_CAN_MspDeInit:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccN9THwO.s:230    .text.HAL_CAN_MspDeInit:00000000 HAL_CAN_MspDeInit
+C:\Users\ncer\AppData\Local\Temp\ccN9THwO.s:273    .text.HAL_CAN_MspDeInit:00000024 $d
 
 UNDEFINED SYMBOLS
 HAL_CAN_Init

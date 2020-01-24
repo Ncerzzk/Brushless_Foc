@@ -1,5 +1,10 @@
 {
     "files.associations": {
-        "arm_math.h": "c"
+        "arm_math.h": "c",
+        "main.h": "c",
+        "stm32f4xx_hal.h": "c",
+        "stm32f4xx_hal_conf.h": "c",
+        "cmd_fun.h": "c",
+        "stm32f4xx_it.h": "c"
     }
 }

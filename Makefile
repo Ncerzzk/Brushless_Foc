@@ -45,6 +45,10 @@ Src/dma.c \
 Src/spi.c \
 Src/tim.c \
 Src/usart.c \
+Src/myfunc.c \
+mylib/as5047.c \
+mylib/uart_ext.c \
+mylib/command.c \
 Src/arm_common_tables.c \
 Src/arm_sin_cos_f32.c \
 Src/stm32f4xx_it.c \
@@ -129,6 +133,7 @@ AS_INCLUDES =
 # C includes
 C_INCLUDES =  \
 -IInc \
+-Imylib \
 -IDrivers/STM32F4xx_HAL_Driver/Inc \
 -IDrivers/STM32F4xx_HAL_Driver/Inc/Legacy \
 -IDrivers/CMSIS/Device/ST/STM32F4xx/Include \
@@ -160,6 +165,7 @@ LIBS = -lc -lm -lnosys
 LIBDIR = 
 LDFLAGS = $(MCU) -specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
 
+LDFLAGS += -lrdimon -u _printf_float
 # default action: build all
 all: $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET).bin
 

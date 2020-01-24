@@ -110,7 +110,8 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
     __HAL_LINKDMA(uartHandle,hdmatx,hdma_usart3_tx);
 
   /* USER CODE BEGIN USART3_MspInit 1 */
-
+    HAL_NVIC_SetPriority(USART3_IRQn, 1, 0);
+    HAL_NVIC_EnableIRQ(USART3_IRQn);
   /* USER CODE END USART3_MspInit 1 */
   }
 }
@@ -142,6 +143,7 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 } 
 
 /* USER CODE BEGIN 1 */
+/*
 char s[22]={'b','y',16,6};
 void send_wave(float arg1,float arg2,float arg3,float arg4){
 
@@ -154,6 +156,7 @@ void send_wave(float arg1,float arg2,float arg3,float arg4){
   HAL_UART_Transmit(&huart3,(uint8_t *)s,sizeof(s),100);
   //HAL_UART_Transmit_IT(&huart1,(uint8_t *)s,sizeof(s));
 }
+*/
 /* USER CODE END 1 */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

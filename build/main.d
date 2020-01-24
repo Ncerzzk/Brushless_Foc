@@ -30,7 +30,7 @@ build/main.o: Src/main.c Inc/main.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h Inc/adc.h \
  Inc/main.h Inc/can.h Inc/dma.h Inc/spi.h Inc/tim.h Inc/usart.h \
- Inc/gpio.h Inc/foc.h
+ Inc/gpio.h Inc/foc.h mylib/as5047.h mylib/uart_ext.h
 
 Inc/main.h:
 
@@ -115,3 +115,7 @@ Inc/usart.h:
 Inc/gpio.h:
 
 Inc/foc.h:
+
+mylib/as5047.h:
+
+mylib/uart_ext.h:

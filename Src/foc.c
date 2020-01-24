@@ -3,7 +3,8 @@
 #include "math.h"
 #include "arm_math.h"
 #include "adc.h"
-
+#include "as5047.h"
+#include "uart_ext.h"
 
 #define PAIRS   7   //Pole of Pairs
 #define PART_NUM   3072 // 多少细分 
@@ -42,8 +43,14 @@ CCR_Duty CCR_Dutys={0};
 static float theta=0;
 float RPS=6;   // 转速
 
+float Position_Degree;
+
+float Position_Offset=215.793457f;
+
 #define TIM7_FREQ   1000
-#define TIM8_FREQ   200000
+#define TIM8_FREQ   20000
+
+#define DRIVE
 
 void UVects_Init(){
     for(int i=0;i<6;++i){
@@ -71,7 +78,7 @@ void Foc_Init(float rps){
     
 
     UVects_Init();
-    /*
+#ifdef DRIVE 
     HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_1);
     HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_2);
     HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_3);
@@ -79,8 +86,7 @@ void Foc_Init(float rps){
     HAL_TIMEx_PWMN_Start(&htim8,TIM_CHANNEL_1);
     HAL_TIMEx_PWMN_Start(&htim8,TIM_CHANNEL_2);
     HAL_TIMEx_PWMN_Start(&htim8,TIM_CHANNEL_3);
-    */
-
+#endif
     TIM7->ARR=84000000/TIM7_FREQ-1;
     HAL_TIM_Base_Start_IT(&htim7);
 
@@ -126,6 +132,11 @@ void get_area_u(uint8_t area,Uvect_Mos *u1,Uvect_Mos *u2){
     }
 }
 
+
+/*
+    根据theta来计算相邻两个矢量的作用时间的函数，
+    因为用到除法次数多了一点，目前暂时废弃。
+*/
 void get_t(float theta,float * t1,float *t2){
 /*
 /       u2y x               u2x y       \
@@ -168,38 +179,27 @@ CCR_Duty get_ccr_duty(float t1,float t2,Uvect_Mos u1,Uvect_Mos u2){
     return result;
 }
 
-// 一次theta增量为360/PART_NUM
-#define delta_theta 360.0f/PART_NUM
-
-void svpwm(){
-    CCR_Duty ccr_duty;
-    Uvect_Mos u1,u2;
-    
-    float t1,t2;
-    //HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
-    uint8_t area=get_area((int)theta); 
-    get_area_u(area,&u1,&u2);
-    get_t(theta,&t1,&t2);
-    ccr_duty=get_ccr_duty(t1,t2,u1,u2);
-
-    TIM8->CCR1=(ccr_duty.ccrc)*TIM8->ARR;
-    TIM8->CCR2=(ccr_duty.ccrb)*TIM8->ARR;
-    TIM8->CCR3=(ccr_duty.ccra)*TIM8->ARR;
-    ///uint32_t temp=MIN(TIM8->CCR1,TIM8->CCR2);
-    //temp=MIN(temp,TIM8->CCR3);   // for trig adc!
-    TIM8->CCR4=1;
-
-    theta+=delta_theta;
-    if(theta>=360){
-        theta-=360;
-    }
-    //HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
-}
-
 void SVPWM_Step(CCR_Duty duty){
     TIM8->CCR1=duty.ccrc*TIM8->ARR;
     TIM8->CCR2=duty.ccrb*TIM8->ARR;
     TIM8->CCR3=duty.ccra*TIM8->ARR;
+}
+
+/*
+    将电压矢量设置为U4，并持续一段时间
+*/
+void Set_to_U4(uint8_t t){
+    CCR_Duty temp_duty={0};
+    temp_duty.ccra=U4.a;
+    temp_duty.ccrb=U4.b;
+    temp_duty.ccrc=U4.c;
+    SVPWM_Step(temp_duty);
+    HAL_Delay(t);
+    temp_duty.ccra=U0.a;
+    temp_duty.ccrb=U0.b;
+    temp_duty.ccrc=U0.c;
+    SVPWM_Step(temp_duty);    
+    uprintf("position:%f \r\n",Position_Degree);
 }
 
 
@@ -255,6 +255,10 @@ void Theta_Handler(){
     float t1,t2;
     float x,y;
     float dealt=RPS*dealtK;
+
+    Position_Degree=Get_Position_Rad_Dgree(1);
+    Foc();
+    /*
     theta+=dealt;
     if(theta>360){
         theta=(int)theta%360;
@@ -268,11 +272,9 @@ void Theta_Handler(){
     y*=0.86f;   // sqrt(3)/2 没错
     SVPWM_Normal_CalT1T2(x,y,area,&t1,&t2);
     CCR_Dutys=get_ccr_duty(t1,t2,u1,u2);
+    */
 }
 
-void SVPWM_Normal(float alpha,float beta){
-    // 幅度不能超过sqrt(3)/2
-}
 
  void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
      if(hadc->Instance==ADC1){
@@ -280,4 +282,32 @@ void SVPWM_Normal(float alpha,float beta){
      }else if(hadc->Instance==ADC2){
          
      }
+ }
+
+ void Foc(){
+    Uvect_Mos u1,u2;
+    float t1,t2;
+    float x,y;
+
+     float electric_position=(-1*Position_Degree+360);
+     float electric_position_offset=(-1*Position_Offset+360);
+
+     int32_t sub=(int32_t)(electric_position-electric_position_offset);
+    if(sub<0){
+        sub+=360;
+    }
+    sub*=PAIRS;
+    sub+=90;
+
+    sub%=360;
+
+    uint8_t area=get_area(sub); 
+    get_area_u(area,&u1,&u2);
+    //get_t(theta,&t1,&t2);
+    arm_sin_cos_f32(sub,&y,&x);
+    x*=0.86f;
+    y*=0.86f;   // sqrt(3)/2 没错
+    SVPWM_Normal_CalT1T2(x,y,area,&t1,&t2);
+    CCR_Dutys=get_ccr_duty(t1,t2,u1,u2);
+        
  }

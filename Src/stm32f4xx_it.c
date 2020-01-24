@@ -64,7 +64,7 @@ extern TIM_HandleTypeDef htim8;
 extern DMA_HandleTypeDef hdma_usart3_rx;
 extern DMA_HandleTypeDef hdma_usart3_tx;
 /* USER CODE BEGIN EV */
-
+extern UART_HandleTypeDef huart3;
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -302,6 +302,19 @@ void DMA2_Stream2_IRQHandler(void)
 }
 
 /* USER CODE BEGIN 1 */
+void USART3_IRQHandler(void)
+{
+  /* USER CODE BEGIN USART1_IRQn 0 */
 
+  /* USER CODE END USART1_IRQn 0 */
+  HAL_UART_IRQHandler(&huart3);
+  /* USER CODE BEGIN USART1_IRQn 1 */
+  void HAL_UART_IDLECallback(UART_HandleTypeDef *huart);
+  if(__HAL_UART_GET_FLAG(&huart3, UART_FLAG_IDLE) != RESET){
+    HAL_UART_IDLECallback(&huart3);
+    return ;
+  }  
+  /* USER CODE END USART1_IRQn 1 */
+}
 /* USER CODE END 1 */
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
