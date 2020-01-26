@@ -110,6 +110,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   debug_uart_init(&huart3,DMA,DMA);
   Foc_Init(1);
+  AS5047_Set_Direction(0);
   Init_OK=1;
   uprintf("hello,world!\r\n");
   /* USER CODE END 2 */
@@ -134,7 +135,7 @@ int main(void)
         HAL_ADC_Stop(&hadc1);
         HAL_ADC_Stop(&hadc2);
         */
-        //send_wave(ADC_Values_Raw[0],ADC_Values_Raw[1],ADC_Values_Raw2[0],Position_Degree);
+      send_wave(Ialpha,Ibeta,ADC_Values_Raw2[2],Position_Degree);
       }
     /* USER CODE BEGIN 3 */
   }
@@ -190,6 +191,8 @@ void MS_IRQ_Handler(){
   if(!Init_OK){
     return ;
   }
+
+  
   ms_cnt++;
   //Theta_Handler();
   if(ms_cnt==2){

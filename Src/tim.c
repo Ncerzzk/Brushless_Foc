@@ -115,7 +115,7 @@ void MX_TIM8_Init(void)
 
   htim8.Instance = TIM8;
   htim8.Init.Prescaler = 0;
-  htim8.Init.CounterMode = TIM_COUNTERMODE_CENTERALIGNED2;
+  htim8.Init.CounterMode = TIM_COUNTERMODE_CENTERALIGNED1;
   htim8.Init.Period = 3360;   // 25K   168M/25K/2;
   htim8.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim8.Init.RepetitionCounter = 1;
@@ -134,7 +134,11 @@ void MX_TIM8_Init(void)
   {
     Error_Handler();
   }
-  sConfigOC.OCMode = TIM_OCMODE_PWM2;
+  // 修改PWM1或者PWM2，其他设置一样的话，则电机运行方向相反
+  // 假设PWM2的U4，abc为 100，如果设置成PWM1 则为011，变成了U3 （位置原点是设置成U4的）
+  // 那么原来PWM2的U4实际上就是PWM1的U3，要让它运行，下一个期望矢量是0+90度
+  // 换成PWM1后，这个期望矢量的位置变成了270度，所以运行方向反了
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;  
   sConfigOC.Pulse = 0;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;

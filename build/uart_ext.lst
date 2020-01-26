@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 1
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 1
   28:mylib/uart_ext.c **** }
   29:mylib/uart_ext.c **** 
   30:mylib/uart_ext.c **** 
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 2
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s 			page 2
 
 
   31:mylib/uart_ext.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 1
   50              		.loc 1 63 1 is_stmt 0 view .LVU3
   51 0012 08BD     		pop	{r3, pc}
   52              	.LVL2:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 3
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s 			page 3
 
 
   53              	.L6:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 1
   95 003a EAE7     		b	.L1
   96              	.L8:
   97              		.align	2
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 4
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s 			page 4
 
 
   98              	.L7:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 1
  146              	.L14:
   25:mylib/uart_ext.c ****       HAL_UART_Receive_DMA(debug_uart, (uint8_t *)buffer_rx, BUFFER_RX_SIZE-1);
  147              		.loc 1 25 7 view .LVU25
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 5
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s 			page 5
 
 
  148 001e 084B     		ldr	r3, .L15+8
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 1
   40:mylib/uart_ext.c ****     debug_uart=uart;
  197              		.loc 1 40 12 is_stmt 0 view .LVU33
  198 0006 054B     		ldr	r3, .L19+4
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 6
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s 			page 6
 
 
  199 0008 1A70     		strb	r2, [r3]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 1
  247 0010 CDED031A 		vstr.32	s3, [sp, #12]
   67:mylib/uart_ext.c **** 
   68:mylib/uart_ext.c ****   s[20]='\r';
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 7
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s 			page 7
 
 
  248              		.loc 1 68 3 is_stmt 1 view .LVU41
@@ -409,27 +409,26 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 1
  286 003c 00000000 		.word	.LANCHOR3
  287              		.cfi_endproc
  288              	.LFE136:
- 290              		.section	.text.uprintf,"ax",%progbits
+ 290              		.section	.text.uprintf_polling,"ax",%progbits
  291              		.align	1
- 292              		.global	uprintf
+ 292              		.global	uprintf_polling
  293              		.syntax unified
  294              		.thumb
  295              		.thumb_func
  296              		.fpu fpv4-sp-d16
- 298              	uprintf:
+ 298              	uprintf_polling:
  299              	.LVL23:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 8
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s 			page 8
 
 
  300              	.LFB137:
   76:mylib/uart_ext.c **** 
-  77:mylib/uart_ext.c **** void uprintf(char *fmt, ...)
-  78:mylib/uart_ext.c **** {
- 301              		.loc 1 78 1 is_stmt 1 view -0
+  77:mylib/uart_ext.c **** void uprintf_polling(char *fmt,...){
+ 301              		.loc 1 77 36 is_stmt 1 view -0
  302              		.cfi_startproc
  303              		@ args = 4, pretend = 16, frame = 8
  304              		@ frame_needed = 0, uses_anonymous_args = 1
- 305              		.loc 1 78 1 is_stmt 0 view .LVU54
+ 305              		.loc 1 77 36 is_stmt 0 view .LVU54
  306 0000 0FB4     		push	{r0, r1, r2, r3}
  307              	.LCFI6:
  308              		.cfi_def_cfa_offset 16
@@ -447,451 +446,549 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 1
  320              		.cfi_def_cfa_offset 32
  321 0006 04AB     		add	r3, sp, #16
  322 0008 53F8042B 		ldr	r2, [r3], #4
-  79:mylib/uart_ext.c ****   int size;
- 323              		.loc 1 79 3 is_stmt 1 view .LVU55
-  80:mylib/uart_ext.c ****   
-  81:mylib/uart_ext.c ****   va_list arg_ptr;
- 324              		.loc 1 81 3 view .LVU56
-  82:mylib/uart_ext.c ****   
-  83:mylib/uart_ext.c ****   va_start(arg_ptr, fmt);  
- 325              		.loc 1 83 3 view .LVU57
+  78:mylib/uart_ext.c ****   int size;
+ 323              		.loc 1 78 3 is_stmt 1 view .LVU55
+  79:mylib/uart_ext.c ****   
+  80:mylib/uart_ext.c ****   va_list arg_ptr;
+ 324              		.loc 1 80 3 view .LVU56
+  81:mylib/uart_ext.c ****   
+  82:mylib/uart_ext.c ****   va_start(arg_ptr, fmt);  
+ 325              		.loc 1 82 3 view .LVU57
  326 000c 0193     		str	r3, [sp, #4]
-  84:mylib/uart_ext.c ****   
-  85:mylib/uart_ext.c ****   size=vsnprintf((char*)uart_buffer, 100 + 1, fmt, arg_ptr);
- 327              		.loc 1 85 3 view .LVU58
- 328              		.loc 1 85 8 is_stmt 0 view .LVU59
- 329 000e 074C     		ldr	r4, .L27
+  83:mylib/uart_ext.c ****   
+  84:mylib/uart_ext.c ****   size=vsnprintf((char*)uart_buffer, 100 + 1, fmt, arg_ptr);
+ 327              		.loc 1 84 3 view .LVU58
+ 328              		.loc 1 84 8 is_stmt 0 view .LVU59
+ 329 000e 094C     		ldr	r4, .L27
  330 0010 6521     		movs	r1, #101
  331 0012 2046     		mov	r0, r4
  332 0014 FFF7FEFF 		bl	vsnprintf
  333              	.LVL24:
-  86:mylib/uart_ext.c ****   va_end(arg_ptr);
- 334              		.loc 1 86 3 is_stmt 1 view .LVU60
-  87:mylib/uart_ext.c ****   UART_Send(uart_buffer,size);
- 335              		.loc 1 87 3 view .LVU61
- 336 0018 81B2     		uxth	r1, r0
- 337 001a 2046     		mov	r0, r4
- 338              	.LVL25:
- 339              		.loc 1 87 3 is_stmt 0 view .LVU62
- 340 001c FFF7FEFF 		bl	UART_Send
- 341              	.LVL26:
-  88:mylib/uart_ext.c **** }
- 342              		.loc 1 88 1 view .LVU63
- 343 0020 02B0     		add	sp, sp, #8
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 9
+  85:mylib/uart_ext.c ****   va_end(arg_ptr);
+ 334              		.loc 1 85 3 is_stmt 1 view .LVU60
+  86:mylib/uart_ext.c ****   HAL_UART_Transmit(debug_uart,uart_buffer,size,1000);
+ 335              		.loc 1 86 3 view .LVU61
+ 336 0018 4FF47A73 		mov	r3, #1000
+ 337 001c 82B2     		uxth	r2, r0
+ 338 001e 2146     		mov	r1, r4
+ 339 0020 0548     		ldr	r0, .L27+4
+ 340              	.LVL25:
+ 341              		.loc 1 86 3 is_stmt 0 view .LVU62
+ 342 0022 0068     		ldr	r0, [r0]
+ 343 0024 FFF7FEFF 		bl	HAL_UART_Transmit
+ 344              	.LVL26:
+  87:mylib/uart_ext.c **** }
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s 			page 9
 
 
- 344              	.LCFI9:
- 345              		.cfi_def_cfa_offset 24
- 346              		@ sp needed
- 347 0022 BDE81040 		pop	{r4, lr}
- 348              	.LCFI10:
- 349              		.cfi_restore 14
- 350              		.cfi_restore 4
- 351              		.cfi_def_cfa_offset 16
- 352 0026 04B0     		add	sp, sp, #16
- 353              	.LCFI11:
- 354              		.cfi_restore 3
- 355              		.cfi_restore 2
- 356              		.cfi_restore 1
- 357              		.cfi_restore 0
- 358              		.cfi_def_cfa_offset 0
- 359 0028 7047     		bx	lr
- 360              	.L28:
- 361 002a 00BF     		.align	2
- 362              	.L27:
- 363 002c 00000000 		.word	uart_buffer
- 364              		.cfi_endproc
- 365              	.LFE137:
- 367              		.section	.text.HAL_UART_RxCpltCallback,"ax",%progbits
- 368              		.align	1
- 369              		.global	HAL_UART_RxCpltCallback
- 370              		.syntax unified
- 371              		.thumb
- 372              		.thumb_func
- 373              		.fpu fpv4-sp-d16
- 375              	HAL_UART_RxCpltCallback:
- 376              	.LVL27:
- 377              	.LFB138:
-  89:mylib/uart_ext.c **** 
-  90:mylib/uart_ext.c **** 
-  91:mylib/uart_ext.c **** void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
- 378              		.loc 1 91 56 is_stmt 1 view -0
- 379              		.cfi_startproc
- 380              		@ args = 0, pretend = 0, frame = 0
- 381              		@ frame_needed = 0, uses_anonymous_args = 0
-  92:mylib/uart_ext.c ****   if(huart==debug_uart){
- 382              		.loc 1 92 3 view .LVU65
- 383              		.loc 1 92 11 is_stmt 0 view .LVU66
- 384 0000 114B     		ldr	r3, .L38
- 385 0002 1B68     		ldr	r3, [r3]
- 386              		.loc 1 92 5 view .LVU67
- 387 0004 8342     		cmp	r3, r0
- 388 0006 00D0     		beq	.L36
- 389 0008 7047     		bx	lr
- 390              	.L36:
-  91:mylib/uart_ext.c ****   if(huart==debug_uart){
- 391              		.loc 1 91 56 view .LVU68
- 392 000a 10B5     		push	{r4, lr}
- 393              	.LCFI12:
- 394              		.cfi_def_cfa_offset 8
- 395              		.cfi_offset 4, -8
- 396              		.cfi_offset 14, -4
-  93:mylib/uart_ext.c ****     buffer_rx[buffer_rx_count]=buffer_rx_temp;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 10
+ 345              		.loc 1 87 1 view .LVU63
+ 346 0028 02B0     		add	sp, sp, #8
+ 347              	.LCFI9:
+ 348              		.cfi_def_cfa_offset 24
+ 349              		@ sp needed
+ 350 002a BDE81040 		pop	{r4, lr}
+ 351              	.LCFI10:
+ 352              		.cfi_restore 14
+ 353              		.cfi_restore 4
+ 354              		.cfi_def_cfa_offset 16
+ 355 002e 04B0     		add	sp, sp, #16
+ 356              	.LCFI11:
+ 357              		.cfi_restore 3
+ 358              		.cfi_restore 2
+ 359              		.cfi_restore 1
+ 360              		.cfi_restore 0
+ 361              		.cfi_def_cfa_offset 0
+ 362 0030 7047     		bx	lr
+ 363              	.L28:
+ 364 0032 00BF     		.align	2
+ 365              	.L27:
+ 366 0034 00000000 		.word	uart_buffer
+ 367 0038 00000000 		.word	.LANCHOR1
+ 368              		.cfi_endproc
+ 369              	.LFE137:
+ 371              		.section	.text.uprintf,"ax",%progbits
+ 372              		.align	1
+ 373              		.global	uprintf
+ 374              		.syntax unified
+ 375              		.thumb
+ 376              		.thumb_func
+ 377              		.fpu fpv4-sp-d16
+ 379              	uprintf:
+ 380              	.LVL27:
+ 381              	.LFB138:
+  88:mylib/uart_ext.c **** 
+  89:mylib/uart_ext.c **** void uprintf(char *fmt, ...)
+  90:mylib/uart_ext.c **** {
+ 382              		.loc 1 90 1 is_stmt 1 view -0
+ 383              		.cfi_startproc
+ 384              		@ args = 4, pretend = 16, frame = 8
+ 385              		@ frame_needed = 0, uses_anonymous_args = 1
+ 386              		.loc 1 90 1 is_stmt 0 view .LVU65
+ 387 0000 0FB4     		push	{r0, r1, r2, r3}
+ 388              	.LCFI12:
+ 389              		.cfi_def_cfa_offset 16
+ 390              		.cfi_offset 0, -16
+ 391              		.cfi_offset 1, -12
+ 392              		.cfi_offset 2, -8
+ 393              		.cfi_offset 3, -4
+ 394 0002 10B5     		push	{r4, lr}
+ 395              	.LCFI13:
+ 396              		.cfi_def_cfa_offset 24
+ 397              		.cfi_offset 4, -24
+ 398              		.cfi_offset 14, -20
+ 399 0004 82B0     		sub	sp, sp, #8
+ 400              	.LCFI14:
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s 			page 10
 
 
- 397              		.loc 1 93 5 is_stmt 1 view .LVU69
- 398              		.loc 1 93 14 is_stmt 0 view .LVU70
- 399 000c 0F4B     		ldr	r3, .L38+4
- 400 000e 1B68     		ldr	r3, [r3]
- 401              		.loc 1 93 31 view .LVU71
- 402 0010 0F4A     		ldr	r2, .L38+8
- 403 0012 1178     		ldrb	r1, [r2]	@ zero_extendqisi2
- 404 0014 0F4A     		ldr	r2, .L38+12
- 405 0016 D154     		strb	r1, [r2, r3]
-  94:mylib/uart_ext.c ****     if(buffer_rx[buffer_rx_count-1]=='\r'&&buffer_rx[buffer_rx_count]=='\n'){
- 406              		.loc 1 94 5 is_stmt 1 view .LVU72
- 407              		.loc 1 94 33 is_stmt 0 view .LVU73
- 408 0018 5C1E     		subs	r4, r3, #1
- 409              		.loc 1 94 17 view .LVU74
- 410 001a 125D     		ldrb	r2, [r2, r4]	@ zero_extendqisi2
- 411              		.loc 1 94 7 view .LVU75
- 412 001c 0D2A     		cmp	r2, #13
- 413 001e 01D1     		bne	.L31
- 414              		.loc 1 94 42 discriminator 1 view .LVU76
- 415 0020 0A29     		cmp	r1, #10
- 416 0022 07D0     		beq	.L37
- 417              	.L31:
-  95:mylib/uart_ext.c ****       buffer_rx[buffer_rx_count-1]='\0';
-  96:mylib/uart_ext.c ****       buffer_rx_OK=1;
-  97:mylib/uart_ext.c ****       // call
-  98:mylib/uart_ext.c ****       buffer_rx_count=0;
-  99:mylib/uart_ext.c ****     }else{
- 100:mylib/uart_ext.c ****       buffer_rx_count++;
- 418              		.loc 1 100 7 is_stmt 1 view .LVU77
- 419              		.loc 1 100 22 is_stmt 0 view .LVU78
- 420 0024 0133     		adds	r3, r3, #1
- 421 0026 094A     		ldr	r2, .L38+4
- 422 0028 1360     		str	r3, [r2]
- 101:mylib/uart_ext.c ****       HAL_UART_Receive_IT(huart,&buffer_rx_temp,1);
- 423              		.loc 1 101 7 is_stmt 1 view .LVU79
- 424 002a 0122     		movs	r2, #1
- 425 002c 0849     		ldr	r1, .L38+8
- 426 002e FFF7FEFF 		bl	HAL_UART_Receive_IT
- 427              	.LVL28:
- 428              	.L29:
- 102:mylib/uart_ext.c ****     }
- 103:mylib/uart_ext.c ****   }
- 104:mylib/uart_ext.c **** }
- 429              		.loc 1 104 1 is_stmt 0 view .LVU80
- 430 0032 10BD     		pop	{r4, pc}
- 431              	.LVL29:
- 432              	.L37:
-  95:mylib/uart_ext.c ****       buffer_rx_OK=1;
- 433              		.loc 1 95 7 is_stmt 1 view .LVU81
-  95:mylib/uart_ext.c ****       buffer_rx_OK=1;
- 434              		.loc 1 95 35 is_stmt 0 view .LVU82
- 435 0034 0023     		movs	r3, #0
- 436 0036 074A     		ldr	r2, .L38+12
- 437 0038 1355     		strb	r3, [r2, r4]
-  96:mylib/uart_ext.c ****       // call
- 438              		.loc 1 96 7 is_stmt 1 view .LVU83
-  96:mylib/uart_ext.c ****       // call
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 11
+ 401              		.cfi_def_cfa_offset 32
+ 402 0006 04AB     		add	r3, sp, #16
+ 403 0008 53F8042B 		ldr	r2, [r3], #4
+  91:mylib/uart_ext.c ****   int size;
+ 404              		.loc 1 91 3 is_stmt 1 view .LVU66
+  92:mylib/uart_ext.c ****   
+  93:mylib/uart_ext.c ****   va_list arg_ptr;
+ 405              		.loc 1 93 3 view .LVU67
+  94:mylib/uart_ext.c ****   
+  95:mylib/uart_ext.c ****   va_start(arg_ptr, fmt);  
+ 406              		.loc 1 95 3 view .LVU68
+ 407 000c 0193     		str	r3, [sp, #4]
+  96:mylib/uart_ext.c ****   
+  97:mylib/uart_ext.c ****   size=vsnprintf((char*)uart_buffer, 100 + 1, fmt, arg_ptr);
+ 408              		.loc 1 97 3 view .LVU69
+ 409              		.loc 1 97 8 is_stmt 0 view .LVU70
+ 410 000e 074C     		ldr	r4, .L31
+ 411 0010 6521     		movs	r1, #101
+ 412 0012 2046     		mov	r0, r4
+ 413 0014 FFF7FEFF 		bl	vsnprintf
+ 414              	.LVL28:
+  98:mylib/uart_ext.c ****   va_end(arg_ptr);
+ 415              		.loc 1 98 3 is_stmt 1 view .LVU71
+  99:mylib/uart_ext.c ****   UART_Send(uart_buffer,size);
+ 416              		.loc 1 99 3 view .LVU72
+ 417 0018 81B2     		uxth	r1, r0
+ 418 001a 2046     		mov	r0, r4
+ 419              	.LVL29:
+ 420              		.loc 1 99 3 is_stmt 0 view .LVU73
+ 421 001c FFF7FEFF 		bl	UART_Send
+ 422              	.LVL30:
+ 100:mylib/uart_ext.c **** }
+ 423              		.loc 1 100 1 view .LVU74
+ 424 0020 02B0     		add	sp, sp, #8
+ 425              	.LCFI15:
+ 426              		.cfi_def_cfa_offset 24
+ 427              		@ sp needed
+ 428 0022 BDE81040 		pop	{r4, lr}
+ 429              	.LCFI16:
+ 430              		.cfi_restore 14
+ 431              		.cfi_restore 4
+ 432              		.cfi_def_cfa_offset 16
+ 433 0026 04B0     		add	sp, sp, #16
+ 434              	.LCFI17:
+ 435              		.cfi_restore 3
+ 436              		.cfi_restore 2
+ 437              		.cfi_restore 1
+ 438              		.cfi_restore 0
+ 439              		.cfi_def_cfa_offset 0
+ 440 0028 7047     		bx	lr
+ 441              	.L32:
+ 442 002a 00BF     		.align	2
+ 443              	.L31:
+ 444 002c 00000000 		.word	uart_buffer
+ 445              		.cfi_endproc
+ 446              	.LFE138:
+ 448              		.section	.text.HAL_UART_RxCpltCallback,"ax",%progbits
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s 			page 11
 
 
- 439              		.loc 1 96 19 is_stmt 0 view .LVU84
- 440 003a 074A     		ldr	r2, .L38+16
- 441 003c 0121     		movs	r1, #1
- 442 003e 1170     		strb	r1, [r2]
-  98:mylib/uart_ext.c ****     }else{
- 443              		.loc 1 98 7 is_stmt 1 view .LVU85
-  98:mylib/uart_ext.c ****     }else{
- 444              		.loc 1 98 22 is_stmt 0 view .LVU86
- 445 0040 024A     		ldr	r2, .L38+4
- 446 0042 1360     		str	r3, [r2]
- 447 0044 F5E7     		b	.L29
- 448              	.L39:
- 449 0046 00BF     		.align	2
- 450              	.L38:
- 451 0048 00000000 		.word	.LANCHOR1
- 452 004c 00000000 		.word	.LANCHOR4
- 453 0050 00000000 		.word	buffer_rx_temp
- 454 0054 00000000 		.word	buffer_rx
- 455 0058 00000000 		.word	buffer_rx_OK
- 456              		.cfi_endproc
- 457              	.LFE138:
- 459              		.section	.text.HAL_UART_IDLECallback,"ax",%progbits
- 460              		.align	1
- 461              		.global	HAL_UART_IDLECallback
- 462              		.syntax unified
- 463              		.thumb
- 464              		.thumb_func
- 465              		.fpu fpv4-sp-d16
- 467              	HAL_UART_IDLECallback:
- 468              	.LVL30:
- 469              	.LFB139:
- 105:mylib/uart_ext.c **** 
- 106:mylib/uart_ext.c **** void HAL_UART_IDLECallback(UART_HandleTypeDef *huart){
- 470              		.loc 1 106 54 is_stmt 1 view -0
- 471              		.cfi_startproc
- 472              		@ args = 0, pretend = 0, frame = 8
- 473              		@ frame_needed = 0, uses_anonymous_args = 0
- 474              		.loc 1 106 54 is_stmt 0 view .LVU88
- 475 0000 10B5     		push	{r4, lr}
- 476              	.LCFI13:
- 477              		.cfi_def_cfa_offset 8
- 478              		.cfi_offset 4, -8
- 479              		.cfi_offset 14, -4
- 480 0002 82B0     		sub	sp, sp, #8
- 481              	.LCFI14:
- 482              		.cfi_def_cfa_offset 16
- 483 0004 0446     		mov	r4, r0
- 107:mylib/uart_ext.c ****    uint8_t temp=0;
- 484              		.loc 1 107 4 is_stmt 1 view .LVU89
- 485              	.LVL31:
- 108:mylib/uart_ext.c ****   
- 109:mylib/uart_ext.c ****   __HAL_UART_CLEAR_IDLEFLAG(huart);
- 486              		.loc 1 109 3 view .LVU90
- 487              	.LBB2:
- 488              		.loc 1 109 3 view .LVU91
- 489 0006 0023     		movs	r3, #0
- 490 0008 0193     		str	r3, [sp, #4]
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 12
+ 449              		.align	1
+ 450              		.global	HAL_UART_RxCpltCallback
+ 451              		.syntax unified
+ 452              		.thumb
+ 453              		.thumb_func
+ 454              		.fpu fpv4-sp-d16
+ 456              	HAL_UART_RxCpltCallback:
+ 457              	.LVL31:
+ 458              	.LFB139:
+ 101:mylib/uart_ext.c **** 
+ 102:mylib/uart_ext.c **** 
+ 103:mylib/uart_ext.c **** void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+ 459              		.loc 1 103 56 is_stmt 1 view -0
+ 460              		.cfi_startproc
+ 461              		@ args = 0, pretend = 0, frame = 0
+ 462              		@ frame_needed = 0, uses_anonymous_args = 0
+ 104:mylib/uart_ext.c ****   if(huart==debug_uart){
+ 463              		.loc 1 104 3 view .LVU76
+ 464              		.loc 1 104 11 is_stmt 0 view .LVU77
+ 465 0000 114B     		ldr	r3, .L42
+ 466 0002 1B68     		ldr	r3, [r3]
+ 467              		.loc 1 104 5 view .LVU78
+ 468 0004 8342     		cmp	r3, r0
+ 469 0006 00D0     		beq	.L40
+ 470 0008 7047     		bx	lr
+ 471              	.L40:
+ 103:mylib/uart_ext.c ****   if(huart==debug_uart){
+ 472              		.loc 1 103 56 view .LVU79
+ 473 000a 10B5     		push	{r4, lr}
+ 474              	.LCFI18:
+ 475              		.cfi_def_cfa_offset 8
+ 476              		.cfi_offset 4, -8
+ 477              		.cfi_offset 14, -4
+ 105:mylib/uart_ext.c ****     buffer_rx[buffer_rx_count]=buffer_rx_temp;
+ 478              		.loc 1 105 5 is_stmt 1 view .LVU80
+ 479              		.loc 1 105 14 is_stmt 0 view .LVU81
+ 480 000c 0F4B     		ldr	r3, .L42+4
+ 481 000e 1B68     		ldr	r3, [r3]
+ 482              		.loc 1 105 31 view .LVU82
+ 483 0010 0F4A     		ldr	r2, .L42+8
+ 484 0012 1178     		ldrb	r1, [r2]	@ zero_extendqisi2
+ 485 0014 0F4A     		ldr	r2, .L42+12
+ 486 0016 D154     		strb	r1, [r2, r3]
+ 106:mylib/uart_ext.c ****     if(buffer_rx[buffer_rx_count-1]=='\r'&&buffer_rx[buffer_rx_count]=='\n'){
+ 487              		.loc 1 106 5 is_stmt 1 view .LVU83
+ 488              		.loc 1 106 33 is_stmt 0 view .LVU84
+ 489 0018 5C1E     		subs	r4, r3, #1
+ 490              		.loc 1 106 17 view .LVU85
+ 491 001a 125D     		ldrb	r2, [r2, r4]	@ zero_extendqisi2
+ 492              		.loc 1 106 7 view .LVU86
+ 493 001c 0D2A     		cmp	r2, #13
+ 494 001e 01D1     		bne	.L35
+ 495              		.loc 1 106 42 discriminator 1 view .LVU87
+ 496 0020 0A29     		cmp	r1, #10
+ 497 0022 07D0     		beq	.L41
+ 498              	.L35:
+ 107:mylib/uart_ext.c ****       buffer_rx[buffer_rx_count-1]='\0';
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s 			page 12
 
 
- 491              		.loc 1 109 3 view .LVU92
- 492 000a 0368     		ldr	r3, [r0]
- 493 000c 1A68     		ldr	r2, [r3]
- 494 000e 0192     		str	r2, [sp, #4]
- 495              		.loc 1 109 3 view .LVU93
- 496 0010 5B68     		ldr	r3, [r3, #4]
- 497 0012 0193     		str	r3, [sp, #4]
- 498              		.loc 1 109 3 view .LVU94
- 499 0014 019B     		ldr	r3, [sp, #4]
- 500              	.LBE2:
- 501              		.loc 1 109 3 view .LVU95
- 110:mylib/uart_ext.c ****   if(huart==debug_uart){
- 502              		.loc 1 110 3 view .LVU96
- 503              		.loc 1 110 11 is_stmt 0 view .LVU97
- 504 0016 074B     		ldr	r3, .L44
- 505 0018 1868     		ldr	r0, [r3]
- 506              	.LVL32:
- 507              		.loc 1 110 5 view .LVU98
- 508 001a A042     		cmp	r0, r4
- 509 001c 01D0     		beq	.L43
- 510              	.LVL33:
- 511              	.L40:
- 111:mylib/uart_ext.c ****     HAL_UART_DMAStop(debug_uart);
- 112:mylib/uart_ext.c ****     temp= huart->Instance->SR;
- 113:mylib/uart_ext.c ****     temp= huart->Instance->DR;//读出串口的数据，防止在关闭DMA期间有数据进来，�
- 114:mylib/uart_ext.c ****     temp++;  // 无用，单纯为了消掉warning
- 115:mylib/uart_ext.c ****     
- 116:mylib/uart_ext.c ****     buffer_rx_OK=1;
- 117:mylib/uart_ext.c ****   }
- 118:mylib/uart_ext.c ****   
- 119:mylib/uart_ext.c **** }
- 512              		.loc 1 119 1 view .LVU99
- 513 001e 02B0     		add	sp, sp, #8
- 514              	.LCFI15:
- 515              		.cfi_remember_state
- 516              		.cfi_def_cfa_offset 8
- 517              		@ sp needed
- 518 0020 10BD     		pop	{r4, pc}
- 519              	.LVL34:
- 520              	.L43:
- 521              	.LCFI16:
- 522              		.cfi_restore_state
- 111:mylib/uart_ext.c ****     HAL_UART_DMAStop(debug_uart);
- 523              		.loc 1 111 5 is_stmt 1 view .LVU100
- 524 0022 FFF7FEFF 		bl	HAL_UART_DMAStop
- 525              	.LVL35:
- 112:mylib/uart_ext.c ****     temp= huart->Instance->DR;//读出串口的数据，防止在关闭DMA期间有数据进来，�
- 526              		.loc 1 112 5 view .LVU101
- 112:mylib/uart_ext.c ****     temp= huart->Instance->DR;//读出串口的数据，防止在关闭DMA期间有数据进来，�
- 527              		.loc 1 112 16 is_stmt 0 view .LVU102
- 528 0026 2368     		ldr	r3, [r4]
- 112:mylib/uart_ext.c ****     temp= huart->Instance->DR;//读出串口的数据，防止在关闭DMA期间有数据进来，�
- 529              		.loc 1 112 26 view .LVU103
- 530 0028 1A68     		ldr	r2, [r3]
- 531              	.LVL36:
- 113:mylib/uart_ext.c ****     temp++;  // 无用，单纯为了消掉warning
- 532              		.loc 1 113 5 is_stmt 1 view .LVU104
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 13
+ 108:mylib/uart_ext.c ****       buffer_rx_OK=1;
+ 109:mylib/uart_ext.c ****       // call
+ 110:mylib/uart_ext.c ****       buffer_rx_count=0;
+ 111:mylib/uart_ext.c ****     }else{
+ 112:mylib/uart_ext.c ****       buffer_rx_count++;
+ 499              		.loc 1 112 7 is_stmt 1 view .LVU88
+ 500              		.loc 1 112 22 is_stmt 0 view .LVU89
+ 501 0024 0133     		adds	r3, r3, #1
+ 502 0026 094A     		ldr	r2, .L42+4
+ 503 0028 1360     		str	r3, [r2]
+ 113:mylib/uart_ext.c ****       HAL_UART_Receive_IT(huart,&buffer_rx_temp,1);
+ 504              		.loc 1 113 7 is_stmt 1 view .LVU90
+ 505 002a 0122     		movs	r2, #1
+ 506 002c 0849     		ldr	r1, .L42+8
+ 507 002e FFF7FEFF 		bl	HAL_UART_Receive_IT
+ 508              	.LVL32:
+ 509              	.L33:
+ 114:mylib/uart_ext.c ****     }
+ 115:mylib/uart_ext.c ****   }
+ 116:mylib/uart_ext.c **** }
+ 510              		.loc 1 116 1 is_stmt 0 view .LVU91
+ 511 0032 10BD     		pop	{r4, pc}
+ 512              	.LVL33:
+ 513              	.L41:
+ 107:mylib/uart_ext.c ****       buffer_rx_OK=1;
+ 514              		.loc 1 107 7 is_stmt 1 view .LVU92
+ 107:mylib/uart_ext.c ****       buffer_rx_OK=1;
+ 515              		.loc 1 107 35 is_stmt 0 view .LVU93
+ 516 0034 0023     		movs	r3, #0
+ 517 0036 074A     		ldr	r2, .L42+12
+ 518 0038 1355     		strb	r3, [r2, r4]
+ 108:mylib/uart_ext.c ****       // call
+ 519              		.loc 1 108 7 is_stmt 1 view .LVU94
+ 108:mylib/uart_ext.c ****       // call
+ 520              		.loc 1 108 19 is_stmt 0 view .LVU95
+ 521 003a 074A     		ldr	r2, .L42+16
+ 522 003c 0121     		movs	r1, #1
+ 523 003e 1170     		strb	r1, [r2]
+ 110:mylib/uart_ext.c ****     }else{
+ 524              		.loc 1 110 7 is_stmt 1 view .LVU96
+ 110:mylib/uart_ext.c ****     }else{
+ 525              		.loc 1 110 22 is_stmt 0 view .LVU97
+ 526 0040 024A     		ldr	r2, .L42+4
+ 527 0042 1360     		str	r3, [r2]
+ 528 0044 F5E7     		b	.L33
+ 529              	.L43:
+ 530 0046 00BF     		.align	2
+ 531              	.L42:
+ 532 0048 00000000 		.word	.LANCHOR1
+ 533 004c 00000000 		.word	.LANCHOR4
+ 534 0050 00000000 		.word	buffer_rx_temp
+ 535 0054 00000000 		.word	buffer_rx
+ 536 0058 00000000 		.word	buffer_rx_OK
+ 537              		.cfi_endproc
+ 538              	.LFE139:
+ 540              		.section	.text.HAL_UART_IDLECallback,"ax",%progbits
+ 541              		.align	1
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s 			page 13
 
 
- 113:mylib/uart_ext.c ****     temp++;  // 无用，单纯为了消掉warning
- 533              		.loc 1 113 26 is_stmt 0 view .LVU105
- 534 002a 5B68     		ldr	r3, [r3, #4]
- 114:mylib/uart_ext.c ****     
- 535              		.loc 1 114 5 is_stmt 1 view .LVU106
- 116:mylib/uart_ext.c ****   }
- 536              		.loc 1 116 5 view .LVU107
- 116:mylib/uart_ext.c ****   }
- 537              		.loc 1 116 17 is_stmt 0 view .LVU108
- 538 002c 024B     		ldr	r3, .L44+4
- 539 002e 0122     		movs	r2, #1
- 540 0030 1A70     		strb	r2, [r3]
- 541              		.loc 1 119 1 view .LVU109
- 542 0032 F4E7     		b	.L40
- 543              	.L45:
- 544              		.align	2
- 545              	.L44:
- 546 0034 00000000 		.word	.LANCHOR1
- 547 0038 00000000 		.word	buffer_rx_OK
- 548              		.cfi_endproc
- 549              	.LFE139:
- 551              		.section	.text.UART_Command_Analize_And_Call,"ax",%progbits
- 552              		.align	1
- 553              		.global	UART_Command_Analize_And_Call
- 554              		.syntax unified
- 555              		.thumb
- 556              		.thumb_func
- 557              		.fpu fpv4-sp-d16
- 559              	UART_Command_Analize_And_Call:
- 560              	.LFB140:
- 120:mylib/uart_ext.c **** 
- 121:mylib/uart_ext.c **** void UART_Command_Analize_And_Call(){
- 561              		.loc 1 121 37 is_stmt 1 view -0
- 562              		.cfi_startproc
- 563              		@ args = 0, pretend = 0, frame = 0
- 564              		@ frame_needed = 0, uses_anonymous_args = 0
- 565 0000 08B5     		push	{r3, lr}
- 566              	.LCFI17:
- 567              		.cfi_def_cfa_offset 8
- 568              		.cfi_offset 3, -8
- 569              		.cfi_offset 14, -4
- 122:mylib/uart_ext.c ****   analize(buffer_rx);
- 570              		.loc 1 122 3 view .LVU111
- 571 0002 0448     		ldr	r0, .L48
- 572 0004 FFF7FEFF 		bl	analize
- 573              	.LVL37:
- 123:mylib/uart_ext.c ****   UART_Start_Receive();
- 574              		.loc 1 123 3 view .LVU112
- 575 0008 FFF7FEFF 		bl	UART_Start_Receive
- 576              	.LVL38:
- 124:mylib/uart_ext.c ****   buffer_rx_OK=0;
- 577              		.loc 1 124 3 view .LVU113
- 578              		.loc 1 124 15 is_stmt 0 view .LVU114
- 579 000c 024B     		ldr	r3, .L48+4
- 580 000e 0022     		movs	r2, #0
- 581 0010 1A70     		strb	r2, [r3]
- 125:mylib/uart_ext.c **** }
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 14
+ 542              		.global	HAL_UART_IDLECallback
+ 543              		.syntax unified
+ 544              		.thumb
+ 545              		.thumb_func
+ 546              		.fpu fpv4-sp-d16
+ 548              	HAL_UART_IDLECallback:
+ 549              	.LVL34:
+ 550              	.LFB140:
+ 117:mylib/uart_ext.c **** 
+ 118:mylib/uart_ext.c **** void HAL_UART_IDLECallback(UART_HandleTypeDef *huart){
+ 551              		.loc 1 118 54 is_stmt 1 view -0
+ 552              		.cfi_startproc
+ 553              		@ args = 0, pretend = 0, frame = 8
+ 554              		@ frame_needed = 0, uses_anonymous_args = 0
+ 555              		.loc 1 118 54 is_stmt 0 view .LVU99
+ 556 0000 10B5     		push	{r4, lr}
+ 557              	.LCFI19:
+ 558              		.cfi_def_cfa_offset 8
+ 559              		.cfi_offset 4, -8
+ 560              		.cfi_offset 14, -4
+ 561 0002 82B0     		sub	sp, sp, #8
+ 562              	.LCFI20:
+ 563              		.cfi_def_cfa_offset 16
+ 564 0004 0446     		mov	r4, r0
+ 119:mylib/uart_ext.c ****    uint8_t temp=0;
+ 565              		.loc 1 119 4 is_stmt 1 view .LVU100
+ 566              	.LVL35:
+ 120:mylib/uart_ext.c ****   
+ 121:mylib/uart_ext.c ****   __HAL_UART_CLEAR_IDLEFLAG(huart);
+ 567              		.loc 1 121 3 view .LVU101
+ 568              	.LBB2:
+ 569              		.loc 1 121 3 view .LVU102
+ 570 0006 0023     		movs	r3, #0
+ 571 0008 0193     		str	r3, [sp, #4]
+ 572              		.loc 1 121 3 view .LVU103
+ 573 000a 0368     		ldr	r3, [r0]
+ 574 000c 1A68     		ldr	r2, [r3]
+ 575 000e 0192     		str	r2, [sp, #4]
+ 576              		.loc 1 121 3 view .LVU104
+ 577 0010 5B68     		ldr	r3, [r3, #4]
+ 578 0012 0193     		str	r3, [sp, #4]
+ 579              		.loc 1 121 3 view .LVU105
+ 580 0014 019B     		ldr	r3, [sp, #4]
+ 581              	.LBE2:
+ 582              		.loc 1 121 3 view .LVU106
+ 122:mylib/uart_ext.c ****   if(huart==debug_uart){
+ 583              		.loc 1 122 3 view .LVU107
+ 584              		.loc 1 122 11 is_stmt 0 view .LVU108
+ 585 0016 074B     		ldr	r3, .L48
+ 586 0018 1868     		ldr	r0, [r3]
+ 587              	.LVL36:
+ 588              		.loc 1 122 5 view .LVU109
+ 589 001a A042     		cmp	r0, r4
+ 590 001c 01D0     		beq	.L47
+ 591              	.LVL37:
+ 592              	.L44:
+ 123:mylib/uart_ext.c ****     HAL_UART_DMAStop(debug_uart);
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s 			page 14
 
 
- 582              		.loc 1 125 1 view .LVU115
- 583 0012 08BD     		pop	{r3, pc}
- 584              	.L49:
- 585              		.align	2
- 586              	.L48:
- 587 0014 00000000 		.word	buffer_rx
- 588 0018 00000000 		.word	buffer_rx_OK
- 589              		.cfi_endproc
- 590              	.LFE140:
- 592              		.global	s
- 593              		.comm	buffer_rx_OK,1,1
- 594              		.global	buffer_rx_count
- 595              		.comm	buffer_rx,30,4
- 596              		.comm	buffer_rx_temp,1,1
- 597              		.comm	uart_buffer,101,4
- 598              		.section	.bss.Tx_Mode,"aw",%nobits
- 599              		.set	.LANCHOR0,. + 0
- 602              	Tx_Mode:
- 603 0000 00       		.space	1
- 604              		.section	.bss.buffer_rx_count,"aw",%nobits
- 605              		.align	2
- 606              		.set	.LANCHOR4,. + 0
- 609              	buffer_rx_count:
- 610 0000 00000000 		.space	4
- 611              		.section	.bss.debug_uart,"aw",%nobits
- 612              		.align	2
- 613              		.set	.LANCHOR1,. + 0
- 616              	debug_uart:
- 617 0000 00000000 		.space	4
- 618              		.section	.data.Rx_Mode,"aw"
- 619              		.set	.LANCHOR2,. + 0
- 622              	Rx_Mode:
- 623 0000 01       		.byte	1
- 624              		.section	.data.s,"aw"
+ 124:mylib/uart_ext.c ****     temp= huart->Instance->SR;
+ 125:mylib/uart_ext.c ****     temp= huart->Instance->DR;//读出串口的数据，防止在关闭DMA期间有数据进来，�
+ 126:mylib/uart_ext.c ****     temp++;  // 无用，单纯为了消掉warning
+ 127:mylib/uart_ext.c ****     
+ 128:mylib/uart_ext.c ****     buffer_rx_OK=1;
+ 129:mylib/uart_ext.c ****   }
+ 130:mylib/uart_ext.c ****   
+ 131:mylib/uart_ext.c **** }
+ 593              		.loc 1 131 1 view .LVU110
+ 594 001e 02B0     		add	sp, sp, #8
+ 595              	.LCFI21:
+ 596              		.cfi_remember_state
+ 597              		.cfi_def_cfa_offset 8
+ 598              		@ sp needed
+ 599 0020 10BD     		pop	{r4, pc}
+ 600              	.LVL38:
+ 601              	.L47:
+ 602              	.LCFI22:
+ 603              		.cfi_restore_state
+ 123:mylib/uart_ext.c ****     HAL_UART_DMAStop(debug_uart);
+ 604              		.loc 1 123 5 is_stmt 1 view .LVU111
+ 605 0022 FFF7FEFF 		bl	HAL_UART_DMAStop
+ 606              	.LVL39:
+ 124:mylib/uart_ext.c ****     temp= huart->Instance->DR;//读出串口的数据，防止在关闭DMA期间有数据进来，�
+ 607              		.loc 1 124 5 view .LVU112
+ 124:mylib/uart_ext.c ****     temp= huart->Instance->DR;//读出串口的数据，防止在关闭DMA期间有数据进来，�
+ 608              		.loc 1 124 16 is_stmt 0 view .LVU113
+ 609 0026 2368     		ldr	r3, [r4]
+ 124:mylib/uart_ext.c ****     temp= huart->Instance->DR;//读出串口的数据，防止在关闭DMA期间有数据进来，�
+ 610              		.loc 1 124 26 view .LVU114
+ 611 0028 1A68     		ldr	r2, [r3]
+ 612              	.LVL40:
+ 125:mylib/uart_ext.c ****     temp++;  // 无用，单纯为了消掉warning
+ 613              		.loc 1 125 5 is_stmt 1 view .LVU115
+ 125:mylib/uart_ext.c ****     temp++;  // 无用，单纯为了消掉warning
+ 614              		.loc 1 125 26 is_stmt 0 view .LVU116
+ 615 002a 5B68     		ldr	r3, [r3, #4]
+ 126:mylib/uart_ext.c ****     
+ 616              		.loc 1 126 5 is_stmt 1 view .LVU117
+ 128:mylib/uart_ext.c ****   }
+ 617              		.loc 1 128 5 view .LVU118
+ 128:mylib/uart_ext.c ****   }
+ 618              		.loc 1 128 17 is_stmt 0 view .LVU119
+ 619 002c 024B     		ldr	r3, .L48+4
+ 620 002e 0122     		movs	r2, #1
+ 621 0030 1A70     		strb	r2, [r3]
+ 622              		.loc 1 131 1 view .LVU120
+ 623 0032 F4E7     		b	.L44
+ 624              	.L49:
  625              		.align	2
- 626              		.set	.LANCHOR3,. + 0
- 629              	s:
- 630 0000 62791006 		.ascii	"by\020\006\000"
- 630      00
- 631 0005 00000000 		.space	17
- 631      00000000 
- 631      00000000 
- 631      00000000 
- 631      00
- 632              		.text
- 633              	.Letext0:
- 634              		.file 2 "c:\\arm_gcc\\arm-none-eabi\\include\\machine\\_default_types.h"
- 635              		.file 3 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_stdint.h"
- 636              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 637              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 638              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
- 639              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 640              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 641              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 642              		.file 10 "Inc/usart.h"
- 643              		.file 11 "c:\\arm_gcc\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stdarg.h"
- 644              		.file 12 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\lock.h"
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 15
+ 626              	.L48:
+ 627 0034 00000000 		.word	.LANCHOR1
+ 628 0038 00000000 		.word	buffer_rx_OK
+ 629              		.cfi_endproc
+ 630              	.LFE140:
+ 632              		.section	.text.UART_Command_Analize_And_Call,"ax",%progbits
+ 633              		.align	1
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s 			page 15
 
 
- 645              		.file 13 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_types.h"
- 646              		.file 14 "c:\\arm_gcc\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h"
- 647              		.file 15 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\reent.h"
- 648              		.file 16 "c:\\arm_gcc\\arm-none-eabi\\include\\stdlib.h"
- 649              		.file 17 "mylib/uart_ext.h"
- 650              		.file 18 "mylib/command.h"
- 651              		.file 19 "c:\\arm_gcc\\arm-none-eabi\\include\\stdio.h"
- 652              		.file 20 "mylib/cmd_fun.h"
- 653              		.file 21 "<built-in>"
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s 			page 16
+ 634              		.global	UART_Command_Analize_And_Call
+ 635              		.syntax unified
+ 636              		.thumb
+ 637              		.thumb_func
+ 638              		.fpu fpv4-sp-d16
+ 640              	UART_Command_Analize_And_Call:
+ 641              	.LFB141:
+ 132:mylib/uart_ext.c **** 
+ 133:mylib/uart_ext.c **** void UART_Command_Analize_And_Call(){
+ 642              		.loc 1 133 37 is_stmt 1 view -0
+ 643              		.cfi_startproc
+ 644              		@ args = 0, pretend = 0, frame = 0
+ 645              		@ frame_needed = 0, uses_anonymous_args = 0
+ 646 0000 08B5     		push	{r3, lr}
+ 647              	.LCFI23:
+ 648              		.cfi_def_cfa_offset 8
+ 649              		.cfi_offset 3, -8
+ 650              		.cfi_offset 14, -4
+ 134:mylib/uart_ext.c ****   analize(buffer_rx);
+ 651              		.loc 1 134 3 view .LVU122
+ 652 0002 0448     		ldr	r0, .L52
+ 653 0004 FFF7FEFF 		bl	analize
+ 654              	.LVL41:
+ 135:mylib/uart_ext.c ****   UART_Start_Receive();
+ 655              		.loc 1 135 3 view .LVU123
+ 656 0008 FFF7FEFF 		bl	UART_Start_Receive
+ 657              	.LVL42:
+ 136:mylib/uart_ext.c ****   buffer_rx_OK=0;
+ 658              		.loc 1 136 3 view .LVU124
+ 659              		.loc 1 136 15 is_stmt 0 view .LVU125
+ 660 000c 024B     		ldr	r3, .L52+4
+ 661 000e 0022     		movs	r2, #0
+ 662 0010 1A70     		strb	r2, [r3]
+ 137:mylib/uart_ext.c **** }
+ 663              		.loc 1 137 1 view .LVU126
+ 664 0012 08BD     		pop	{r3, pc}
+ 665              	.L53:
+ 666              		.align	2
+ 667              	.L52:
+ 668 0014 00000000 		.word	buffer_rx
+ 669 0018 00000000 		.word	buffer_rx_OK
+ 670              		.cfi_endproc
+ 671              	.LFE141:
+ 673              		.global	s
+ 674              		.comm	buffer_rx_OK,1,1
+ 675              		.global	buffer_rx_count
+ 676              		.comm	buffer_rx,30,4
+ 677              		.comm	buffer_rx_temp,1,1
+ 678              		.comm	uart_buffer,101,4
+ 679              		.section	.bss.Tx_Mode,"aw",%nobits
+ 680              		.set	.LANCHOR0,. + 0
+ 683              	Tx_Mode:
+ 684 0000 00       		.space	1
+ 685              		.section	.bss.buffer_rx_count,"aw",%nobits
+ 686              		.align	2
+ 687              		.set	.LANCHOR4,. + 0
+ 690              	buffer_rx_count:
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s 			page 16
+
+
+ 691 0000 00000000 		.space	4
+ 692              		.section	.bss.debug_uart,"aw",%nobits
+ 693              		.align	2
+ 694              		.set	.LANCHOR1,. + 0
+ 697              	debug_uart:
+ 698 0000 00000000 		.space	4
+ 699              		.section	.data.Rx_Mode,"aw"
+ 700              		.set	.LANCHOR2,. + 0
+ 703              	Rx_Mode:
+ 704 0000 01       		.byte	1
+ 705              		.section	.data.s,"aw"
+ 706              		.align	2
+ 707              		.set	.LANCHOR3,. + 0
+ 710              	s:
+ 711 0000 62791006 		.ascii	"by\020\006\000"
+ 711      00
+ 712 0005 00000000 		.space	17
+ 712      00000000 
+ 712      00000000 
+ 712      00000000 
+ 712      00
+ 713              		.text
+ 714              	.Letext0:
+ 715              		.file 2 "c:\\arm_gcc\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 716              		.file 3 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 717              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 718              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 719              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 720              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 721              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 722              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 723              		.file 10 "Inc/usart.h"
+ 724              		.file 11 "c:\\arm_gcc\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stdarg.h"
+ 725              		.file 12 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\lock.h"
+ 726              		.file 13 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_types.h"
+ 727              		.file 14 "c:\\arm_gcc\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h"
+ 728              		.file 15 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\reent.h"
+ 729              		.file 16 "c:\\arm_gcc\\arm-none-eabi\\include\\stdlib.h"
+ 730              		.file 17 "mylib/uart_ext.h"
+ 731              		.file 18 "mylib/command.h"
+ 732              		.file 19 "c:\\arm_gcc\\arm-none-eabi\\include\\stdio.h"
+ 733              		.file 20 "mylib/cmd_fun.h"
+ 734              		.file 21 "<built-in>"
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s 			page 17
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 uart_ext.c
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:18     .text.UART_Send:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:25     .text.UART_Send:00000000 UART_Send
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:99     .text.UART_Send:0000003c $d
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:105    .text.UART_Start_Receive:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:112    .text.UART_Start_Receive:00000000 UART_Start_Receive
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:164    .text.UART_Start_Receive:00000038 $d
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:18     .text.UART_Send:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:25     .text.UART_Send:00000000 UART_Send
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:99     .text.UART_Send:0000003c $d
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:105    .text.UART_Start_Receive:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:112    .text.UART_Start_Receive:00000000 UART_Start_Receive
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:164    .text.UART_Start_Receive:00000038 $d
                             *COM*:00000001 buffer_rx_temp
                             *COM*:0000001e buffer_rx
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:172    .text.debug_uart_init:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:179    .text.debug_uart_init:00000000 debug_uart_init
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:215    .text.debug_uart_init:00000018 $d
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:222    .text.send_wave:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:229    .text.send_wave:00000000 send_wave
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:286    .text.send_wave:0000003c $d
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:291    .text.uprintf:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:298    .text.uprintf:00000000 uprintf
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:363    .text.uprintf:0000002c $d
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:172    .text.debug_uart_init:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:179    .text.debug_uart_init:00000000 debug_uart_init
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:215    .text.debug_uart_init:00000018 $d
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:222    .text.send_wave:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:229    .text.send_wave:00000000 send_wave
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:286    .text.send_wave:0000003c $d
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:291    .text.uprintf_polling:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:298    .text.uprintf_polling:00000000 uprintf_polling
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:366    .text.uprintf_polling:00000034 $d
                             *COM*:00000065 uart_buffer
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:368    .text.HAL_UART_RxCpltCallback:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:375    .text.HAL_UART_RxCpltCallback:00000000 HAL_UART_RxCpltCallback
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:451    .text.HAL_UART_RxCpltCallback:00000048 $d
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:372    .text.uprintf:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:379    .text.uprintf:00000000 uprintf
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:444    .text.uprintf:0000002c $d
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:449    .text.HAL_UART_RxCpltCallback:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:456    .text.HAL_UART_RxCpltCallback:00000000 HAL_UART_RxCpltCallback
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:532    .text.HAL_UART_RxCpltCallback:00000048 $d
                             *COM*:00000001 buffer_rx_OK
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:460    .text.HAL_UART_IDLECallback:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:467    .text.HAL_UART_IDLECallback:00000000 HAL_UART_IDLECallback
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:546    .text.HAL_UART_IDLECallback:00000034 $d
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:552    .text.UART_Command_Analize_And_Call:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:559    .text.UART_Command_Analize_And_Call:00000000 UART_Command_Analize_And_Call
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:587    .text.UART_Command_Analize_And_Call:00000014 $d
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:629    .data.s:00000000 s
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:609    .bss.buffer_rx_count:00000000 buffer_rx_count
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:602    .bss.Tx_Mode:00000000 Tx_Mode
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:603    .bss.Tx_Mode:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:605    .bss.buffer_rx_count:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:612    .bss.debug_uart:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:616    .bss.debug_uart:00000000 debug_uart
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:622    .data.Rx_Mode:00000000 Rx_Mode
-C:\Users\ncer\AppData\Local\Temp\cclnrFQj.s:625    .data.s:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:541    .text.HAL_UART_IDLECallback:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:548    .text.HAL_UART_IDLECallback:00000000 HAL_UART_IDLECallback
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:627    .text.HAL_UART_IDLECallback:00000034 $d
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:633    .text.UART_Command_Analize_And_Call:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:640    .text.UART_Command_Analize_And_Call:00000000 UART_Command_Analize_And_Call
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:668    .text.UART_Command_Analize_And_Call:00000014 $d
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:710    .data.s:00000000 s
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:690    .bss.buffer_rx_count:00000000 buffer_rx_count
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:683    .bss.Tx_Mode:00000000 Tx_Mode
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:684    .bss.Tx_Mode:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:686    .bss.buffer_rx_count:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:693    .bss.debug_uart:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:697    .bss.debug_uart:00000000 debug_uart
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:703    .data.Rx_Mode:00000000 Rx_Mode
+C:\Users\ncer\AppData\Local\Temp\ccLjTLmx.s:706    .data.s:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_UART_Transmit

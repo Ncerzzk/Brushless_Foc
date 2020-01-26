@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 1
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -42,8 +42,8 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 1
   12:mylib/as5047.c **** uint16_t AS_5047_Err;
   13:mylib/as5047.c **** 
   14:mylib/as5047.c **** uint16_t Read_Reg(uint16_t reg){
-  15:mylib/as5047.c ****   uint16_t command=0;
-  16:mylib/as5047.c ****   uint16_t result=0;
+  15:mylib/as5047.c **** uint16_t command=0;
+  16:mylib/as5047.c **** uint16_t result=0;
   17:mylib/as5047.c **** 
   18:mylib/as5047.c ****   static uint8_t OK=0;
   19:mylib/as5047.c **** 
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 1
   28:mylib/as5047.c ****   command=Command(reg,1);
   29:mylib/as5047.c ****   Set_CSN(0);
   30:mylib/as5047.c ****   OK=HAL_SPI_TransmitReceive(&SPI_USE,(uint8_t *)&command,(uint8_t *)&AS_5047_Err,1,100);
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 2
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s 			page 2
 
 
   31:mylib/as5047.c ****   Set_CSN(1);
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 1
   40              	.LVL1:
   74:mylib/as5047.c ****   uint16_t temp=0;
   41              		.loc 1 74 3 view .LVU3
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 3
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s 			page 3
 
 
   75:mylib/as5047.c ****   for(int i=0;i<15;++i){
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 1
   87 001e 14F0010F 		tst	r4, #1
   88 0022 04D0     		beq	.L6
   82:mylib/as5047.c ****     return 0;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 4
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s 			page 4
 
 
   83:mylib/as5047.c ****   }else{
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 1
  137              		.cfi_offset 14, -4
   89:mylib/as5047.c ****   uint16_t command=0;
  138              		.loc 1 89 3 is_stmt 1 view .LVU33
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 5
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s 			page 5
 
 
  139              	.LVL12:
@@ -280,12 +280,12 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 1
  172              	Read_Reg:
  173              	.LVL17:
  174              	.LFB130:
-  14:mylib/as5047.c ****   uint16_t command=0;
+  14:mylib/as5047.c **** uint16_t command=0;
  175              		.loc 1 14 32 is_stmt 1 view -0
  176              		.cfi_startproc
  177              		@ args = 0, pretend = 0, frame = 8
  178              		@ frame_needed = 0, uses_anonymous_args = 0
-  14:mylib/as5047.c ****   uint16_t command=0;
+  14:mylib/as5047.c **** uint16_t command=0;
  179              		.loc 1 14 32 is_stmt 0 view .LVU45
  180 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
  181              	.LCFI4:
@@ -298,17 +298,17 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 1
  188              		.cfi_offset 14, -4
  189 0004 84B0     		sub	sp, sp, #16
  190              	.LCFI5:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 6
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s 			page 6
 
 
  191              		.cfi_def_cfa_offset 40
  192 0006 8046     		mov	r8, r0
-  15:mylib/as5047.c ****   uint16_t result=0;
- 193              		.loc 1 15 3 is_stmt 1 view .LVU46
+  15:mylib/as5047.c **** uint16_t result=0;
+ 193              		.loc 1 15 1 is_stmt 1 view .LVU46
   16:mylib/as5047.c **** 
- 194              		.loc 1 16 3 view .LVU47
+ 194              		.loc 1 16 1 view .LVU47
   16:mylib/as5047.c **** 
- 195              		.loc 1 16 12 is_stmt 0 view .LVU48
+ 195              		.loc 1 16 10 is_stmt 0 view .LVU48
  196 0008 0025     		movs	r5, #0
  197 000a ADF80C50 		strh	r5, [sp, #12]	@ movhi
   18:mylib/as5047.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 1
  231 003e 4FF40041 		mov	r1, #32768
  232 0042 2046     		mov	r0, r4
  233 0044 FFF7FEFF 		bl	HAL_GPIO_WritePin
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 7
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s 			page 7
 
 
  234              	.LVL22:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 1
  275              	.LVL27:
   33:mylib/as5047.c ****   Set_CSN(0);
  276              		.loc 1 33 10 view .LVU73
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 8
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s 			page 8
 
 
  277 008c ADF80E00 		strh	r0, [sp, #14]	@ movhi
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 1
  318 00c6 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
  319              	.L13:
  320              	.LCFI7:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 9
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s 			page 9
 
 
  321              		.cfi_restore_state
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 1
  367              		.loc 1 51 11 is_stmt 0 view .LVU96
  368 0010 C0F30D00 		ubfx	r0, r0, #0, #14
  369              	.LVL33:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 10
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s 			page 10
 
 
   52:mylib/as5047.c **** }
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 1
  415              	.LVL39:
   64:mylib/as5047.c ****     result=2*PI*position/16384.0f;
  416              		.loc 1 64 3 is_stmt 1 view .LVU108
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 11
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s 			page 11
 
 
   64:mylib/as5047.c ****     result=2*PI*position/16384.0f;
@@ -653,48 +653,280 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 1
  454 0044 0000B443 		.word	1135869952
  455              		.cfi_endproc
  456              	.LFE132:
- 458              		.comm	AS_5047_Err,2,2
- 459              		.section	.bss.OK.8476,"aw",%nobits
- 460              		.set	.LANCHOR0,. + 0
- 463              	OK.8476:
- 464 0000 00       		.space	1
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 12
+ 458              		.section	.text.AS5047_Set_Direction,"ax",%progbits
+ 459              		.align	1
+ 460              		.global	AS5047_Set_Direction
+ 461              		.syntax unified
+ 462              		.thumb
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s 			page 12
 
 
- 465              		.text
- 466              	.Letext0:
- 467              		.file 2 "c:\\arm_gcc\\arm-none-eabi\\include\\machine\\_default_types.h"
- 468              		.file 3 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_stdint.h"
- 469              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 470              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 471              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
- 472              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 473              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
- 474              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 475              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h"
- 476              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 477              		.file 12 "Inc/spi.h"
- 478              		.file 13 "Inc/usart.h"
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s 			page 13
+ 463              		.thumb_func
+ 464              		.fpu fpv4-sp-d16
+ 466              	AS5047_Set_Direction:
+ 467              	.LVL45:
+ 468              	.LFB135:
+  95:mylib/as5047.c **** 
+  96:mylib/as5047.c **** // 本函数需确保不会被其他操作AS5047的程序打断
+  97:mylib/as5047.c **** // 因为写入一个寄存器需要好几个SPI操作时序，一旦中间有其他操作（如读
+  98:mylib/as5047.c **** 
+  99:mylib/as5047.c **** // 方向有两种，
+ 100:mylib/as5047.c **** // direction==0 顺时针为正 （从上往下看磁编码器）                
+ 101:mylib/as5047.c **** // direction==1 逆时针为正
+ 102:mylib/as5047.c **** 
+ 103:mylib/as5047.c **** void AS5047_Set_Direction(uint8_t direction){
+ 469              		.loc 1 103 45 is_stmt 1 view -0
+ 470              		.cfi_startproc
+ 471              		@ args = 0, pretend = 0, frame = 8
+ 472              		@ frame_needed = 0, uses_anonymous_args = 0
+ 473              		.loc 1 103 45 is_stmt 0 view .LVU122
+ 474 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 475              	.LCFI10:
+ 476              		.cfi_def_cfa_offset 24
+ 477              		.cfi_offset 4, -24
+ 478              		.cfi_offset 5, -20
+ 479              		.cfi_offset 6, -16
+ 480              		.cfi_offset 7, -12
+ 481              		.cfi_offset 8, -8
+ 482              		.cfi_offset 14, -4
+ 483 0004 84B0     		sub	sp, sp, #16
+ 484              	.LCFI11:
+ 485              		.cfi_def_cfa_offset 40
+ 486 0006 0546     		mov	r5, r0
+ 104:mylib/as5047.c ****   uint16_t command=0;
+ 487              		.loc 1 104 3 is_stmt 1 view .LVU123
+ 105:mylib/as5047.c ****   static uint16_t result=0;
+ 488              		.loc 1 105 3 view .LVU124
+ 106:mylib/as5047.c **** 
+ 107:mylib/as5047.c ****   command=Command(0x01,1);
+ 489              		.loc 1 107 3 view .LVU125
+ 490              		.loc 1 107 11 is_stmt 0 view .LVU126
+ 491 0008 0121     		movs	r1, #1
+ 492 000a 0846     		mov	r0, r1
+ 493              	.LVL46:
+ 494              		.loc 1 107 11 view .LVU127
+ 495 000c FFF7FEFF 		bl	Command
+ 496              	.LVL47:
+ 497              		.loc 1 107 10 view .LVU128
+ 498 0010 ADF80E00 		strh	r0, [sp, #14]	@ movhi
+ 108:mylib/as5047.c ****   Set_CSN(0);
+ 499              		.loc 1 108 3 is_stmt 1 view .LVU129
+ 500 0014 364C     		ldr	r4, .L29
+ 501 0016 0022     		movs	r2, #0
+ 502 0018 4FF40041 		mov	r1, #32768
+ 503 001c 2046     		mov	r0, r4
+ 504 001e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 505              	.LVL48:
+ 506              		.loc 1 108 13 view .LVU130
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s 			page 13
+
+
+ 109:mylib/as5047.c ****   HAL_SPI_Transmit(&SPI_USE,(uint8_t *)&command,1,100);
+ 507              		.loc 1 109 3 view .LVU131
+ 508 0022 344E     		ldr	r6, .L29+4
+ 509 0024 6423     		movs	r3, #100
+ 510 0026 0122     		movs	r2, #1
+ 511 0028 0DF10E01 		add	r1, sp, #14
+ 512 002c 3046     		mov	r0, r6
+ 513 002e FFF7FEFF 		bl	HAL_SPI_Transmit
+ 514              	.LVL49:
+ 110:mylib/as5047.c ****   Set_CSN(1);
+ 515              		.loc 1 110 3 view .LVU132
+ 516 0032 0122     		movs	r2, #1
+ 517 0034 4FF40041 		mov	r1, #32768
+ 518 0038 2046     		mov	r0, r4
+ 519 003a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 520              	.LVL50:
+ 521              		.loc 1 110 13 view .LVU133
+ 111:mylib/as5047.c **** 
+ 112:mylib/as5047.c ****   command=Command(0x18,0);
+ 522              		.loc 1 112 3 view .LVU134
+ 523              		.loc 1 112 11 is_stmt 0 view .LVU135
+ 524 003e 0021     		movs	r1, #0
+ 525 0040 1820     		movs	r0, #24
+ 526 0042 FFF7FEFF 		bl	Command
+ 527              	.LVL51:
+ 528              		.loc 1 112 10 view .LVU136
+ 529 0046 ADF80E00 		strh	r0, [sp, #14]	@ movhi
+ 113:mylib/as5047.c ****   Set_CSN(0);
+ 530              		.loc 1 113 3 is_stmt 1 view .LVU137
+ 531 004a 0022     		movs	r2, #0
+ 532 004c 4FF40041 		mov	r1, #32768
+ 533 0050 2046     		mov	r0, r4
+ 534 0052 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 535              	.LVL52:
+ 536              		.loc 1 113 13 view .LVU138
+ 114:mylib/as5047.c ****   HAL_SPI_TransmitReceive(&SPI_USE,(uint8_t *)&command,(uint8_t *)&result,1,100);   // 接收错误
+ 537              		.loc 1 114 3 view .LVU139
+ 538 0056 284F     		ldr	r7, .L29+8
+ 539 0058 4FF06408 		mov	r8, #100
+ 540 005c CDF80080 		str	r8, [sp]
+ 541 0060 0123     		movs	r3, #1
+ 542 0062 3A46     		mov	r2, r7
+ 543 0064 0DF10E01 		add	r1, sp, #14
+ 544 0068 3046     		mov	r0, r6
+ 545 006a FFF7FEFF 		bl	HAL_SPI_TransmitReceive
+ 546              	.LVL53:
+ 115:mylib/as5047.c ****   Set_CSN(1);
+ 547              		.loc 1 115 3 view .LVU140
+ 548 006e 0122     		movs	r2, #1
+ 549 0070 4FF40041 		mov	r1, #32768
+ 550 0074 2046     		mov	r0, r4
+ 551 0076 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 552              	.LVL54:
+ 553              		.loc 1 115 13 view .LVU141
+ 116:mylib/as5047.c **** 
+ 117:mylib/as5047.c ****   direction<<=2;
+ 554              		.loc 1 117 3 view .LVU142
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s 			page 14
+
+
+ 555              		.loc 1 117 12 is_stmt 0 view .LVU143
+ 556 007a A800     		lsls	r0, r5, #2
+ 557              	.LVL55:
+ 118:mylib/as5047.c ****   command=Command(direction,0);
+ 558              		.loc 1 118 3 is_stmt 1 view .LVU144
+ 559              		.loc 1 118 11 is_stmt 0 view .LVU145
+ 560 007c 0021     		movs	r1, #0
+ 561 007e 00F0FC00 		and	r0, r0, #252
+ 562              	.LVL56:
+ 563              		.loc 1 118 11 view .LVU146
+ 564 0082 FFF7FEFF 		bl	Command
+ 565              	.LVL57:
+ 566              		.loc 1 118 10 view .LVU147
+ 567 0086 ADF80E00 		strh	r0, [sp, #14]	@ movhi
+ 119:mylib/as5047.c ****   Set_CSN(0);
+ 568              		.loc 1 119 3 is_stmt 1 view .LVU148
+ 569 008a 0022     		movs	r2, #0
+ 570 008c 4FF40041 		mov	r1, #32768
+ 571 0090 2046     		mov	r0, r4
+ 572 0092 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 573              	.LVL58:
+ 574              		.loc 1 119 13 view .LVU149
+ 120:mylib/as5047.c ****   HAL_SPI_TransmitReceive(&SPI_USE,(uint8_t *)&command,(uint8_t *)&result,1,100);   // 接收寄存
+ 575              		.loc 1 120 3 view .LVU150
+ 576 0096 CDF80080 		str	r8, [sp]
+ 577 009a 0123     		movs	r3, #1
+ 578 009c 3A46     		mov	r2, r7
+ 579 009e 0DF10E01 		add	r1, sp, #14
+ 580 00a2 3046     		mov	r0, r6
+ 581 00a4 FFF7FEFF 		bl	HAL_SPI_TransmitReceive
+ 582              	.LVL59:
+ 121:mylib/as5047.c ****   Set_CSN(1);
+ 583              		.loc 1 121 3 view .LVU151
+ 584 00a8 0122     		movs	r2, #1
+ 585 00aa 4FF40041 		mov	r1, #32768
+ 586 00ae 2046     		mov	r0, r4
+ 587 00b0 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 588              	.LVL60:
+ 589              		.loc 1 121 13 view .LVU152
+ 122:mylib/as5047.c **** 
+ 123:mylib/as5047.c ****   command=Command(0x00,1);
+ 590              		.loc 1 123 3 view .LVU153
+ 591              		.loc 1 123 11 is_stmt 0 view .LVU154
+ 592 00b4 0121     		movs	r1, #1
+ 593 00b6 0020     		movs	r0, #0
+ 594 00b8 FFF7FEFF 		bl	Command
+ 595              	.LVL61:
+ 596              		.loc 1 123 10 view .LVU155
+ 597 00bc ADF80E00 		strh	r0, [sp, #14]	@ movhi
+ 124:mylib/as5047.c ****   Set_CSN(0);
+ 598              		.loc 1 124 3 is_stmt 1 view .LVU156
+ 599 00c0 0022     		movs	r2, #0
+ 600 00c2 4FF40041 		mov	r1, #32768
+ 601 00c6 2046     		mov	r0, r4
+ 602 00c8 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 603              	.LVL62:
+ 604              		.loc 1 124 13 view .LVU157
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s 			page 15
+
+
+ 125:mylib/as5047.c ****   HAL_SPI_TransmitReceive(&SPI_USE,(uint8_t *)&command,(uint8_t *)&result,1,100);   /// 发送NOP�
+ 605              		.loc 1 125 3 view .LVU158
+ 606 00cc CDF80080 		str	r8, [sp]
+ 607 00d0 0123     		movs	r3, #1
+ 608 00d2 3A46     		mov	r2, r7
+ 609 00d4 0DF10E01 		add	r1, sp, #14
+ 610 00d8 3046     		mov	r0, r6
+ 611 00da FFF7FEFF 		bl	HAL_SPI_TransmitReceive
+ 612              	.LVL63:
+ 126:mylib/as5047.c ****   Set_CSN(1);
+ 613              		.loc 1 126 3 view .LVU159
+ 614 00de 0122     		movs	r2, #1
+ 615 00e0 4FF40041 		mov	r1, #32768
+ 616 00e4 2046     		mov	r0, r4
+ 617 00e6 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 618              	.LVL64:
+ 619              		.loc 1 126 13 view .LVU160
+ 127:mylib/as5047.c **** }
+ 620              		.loc 1 127 1 is_stmt 0 view .LVU161
+ 621 00ea 04B0     		add	sp, sp, #16
+ 622              	.LCFI12:
+ 623              		.cfi_def_cfa_offset 24
+ 624              		@ sp needed
+ 625 00ec BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 626              	.LVL65:
+ 627              	.L30:
+ 628              		.loc 1 127 1 view .LVU162
+ 629              		.align	2
+ 630              	.L29:
+ 631 00f0 00000240 		.word	1073872896
+ 632 00f4 00000000 		.word	hspi3
+ 633 00f8 00000000 		.word	.LANCHOR1
+ 634              		.cfi_endproc
+ 635              	.LFE135:
+ 637              		.comm	AS_5047_Err,2,2
+ 638              		.section	.bss.OK.8477,"aw",%nobits
+ 639              		.set	.LANCHOR0,. + 0
+ 642              	OK.8477:
+ 643 0000 00       		.space	1
+ 644              		.section	.bss.result.8505,"aw",%nobits
+ 645              		.align	1
+ 646              		.set	.LANCHOR1,. + 0
+ 649              	result.8505:
+ 650 0000 0000     		.space	2
+ 651              		.text
+ 652              	.Letext0:
+ 653              		.file 2 "c:\\arm_gcc\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 654              		.file 3 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 655              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 656              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 657              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 658              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 659              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 660              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 661              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h"
+ 662              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 663              		.file 12 "Inc/spi.h"
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s 			page 16
+
+
+ 664              		.file 13 "Inc/usart.h"
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s 			page 17
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 as5047.c
-C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s:18     .text.Count_PARC:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s:25     .text.Count_PARC:00000000 Count_PARC
-C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s:119    .text.Command:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s:125    .text.Command:00000000 Command
-C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s:165    .text.Read_Reg:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s:172    .text.Read_Reg:00000000 Read_Reg
-C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s:328    .text.Read_Reg:000000d0 $d
+C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s:18     .text.Count_PARC:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s:25     .text.Count_PARC:00000000 Count_PARC
+C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s:119    .text.Command:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s:125    .text.Command:00000000 Command
+C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s:165    .text.Read_Reg:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s:172    .text.Read_Reg:00000000 Read_Reg
+C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s:328    .text.Read_Reg:000000d0 $d
                             *COM*:00000002 AS_5047_Err
-C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s:336    .text.Get_Position:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s:343    .text.Get_Position:00000000 Get_Position
-C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s:385    .text.Get_Position_Rad_Dgree:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s:392    .text.Get_Position_Rad_Dgree:00000000 Get_Position_Rad_Dgree
-C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s:452    .text.Get_Position_Rad_Dgree:0000003c $d
-C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s:463    .bss.OK.8476:00000000 OK.8476
-C:\Users\ncer\AppData\Local\Temp\ccMJ9A3J.s:464    .bss.OK.8476:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s:336    .text.Get_Position:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s:343    .text.Get_Position:00000000 Get_Position
+C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s:385    .text.Get_Position_Rad_Dgree:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s:392    .text.Get_Position_Rad_Dgree:00000000 Get_Position_Rad_Dgree
+C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s:452    .text.Get_Position_Rad_Dgree:0000003c $d
+C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s:459    .text.AS5047_Set_Direction:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s:466    .text.AS5047_Set_Direction:00000000 AS5047_Set_Direction
+C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s:631    .text.AS5047_Set_Direction:000000f0 $d
+C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s:642    .bss.OK.8477:00000000 OK.8477
+C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s:643    .bss.OK.8477:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s:645    .bss.result.8505:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccSECGNu.s:649    .bss.result.8505:00000000 result.8505
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin

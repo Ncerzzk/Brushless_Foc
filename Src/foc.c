@@ -6,12 +6,11 @@
 #include "as5047.h"
 #include "uart_ext.h"
 
-#define PAIRS   7   //Pole of Pairs
-#define PART_NUM   3072 // 多少细分 
 #define MIN(a,b)    a<b?a:b
 
 uint16_t ADC_Values_Raw[4];
 uint16_t ADC_Values_Raw2[4];
+float Ialpha,Ibeta;
 //#define PI  3.1415926f
 typedef struct{
     uint8_t a;
@@ -28,6 +27,35 @@ typedef struct{
     float ccrc;
 }CCR_Duty;
 
+typedef struct{
+    uint8_t pairs;
+    float R;
+    float L;
+    int8_t direction; 
+    // 电机的运转方向，约定在开环模式下，电机按u4->u6方向运行（电角度增大），机械角度也增大为正方向
+    // 此参数与电机 a b c 三相的焊接有关
+    // 此参数仅在有感模式中(SENSOR_FOC)有用
+}Motor_Info;
+
+enum{
+    WAIT,
+    SENSOR_FOC,
+    SENSOR_LESS_FOC,
+    VF_OPENLOOP,
+    MEASURE_R,
+    MEASURE_L,
+    TEST_DIRECTION,
+    TEST_POSITION_OFFSET
+}Board_Mode;
+
+struct{
+    uint32_t time; // unit:ms
+    float last_position;
+    int direction_result;
+}Test_Direction_Info;
+
+Motor_Info Motor={7,0,0};
+
 Uvect_Mos U0={0,0,0,0};
 Uvect_Mos U4={1,0,0,0};
 Uvect_Mos U6={1,1,0,PI/3};
@@ -39,20 +67,21 @@ Uvect_Mos U7={1,1,1,0};
 
 Uvect_Mos *Uvects[6]={&U1,&U2,&U3,&U4,&U5,&U6};
 
-CCR_Duty CCR_Dutys={0};
+
 static float theta=0;
 float RPS=6;   // 转速
 
 float Position_Degree;
 
 float Position_Offset=215.793457f;
+//float Position_Offset=273.164062f;
 
 #define TIM7_FREQ   1000
 #define TIM8_FREQ   20000
 
 #define DRIVE
 
-void UVects_Init(){
+static void UVects_Init(){
     for(int i=0;i<6;++i){
         float v_theta=Uvects[i]->theta;
         Uvects[i]->x=cosf(v_theta);
@@ -62,20 +91,10 @@ void UVects_Init(){
 
 void Foc_Init(float rps){
     // rps unit is r/s
-    int interupt_time=0;
-    int PSC=0;
-
-    //interupt_time=rps*PAIRS*PART_NUM;
-    //PSC=1281/interupt_time;    //84000000/65535/interrupt_time
-    //TIM7->ARR=84000000/(PSC+1)/interupt_time;
-    //TIM7->PSC=PSC;
-    interupt_time=rps*PAIRS*PART_NUM;
-    PSC=1281/interupt_time;
+    Board_Mode=VF_OPENLOOP;
     TIM8->ARR=168000000/TIM8_FREQ/2;
-//  TIM8->ARR=168000000/(PSC+1)/interupt_time/2;
-//   TIM8->PSC=PSC;
 
-    
+    TIM8->CCR4=TIM8->ARR-2;
 
     UVects_Init();
 #ifdef DRIVE 
@@ -92,14 +111,16 @@ void Foc_Init(float rps){
 
     //ADC
    // HAL_ADC_Start_DMA(&hadc1,(uint32_t *)ADC_Values_Raw,2);
-    HAL_ADC_Start_DMA(&hadc2,(uint32_t *)ADC_Values_Raw2,3);
-    HAL_TIM_Base_Start_IT(&htim8);
+    HAL_ADC_Start_DMA(&hadc2,(uint32_t *)ADC_Values_Raw2,2);
+    HAL_TIM_Base_Start(&htim8);
 }
 
 uint8_t get_area(uint32_t now_theta){
     return now_theta/60+1;
 }
 
+// 根据扇区号，获取该扇区的两个电压矢量
+// area:1-6
 void get_area_u(uint8_t area,Uvect_Mos *u1,Uvect_Mos *u2){
     switch (area)
     {
@@ -203,15 +224,14 @@ void Set_to_U4(uint8_t t){
 }
 
 
-
+extern uint8_t Init_OK;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 
     if(htim->Instance==TIM7){
+        if(!Init_OK){
+            return ;
+        }
         Theta_Handler();
-    }
-    if(htim->Instance==TIM8){
-            //svpwm();
-        SVPWM_Step(CCR_Dutys);
     }
 }
 
@@ -257,30 +277,41 @@ void Theta_Handler(){
     float dealt=RPS*dealtK;
 
     Position_Degree=Get_Position_Rad_Dgree(1);
-    Foc();
-    /*
-    theta+=dealt;
-    if(theta>360){
-        theta=(int)theta%360;
+    switch(Board_Mode){
+        case SENSOR_FOC:
+            Foc();
+            break;
+        case VF_OPENLOOP:
+            VF_Openloop_Control(1,1000,1,1);
+            break;
+        case TEST_DIRECTION:
+            Test_Direction();
+            break;
+        case WAIT:
+            SVPWM(0,0);
+            break;
+        default:
+        break;
+
     }
-    
-    uint8_t area=get_area((int)theta); 
-    get_area_u(area,&u1,&u2);
-    //get_t(theta,&t1,&t2);
-    arm_sin_cos_f32(theta,&y,&x);
-    x*=0.86f;
-    y*=0.86f;   // sqrt(3)/2 没错
-    SVPWM_Normal_CalT1T2(x,y,area,&t1,&t2);
-    CCR_Dutys=get_ccr_duty(t1,t2,u1,u2);
-    */
 }
 
+#define ADC_RAW2_CURRENT(raw) raw*3300.0f/4096/200/0.003f
+
+void Park_Conv(float ia,float ib,float * ialpha,float *ibeta){
+    *ialpha=ia;
+    *ibeta=(sqrtf(3)*ib+sqrtf(3)*(ib+ia))/3.0f;
+}
 
  void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
+     float ia,ib;
+
      if(hadc->Instance==ADC1){
 
      }else if(hadc->Instance==ADC2){
-         
+        ia=ADC_RAW2_CURRENT(ADC_Values_Raw2[0]);
+        ib=ADC_RAW2_CURRENT(ADC_Values_Raw2[1]);
+        Park_Conv(ia,ib,&Ialpha,&Ibeta);
      }
  }
 
@@ -289,25 +320,79 @@ void Theta_Handler(){
     float t1,t2;
     float x,y;
 
-     float electric_position=(-1*Position_Degree+360);
-     float electric_position_offset=(-1*Position_Offset+360);
-
+    float electric_position=(-1*Position_Degree+360);
+    float electric_position_offset=(-1*Position_Offset+360);
+    //float electric_position=Position_Degree;
+    //float electric_position_offset=Position_Offset;
      int32_t sub=(int32_t)(electric_position-electric_position_offset);
+     
     if(sub<0){
         sub+=360;
     }
-    sub*=PAIRS;
+    sub*=Motor.pairs;
     sub+=90;
 
     sub%=360;
 
-    uint8_t area=get_area(sub); 
+    SVPWM(sub,1);
+ }
+
+// Target_U 期望电压矢量的角度 单位° 0-360
+// duty 期望占空比 0-1
+static void SVPWM(float Target_U,float duty){
+    Uvect_Mos u1,u2;
+    float x,y;
+    float t1,t2;
+    static CCR_Duty CCR_Dutys={0};
+
+    uint8_t area=get_area(Target_U);
     get_area_u(area,&u1,&u2);
-    //get_t(theta,&t1,&t2);
-    arm_sin_cos_f32(sub,&y,&x);
-    x*=0.86f;
-    y*=0.86f;   // sqrt(3)/2 没错
+    arm_sin_cos_f32(Target_U,&y,&x);
+    x*=0.86f*duty;
+    y*=0.86f*duty;   // sqrt(3)/2 没错
     SVPWM_Normal_CalT1T2(x,y,area,&t1,&t2);
     CCR_Dutys=get_ccr_duty(t1,t2,u1,u2);
-        
- }
+    SVPWM_Step(CCR_Dutys);    
+}
+
+
+void VF_Openloop_Control(float duty,float freq,int8_t direction,float rps){
+    static float theta=0;
+    float delta_p=rps*Motor.pairs*360.0f/freq;   // 每次调用本函数要增加的值
+
+    theta+=direction*delta_p;
+    if(theta>360){
+        theta-=360;
+    }else if(theta<0){
+        theta+=360;
+    }
+    SVPWM(theta,duty);
+}
+
+
+static void Test_Direction(){
+   Test_Direction_Info.time+=1;
+
+   if(Position_Degree>Test_Direction_Info.last_position){
+       Test_Direction_Info.direction_result+=1;
+   }else{
+       Test_Direction_Info.direction_result-=1;
+   }
+
+   VF_Openloop_Control(0.3f,1000,1,10);
+
+
+   if(Test_Direction_Info.time>10000){ // run 10s
+    Board_Mode=WAIT;
+    Test_Direction_Info.time=0;
+    uprintf_polling("direction result:%d\r\n",Test_Direction_Info.direction_result);
+    if(Test_Direction_Info.direction_result>0){
+        uprintf_polling("the direction of the motor is postive!\r\n");
+        Motor.direction=1;
+    }else{
+        uprintf_polling("the direction of the motor is nagative!\r\n");
+        Motor.direction=-1;
+    }
+    Test_Direction_Info.direction_result=0;
+   }
+}

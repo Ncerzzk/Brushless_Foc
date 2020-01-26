@@ -74,6 +74,21 @@ void get_position(int arg_num,char **s,float *args){
   return ;
 }
 
+extern enum{
+    WAIT,
+    SENSOR_FOC,
+    SENSOR_LESS_FOC,
+    VF_OPENLOOP,
+    MEASURE_R,
+    MEASURE_L,
+    TEST_DIRECTION,
+    TEST_POSITION_OFFSET
+}Board_Mode;
+void test_direction(int arg_num,char **s,float *args){
+  Board_Mode=TEST_DIRECTION;
+  return ;
+}
+
 /*
 将要增加的命令与函数写在这里
 */
@@ -81,6 +96,7 @@ void command_init(void){
   add_cmd("test",test);  
   add_cmd("set_u4",set_to_u4);
   add_cmd("get_p",get_position);
+  add_cmd("test_direction",test_direction);
 }
 
 
