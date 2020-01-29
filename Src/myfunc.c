@@ -75,17 +75,23 @@ void get_position(int arg_num,char **s,float *args){
 }
 
 extern enum{
-    WAIT,
+    STOP_MODE,
+    WAIT_MODE,
     SENSOR_FOC,
     SENSOR_LESS_FOC,
     VF_OPENLOOP,
     MEASURE_R,
     MEASURE_L,
-    TEST_DIRECTION,
+    TEST_DIRECTION=0xF1,
     TEST_POSITION_OFFSET
 }Board_Mode;
 void test_direction(int arg_num,char **s,float *args){
   Board_Mode=TEST_DIRECTION;
+  return ;
+}
+
+void measure_r(int arg_num,char **s,float *args){
+  Board_Mode=MEASURE_R;
   return ;
 }
 
@@ -97,6 +103,7 @@ void command_init(void){
   add_cmd("set_u4",set_to_u4);
   add_cmd("get_p",get_position);
   add_cmd("test_direction",test_direction);
+  add_cmd("measure_r",measure_r);
 }
 
 

@@ -98,7 +98,7 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_DMA_Init();
-  MX_ADC1_Init();
+  //MX_ADC1_Init();
   MX_CAN1_Init();
   MX_SPI3_Init();
   MX_TIM4_Init();
@@ -108,6 +108,7 @@ int main(void)
   MX_TIM7_Init();
   MX_ADC2_Init();
   /* USER CODE BEGIN 2 */
+  HAL_ADC_Start_DMA(&hadc2,(uint32_t *)ADC_Values_Raw2,2);
   debug_uart_init(&huart3,DMA,DMA);
   Foc_Init(1);
   AS5047_Set_Direction(0);
@@ -135,7 +136,7 @@ int main(void)
         HAL_ADC_Stop(&hadc1);
         HAL_ADC_Stop(&hadc2);
         */
-      send_wave(Ialpha,Ibeta,ADC_Values_Raw2[2],Position_Degree);
+      //send_wave(Ialpha,Ibeta,ADC_Values_Raw2[2],Position_Degree);
       }
     /* USER CODE BEGIN 3 */
   }
