@@ -195,6 +195,7 @@ void MS_IRQ_Handler(){
 
   
   ms_cnt++;
+  Music_Play_Beat();
   //Theta_Handler();
   if(ms_cnt==2){
     ms_cnt=0;

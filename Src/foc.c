@@ -10,29 +10,14 @@ static void SVPWM(float Target_U, float duty);
 static void Test_Direction();
 static void Measure_R_MS_Handler(float duty);
 static void Measure_R_20Khz_Handler();
+static void Set_Vector(Uvect_Mos u,float duty);
+static void SVPWM_Step(CCR_Duty duty);
 
 #define MIN(a, b) a < b ? a : b
 
 uint16_t ADC_Values_Raw[4];
 uint16_t ADC_Values_Raw2[4];
 float Ialpha, Ibeta;
-//#define PI  3.1415926f
-typedef struct
-{
-    uint8_t a;
-    uint8_t b;
-    uint8_t c;
-    float theta;
-    float x;
-    float y;
-} Uvect_Mos;
-
-typedef struct
-{
-    float ccra;
-    float ccrb;
-    float ccrc;
-} CCR_Duty;
 
 typedef struct
 {
@@ -55,8 +40,12 @@ enum
     MEASURE_R,
     MEASURE_L,
     TEST_DIRECTION = 0xF1,
-    TEST_POSITION_OFFSET
+    TEST_POSITION_OFFSET,
+    SING_MODE   // 唱歌模式
 } Board_Mode;
+
+
+
 
 struct
 {
@@ -104,7 +93,7 @@ static void UVects_Init()
 void Foc_Init(float rps)
 {
     // rps unit is r/s
-    Board_Mode = VF_OPENLOOP;
+    Board_Mode = SING_MODE;
     TIM8->ARR = 168000000 / TIM8_FREQ / 2;
 
     TIM8->CCR4 = TIM8->ARR - 2;
@@ -214,7 +203,7 @@ CCR_Duty get_ccr_duty(float t1, float t2, Uvect_Mos u1, Uvect_Mos u2)
     return result;
 }
 
-void SVPWM_Step(CCR_Duty duty)
+static void SVPWM_Step(CCR_Duty duty)
 {
     TIM8->CCR1 = duty.ccrc * TIM8->ARR;
     TIM8->CCR2 = duty.ccrb * TIM8->ARR;
@@ -299,7 +288,7 @@ void Theta_Handler()
         Foc();
         break;
     case VF_OPENLOOP:
-        VF_Openloop_Control(1, 1000, 1, 1);
+        VF_Openloop_Control(1, 1000, 1, 3);
         break;
     case TEST_DIRECTION:
         Test_Direction();
@@ -312,6 +301,9 @@ void Theta_Handler()
         break;
     case MEASURE_R:
         Measure_R_MS_Handler(1);
+        break;
+    case SING_MODE:
+        Muisc_Play_TIM7_IRQ_Handler();
         break;
     default:
         break;
@@ -450,6 +442,17 @@ struct
     float current_sum;
 } Measure_R_Info;
 
+static void Set_Vector(Uvect_Mos u,float duty){
+    CCR_Duty temp_duty={0};
+
+    temp_duty.ccra = u.a * duty; //011
+    temp_duty.ccrb = u.b * duty;
+    temp_duty.ccrc = u.c * duty;
+
+    SVPWM_Step(temp_duty);    
+}
+
+
 static void Measure_R_MS_Handler(float duty)
 {
     CCR_Duty temp_duty = {0};
@@ -466,6 +469,8 @@ static void Measure_R_MS_Handler(float duty)
         temp_duty.ccrb = Measure_R_Info.Used_Mos->b * duty;
         temp_duty.ccrc = Measure_R_Info.Used_Mos->c * duty;
         SVPWM_Step(temp_duty);
+        
+        //Set_Vector(*Measure_R_Info.Used_Mos,duty); 
         Measure_R_Info.time = 1;
 
         return;
@@ -527,3 +532,143 @@ static void Measure_R_20Khz_Handler()
         }
     }
 }
+
+typedef enum{
+    STOP_NOTE=20000,
+    DO=261,
+    RE=293,
+    MI=329,
+    FA=349,
+    SOL=392,
+    LA=440,
+    SI=493
+}MUSIC_FREQ;
+
+MUSIC_FREQ Music_Freqs[8]={STOP_NOTE,DO,RE,MI,FA,SOL,LA,SI};
+//uint16_t Music_Song[]={0x1803,0x1802,0x1801,0x806,0x1801,0x1802,0x1803,0x1805,0x1803,0x1802,0x1801,0x806,0x806,0x805,0x403,0x800,0x1f01,0xf07,0x806,0x805,0x806,0x1801,0x1801,0x1805,0x1803,0x1f03,0x1f02,0x1801,0x1801,0x1801,0x806,0x407,0x800,0x1f03,0x1f02,0x1803,0x1802,0x1803,0x1805,0x1806,0x1805,0x1f05,0x1805,0x1f03,0x1f06,0x1805,0x1f04,0x1f05,0x1f04,0x1f05,0x1f04,0x1403,0x800,0x1f02,0x1f03,0x1804,0x1803,0x1802,0xf00,0xf06,0x1803,0x1f02,0x1f01,0x1f01,0x1f01,0x1f01,0x1f02,0xf07,0x807,0xf07,0xf07,0x807,0xf06,0xf06,0x807,0x407};    // 音符数组   3,3,3,3,2,3
+uint16_t Music_Song[]={0x803,0x803,0x803,0x802,0x203,0x802,0x803,0x802,0x802,0x3406,0x3806,0x3807,0x401,0x802,0x801,0x3407,0x3805,0x3106,0x803,0x803,0x803,0x802,0x403,0x806,0x805,0x806,0x805,0x805,0x402,0x802,0x803,0x804,0x805,0x804,0x403,0x802,0x103,0x406,0x3807,0x3806,0x405,0x803,0x105,0x803,0x805,0x402,0x806,0x805,0x403,0x802,0x103,0x402,0x805,0x406,0x401,0x806,0x806,0x406,0x806,0x807,0x1401,0x807,0x806,0x407,0x805,0x103,0x406,0x807,0x806,0x405,0x803,0x105,0x804,0x805,0x406,0x807,0x806,0x407,0x405,0xf06,0x103,0x402,0x805,0x406,0x401,0x806,0x406,0x806,0x807,0x1401,0x807,0x806,0x407,0x805,0x106};
+/*
+3/,3/,3/,2/,3-,2/,3/,2/,2/,-6,-6/,-7/,1,2/,1/,-7
+*/
+struct{
+    uint32_t ms_cnt;
+    uint32_t cnt;
+    uint32_t TIM_old_ARR;
+    float time;
+    uint8_t stop;
+}Music_Info;
+
+
+void Set_Sing_Mode(){
+    Music_Info.TIM_old_ARR=TIM7->ARR;
+    Music_Info.cnt=0;
+}
+
+#define HALF_NOTE_K  1.059f
+float Music_Get_Note(uint16_t num,float* time){
+    uint8_t index=num&0xFF;
+    MUSIC_FREQ note=Music_Freqs[index];
+
+    float result=note;
+
+    uint8_t t=(num&0xF00)>>8; 
+    uint8_t octave=(num&0x3000)>>12;
+    uint8_t semitone=(num&0xC000)>>14;
+    switch (t)
+    {
+    case 1:
+        *time=4.0f;
+        break;
+    case 2:
+        *time=2.0f;
+        break;
+    case 4:
+        *time=1.0f;
+        break;
+    case 8:
+        *time=0.5f;
+        break;
+    case 0xF:
+        *time=0.25f;
+        break;
+    
+    default:
+        break;
+    }
+
+    switch(octave){
+        case 1:
+        result=note*2;
+        break;
+        case 0:
+        result=note;
+        break;
+        case 3:
+        result=note/2;
+        break;
+    }
+
+    switch(semitone){
+        case 1:
+        result*=HALF_NOTE_K;
+        break;
+        case 0:
+        break;
+        case 3:
+        result/=HALF_NOTE_K;
+        break;
+    }
+    
+    return result;
+}
+void Music_Play_Note(uint16_t freq){
+
+    TIM7->PSC=6;
+    TIM7->ARR=12000000/freq-1;
+
+}
+
+void Muisc_Play_TIM7_IRQ_Handler(){
+    static uint8_t first_time=0;
+    if(Music_Info.stop==1){
+        Set_Vector(U0,0);
+        return ;
+    }
+    if(!first_time){
+        Set_Vector(U4,0.3f);
+    }else{
+        Set_Vector(U6,0.3f);
+    }
+    first_time=!first_time;
+}
+
+void Music_Play_Beat(){   // 节拍处理，暂定一分钟80拍，即750ms一拍
+    static uint16_t next_time=750;
+    uint16_t note;
+    if(Board_Mode!=SING_MODE){
+        return ;
+    }
+    Music_Info.ms_cnt++;
+
+    if(Music_Info.ms_cnt>=next_time*0.85&&Music_Info.ms_cnt<next_time){
+        Music_Info.stop=1;
+    }
+
+    if(Music_Info.ms_cnt>=next_time){  // 750*1/4
+        Music_Info.ms_cnt=0;    // 以下代码1s执行一次
+        Music_Info.stop=0;
+        Music_Info.time=1.0f;
+
+        uint16_t temp=Music_Song[Music_Info.cnt];
+        note=(uint16_t)Music_Get_Note(temp,&Music_Info.time);
+
+        Music_Play_Note(note); 
+        next_time=500*Music_Info.time;
+        if(Music_Info.cnt==sizeof(Music_Song)/sizeof(uint16_t)-1){
+            Board_Mode=STOP_MODE;
+        }else{
+            Music_Info.cnt++;
+        }
+    }
+}
+

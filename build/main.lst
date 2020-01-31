@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 1
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 1
   28:Src/main.c    **** #include "usart.h"
   29:Src/main.c    **** #include "gpio.h"
   30:Src/main.c    **** 
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 2
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s 			page 2
 
 
   31:Src/main.c    **** /* Private includes ----------------------------------------------------------*/
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 1
   85:Src/main.c    ****   HAL_Init();
   86:Src/main.c    **** 
   87:Src/main.c    ****   /* USER CODE BEGIN Init */
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 3
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s 			page 3
 
 
   88:Src/main.c    **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 1
  142:Src/main.c    ****   }
  143:Src/main.c    ****   /* USER CODE END 3 */
  144:Src/main.c    **** }
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 4
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s 			page 4
 
 
  145:Src/main.c    **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 1
   70              		.loc 1 157 3 view .LVU9
   71 002e 019B     		ldr	r3, [sp, #4]
   72              	.LBE2:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 5
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s 			page 5
 
 
   73              		.loc 1 157 3 view .LVU10
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 1
  117 0062 1295     		str	r5, [sp, #72]
  168:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLQ = 4;
  118              		.loc 1 168 3 is_stmt 1 view .LVU31
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 6
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s 			page 6
 
 
  119              		.loc 1 168 30 is_stmt 0 view .LVU32
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 1
  155 008a 30BD     		pop	{r4, r5, pc}
  156              	.L4:
  157              		.align	2
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 7
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s 			page 7
 
 
  158              	.L3:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 1
  204 0016 FFF7FEFF 		bl	MX_SPI3_Init
  205              	.LVL8:
  104:Src/main.c    ****   MX_TIM8_Init();
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 8
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s 			page 8
 
 
  206              		.loc 1 104 3 view .LVU55
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 1
  116:Src/main.c    ****   /* USER CODE END 2 */
  249              		.loc 1 116 3 is_stmt 1 view .LVU67
  250 005a 0D48     		ldr	r0, .L12+16
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 9
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s 			page 9
 
 
  251 005c FFF7FEFF 		bl	uprintf
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 1
  296              		.section	.text.MS_IRQ_Handler,"ax",%progbits
  297              		.align	1
  298              		.global	MS_IRQ_Handler
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 10
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s 			page 10
 
 
  299              		.syntax unified
@@ -554,169 +554,182 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 1
  307              		.cfi_startproc
  308              		@ args = 0, pretend = 0, frame = 0
  309              		@ frame_needed = 0, uses_anonymous_args = 0
- 310              		@ link register save eliminated.
  190:Src/main.c    ****   static ms_cnt;
- 311              		.loc 1 190 3 view .LVU79
+ 310              		.loc 1 190 3 view .LVU79
  191:Src/main.c    **** 
  192:Src/main.c    ****   if(!Init_OK){
- 312              		.loc 1 192 3 view .LVU80
- 313              		.loc 1 192 6 is_stmt 0 view .LVU81
- 314 0000 084B     		ldr	r3, .L17
- 315 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 316              		.loc 1 192 5 view .LVU82
- 317 0004 2BB1     		cbz	r3, .L14
+ 311              		.loc 1 192 3 view .LVU80
+ 312              		.loc 1 192 6 is_stmt 0 view .LVU81
+ 313 0000 0A4B     		ldr	r3, .L22
+ 314 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 315              		.loc 1 192 5 view .LVU82
+ 316 0004 03B9     		cbnz	r3, .L20
+ 317 0006 7047     		bx	lr
+ 318              	.L20:
+ 189:Src/main.c    ****   static ms_cnt;
+ 319              		.loc 1 189 22 view .LVU83
+ 320 0008 10B5     		push	{r4, lr}
+ 321              	.LCFI4:
+ 322              		.cfi_def_cfa_offset 8
+ 323              		.cfi_offset 4, -8
+ 324              		.cfi_offset 14, -4
  193:Src/main.c    ****     return ;
  194:Src/main.c    ****   }
  195:Src/main.c    **** 
  196:Src/main.c    ****   
  197:Src/main.c    ****   ms_cnt++;
- 318              		.loc 1 197 3 is_stmt 1 view .LVU83
- 319              		.loc 1 197 9 is_stmt 0 view .LVU84
- 320 0006 084A     		ldr	r2, .L17+4
- 321 0008 1368     		ldr	r3, [r2]
- 322 000a 0133     		adds	r3, r3, #1
- 323 000c 1360     		str	r3, [r2]
- 198:Src/main.c    ****   //Theta_Handler();
- 199:Src/main.c    ****   if(ms_cnt==2){
- 324              		.loc 1 199 3 is_stmt 1 view .LVU85
- 325              		.loc 1 199 5 is_stmt 0 view .LVU86
- 326 000e 022B     		cmp	r3, #2
- 327 0010 00D0     		beq	.L16
- 328              	.L14:
- 200:Src/main.c    ****     ms_cnt=0;
- 201:Src/main.c    ****     ms_2_flag=1;
+ 325              		.loc 1 197 3 is_stmt 1 view .LVU84
+ 326              		.loc 1 197 9 is_stmt 0 view .LVU85
+ 327 000a 094C     		ldr	r4, .L22+4
+ 328 000c 2368     		ldr	r3, [r4]
+ 329 000e 0133     		adds	r3, r3, #1
+ 330 0010 2360     		str	r3, [r4]
+ 198:Src/main.c    ****   Music_Play_Beat();
+ 331              		.loc 1 198 3 is_stmt 1 view .LVU86
+ 332 0012 FFF7FEFF 		bl	Music_Play_Beat
+ 333              	.LVL21:
+ 199:Src/main.c    ****   //Theta_Handler();
+ 200:Src/main.c    ****   if(ms_cnt==2){
+ 334              		.loc 1 200 3 view .LVU87
+ 335              		.loc 1 200 12 is_stmt 0 view .LVU88
+ 336 0016 2368     		ldr	r3, [r4]
+ 337              		.loc 1 200 5 view .LVU89
+ 338 0018 022B     		cmp	r3, #2
+ 339 001a 00D0     		beq	.L21
+ 340              	.L14:
+ 201:Src/main.c    ****     ms_cnt=0;
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s 			page 11
+
+
+ 202:Src/main.c    ****     ms_2_flag=1;
+ 203:Src/main.c    ****   }
+ 204:Src/main.c    **** }
+ 341              		.loc 1 204 1 view .LVU90
+ 342 001c 10BD     		pop	{r4, pc}
+ 343              	.L21:
+ 201:Src/main.c    ****     ms_cnt=0;
+ 344              		.loc 1 201 5 is_stmt 1 view .LVU91
+ 201:Src/main.c    ****     ms_cnt=0;
+ 345              		.loc 1 201 11 is_stmt 0 view .LVU92
+ 346 001e 0022     		movs	r2, #0
+ 347 0020 2260     		str	r2, [r4]
  202:Src/main.c    ****   }
- 203:Src/main.c    **** }
- 329              		.loc 1 203 1 view .LVU87
- 330 0012 7047     		bx	lr
- 331              	.L16:
- 200:Src/main.c    ****     ms_cnt=0;
- 332              		.loc 1 200 5 is_stmt 1 view .LVU88
- 200:Src/main.c    ****     ms_cnt=0;
- 333              		.loc 1 200 11 is_stmt 0 view .LVU89
- 334 0014 1346     		mov	r3, r2
- 335 0016 0022     		movs	r2, #0
- 336 0018 1A60     		str	r2, [r3]
- 201:Src/main.c    ****   }
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 11
+ 348              		.loc 1 202 5 is_stmt 1 view .LVU93
+ 202:Src/main.c    ****   }
+ 349              		.loc 1 202 14 is_stmt 0 view .LVU94
+ 350 0022 044B     		ldr	r3, .L22+8
+ 351 0024 0122     		movs	r2, #1
+ 352 0026 1A70     		strb	r2, [r3]
+ 353 0028 F8E7     		b	.L14
+ 354              	.L23:
+ 355 002a 00BF     		.align	2
+ 356              	.L22:
+ 357 002c 00000000 		.word	.LANCHOR0
+ 358 0030 00000000 		.word	.LANCHOR1
+ 359 0034 00000000 		.word	ms_2_flag
+ 360              		.cfi_endproc
+ 361              	.LFE135:
+ 363              		.section	.text.Error_Handler,"ax",%progbits
+ 364              		.align	1
+ 365              		.global	Error_Handler
+ 366              		.syntax unified
+ 367              		.thumb
+ 368              		.thumb_func
+ 369              		.fpu fpv4-sp-d16
+ 371              	Error_Handler:
+ 372              	.LFB136:
+ 205:Src/main.c    **** /* USER CODE END 4 */
+ 206:Src/main.c    **** 
+ 207:Src/main.c    **** /**
+ 208:Src/main.c    ****   * @brief  This function is executed in case of error occurrence.
+ 209:Src/main.c    ****   * @retval None
+ 210:Src/main.c    ****   */
+ 211:Src/main.c    **** void Error_Handler(void)
+ 212:Src/main.c    **** {
+ 373              		.loc 1 212 1 is_stmt 1 view -0
+ 374              		.cfi_startproc
+ 375              		@ args = 0, pretend = 0, frame = 0
+ 376              		@ frame_needed = 0, uses_anonymous_args = 0
+ 377              		@ link register save eliminated.
+ 213:Src/main.c    ****   /* USER CODE BEGIN Error_Handler_Debug */
+ 214:Src/main.c    ****   /* User can add his own implementation to report the HAL error return state */
+ 215:Src/main.c    **** 
+ 216:Src/main.c    ****   /* USER CODE END Error_Handler_Debug */
+ 217:Src/main.c    **** }
+ 378              		.loc 1 217 1 view .LVU96
+ 379 0000 7047     		bx	lr
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s 			page 12
 
 
- 337              		.loc 1 201 5 is_stmt 1 view .LVU90
- 201:Src/main.c    ****   }
- 338              		.loc 1 201 14 is_stmt 0 view .LVU91
- 339 001a 044B     		ldr	r3, .L17+8
- 340 001c 0122     		movs	r2, #1
- 341 001e 1A70     		strb	r2, [r3]
- 342 0020 F7E7     		b	.L14
- 343              	.L18:
- 344 0022 00BF     		.align	2
- 345              	.L17:
- 346 0024 00000000 		.word	.LANCHOR0
- 347 0028 00000000 		.word	.LANCHOR1
- 348 002c 00000000 		.word	ms_2_flag
- 349              		.cfi_endproc
- 350              	.LFE135:
- 352              		.section	.text.Error_Handler,"ax",%progbits
- 353              		.align	1
- 354              		.global	Error_Handler
- 355              		.syntax unified
- 356              		.thumb
- 357              		.thumb_func
- 358              		.fpu fpv4-sp-d16
- 360              	Error_Handler:
- 361              	.LFB136:
- 204:Src/main.c    **** /* USER CODE END 4 */
- 205:Src/main.c    **** 
- 206:Src/main.c    **** /**
- 207:Src/main.c    ****   * @brief  This function is executed in case of error occurrence.
- 208:Src/main.c    ****   * @retval None
- 209:Src/main.c    ****   */
- 210:Src/main.c    **** void Error_Handler(void)
- 211:Src/main.c    **** {
- 362              		.loc 1 211 1 is_stmt 1 view -0
- 363              		.cfi_startproc
- 364              		@ args = 0, pretend = 0, frame = 0
- 365              		@ frame_needed = 0, uses_anonymous_args = 0
- 366              		@ link register save eliminated.
- 212:Src/main.c    ****   /* USER CODE BEGIN Error_Handler_Debug */
- 213:Src/main.c    ****   /* User can add his own implementation to report the HAL error return state */
- 214:Src/main.c    **** 
- 215:Src/main.c    ****   /* USER CODE END Error_Handler_Debug */
- 216:Src/main.c    **** }
- 367              		.loc 1 216 1 view .LVU93
- 368 0000 7047     		bx	lr
- 369              		.cfi_endproc
- 370              	.LFE136:
- 372              		.global	Init_OK
- 373              		.comm	ms_2_flag,1,1
- 374              		.section	.bss.Init_OK,"aw",%nobits
- 375              		.set	.LANCHOR0,. + 0
- 378              	Init_OK:
- 379 0000 00       		.space	1
- 380              		.section	.bss.ms_cnt.10180,"aw",%nobits
- 381              		.align	2
- 382              		.set	.LANCHOR1,. + 0
- 385              	ms_cnt.10180:
- 386 0000 00000000 		.space	4
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 12
-
-
- 387              		.text
- 388              	.Letext0:
- 389              		.file 2 "c:\\arm_gcc\\arm-none-eabi\\include\\machine\\_default_types.h"
- 390              		.file 3 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_stdint.h"
- 391              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 392              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 393              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
- 394              		.file 7 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
- 395              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 396              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
- 397              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
- 398              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 399              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h"
- 400              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h"
- 401              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h"
- 402              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
- 403              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 404              		.file 17 "Inc/adc.h"
- 405              		.file 18 "Inc/can.h"
- 406              		.file 19 "Inc/spi.h"
- 407              		.file 20 "Inc/tim.h"
- 408              		.file 21 "Inc/usart.h"
- 409              		.file 22 "Inc/foc.h"
- 410              		.file 23 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\lock.h"
- 411              		.file 24 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_types.h"
- 412              		.file 25 "c:\\arm_gcc\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h"
- 413              		.file 26 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\reent.h"
- 414              		.file 27 "c:\\arm_gcc\\arm-none-eabi\\include\\stdlib.h"
- 415              		.file 28 "mylib/uart_ext.h"
- 416              		.file 29 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 417              		.file 30 "Inc/gpio.h"
- 418              		.file 31 "Inc/dma.h"
- 419              		.file 32 "mylib/as5047.h"
- 420              		.file 33 "<built-in>"
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s 			page 13
+ 380              		.cfi_endproc
+ 381              	.LFE136:
+ 383              		.global	Init_OK
+ 384              		.comm	ms_2_flag,1,1
+ 385              		.section	.bss.Init_OK,"aw",%nobits
+ 386              		.set	.LANCHOR0,. + 0
+ 389              	Init_OK:
+ 390 0000 00       		.space	1
+ 391              		.section	.bss.ms_cnt.10194,"aw",%nobits
+ 392              		.align	2
+ 393              		.set	.LANCHOR1,. + 0
+ 396              	ms_cnt.10194:
+ 397 0000 00000000 		.space	4
+ 398              		.text
+ 399              	.Letext0:
+ 400              		.file 2 "c:\\arm_gcc\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 401              		.file 3 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 402              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 403              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 404              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 405              		.file 7 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
+ 406              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 407              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
+ 408              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
+ 409              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 410              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h"
+ 411              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h"
+ 412              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h"
+ 413              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 414              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 415              		.file 17 "Inc/adc.h"
+ 416              		.file 18 "Inc/can.h"
+ 417              		.file 19 "Inc/spi.h"
+ 418              		.file 20 "Inc/tim.h"
+ 419              		.file 21 "Inc/usart.h"
+ 420              		.file 22 "Inc/foc.h"
+ 421              		.file 23 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\lock.h"
+ 422              		.file 24 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_types.h"
+ 423              		.file 25 "c:\\arm_gcc\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h"
+ 424              		.file 26 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\reent.h"
+ 425              		.file 27 "c:\\arm_gcc\\arm-none-eabi\\include\\stdlib.h"
+ 426              		.file 28 "mylib/uart_ext.h"
+ 427              		.file 29 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 428              		.file 30 "Inc/gpio.h"
+ 429              		.file 31 "Inc/dma.h"
+ 430              		.file 32 "mylib/as5047.h"
+ 431              		.file 33 "<built-in>"
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s:18     .text.SystemClock_Config:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s:26     .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s:159    .text.SystemClock_Config:0000008c $d
-C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s:165    .rodata.main.str1.4:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s:169    .text.main:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s:176    .text.main:00000000 main
-C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s:286    .text.main:00000080 $d
+C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s:18     .text.SystemClock_Config:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s:26     .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s:159    .text.SystemClock_Config:0000008c $d
+C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s:165    .rodata.main.str1.4:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s:169    .text.main:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s:176    .text.main:00000000 main
+C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s:286    .text.main:00000080 $d
                             *COM*:00000001 ms_2_flag
-C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s:297    .text.MS_IRQ_Handler:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s:304    .text.MS_IRQ_Handler:00000000 MS_IRQ_Handler
-C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s:346    .text.MS_IRQ_Handler:00000024 $d
-C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s:353    .text.Error_Handler:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s:360    .text.Error_Handler:00000000 Error_Handler
-C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s:378    .bss.Init_OK:00000000 Init_OK
-C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s:379    .bss.Init_OK:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s:381    .bss.ms_cnt.10180:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\ccSVrKo6.s:385    .bss.ms_cnt.10180:00000000 ms_cnt.10180
+C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s:297    .text.MS_IRQ_Handler:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s:304    .text.MS_IRQ_Handler:00000000 MS_IRQ_Handler
+C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s:357    .text.MS_IRQ_Handler:0000002c $d
+C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s:364    .text.Error_Handler:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s:371    .text.Error_Handler:00000000 Error_Handler
+C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s:389    .bss.Init_OK:00000000 Init_OK
+C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s:390    .bss.Init_OK:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s:392    .bss.ms_cnt.10194:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccpUfkm2.s:396    .bss.ms_cnt.10194:00000000 ms_cnt.10194
 
 UNDEFINED SYMBOLS
 memset
@@ -743,3 +756,4 @@ ADC_Values_Raw2
 hadc2
 huart3
 buffer_rx_OK
+Music_Play_Beat
