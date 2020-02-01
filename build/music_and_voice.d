@@ -1,5 +1,5 @@
-build/foc.o: Src/foc.c Inc/foc.h Inc/tim.h Inc/main.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+build/music_and_voice.o: mylib/music_and_voice.c mylib/music_and_voice.h \
+ Inc/tim.h Inc/main.h Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  Inc/stm32f4xx_hal_conf.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
@@ -28,12 +28,10 @@ build/foc.o: Src/foc.c Inc/foc.h Inc/tim.h Inc/main.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- Drivers/CMSIS/Include/arm_math.h Drivers/CMSIS/Include/core_cm4.h \
- Inc/adc.h mylib/as5047.h mylib/uart_ext.h Inc/main.h \
- mylib/music_and_voice.h
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h Inc/foc.h \
+ Inc/voice.h
 
-Inc/foc.h:
+mylib/music_and_voice.h:
 
 Inc/tim.h:
 
@@ -103,16 +101,6 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
-Drivers/CMSIS/Include/arm_math.h:
+Inc/foc.h:
 
-Drivers/CMSIS/Include/core_cm4.h:
-
-Inc/adc.h:
-
-mylib/as5047.h:
-
-mylib/uart_ext.h:
-
-Inc/main.h:
-
-mylib/music_and_voice.h:
+Inc/voice.h:

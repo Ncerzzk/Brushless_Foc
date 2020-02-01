@@ -33,6 +33,7 @@
 #include "foc.h"
 #include "as5047.h"
 #include "uart_ext.h"
+#include "music_and_voice.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -109,6 +110,7 @@ int main(void)
   MX_ADC2_Init();
   /* USER CODE BEGIN 2 */
   HAL_ADC_Start_DMA(&hadc2,(uint32_t *)ADC_Values_Raw2,2);
+  Music_Init(&htim7,80,0.15f);
   debug_uart_init(&huart3,DMA,DMA);
   Foc_Init(1);
   AS5047_Set_Direction(0);

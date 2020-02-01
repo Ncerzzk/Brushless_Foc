@@ -6,6 +6,9 @@
         "stm32f4xx_hal_conf.h": "c",
         "cmd_fun.h": "c",
         "stm32f4xx_it.h": "c",
-        "limits": "c"
+        "limits": "c",
+        "stdio.h": "c",
+        "foc.h": "c",
+        "uart_ext.h": "c"
     }
 }

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 1
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclAtwt1.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 1
   27:Src/arm_sin_cos_f32.c **** * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
   28:Src/arm_sin_cos_f32.c **** * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
   29:Src/arm_sin_cos_f32.c **** * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 2
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclAtwt1.s 			page 2
 
 
   30:Src/arm_sin_cos_f32.c **** * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 1
   84:Src/arm_sin_cos_f32.c **** void arm_sin_cos_f32(
   85:Src/arm_sin_cos_f32.c ****   float32_t theta,
   86:Src/arm_sin_cos_f32.c ****   float32_t * pSinVal,
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 3
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclAtwt1.s 			page 3
 
 
   87:Src/arm_sin_cos_f32.c ****   float32_t * pCosVal)
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 1
   62              		.loc 1 108 13 is_stmt 0 view .LVU14
   63 0018 F8EEE77A 		vcvt.f32.s32	s15, s15
   64              	.LVL3:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 4
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclAtwt1.s 			page 4
 
 
   65              		.loc 1 108 6 view .LVU15
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 1
  107 0058 92ED003A 		vldr.32	s6, [r2]
  108              	.LVL12:
  121:Src/arm_sin_cos_f32.c ****   d1 = -sinTable_f32[indexS+0];
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 5
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclAtwt1.s 			page 5
 
 
  109              		.loc 1 121 3 is_stmt 1 view .LVU33
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 1
  157              		.loc 1 127 8 view .LVU53
  158 00a6 37EE257A 		vadd.f32	s14, s14, s11
  159              	.LVL22:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 6
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclAtwt1.s 			page 6
 
 
  128:Src/arm_sin_cos_f32.c ****   temp = fract*temp + d1*Dn;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 1
  200 00d6 27EE877A 		vmul.f32	s14, s15, s14
  201              	.LVL31:
  202              		.loc 1 141 25 view .LVU75
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 7
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclAtwt1.s 			page 7
 
 
  203 00da 66EEA26A 		vmul.f32	s13, s13, s5
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 1
  250              		.loc 1 105 6 is_stmt 0 view .LVU92
  251 010e 17EE903A 		vmov	r3, s15	@ int
  252 0112 013B     		subs	r3, r3, #1
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 8
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclAtwt1.s 			page 8
 
 
  253 0114 07EE903A 		vmov	s15, r3	@ int
@@ -446,14 +446,14 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 1
  275              		.file 8 "c:\\arm_gcc\\arm-none-eabi\\include\\math.h"
  276              		.file 9 "Drivers/CMSIS/Include/arm_math.h"
  277              		.file 10 "Inc/arm_common_tables.h"
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s 			page 9
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cclAtwt1.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 arm_sin_cos_f32.c
-C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s:18     .text.arm_sin_cos_f32:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s:26     .text.arm_sin_cos_f32:00000000 arm_sin_cos_f32
-C:\Users\ncer\AppData\Local\Temp\cczlc9l1.s:260    .text.arm_sin_cos_f32:0000011c $d
+C:\Users\ncer\AppData\Local\Temp\cclAtwt1.s:18     .text.arm_sin_cos_f32:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\cclAtwt1.s:26     .text.arm_sin_cos_f32:00000000 arm_sin_cos_f32
+C:\Users\ncer\AppData\Local\Temp\cclAtwt1.s:260    .text.arm_sin_cos_f32:0000011c $d
 
 UNDEFINED SYMBOLS
 sinTable_f32

@@ -1,0 +1,26 @@
+clear;
+[data,fs]=audioread('1.m4a');
+data=data(:,1);
+num=size(data)
+num=num(1)
+
+freq=6000;
+
+for i = 1:num/(fs/freq)
+    result(i)=data((i-1)*(fs/freq)+1);
+end
+result=result*3;
+
+sound(result,freq);
+
+mcu_result=result*255+128;  
+
+for i=1:size(result')
+    fprintf('%d,',round(mcu_result(i)));
+    if(mod(i,50)==0)
+        fprintf('\r\n');
+    end
+end
+
+
+

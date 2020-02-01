@@ -31,4 +31,6 @@ void Music_Play_Beat();
 
 void Set_to_U4(uint8_t t);
 void Foc();
+void voice_3khz_handler();
+void Set_Vector(Uvect_Mos u, float duty);
 #endif
