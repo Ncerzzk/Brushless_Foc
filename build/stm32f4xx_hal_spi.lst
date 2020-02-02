@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
   28:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****           (##) NVIC configuration if you need to use interrupt process
   29:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****               (+++) Configure the SPIx interrupt priority
   30:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****               (+++) Enable the NVIC SPI IRQ handle
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 2
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 2
 
 
   31:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****           (##) DMA Configuration if you need to use DMA process
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
   85:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****           and the Callback ID.
   86:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****           This function allows to reset following callbacks:
   87:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****             (+) TxCpltCallback        : SPI Tx Completed callback
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 3
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 3
 
 
   88:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****             (+) RxCpltCallback        : SPI Rx Completed callback
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  142:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****        |    R    |     Interrupt  | Fpclk/8  | Fpclk/8  | Fpclk/64  | Fpclk/2  | Fpclk/64  | Fpclk/
  143:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****        |    X    |----------------|----------|----------|-----------|----------|-----------|-------
  144:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****        |         |       DMA      | Fpclk/2  | Fpclk/2  | Fpclk/64  | Fpclk/2  | Fpclk/128 | Fpclk/
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 4
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 4
 
 
  145:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****        |=========|================|==========|==========|===========|==========|===========|=======
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  199:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** #include "stm32f4xx_hal.h"
  200:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  201:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** /** @addtogroup STM32F4xx_HAL_Driver
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 5
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 5
 
 
  202:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   * @{
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  256:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** static void SPI_CloseRx_ISR(SPI_HandleTypeDef *hspi);
  257:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** static void SPI_CloseTx_ISR(SPI_HandleTypeDef *hspi);
  258:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** static HAL_StatusTypeDef SPI_EndRxTransaction(SPI_HandleTypeDef *hspi, uint32_t Timeout, uint32_t T
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 6
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 6
 
 
  259:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** static HAL_StatusTypeDef SPI_EndRxTxTransaction(SPI_HandleTypeDef *hspi, uint32_t Timeout, uint32_t
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  313:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
  314:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     return HAL_ERROR;
  315:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   }
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 7
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 7
 
 
  316:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  370:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->State = HAL_SPI_STATE_BUSY;
  371:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  372:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   /* Disable the selected SPI peripheral */
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 8
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 8
 
 
  373:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   __HAL_SPI_DISABLE(hspi);
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  427:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** #if (USE_HAL_SPI_REGISTER_CALLBACKS == 1U)
  428:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   if (hspi->MspDeInitCallback == NULL)
  429:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 9
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 9
 
 
  430:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     hspi->MspDeInitCallback = HAL_SPI_MspDeInit; /* Legacy weak MspDeInit  */
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  484:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   *         To be used instead of the weak predefined callback
  485:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   * @param  hspi Pointer to a SPI_HandleTypeDef structure that contains
  486:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   *                the configuration information for the specified SPI.
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 10
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 10
 
 
  487:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   * @param  CallbackID ID of the callback to be registered
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  541:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       case HAL_SPI_MSPINIT_CB_ID :
  542:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****         hspi->MspInitCallback = pCallback;
  543:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****         break;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 11
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 11
 
 
  544:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  598:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   * @param  CallbackID ID of the callback to be unregistered
  599:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   * @retval HAL status
  600:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   */
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 12
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 12
 
 
  601:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** HAL_StatusTypeDef HAL_SPI_UnRegisterCallback(SPI_HandleTypeDef *hspi, HAL_SPI_CallbackIDTypeDef Cal
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  655:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  656:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****         /* Return error status */
  657:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****         status =  HAL_ERROR;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 13
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 13
 
 
  658:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****         break;
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  712:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  713:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     (#) There are two modes of transfer:
  714:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****        (++) Blocking mode: The communication is performed in polling mode.
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 14
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 14
 
 
  715:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****             The HAL status of all data processing is returned by the same function
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  769:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  770:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   /* Set the transaction information */
  771:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->State       = HAL_SPI_STATE_BUSY_TX;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 15
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 15
 
 
  772:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->ErrorCode   = HAL_SPI_ERROR_NONE;
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  826:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****         /* Timeout management */
  827:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****         if ((((HAL_GetTick() - tickstart) >=  Timeout) && (Timeout != HAL_MAX_DELAY)) || (Timeout =
  828:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****         {
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 16
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 16
 
 
  829:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****           errorcode = HAL_TIMEOUT;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  883:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  884:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   if (hspi->ErrorCode != HAL_SPI_ERROR_NONE)
  885:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 17
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 17
 
 
  886:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     errorcode = HAL_ERROR;
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  940:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->RxXferCount = Size;
  941:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  942:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   /*Init field not used in handle to zero */
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 18
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 18
 
 
  943:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->pTxBuffPtr  = (uint8_t *)NULL;
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  997:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   else
  998:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
  999:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     /* Transfer loop */
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 19
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 19
 
 
 1000:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     while (hspi->RxXferCount > 0U)
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1054:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
 1055:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     /* Read CRC to Flush DR and RXNE flag */
 1056:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     READ_REG(hspi->Instance->DR);
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 20
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 20
 
 
 1057:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   }
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1111:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   /* Process Locked */
 1112:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   __HAL_LOCK(hspi);
 1113:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 21
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 21
 
 
 1114:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   /* Init tickstart for timeout management*/
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1168:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
 1169:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   /* Transmit and Receive data in 16 Bit mode */
 1170:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   if (hspi->Init.DataSize == SPI_DATASIZE_16BIT)
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 22
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 22
 
 
 1171:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1225:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       /* Check TXE flag */
 1226:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       if ((__HAL_SPI_GET_FLAG(hspi, SPI_FLAG_TXE)) && (hspi->TxXferCount > 0U) && (txallowed == 1U)
 1227:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       {
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 23
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 23
 
 
 1228:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****         *(__IO uint8_t *)&hspi->Instance->DR = (*hspi->pTxBuffPtr);
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1282:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
 1283:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     errorcode = HAL_ERROR;
 1284:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   }
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 24
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 24
 
 
 1285:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** #endif /* USE_SPI_CRC */
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1339:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->ErrorCode   = HAL_SPI_ERROR_NONE;
 1340:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->pTxBuffPtr  = (uint8_t *)pData;
 1341:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->TxXferSize  = Size;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 25
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 25
 
 
 1342:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->TxXferCount = Size;
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1396:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   * @retval HAL status
 1397:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   */
 1398:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** HAL_StatusTypeDef HAL_SPI_Receive_IT(SPI_HandleTypeDef *hspi, uint8_t *pData, uint16_t Size)
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 26
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 26
 
 
 1399:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** {
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1453:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** #if (USE_SPI_CRC != 0U)
 1454:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   /* Reset CRC Calculation */
 1455:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   if (hspi->Init.CRCCalculation == SPI_CRCCALCULATION_ENABLE)
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 27
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 27
 
 
 1456:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1510:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     goto error;
 1511:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   }
 1512:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 28
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 28
 
 
 1513:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   if ((pTxData == NULL) || (pRxData == NULL) || (Size == 0U))
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1567:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   return errorcode;
 1568:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** }
 1569:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 29
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 29
 
 
 1570:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** /**
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1624:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   /* Reset CRC Calculation */
 1625:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   if (hspi->Init.CRCCalculation == SPI_CRCCALCULATION_ENABLE)
 1626:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 30
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 30
 
 
 1627:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     SPI_RESET_CRC(hspi);
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1681:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   * @retval HAL status
 1682:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   */
 1683:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** HAL_StatusTypeDef HAL_SPI_Receive_DMA(SPI_HandleTypeDef *hspi, uint8_t *pData, uint16_t Size)
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 31
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 31
 
 
 1684:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** {
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1738:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
 1739:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     SPI_RESET_CRC(hspi);
 1740:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   }
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 32
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 32
 
 
 1741:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** #endif /* USE_SPI_CRC */
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1795:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** HAL_StatusTypeDef HAL_SPI_TransmitReceive_DMA(SPI_HandleTypeDef *hspi, uint8_t *pTxData, uint8_t *p
 1796:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****                                               uint16_t Size)
 1797:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** {
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 33
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 33
 
 
 1798:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   uint32_t             tmp_mode;
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1852:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     SPI_RESET_CRC(hspi);
 1853:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   }
 1854:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** #endif /* USE_SPI_CRC */
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 34
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 34
 
 
 1855:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1909:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   if ((hspi->Instance->CR1 & SPI_CR1_SPE) != SPI_CR1_SPE)
 1910:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
 1911:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     /* Enable SPI peripheral */
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 35
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 35
 
 
 1912:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     __HAL_SPI_ENABLE(hspi);
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1966:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     while (hspi->State != HAL_SPI_STATE_ABORT);
 1967:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     /* Reset Timeout Counter */
 1968:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     count = resetcount;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 36
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 36
 
 
 1969:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   }
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2023:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   if (HAL_IS_BIT_SET(hspi->Instance->CR2, SPI_CR2_RXDMAEN))
 2024:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
 2025:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     /* Abort the SPI DMA Rx Stream/Channel : use blocking DMA Abort API (no callback) */
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 37
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 37
 
 
 2026:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     if (hspi->hdmarx != NULL)
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2080:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   *           - Set handle State to READY
 2081:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   *           - At abort completion, call user abort complete callback
 2082:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   * @note   This procedure is executed in Interrupt mode, meaning that abort procedure could be
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 38
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 38
 
 
 2083:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   *         considered as completed only when user abort complete callback is executed (not when ex
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2137:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
 2138:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   /* If DMA Tx and/or DMA Rx Handles are associated to SPI Handle, DMA Abort complete callbacks sho
 2139:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****      before any call to DMA Abort functions */
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 39
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 39
 
 
 2140:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   /* DMA Tx Handle is valid */
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2194:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       if (HAL_DMA_Abort_IT(hspi->hdmarx) !=  HAL_OK)
 2195:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       {
 2196:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****         hspi->hdmarx->XferAbortCallback = NULL;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 40
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 40
 
 
 2197:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****         hspi->ErrorCode = HAL_SPI_ERROR_ABORT;
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2251:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   __HAL_LOCK(hspi);
 2252:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
 2253:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   /* Disable the SPI DMA Tx & Rx requests */
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 41
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 41
 
 
 2254:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   CLEAR_BIT(hspi->Instance->CR2, SPI_CR2_TXDMAEN | SPI_CR2_RXDMAEN);
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2308:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
 2309:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     if (HAL_OK != HAL_DMA_Abort(hspi->hdmarx))
 2310:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     {
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 42
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 42
 
 
 2311:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       SET_BIT(hspi->ErrorCode, HAL_SPI_ERROR_DMA);
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2365:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
 2366:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     /* SPI Mode Fault error interrupt occurred -------------------------------*/
 2367:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     if (SPI_CHECK_FLAG(itflag, SPI_FLAG_MODF) != RESET)
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 43
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 43
 
 
 2368:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     {
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2422:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       }
 2423:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     }
 2424:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     return;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 44
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 44
 
 
 2425:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   }
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2479:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   *               the configuration information for SPI module.
 2480:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   * @retval None
 2481:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   */
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 45
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 45
 
 
 2482:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** __weak void HAL_SPI_TxHalfCpltCallback(SPI_HandleTypeDef *hspi)
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2536:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****             the HAL_SPI_ErrorCallback should be implemented in the user file
 2537:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****    */
 2538:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   /* NOTE : The ErrorCode parameter in the hspi handle is updated by the SPI processes
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 46
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 46
 
 
 2539:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****             and user can use HAL_SPI_GetError() API to check the latest error occurred
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2593:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   * @retval SPI error code in bitmap format
 2594:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   */
 2595:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** uint32_t HAL_SPI_GetError(SPI_HandleTypeDef *hspi)
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 47
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 47
 
 
 2596:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** {
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2650:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     hspi->State = HAL_SPI_STATE_READY;
 2651:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
 2652:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     if (hspi->ErrorCode != HAL_SPI_ERROR_NONE)
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 48
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 48
 
 
 2653:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     {
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2707:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     CLEAR_BIT(hspi->Instance->CR2, SPI_CR2_TXDMAEN | SPI_CR2_RXDMAEN);
 2708:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
 2709:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     /* Check the end of the transaction */
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 49
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 49
 
 
 2710:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     if (SPI_EndRxTransaction(hspi, SPI_DEFAULT_TIMEOUT, tickstart) != HAL_OK)
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2764:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     __HAL_SPI_DISABLE_IT(hspi, SPI_IT_ERR);
 2765:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
 2766:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** #if (USE_SPI_CRC != 0U)
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 50
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 50
 
 
 2767:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     /* CRC handling */
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2821:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** /**
 2822:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   * @brief  DMA SPI half transmit process complete callback.
 2823:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   * @param  hdma pointer to a DMA_HandleTypeDef structure that contains
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 51
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 51
 
 
 2824:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   *               the configuration information for the specified DMA module.
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2878:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   *               the configuration information for the specified DMA module.
 2879:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   * @retval None
 2880:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   */
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 52
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 52
 
 
 2881:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** static void SPI_DMAError(DMA_HandleTypeDef *hdma)
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2935:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   CLEAR_BIT(hspi->Instance->CR2, SPI_CR2_TXDMAEN);
 2936:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
 2937:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   /* Wait until TXE flag is set */
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 53
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 53
 
 
 2938:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   do
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2992:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** static void SPI_DMARxAbortCallback(DMA_HandleTypeDef *hdma)
 2993:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** {
 2994:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   SPI_HandleTypeDef *hspi = (SPI_HandleTypeDef *)(((DMA_HandleTypeDef *)hdma)->Parent); /* Derogati
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 54
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 54
 
 
 2995:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 3049:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   * @retval None
 3050:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   */
 3051:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** static void SPI_2linesRxISR_8BIT(struct __SPI_HandleTypeDef *hspi)
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 55
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 55
 
 
 3052:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** {
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 3106:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   */
 3107:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** static void SPI_2linesTxISR_8BIT(struct __SPI_HandleTypeDef *hspi)
 3108:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** {
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 56
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 56
 
 
 3109:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   *(__IO uint8_t *)&hspi->Instance->DR = (*hspi->pTxBuffPtr);
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 3163:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     if (hspi->TxXferCount == 0U)
 3164:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     {
 3165:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       SPI_CloseRxTx_ISR(hspi);
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 57
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 57
 
 
 3166:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     }
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 3220:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     {
 3221:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       SPI_CloseRxTx_ISR(hspi);
 3222:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     }
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 58
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 58
 
 
 3223:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   }
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 3277:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   * @brief  Manage the CRC 16-bit receive in Interrupt context.
 3278:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   * @param  hspi pointer to a SPI_HandleTypeDef structure that contains
 3279:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   *               the configuration information for SPI module.
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 59
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 59
 
 
 3280:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   * @retval None
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 3334:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** {
 3335:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   *(__IO uint8_t *)&hspi->Instance->DR = (*hspi->pTxBuffPtr);
 3336:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->pTxBuffPtr++;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 60
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 60
 
 
 3337:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->TxXferCount--;
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 3391:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   while ((__HAL_SPI_GET_FLAG(hspi, Flag) ? SET : RESET) != State)
 3392:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
 3393:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     if (Timeout != HAL_MAX_DELAY)
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 61
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 61
 
 
 3394:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     {
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 3448:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   if (SPI_WaitFlagStateUntilTimeout(hspi, SPI_FLAG_BSY, RESET, Timeout, Tickstart) != HAL_OK)
 3449:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
 3450:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     SET_BIT(hspi->ErrorCode, HAL_SPI_ERROR_FLAG);
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 62
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 62
 
 
 3451:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     return HAL_TIMEOUT;
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 3505:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
 3506:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     SET_BIT(hspi->ErrorCode, HAL_SPI_ERROR_FLAG);
 3507:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   }
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 63
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 63
 
 
 3508:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 3562:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       HAL_SPI_ErrorCallback(hspi);
 3563:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** #endif /* USE_HAL_SPI_REGISTER_CALLBACKS */
 3564:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     }
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 64
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 64
 
 
 3565:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** #if (USE_SPI_CRC != 0U)
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 3619:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     else
 3620:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     {
 3621:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       /* Call user error callback */
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 65
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 65
 
 
 3622:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** #if (USE_HAL_SPI_REGISTER_CALLBACKS == 1U)
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 3676:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
 3677:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     /* Call user error callback */
 3678:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** #if (USE_HAL_SPI_REGISTER_CALLBACKS == 1U)
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 66
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 66
 
 
 3679:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     hspi->ErrorCallback(hspi);
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
   53              		.loc 1 3708 15 is_stmt 0 view .LVU8
   54 0016 019B     		ldr	r3, [sp, #4]
   55              		.loc 1 3708 8 view .LVU9
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 67
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 67
 
 
   56 0018 43B1     		cbz	r3, .L6
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 3726:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->State = HAL_SPI_STATE_ABORT;
   91              		.loc 1 3726 3 view .LVU21
   92              		.loc 1 3726 15 is_stmt 0 view .LVU22
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 68
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 68
 
 
   93 004c 0723     		movs	r3, #7
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 3742:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
 3743:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->State = HAL_SPI_STATE_ABORT;
  134              		.loc 1 3743 3 view .LVU27
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 69
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 69
 
 
  135              		.loc 1 3743 15 is_stmt 0 view .LVU28
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  183              		.loc 1 3391 9 view .LVU36
  184 001a BC42     		cmp	r4, r7
  185 001c 37D0     		beq	.L20
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 70
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 70
 
 
 3393:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     {
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  224              		.loc 1 3417 9 discriminator 1 view .LVU52
 3417:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  225              		.loc 1 3417 21 is_stmt 0 discriminator 1 view .LVU53
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 71
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 71
 
 
  226 004e 0123     		movs	r3, #1
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  267              		.loc 1 3427 10 is_stmt 0 view .LVU66
  268 008e 0020     		movs	r0, #0
  269              	.L17:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 72
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 72
 
 
 3428:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  316 0014 02B0     		add	sp, sp, #8
  317              	.LCFI5:
  318              		.cfi_remember_state
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 73
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 73
 
 
  319              		.cfi_def_cfa_offset 8
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  367 000a B1F5827F 		cmp	r1, #260
  368 000e 08D0     		beq	.L32
  369              	.LVL12:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 74
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 74
 
 
  370              	.L28:
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 3450:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     return HAL_TIMEOUT;
  414              		.loc 1 3450 5 is_stmt 1 view .LVU95
  415 003c 636D     		ldr	r3, [r4, #84]
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 75
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 75
 
 
  416 003e 43F02003 		orr	r3, r3, #32
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  310:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   /* Check the SPI handle allocation */
  466              		.loc 1 310 1 view .LVU104
  467 0004 10B5     		push	{r4, lr}
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 76
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 76
 
 
  468              	.LCFI11:
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  503 001e 23F04003 		bic	r3, r3, #64
  504 0022 1360     		str	r3, [r2]
  378:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****                                   hspi->Init.CLKPolarity | hspi->Init.CLKPhase | (hspi->Init.NSS & 
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 77
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 77
 
 
  505              		.loc 1 378 3 view .LVU124
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  344:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  551              		.loc 1 344 5 is_stmt 1 view .LVU133
  344:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 78
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 78
 
 
  552              		.loc 1 344 16 is_stmt 0 view .LVU134
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  603              	HAL_SPI_DeInit:
  604              	.LVL26:
  605              	.LFB131:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 79
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 79
 
 
  412:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   /* Check the SPI handle allocation */
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  446:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** }
  644              		.loc 1 446 3 view .LVU158
  447:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 80
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 80
 
 
  645              		.loc 1 447 1 is_stmt 0 view .LVU159
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  694              		.loc 1 746 3 view .LVU166
  749:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  695              		.loc 1 749 3 view .LVU167
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 81
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 81
 
 
  752:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  733              		.loc 1 771 21 is_stmt 0 view .LVU184
  734 0040 0323     		movs	r3, #3
  735 0042 84F85130 		strb	r3, [r4, #81]
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 82
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 82
 
 
  772:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->pTxBuffPtr  = (uint8_t *)pData;
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  769 0066 1ED0     		beq	.L82
  770              	.L55:
  799:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 83
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 83
 
 
  771              		.loc 1 799 3 is_stmt 1 view .LVU206
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  808              		.loc 1 841 7 is_stmt 1 view .LVU223
  841:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       hspi->TxXferCount--;
  809              		.loc 1 841 24 is_stmt 0 view .LVU224
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 84
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 84
 
 
  810 0094 236B     		ldr	r3, [r4, #48]
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  849              		.loc 1 811 24 is_stmt 0 view .LVU239
  850 00c4 236B     		ldr	r3, [r4, #48]
  851 00c6 0233     		adds	r3, r3, #2
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 85
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 85
 
 
  852 00c8 2363     		str	r3, [r4, #48]
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  818:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       {
  892              		.loc 1 818 10 view .LVU254
  893 00f6 12F0020F 		tst	r2, #2
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 86
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 86
 
 
  894 00fa ECD0     		beq	.L61
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  933              	.L68:
  844:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     {
  934              		.loc 1 844 11 is_stmt 1 view .LVU270
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 87
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 87
 
 
  844:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     {
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  973 0154 2046     		mov	r0, r4
  974 0156 FFF7FEFF 		bl	SPI_EndRxTxTransaction
  975              	.LVL38:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 88
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 88
 
 
  873:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  760:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     goto error;
  1014              		.loc 1 760 15 view .LVU303
  1015 017a 0226     		movs	r6, #2
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 89
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 89
 
 
  1016              	.LVL40:
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  1060              		.cfi_endproc
  1061              	.LFE134:
  1063              		.section	.text.HAL_SPI_TransmitReceive,"ax",%progbits
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 90
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 90
 
 
  1064              		.align	1
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  1107 000e 012B     		cmp	r3, #1
  1108 0010 00F01081 		beq	.L106
  1109 0014 0446     		mov	r4, r0
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 91
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 91
 
 
  1110 0016 8846     		mov	r8, r1
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  1148 0044 40F0E880 		bne	.L109
  1149              	.L86:
 1129:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 92
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 92
 
 
  1150              		.loc 1 1129 3 is_stmt 1 view .LVU342
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1146:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->TxXferCount = Size;
  1187              		.loc 1 1146 3 is_stmt 1 view .LVU360
 1146:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->TxXferCount = Size;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 93
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 93
 
 
  1188              		.loc 1 1146 21 is_stmt 0 view .LVU361
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  1224 00a0 6368     		ldr	r3, [r4, #4]
 1217:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     {
  1225              		.loc 1 1217 8 view .LVU380
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 94
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 94
 
 
  1226 00a2 0BB1     		cbz	r3, .L98
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  1264              		.loc 1 1172 8 view .LVU396
  1265 00c6 0BB1     		cbz	r3, .L91
 1172:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     {
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 95
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 95
 
 
  1266              		.loc 1 1172 45 discriminator 1 view .LVU397
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  1305 00ec 12F0010F 		tst	r2, #1
  1306 00f0 0ED0     		beq	.L95
 1199:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       {
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 96
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 96
 
 
  1307              		.loc 1 1199 61 discriminator 1 view .LVU413
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  1345 0116 A842     		cmp	r0, r5
  1346 0118 03D3     		bcc	.L93
 1207:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       {
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 97
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 97
 
 
  1347              		.loc 1 1207 53 discriminator 1 view .LVU430
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  1386              		.loc 1 1183 28 view .LVU445
  1387 014a DA60     		str	r2, [r3, #12]
 1184:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****         hspi->TxXferCount--;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 98
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 98
 
 
  1388              		.loc 1 1184 9 is_stmt 1 view .LVU446
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1247:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****         hspi->RxXferCount--;
  1427              		.loc 1 1247 9 is_stmt 1 view .LVU462
 1247:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****         hspi->RxXferCount--;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 99
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 99
 
 
  1428              		.loc 1 1247 13 is_stmt 0 view .LVU463
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  1468 019e 9BB2     		uxth	r3, r3
 1223:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     {
  1469              		.loc 1 1223 11 view .LVU478
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 100
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 100
 
 
  1470 01a0 13B9     		cbnz	r3, .L104
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  1507              		.loc 1 1230 13 is_stmt 0 view .LVU495
  1508 01ca E38E     		ldrh	r3, [r4, #54]
  1509 01cc 9BB2     		uxth	r3, r3
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 101
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 101
 
 
 1230:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****         /* Next Data is a reception (Rx). Tx not allowed */
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  1550              	.LBE3:
 1290:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     hspi->ErrorCode = HAL_SPI_ERROR_FLAG;
  1551              		.loc 1 1290 5 view .LVU510
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 102
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 102
 
 
  1552              	.LVL71:
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1125:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     goto error;
  1592              		.loc 1 1125 15 view .LVU525
  1593 0214 0220     		movs	r0, #2
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 103
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 103
 
 
  1594              	.LVL76:
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  1637              	.LVL86:
  1638              	.L106:
 1112:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 104
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 104
 
 
  1639              		.loc 1 1112 3 view .LVU537
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  1687              		.loc 1 910 6 view .LVU545
  1688 0010 B3F5827F 		cmp	r3, #260
  1689 0014 36D0     		beq	.L145
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 105
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 105
 
 
  1690              	.L121:
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  1727 004a 0023     		movs	r3, #0
  1728 004c 6365     		str	r3, [r4, #84]
  938:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->RxXferSize  = Size;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 106
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 106
 
 
  1729              		.loc 1 938 3 is_stmt 1 view .LVU563
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  966:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
  1763              		.loc 1 966 22 view .LVU584
  1764 006e 1A68     		ldr	r2, [r3]
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 107
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 107
 
 
  966:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  1805 009e 2268     		ldr	r2, [r4]
  1806 00a0 1368     		ldr	r3, [r2]
  1807 00a2 23F48043 		bic	r3, r3, #16384
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 108
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 108
 
 
  1808 00a6 1360     		str	r3, [r2]
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  1847 00d2 1B7B     		ldrb	r3, [r3, #12]	@ zero_extendqisi2
  982:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****         hspi->pRxBuffPtr += sizeof(uint8_t);
  1848              		.loc 1 982 41 view .LVU614
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 109
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 109
 
 
  1849 00d4 1370     		strb	r3, [r2]
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  1888              		.loc 1 1003 7 is_stmt 1 view .LVU629
 1003:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       {
  1889              		.loc 1 1003 11 is_stmt 0 view .LVU630
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 110
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 110
 
 
  1890 0102 2368     		ldr	r3, [r4]
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  1929 0132 6365     		str	r3, [r4, #84]
  1930              	.L137:
 1075:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 111
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 111
 
 
  1931              		.loc 1 1075 3 is_stmt 1 view .LVU646
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  1973 0156 0326     		movs	r6, #3
  1974 0158 F1E7     		b	.L123
  1975              	.L142:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 112
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 112
 
 
 1014:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****           goto error;
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  2021              		.loc 1 1323 3 discriminator 2 view .LVU669
 1325:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
  2022              		.loc 1 1325 3 discriminator 2 view .LVU670
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 113
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 113
 
 
 1325:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  2058 0034 9887     		strh	r0, [r3, #60]	@ movhi
 1347:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->RxISR       = NULL;
  2059              		.loc 1 1347 3 is_stmt 1 view .LVU690
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 114
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 114
 
 
 1347:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->RxISR       = NULL;
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  2097              		.loc 1 1382 5 is_stmt 1 view .LVU707
  2098 005e 1168     		ldr	r1, [r2]
  2099 0060 41F04001 		orr	r1, r1, #64
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 115
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 115
 
 
  2100 0064 1160     		str	r1, [r2]
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  2141              		.loc 1 1333 15 view .LVU720
  2142 008a 0220     		movs	r0, #2
  2143 008c F9E7     		b	.L149
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 116
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 116
 
 
  2144              	.LVL117:
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1500:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  2191              		.loc 1 1500 3 view .LVU730
 1500:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 117
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 117
 
 
  2192              		.loc 1 1500 3 view .LVU731
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  2231 0030 38D0     		beq	.L172
 1513:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
  2232              		.loc 1 1513 25 discriminator 1 view .LVU747
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 118
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 118
 
 
  2233 0032 002A     		cmp	r2, #0
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1531:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->RxXferCount = Size;
  2269              		.loc 1 1531 21 is_stmt 0 view .LVU766
  2270 0056 A387     		strh	r3, [r4, #60]	@ movhi
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 119
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 119
 
 
 1532:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1494:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  2309              		.loc 1 1494 24 is_stmt 0 view .LVU783
  2310 0082 0020     		movs	r0, #0
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 120
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 120
 
 
  2311 0084 05E0     		b	.L164
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  2353              	.LVL135:
 1509:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     goto error;
  2354              		.loc 1 1509 15 view .LVU796
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 121
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 121
 
 
  2355 009e F8E7     		b	.L164
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  2399 00c0 00000000 		.word	SPI_2linesRxISR_8BIT
  2400 00c4 00000000 		.word	SPI_2linesTxISR_8BIT
  2401              		.cfi_endproc
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 122
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 122
 
 
  2402              	.LFE139:
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  2447 001a 84F85000 		strb	r0, [r4, #80]
 1410:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  2448              		.loc 1 1410 3 discriminator 2 view .LVU818
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 123
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 123
 
 
 1412:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1433:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->TxXferCount = 0U;
  2484              		.loc 1 1433 21 is_stmt 0 view .LVU838
  2485 0042 A086     		strh	r0, [r4, #52]	@ movhi
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 124
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 124
 
 
 1434:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->TxISR       = NULL;
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  2523 006a 1A68     		ldr	r2, [r3]
  2524 006c 42F04002 		orr	r2, r2, #64
  2525 0070 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 125
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 125
 
 
 1400:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1477:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   return errorcode;
  2568              		.loc 1 1477 3 is_stmt 1 view .LVU868
 1477:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   return errorcode;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 126
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 126
 
 
  2569              		.loc 1 1477 3 view .LVU869
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  2618              		.cfi_offset 14, -4
 1580:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  2619              		.loc 1 1580 3 is_stmt 1 view .LVU877
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 127
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 127
 
 
  2620              	.LVL162:
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  2656              		.loc 1 1606 21 is_stmt 0 view .LVU895
  2657 002e 0163     		str	r1, [r0, #48]
 1607:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->TxXferCount = Size;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 128
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 128
 
 
  2658              		.loc 1 1607 3 is_stmt 1 view .LVU896
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1635:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  2693              		.loc 1 1635 3 is_stmt 1 view .LVU916
 1635:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 129
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 129
 
 
  2694              		.loc 1 1635 7 is_stmt 0 view .LVU917
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  2732 0072 2368     		ldr	r3, [r4]
 1655:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
  2733              		.loc 1 1655 22 view .LVU934
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 130
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 130
 
 
  2734 0074 1A68     		ldr	r2, [r3]
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1650:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     goto error;
  2777              		.loc 1 1650 17 is_stmt 0 view .LVU946
  2778 00b0 0123     		movs	r3, #1
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 131
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 131
 
 
  2779 00b2 84F85130 		strb	r3, [r4, #81]
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  2826              		@ args = 0, pretend = 0, frame = 0
  2827              		@ frame_needed = 0, uses_anonymous_args = 0
 1797:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   uint32_t             tmp_mode;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 132
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 132
 
 
  2828              		.loc 1 1797 1 is_stmt 0 view .LVU956
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  2865              		.loc 1 1816 6 is_stmt 0 discriminator 2 view .LVU973
  2866 001c 0128     		cmp	r0, #1
  2867 001e 07D0     		beq	.L209
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 133
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 133
 
 
 1816:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****         ((tmp_mode == SPI_MODE_MASTER) && (hspi->Init.Direction == SPI_DIRECTION_2LINES) && (tmp_st
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  2906              		.loc 1 1836 21 is_stmt 0 view .LVU989
  2907 004c 0020     		movs	r0, #0
  2908 004e 6065     		str	r0, [r4, #84]
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 134
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 134
 
 
 1837:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->TxXferSize  = Size;
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  2942              		.loc 1 1866 5 is_stmt 1 view .LVU1010
 1866:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     hspi->hdmarx->XferCpltCallback     = SPI_DMATransmitReceiveCplt;
  2943              		.loc 1 1866 9 is_stmt 0 view .LVU1011
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 135
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 135
 
 
  2944 006a E36C     		ldr	r3, [r4, #76]
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1877:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
  2983              		.loc 1 1877 6 view .LVU1027
  2984 0092 70B1     		cbz	r0, .L214
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 136
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 136
 
 
 1880:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     errorcode = HAL_ERROR;
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  3024 00bc A26C     		ldr	r2, [r4, #72]
 1892:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->hdmatx->XferCpltCallback     = NULL;
  3025              		.loc 1 1892 38 view .LVU1043
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 137
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 137
 
 
  3026 00be 0023     		movs	r3, #0
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  3062              		.loc 1 1909 6 view .LVU1061
  3063 00e4 12F0400F 		tst	r2, #64
  3064 00e8 03D1     		bne	.L216
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 138
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 138
 
 
 1912:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   }
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  3106              	.LVL197:
  3107              	.L208:
 1924:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 139
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 139
 
 
  3108              		.loc 1 1924 1 is_stmt 0 view .LVU1075
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  3151 013a 00BF     		.align	2
  3152              	.L227:
  3153 013c 00000000 		.word	SPI_DMAHalfTransmitReceiveCplt
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 140
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 140
 
 
  3154 0140 00000000 		.word	SPI_DMATransmitReceiveCplt
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  3200              		.loc 1 1702 3 is_stmt 1 view .LVU1096
 1702:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  3201              		.loc 1 1702 3 view .LVU1097
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 141
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 141
 
 
  3202 0010 94F85000 		ldrb	r0, [r4, #80]	@ zero_extendqisi2
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  3238              		.loc 1 1721 21 is_stmt 0 view .LVU1115
  3239 003e E287     		strh	r2, [r4, #62]	@ movhi
 1724:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->TxISR       = NULL;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 142
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 142
 
 
  3240              		.loc 1 1724 3 is_stmt 1 view .LVU1116
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1753:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  3276              		.loc 1 1753 3 is_stmt 1 view .LVU1135
 1753:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 143
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 143
 
 
  3277              		.loc 1 1753 7 is_stmt 0 view .LVU1136
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  3318 0098 5368     		ldr	r3, [r2, #4]
  3319 009a 43F00103 		orr	r3, r3, #1
  3320 009e 5360     		str	r3, [r2, #4]
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 144
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 144
 
 
 1685:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  3362              	.LVL222:
 1762:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     goto error;
  3363              		.loc 1 1762 5 view .LVU1163
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 145
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 145
 
 
 1762:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     goto error;
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1940:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   HAL_StatusTypeDef errorcode;
  3411              		.loc 1 1940 1 is_stmt 1 view -0
  3412              		.cfi_startproc
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 146
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 146
 
 
  3413              		@ args = 0, pretend = 0, frame = 16
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1953:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
  3454              		.loc 1 1953 6 view .LVU1187
  3455 002c 13F0800F 		tst	r3, #128
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 147
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 147
 
 
  3456 0030 12D0     		beq	.L245
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 1971:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
  3494              		.loc 1 1971 7 is_stmt 0 view .LVU1204
  3495 0058 5368     		ldr	r3, [r2, #4]
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 148
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 148
 
 
 1971:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  3534              	.L249:
 1990:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
  3535              		.loc 1 1990 3 is_stmt 1 view .LVU1221
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 149
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 149
 
 
 1990:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  3573 00ac 039B     		ldr	r3, [sp, #12]
 2011:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****         {
  3574              		.loc 1 2011 12 view .LVU1239
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 150
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 150
 
 
  3575 00ae 43B1     		cbz	r3, .L264
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2033:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       {
  3613              		.loc 1 2033 7 is_stmt 1 view .LVU1256
 2033:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       {
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 151
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 151
 
 
  3614              		.loc 1 2033 11 is_stmt 0 view .LVU1257
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  3654              	.LVL232:
 2062:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   __HAL_SPI_CLEAR_FREFLAG(hspi);
  3655              		.loc 1 2062 3 is_stmt 1 view .LVU1272
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 152
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 152
 
 
  3656              	.LBB4:
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  3696              	.LCFI37:
  3697              		.cfi_restore_state
 2053:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   }
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 153
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 153
 
 
  3698              		.loc 1 2053 15 view .LVU1287
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  3745              		.loc 1 2257 3 discriminator 2 view .LVU1296
 2259:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** }
  3746              		.loc 1 2259 3 discriminator 2 view .LVU1297
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 154
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 154
 
 
 2259:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** }
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  3792              		.loc 1 2277 3 discriminator 2 view .LVU1308
 2277:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  3793              		.loc 1 2277 3 discriminator 2 view .LVU1309
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 155
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 155
 
 
  3794 0018 0023     		movs	r3, #0
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2298:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
  3840              		.loc 1 2298 11 is_stmt 0 view .LVU1320
  3841 0004 806C     		ldr	r0, [r0, #72]
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 156
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 156
 
 
  3842              	.LVL244:
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  3881 002e 6365     		str	r3, [r4, #84]
 2312:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     }
  3882              		.loc 1 2312 7 view .LVU1336
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 157
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 157
 
 
  3883              	.LVL250:
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  3930              		.syntax unified
  3931              		.thumb
  3932              		.thumb_func
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 158
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 158
 
 
  3933              		.fpu fpv4-sp-d16
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  3985              		@ frame_needed = 0, uses_anonymous_args = 0
  3986              		@ link register save eliminated.
 2485:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 159
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 159
 
 
  3987              		.loc 1 2485 3 view .LVU1354
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  4037              		.loc 1 2499 1 is_stmt 1 view -0
  4038              		.cfi_startproc
  4039              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 160
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 160
 
 
  4040              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  4090              	.LVL265:
  4091              	.LFB154:
 2515:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   /* Prevent unused argument(s) compilation warning */
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 161
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 161
 
 
  4092              		.loc 1 2515 1 is_stmt 1 view -0
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  4141              		.thumb_func
  4142              		.fpu fpv4-sp-d16
  4144              	HAL_SPI_ErrorCallback:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 162
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 162
 
 
  4145              	.LVL270:
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  4192 0014 02FB03F3 		mul	r3, r2, r3
 3642:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  4193              		.loc 1 3642 17 view .LVU1389
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 163
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 163
 
 
  4194 0018 0193     		str	r3, [sp, #4]
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  4232 0040 4B68     		ldr	r3, [r1, #4]
  4233 0042 23F0A003 		bic	r3, r3, #160
  4234 0046 4B60     		str	r3, [r1, #4]
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 164
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 164
 
 
 3663:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  4273 006c 0123     		movs	r3, #1
  4274 006e 84F85130 		strb	r3, [r4, #81]
 3675:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 165
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 165
 
 
  4275              		.loc 1 3675 3 is_stmt 1 discriminator 1 view .LVU1422
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 3334:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   *(__IO uint8_t *)&hspi->Instance->DR = (*hspi->pTxBuffPtr);
  4324              		.loc 1 3334 1 is_stmt 0 view .LVU1430
  4325 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 166
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 166
 
 
  4326              	.LCFI46:
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 3348:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   }
  4365              		.loc 1 3348 5 is_stmt 1 view .LVU1446
  4366 0022 FFF7FEFF 		bl	SPI_CloseTx_ISR
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 167
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 167
 
 
  4367              	.LVL282:
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 3363:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  4411              		.loc 1 3363 20 view .LVU1459
  4412 0014 013B     		subs	r3, r3, #1
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 168
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 168
 
 
  4413 0016 9BB2     		uxth	r3, r3
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  4460 0006 0268     		ldr	r2, [r0]
  4461 0008 5368     		ldr	r3, [r2, #4]
  4462 000a 23F06003 		bic	r3, r3, #96
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 169
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 169
 
 
  4463 000e 5360     		str	r3, [r2, #4]
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  4502              		.loc 1 3592 3 discriminator 1 view .LVU1483
 3592:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  4503              		.loc 1 3592 15 is_stmt 0 discriminator 1 view .LVU1484
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 170
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 170
 
 
  4504 003a 0123     		movs	r3, #1
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  4551 0000 08B5     		push	{r3, lr}
  4552              	.LCFI52:
  4553              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 171
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 171
 
 
  4554              		.cfi_offset 3, -8
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  4592 0022 FFF7FEFF 		bl	SPI_CloseRx_ISR
  4593              	.LVL296:
 3273:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 172
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 172
 
 
  4594              		.loc 1 3273 1 is_stmt 0 view .LVU1510
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  4638 0014 013B     		subs	r3, r3, #1
  4639 0016 9BB2     		uxth	r3, r3
  4640 0018 C387     		strh	r3, [r0, #62]	@ movhi
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 173
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 173
 
 
 3314:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 3483:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  4687              		.loc 1 3483 70 is_stmt 0 view .LVU1533
  4688 0006 284B     		ldr	r3, .L337
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 174
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 174
 
 
  4689 0008 1B68     		ldr	r3, [r3]
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  4727              		.loc 1 3501 3 view .LVU1549
  4728 0038 13F0020F 		tst	r3, #2
  4729 003c F5D0     		beq	.L328
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 175
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 175
 
 
  4730 003e 03E0     		b	.L327
@@ -10498,7 +10498,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  4769              		.loc 1 3512 5 view .LVU1564
  4770 006a 009B     		ldr	r3, [sp]
  4771              	.L330:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 176
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 176
 
 
  4772              	.LBE8:
@@ -10558,7 +10558,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  4812 0092 FFF7FEFF 		bl	HAL_SPI_RxCpltCallback
  4813              	.LVL308:
  4814 0096 F6E7     		b	.L325
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 177
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 177
 
 
  4815              	.L331:
@@ -10618,7 +10618,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 3109:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->pTxBuffPtr++;
  4861              		.loc 1 3109 40 view .LVU1589
  4862 0008 1A73     		strb	r2, [r3, #12]
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 178
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 178
 
 
 3110:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->TxXferCount--;
@@ -10678,7 +10678,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  4902              	.LVL313:
 3135:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  4903              		.loc 1 3135 1 is_stmt 0 view .LVU1605
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 179
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 179
 
 
  4904 0036 FBE7     		b	.L339
@@ -10738,7 +10738,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  4947              		.loc 1 3056 20 view .LVU1618
  4948 0014 013B     		subs	r3, r3, #1
  4949 0016 9BB2     		uxth	r3, r3
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 180
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 180
 
 
  4950 0018 C387     		strh	r3, [r0, #62]	@ movhi
@@ -10798,7 +10798,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  4995              		@ frame_needed = 0, uses_anonymous_args = 0
 3196:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   /* Transmit data in 16 Bit mode */
  4996              		.loc 1 3196 1 is_stmt 0 view .LVU1630
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 181
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 181
 
 
  4997 0000 08B5     		push	{r3, lr}
@@ -10858,7 +10858,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 3219:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     {
  5036              		.loc 1 3219 13 is_stmt 0 view .LVU1646
  5037 002a C38F     		ldrh	r3, [r0, #62]
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 182
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 182
 
 
  5038 002c 9BB2     		uxth	r3, r3
@@ -10918,7 +10918,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  5083 0008 1A80     		strh	r2, [r3]	@ movhi
 3147:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->RxXferCount--;
  5084              		.loc 1 3147 3 is_stmt 1 view .LVU1658
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 183
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 183
 
 
 3147:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->RxXferCount--;
@@ -10978,7 +10978,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  5125              		.cfi_endproc
  5126              	.LFE171:
  5128              		.section	.text.SPI_DMAError,"ax",%progbits
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 184
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 184
 
 
  5129              		.align	1
@@ -11038,7 +11038,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  5175              		.syntax unified
  5176              		.thumb
  5177              		.thumb_func
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 185
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 185
 
 
  5178              		.fpu fpv4-sp-d16
@@ -11098,7 +11098,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2635:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  5221              		.loc 1 2635 5 view .LVU1695
  5222 0022 2168     		ldr	r1, [r4]
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 186
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 186
 
 
  5223 0024 4B68     		ldr	r3, [r1, #4]
@@ -11158,7 +11158,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  5262              		.loc 1 2649 5 discriminator 1 view .LVU1710
 2649:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     hspi->State = HAL_SPI_STATE_READY;
  5263              		.loc 1 2649 23 is_stmt 0 discriminator 1 view .LVU1711
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 187
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 187
 
 
  5264 0050 0023     		movs	r3, #0
@@ -11218,7 +11218,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2678:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   SPI_HandleTypeDef *hspi = (SPI_HandleTypeDef *)(((DMA_HandleTypeDef *)hdma)->Parent); /* Derogati
  5311              		.loc 1 2678 1 view -0
  5312              		.cfi_startproc
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 188
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 188
 
 
  5313              		@ args = 0, pretend = 0, frame = 0
@@ -11278,7 +11278,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  5353              		.loc 1 2710 9 is_stmt 0 view .LVU1735
  5354 002a 6421     		movs	r1, #100
  5355 002c 2046     		mov	r0, r4
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 189
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 189
 
 
  5356              	.LVL340:
@@ -11338,7 +11338,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  5395 0054 FAE7     		b	.L364
  5396              		.cfi_endproc
  5397              	.LFE160:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 190
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 190
 
 
  5399              		.section	.text.SPI_DMATransmitReceiveCplt,"ax",%progbits
@@ -11398,7 +11398,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  5442 0018 4B68     		ldr	r3, [r1, #4]
  5443 001a 23F02003 		bic	r3, r3, #32
  5444 001e 4B60     		str	r3, [r1, #4]
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 191
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 191
 
 
 2781:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     {
@@ -11458,7 +11458,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  5483 004c 2046     		mov	r0, r4
  5484 004e FFF7FEFF 		bl	HAL_SPI_TxRxCpltCallback
  5485              	.LVL350:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 192
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 192
 
 
  5486              	.L370:
@@ -11518,7 +11518,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2331:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  5533              		.loc 1 2331 12 is_stmt 0 view .LVU1788
  5534 000a 9368     		ldr	r3, [r2, #8]
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 193
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 193
 
 
  5535              	.LVL355:
@@ -11578,7 +11578,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2352:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     {
  5574              		.loc 1 2352 8 is_stmt 0 view .LVU1804
  5575 0046 78B1     		cbz	r0, .L381
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 194
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 194
 
 
 2354:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       {
@@ -11638,7 +11638,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2370:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     }
  5615              		.loc 1 2370 7 view .LVU1820
  5616 0076 9068     		ldr	r0, [r2, #8]
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 195
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 195
 
 
  5617 0078 0290     		str	r0, [sp, #8]
@@ -11698,7 +11698,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  5655 009e 636D     		ldr	r3, [r4, #84]
 2380:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     {
  5656              		.loc 1 2380 8 discriminator 1 view .LVU1837
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 196
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 196
 
 
  5657 00a0 002B     		cmp	r3, #0
@@ -11758,7 +11758,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  5696 00da 6365     		str	r3, [r4, #84]
  5697              	.L387:
 2403:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****         {
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 197
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 197
 
 
  5698              		.loc 1 2403 9 view .LVU1853
@@ -11818,7 +11818,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  5737              		.loc 1 2344 5 view .LVU1868
  5738 0100 2046     		mov	r0, r4
  5739 0102 9847     		blx	r3
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 198
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 198
 
 
  5740              	.LVL365:
@@ -11878,7 +11878,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  5782              	.L391:
  5783 0120 00000000 		.word	SPI_DMAAbortOnError
  5784              		.cfi_endproc
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 199
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 199
 
 
  5785              	.LFE148:
@@ -11938,7 +11938,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  5832              		.fpu fpv4-sp-d16
  5834              	HAL_SPI_AbortCpltCallback:
  5835              	.LVL372:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 200
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 200
 
 
  5836              	.LFB156:
@@ -11998,7 +11998,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  5881              		.loc 1 2095 3 view .LVU1901
 2095:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   count = resetcount;
  5882              		.loc 1 2095 61 is_stmt 0 view .LVU1902
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 201
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 201
 
 
  5883 0006 4F4B     		ldr	r3, .L422
@@ -12058,7 +12058,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  5921              		.loc 1 2113 12 is_stmt 0 view .LVU1918
  5922 003a 039B     		ldr	r3, [sp, #12]
  5923 003c 013B     		subs	r3, r3, #1
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 202
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 202
 
 
  5924 003e 0393     		str	r3, [sp, #12]
@@ -12118,7 +12118,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2131:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     }
  5962              		.loc 1 2131 7 is_stmt 1 view .LVU1935
 2131:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     }
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 203
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 203
 
 
  5963              		.loc 1 2131 12 is_stmt 0 view .LVU1936
@@ -12178,7 +12178,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  6002              	.L405:
 2155:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
  6003              		.loc 1 2155 3 is_stmt 1 view .LVU1952
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 204
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 204
 
 
 2155:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
@@ -12238,7 +12238,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  6040              		.loc 1 2178 13 is_stmt 0 view .LVU1970
  6041 00bc A36C     		ldr	r3, [r4, #72]
 2178:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****         hspi->ErrorCode = HAL_SPI_ERROR_ABORT;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 205
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 205
 
 
  6042              		.loc 1 2178 41 view .LVU1971
@@ -12298,7 +12298,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2194:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       {
  6082              		.loc 1 2194 7 is_stmt 1 view .LVU1986
 2194:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****       {
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 206
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 206
 
 
  6083              		.loc 1 2194 11 is_stmt 0 view .LVU1987
@@ -12358,7 +12358,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  6124              		.loc 1 2183 19 view .LVU2000
  6125 0106 0026     		movs	r6, #0
  6126 0108 E6E7     		b	.L409
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 207
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 207
 
 
  6127              	.LVL382:
@@ -12418,7 +12418,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  6165              	.LBB15:
 2226:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  6166              		.loc 1 2226 5 view .LVU2017
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 208
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 208
 
 
  6167 012a 0192     		str	r2, [sp, #4]
@@ -12478,7 +12478,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2993:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   SPI_HandleTypeDef *hspi = (SPI_HandleTypeDef *)(((DMA_HandleTypeDef *)hdma)->Parent); /* Derogati
  6215              		.loc 1 2993 1 is_stmt 0 view .LVU2026
  6216 0000 10B5     		push	{r4, lr}
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 209
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 209
 
 
  6217              	.LCFI78:
@@ -12538,7 +12538,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  6259 0036 6365     		str	r3, [r4, #84]
  6260              	.L425:
 3011:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   {
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 210
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 210
 
 
  6261              		.loc 1 3011 3 view .LVU2039
@@ -12598,7 +12598,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  6298 0058 0091     		str	r1, [sp]
 3031:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   __HAL_SPI_CLEAR_FREFLAG(hspi);
  6299              		.loc 1 3031 3 view .LVU2057
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 211
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 211
 
 
  6300 005a 9968     		ldr	r1, [r3, #8]
@@ -12658,7 +12658,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  6344              	.LVL391:
  6345              	.LFB167:
 2927:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   SPI_HandleTypeDef *hspi = (SPI_HandleTypeDef *)(((DMA_HandleTypeDef *)hdma)->Parent); /* Derogati
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 212
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 212
 
 
  6346              		.loc 1 2927 1 is_stmt 1 view -0
@@ -12718,7 +12718,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  6387              		.loc 1 2938 3 view .LVU2083
 2940:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     {
  6388              		.loc 1 2940 5 view .LVU2084
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 213
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 213
 
 
 2940:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****     {
@@ -12778,7 +12778,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2959:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c ****   hspi->TxXferCount = 0U;
  6426              		.loc 1 2959 21 is_stmt 0 view .LVU2102
  6427 0050 0023     		movs	r3, #0
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 214
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 214
 
 
  6428 0052 C387     		strh	r3, [r0, #62]	@ movhi
@@ -12838,7 +12838,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
 2971:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c **** 
  6466              		.loc 1 2971 3 view .LVU2119
  6467 0076 029B     		ldr	r3, [sp, #8]
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 215
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 215
 
 
  6468              	.LBE19:
@@ -12898,7 +12898,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  6515              	.LFE157:
  6517              		.section	.text.HAL_SPI_GetError,"ax",%progbits
  6518              		.align	1
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 216
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 216
 
 
  6519              		.global	HAL_SPI_GetError
@@ -12938,140 +12938,140 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 1
  6551              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
  6552              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h"
  6553              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 217
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 217
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f4xx_hal_spi.c
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:18     .text.SPI_AbortRx_ISR:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:25     .text.SPI_AbortRx_ISR:00000000 SPI_AbortRx_ISR
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:104    .text.SPI_AbortRx_ISR:00000058 $d
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:110    .text.SPI_AbortTx_ISR:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:116    .text.SPI_AbortTx_ISR:00000000 SPI_AbortTx_ISR
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:144    .text.SPI_WaitFlagStateUntilTimeout:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:150    .text.SPI_WaitFlagStateUntilTimeout:00000000 SPI_WaitFlagStateUntilTimeout
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:277    .text.SPI_EndRxTxTransaction:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:283    .text.SPI_EndRxTxTransaction:00000000 SPI_EndRxTxTransaction
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:338    .text.SPI_EndRxTransaction:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:344    .text.SPI_EndRxTransaction:00000000 SPI_EndRxTransaction
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:426    .text.HAL_SPI_MspInit:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:433    .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:448    .text.HAL_SPI_Init:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:455    .text.HAL_SPI_Init:00000000 HAL_SPI_Init
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:574    .text.HAL_SPI_MspDeInit:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:581    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:596    .text.HAL_SPI_DeInit:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:603    .text.HAL_SPI_DeInit:00000000 HAL_SPI_DeInit
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:662    .text.HAL_SPI_Transmit:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:669    .text.HAL_SPI_Transmit:00000000 HAL_SPI_Transmit
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:1064   .text.HAL_SPI_TransmitReceive:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:1071   .text.HAL_SPI_TransmitReceive:00000000 HAL_SPI_TransmitReceive
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:1648   .text.HAL_SPI_Receive:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:1655   .text.HAL_SPI_Receive:00000000 HAL_SPI_Receive
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:1991   .text.HAL_SPI_Transmit_IT:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:1998   .text.HAL_SPI_Transmit_IT:00000000 HAL_SPI_Transmit_IT
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:2158   .text.HAL_SPI_Transmit_IT:00000098 $d
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4380   .text.SPI_TxISR_16BIT:00000000 SPI_TxISR_16BIT
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4317   .text.SPI_TxISR_8BIT:00000000 SPI_TxISR_8BIT
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:2164   .text.HAL_SPI_TransmitReceive_IT:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:2171   .text.HAL_SPI_TransmitReceive_IT:00000000 HAL_SPI_TransmitReceive_IT
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:2397   .text.HAL_SPI_TransmitReceive_IT:000000b8 $d
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:5062   .text.SPI_2linesRxISR_16BIT:00000000 SPI_2linesRxISR_16BIT
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4989   .text.SPI_2linesTxISR_16BIT:00000000 SPI_2linesTxISR_16BIT
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4915   .text.SPI_2linesRxISR_8BIT:00000000 SPI_2linesRxISR_8BIT
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4841   .text.SPI_2linesTxISR_8BIT:00000000 SPI_2linesTxISR_8BIT
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:2405   .text.HAL_SPI_Receive_IT:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:2412   .text.HAL_SPI_Receive_IT:00000000 HAL_SPI_Receive_IT
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:2591   .text.HAL_SPI_Receive_IT:000000ac $d
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4606   .text.SPI_RxISR_16BIT:00000000 SPI_RxISR_16BIT
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4543   .text.SPI_RxISR_8BIT:00000000 SPI_RxISR_8BIT
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:2597   .text.HAL_SPI_Transmit_DMA:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:2604   .text.HAL_SPI_Transmit_DMA:00000000 HAL_SPI_Transmit_DMA
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:2807   .text.HAL_SPI_Transmit_DMA:000000c8 $d
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4000   .text.SPI_DMAHalfTransmitCplt:00000000 SPI_DMAHalfTransmitCplt
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:5180   .text.SPI_DMATransmitCplt:00000000 SPI_DMATransmitCplt
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:5135   .text.SPI_DMAError:00000000 SPI_DMAError
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:2814   .text.HAL_SPI_TransmitReceive_DMA:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:2821   .text.HAL_SPI_TransmitReceive_DMA:00000000 HAL_SPI_TransmitReceive_DMA
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3153   .text.HAL_SPI_TransmitReceive_DMA:0000013c $d
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4110   .text.SPI_DMAHalfTransmitReceiveCplt:00000000 SPI_DMAHalfTransmitReceiveCplt
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:5406   .text.SPI_DMATransmitReceiveCplt:00000000 SPI_DMATransmitReceiveCplt
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4055   .text.SPI_DMAHalfReceiveCplt:00000000 SPI_DMAHalfReceiveCplt
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:5308   .text.SPI_DMAReceiveCplt:00000000 SPI_DMAReceiveCplt
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 218
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:18     .text.SPI_AbortRx_ISR:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:25     .text.SPI_AbortRx_ISR:00000000 SPI_AbortRx_ISR
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:104    .text.SPI_AbortRx_ISR:00000058 $d
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:110    .text.SPI_AbortTx_ISR:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:116    .text.SPI_AbortTx_ISR:00000000 SPI_AbortTx_ISR
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:144    .text.SPI_WaitFlagStateUntilTimeout:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:150    .text.SPI_WaitFlagStateUntilTimeout:00000000 SPI_WaitFlagStateUntilTimeout
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:277    .text.SPI_EndRxTxTransaction:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:283    .text.SPI_EndRxTxTransaction:00000000 SPI_EndRxTxTransaction
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:338    .text.SPI_EndRxTransaction:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:344    .text.SPI_EndRxTransaction:00000000 SPI_EndRxTransaction
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:426    .text.HAL_SPI_MspInit:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:433    .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:448    .text.HAL_SPI_Init:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:455    .text.HAL_SPI_Init:00000000 HAL_SPI_Init
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:574    .text.HAL_SPI_MspDeInit:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:581    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:596    .text.HAL_SPI_DeInit:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:603    .text.HAL_SPI_DeInit:00000000 HAL_SPI_DeInit
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:662    .text.HAL_SPI_Transmit:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:669    .text.HAL_SPI_Transmit:00000000 HAL_SPI_Transmit
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:1064   .text.HAL_SPI_TransmitReceive:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:1071   .text.HAL_SPI_TransmitReceive:00000000 HAL_SPI_TransmitReceive
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:1648   .text.HAL_SPI_Receive:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:1655   .text.HAL_SPI_Receive:00000000 HAL_SPI_Receive
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:1991   .text.HAL_SPI_Transmit_IT:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:1998   .text.HAL_SPI_Transmit_IT:00000000 HAL_SPI_Transmit_IT
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:2158   .text.HAL_SPI_Transmit_IT:00000098 $d
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4380   .text.SPI_TxISR_16BIT:00000000 SPI_TxISR_16BIT
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4317   .text.SPI_TxISR_8BIT:00000000 SPI_TxISR_8BIT
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:2164   .text.HAL_SPI_TransmitReceive_IT:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:2171   .text.HAL_SPI_TransmitReceive_IT:00000000 HAL_SPI_TransmitReceive_IT
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:2397   .text.HAL_SPI_TransmitReceive_IT:000000b8 $d
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:5062   .text.SPI_2linesRxISR_16BIT:00000000 SPI_2linesRxISR_16BIT
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4989   .text.SPI_2linesTxISR_16BIT:00000000 SPI_2linesTxISR_16BIT
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4915   .text.SPI_2linesRxISR_8BIT:00000000 SPI_2linesRxISR_8BIT
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4841   .text.SPI_2linesTxISR_8BIT:00000000 SPI_2linesTxISR_8BIT
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:2405   .text.HAL_SPI_Receive_IT:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:2412   .text.HAL_SPI_Receive_IT:00000000 HAL_SPI_Receive_IT
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:2591   .text.HAL_SPI_Receive_IT:000000ac $d
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4606   .text.SPI_RxISR_16BIT:00000000 SPI_RxISR_16BIT
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4543   .text.SPI_RxISR_8BIT:00000000 SPI_RxISR_8BIT
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:2597   .text.HAL_SPI_Transmit_DMA:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:2604   .text.HAL_SPI_Transmit_DMA:00000000 HAL_SPI_Transmit_DMA
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:2807   .text.HAL_SPI_Transmit_DMA:000000c8 $d
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4000   .text.SPI_DMAHalfTransmitCplt:00000000 SPI_DMAHalfTransmitCplt
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:5180   .text.SPI_DMATransmitCplt:00000000 SPI_DMATransmitCplt
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:5135   .text.SPI_DMAError:00000000 SPI_DMAError
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:2814   .text.HAL_SPI_TransmitReceive_DMA:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:2821   .text.HAL_SPI_TransmitReceive_DMA:00000000 HAL_SPI_TransmitReceive_DMA
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3153   .text.HAL_SPI_TransmitReceive_DMA:0000013c $d
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4110   .text.SPI_DMAHalfTransmitReceiveCplt:00000000 SPI_DMAHalfTransmitReceiveCplt
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:5406   .text.SPI_DMATransmitReceiveCplt:00000000 SPI_DMATransmitReceiveCplt
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4055   .text.SPI_DMAHalfReceiveCplt:00000000 SPI_DMAHalfReceiveCplt
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:5308   .text.SPI_DMAReceiveCplt:00000000 SPI_DMAReceiveCplt
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 218
 
 
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3162   .text.HAL_SPI_Receive_DMA:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3169   .text.HAL_SPI_Receive_DMA:00000000 HAL_SPI_Receive_DMA
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3394   .text.HAL_SPI_Receive_DMA:000000e4 $d
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3401   .text.HAL_SPI_Abort:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3408   .text.HAL_SPI_Abort:00000000 HAL_SPI_Abort
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3704   .text.HAL_SPI_Abort:00000134 $d
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3712   .text.HAL_SPI_DMAPause:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3719   .text.HAL_SPI_DMAPause:00000000 HAL_SPI_DMAPause
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3763   .text.HAL_SPI_DMAResume:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3770   .text.HAL_SPI_DMAResume:00000000 HAL_SPI_DMAResume
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3814   .text.HAL_SPI_DMAStop:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3821   .text.HAL_SPI_DMAStop:00000000 HAL_SPI_DMAStop
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3906   .text.HAL_SPI_TxCpltCallback:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3913   .text.HAL_SPI_TxCpltCallback:00000000 HAL_SPI_TxCpltCallback
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3928   .text.HAL_SPI_RxCpltCallback:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3935   .text.HAL_SPI_RxCpltCallback:00000000 HAL_SPI_RxCpltCallback
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3950   .text.HAL_SPI_TxRxCpltCallback:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3957   .text.HAL_SPI_TxRxCpltCallback:00000000 HAL_SPI_TxRxCpltCallback
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3972   .text.HAL_SPI_TxHalfCpltCallback:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3979   .text.HAL_SPI_TxHalfCpltCallback:00000000 HAL_SPI_TxHalfCpltCallback
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:3994   .text.SPI_DMAHalfTransmitCplt:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4027   .text.HAL_SPI_RxHalfCpltCallback:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4034   .text.HAL_SPI_RxHalfCpltCallback:00000000 HAL_SPI_RxHalfCpltCallback
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4049   .text.SPI_DMAHalfReceiveCplt:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4082   .text.HAL_SPI_TxRxHalfCpltCallback:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4089   .text.HAL_SPI_TxRxHalfCpltCallback:00000000 HAL_SPI_TxRxHalfCpltCallback
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4104   .text.SPI_DMAHalfTransmitReceiveCplt:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4137   .text.HAL_SPI_ErrorCallback:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4144   .text.HAL_SPI_ErrorCallback:00000000 HAL_SPI_ErrorCallback
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4159   .text.SPI_CloseTx_ISR:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4165   .text.SPI_CloseTx_ISR:00000000 SPI_CloseTx_ISR
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4305   .text.SPI_CloseTx_ISR:00000088 $d
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4311   .text.SPI_TxISR_8BIT:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4374   .text.SPI_TxISR_16BIT:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4436   .text.SPI_CloseRx_ISR:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4442   .text.SPI_CloseRx_ISR:00000000 SPI_CloseRx_ISR
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4537   .text.SPI_RxISR_8BIT:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4600   .text.SPI_RxISR_16BIT:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4662   .text.SPI_CloseRxTx_ISR:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4668   .text.SPI_CloseRxTx_ISR:00000000 SPI_CloseRxTx_ISR
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4829   .text.SPI_CloseRxTx_ISR:000000a8 $d
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4835   .text.SPI_2linesTxISR_8BIT:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4909   .text.SPI_2linesRxISR_8BIT:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:4983   .text.SPI_2linesTxISR_16BIT:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:5056   .text.SPI_2linesRxISR_16BIT:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:5129   .text.SPI_DMAError:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:5174   .text.SPI_DMATransmitCplt:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:5302   .text.SPI_DMAReceiveCplt:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:5400   .text.SPI_DMATransmitReceiveCplt:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:5501   .text.HAL_SPI_IRQHandler:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:5508   .text.HAL_SPI_IRQHandler:00000000 HAL_SPI_IRQHandler
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:5783   .text.HAL_SPI_IRQHandler:00000120 $d
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:5794   .text.SPI_DMAAbortOnError:00000000 SPI_DMAAbortOnError
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:5788   .text.SPI_DMAAbortOnError:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:5827   .text.HAL_SPI_AbortCpltCallback:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:5834   .text.HAL_SPI_AbortCpltCallback:00000000 HAL_SPI_AbortCpltCallback
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:5849   .text.HAL_SPI_Abort_IT:00000000 $t
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s 			page 219
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3162   .text.HAL_SPI_Receive_DMA:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3169   .text.HAL_SPI_Receive_DMA:00000000 HAL_SPI_Receive_DMA
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3394   .text.HAL_SPI_Receive_DMA:000000e4 $d
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3401   .text.HAL_SPI_Abort:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3408   .text.HAL_SPI_Abort:00000000 HAL_SPI_Abort
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3704   .text.HAL_SPI_Abort:00000134 $d
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3712   .text.HAL_SPI_DMAPause:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3719   .text.HAL_SPI_DMAPause:00000000 HAL_SPI_DMAPause
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3763   .text.HAL_SPI_DMAResume:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3770   .text.HAL_SPI_DMAResume:00000000 HAL_SPI_DMAResume
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3814   .text.HAL_SPI_DMAStop:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3821   .text.HAL_SPI_DMAStop:00000000 HAL_SPI_DMAStop
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3906   .text.HAL_SPI_TxCpltCallback:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3913   .text.HAL_SPI_TxCpltCallback:00000000 HAL_SPI_TxCpltCallback
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3928   .text.HAL_SPI_RxCpltCallback:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3935   .text.HAL_SPI_RxCpltCallback:00000000 HAL_SPI_RxCpltCallback
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3950   .text.HAL_SPI_TxRxCpltCallback:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3957   .text.HAL_SPI_TxRxCpltCallback:00000000 HAL_SPI_TxRxCpltCallback
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3972   .text.HAL_SPI_TxHalfCpltCallback:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3979   .text.HAL_SPI_TxHalfCpltCallback:00000000 HAL_SPI_TxHalfCpltCallback
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:3994   .text.SPI_DMAHalfTransmitCplt:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4027   .text.HAL_SPI_RxHalfCpltCallback:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4034   .text.HAL_SPI_RxHalfCpltCallback:00000000 HAL_SPI_RxHalfCpltCallback
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4049   .text.SPI_DMAHalfReceiveCplt:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4082   .text.HAL_SPI_TxRxHalfCpltCallback:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4089   .text.HAL_SPI_TxRxHalfCpltCallback:00000000 HAL_SPI_TxRxHalfCpltCallback
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4104   .text.SPI_DMAHalfTransmitReceiveCplt:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4137   .text.HAL_SPI_ErrorCallback:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4144   .text.HAL_SPI_ErrorCallback:00000000 HAL_SPI_ErrorCallback
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4159   .text.SPI_CloseTx_ISR:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4165   .text.SPI_CloseTx_ISR:00000000 SPI_CloseTx_ISR
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4305   .text.SPI_CloseTx_ISR:00000088 $d
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4311   .text.SPI_TxISR_8BIT:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4374   .text.SPI_TxISR_16BIT:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4436   .text.SPI_CloseRx_ISR:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4442   .text.SPI_CloseRx_ISR:00000000 SPI_CloseRx_ISR
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4537   .text.SPI_RxISR_8BIT:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4600   .text.SPI_RxISR_16BIT:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4662   .text.SPI_CloseRxTx_ISR:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4668   .text.SPI_CloseRxTx_ISR:00000000 SPI_CloseRxTx_ISR
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4829   .text.SPI_CloseRxTx_ISR:000000a8 $d
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4835   .text.SPI_2linesTxISR_8BIT:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4909   .text.SPI_2linesRxISR_8BIT:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:4983   .text.SPI_2linesTxISR_16BIT:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:5056   .text.SPI_2linesRxISR_16BIT:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:5129   .text.SPI_DMAError:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:5174   .text.SPI_DMATransmitCplt:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:5302   .text.SPI_DMAReceiveCplt:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:5400   .text.SPI_DMATransmitReceiveCplt:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:5501   .text.HAL_SPI_IRQHandler:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:5508   .text.HAL_SPI_IRQHandler:00000000 HAL_SPI_IRQHandler
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:5783   .text.HAL_SPI_IRQHandler:00000120 $d
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:5794   .text.SPI_DMAAbortOnError:00000000 SPI_DMAAbortOnError
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:5788   .text.SPI_DMAAbortOnError:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:5827   .text.HAL_SPI_AbortCpltCallback:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:5834   .text.HAL_SPI_AbortCpltCallback:00000000 HAL_SPI_AbortCpltCallback
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:5849   .text.HAL_SPI_Abort_IT:00000000 $t
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s 			page 219
 
 
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:5856   .text.HAL_SPI_Abort_IT:00000000 HAL_SPI_Abort_IT
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:6192   .text.HAL_SPI_Abort_IT:00000144 $d
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:6343   .text.SPI_DMATxAbortCallback:00000000 SPI_DMATxAbortCallback
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:6208   .text.SPI_DMARxAbortCallback:00000000 SPI_DMARxAbortCallback
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:6202   .text.SPI_DMARxAbortCallback:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:6337   .text.SPI_DMATxAbortCallback:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:6487   .text.SPI_DMATxAbortCallback:00000088 $d
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:6493   .text.HAL_SPI_GetState:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:6500   .text.HAL_SPI_GetState:00000000 HAL_SPI_GetState
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:6518   .text.HAL_SPI_GetError:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccpvJJuF.s:6525   .text.HAL_SPI_GetError:00000000 HAL_SPI_GetError
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:5856   .text.HAL_SPI_Abort_IT:00000000 HAL_SPI_Abort_IT
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:6192   .text.HAL_SPI_Abort_IT:00000144 $d
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:6343   .text.SPI_DMATxAbortCallback:00000000 SPI_DMATxAbortCallback
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:6208   .text.SPI_DMARxAbortCallback:00000000 SPI_DMARxAbortCallback
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:6202   .text.SPI_DMARxAbortCallback:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:6337   .text.SPI_DMATxAbortCallback:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:6487   .text.SPI_DMATxAbortCallback:00000088 $d
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:6493   .text.HAL_SPI_GetState:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:6500   .text.HAL_SPI_GetState:00000000 HAL_SPI_GetState
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:6518   .text.HAL_SPI_GetError:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccF5qPKb.s:6525   .text.HAL_SPI_GetError:00000000 HAL_SPI_GetError
 
 UNDEFINED SYMBOLS
 SystemCoreClock

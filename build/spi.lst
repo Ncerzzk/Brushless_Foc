@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s 			page 1
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpgBJNk.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s 			page 1
   28:Src/spi.c     **** 
   29:Src/spi.c     **** /* SPI3 init function */
   30:Src/spi.c     **** void MX_SPI3_Init(void)
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s 			page 2
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpgBJNk.s 			page 2
 
 
   31:Src/spi.c     **** {
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s 			page 1
   72 0028 0362     		str	r3, [r0, #32]
   42:Src/spi.c     ****   hspi3.Init.TIMode = SPI_TIMODE_DISABLE;
   73              		.loc 1 42 3 is_stmt 1 view .LVU19
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s 			page 3
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpgBJNk.s 			page 3
 
 
   74              		.loc 1 42 21 is_stmt 0 view .LVU20
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s 			page 1
  118              		.cfi_startproc
  119              		@ args = 0, pretend = 0, frame = 32
  120              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s 			page 4
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpgBJNk.s 			page 4
 
 
  121              		.loc 1 53 1 is_stmt 0 view .LVU32
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s 			page 1
  147 0018 09B0     		add	sp, sp, #36
  148              	.LCFI3:
  149              		.cfi_remember_state
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s 			page 5
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpgBJNk.s 			page 5
 
 
  150              		.cfi_def_cfa_offset 4
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s 			page 1
  191              		.loc 1 70 5 view .LVU51
   70:Src/spi.c     ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
  192              		.loc 1 70 25 is_stmt 0 view .LVU52
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s 			page 6
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpgBJNk.s 			page 6
 
 
  193 004c 4FF4E053 		mov	r3, #7168
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s 			page 1
   83:Src/spi.c     **** void HAL_SPI_MspDeInit(SPI_HandleTypeDef* spiHandle)
   84:Src/spi.c     **** {
  238              		.loc 1 84 1 is_stmt 1 view -0
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s 			page 7
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpgBJNk.s 			page 7
 
 
  239              		.cfi_startproc
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s 			page 1
   99:Src/spi.c     **** 
  270              		.loc 1 99 5 is_stmt 0 view .LVU72
  271 001c FFF7FEFF 		bl	HAL_GPIO_DeInit
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s 			page 8
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpgBJNk.s 			page 8
 
 
  272              	.LVL11:
@@ -446,21 +446,21 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s 			page 1
  295              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h"
  296              		.file 11 "Inc/spi.h"
  297              		.file 12 "Inc/main.h"
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s 			page 9
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccpgBJNk.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 spi.c
-C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s:18     .text.MX_SPI3_Init:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s:26     .text.MX_SPI3_Init:00000000 MX_SPI3_Init
-C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s:101    .text.MX_SPI3_Init:00000040 $d
+C:\Users\ncer\AppData\Local\Temp\ccpgBJNk.s:18     .text.MX_SPI3_Init:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccpgBJNk.s:26     .text.MX_SPI3_Init:00000000 MX_SPI3_Init
+C:\Users\ncer\AppData\Local\Temp\ccpgBJNk.s:101    .text.MX_SPI3_Init:00000040 $d
                             *COM*:00000058 hspi3
-C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s:107    .text.HAL_SPI_MspInit:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s:114    .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
-C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s:222    .text.HAL_SPI_MspInit:0000006c $d
-C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s:228    .text.HAL_SPI_MspDeInit:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s:235    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
-C:\Users\ncer\AppData\Local\Temp\cc5jGvZc.s:278    .text.HAL_SPI_MspDeInit:00000024 $d
+C:\Users\ncer\AppData\Local\Temp\ccpgBJNk.s:107    .text.HAL_SPI_MspInit:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccpgBJNk.s:114    .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
+C:\Users\ncer\AppData\Local\Temp\ccpgBJNk.s:222    .text.HAL_SPI_MspInit:0000006c $d
+C:\Users\ncer\AppData\Local\Temp\ccpgBJNk.s:228    .text.HAL_SPI_MspDeInit:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccpgBJNk.s:235    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
+C:\Users\ncer\AppData\Local\Temp\ccpgBJNk.s:278    .text.HAL_SPI_MspDeInit:00000024 $d
 
 UNDEFINED SYMBOLS
 HAL_SPI_Init

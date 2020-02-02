@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
   28:Src/tim.c     **** TIM_HandleTypeDef htim6;
   29:Src/tim.c     **** TIM_HandleTypeDef htim7;
   30:Src/tim.c     **** TIM_HandleTypeDef htim8;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 2
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 2
 
 
   31:Src/tim.c     **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
   69 001c 0392     		str	r2, [sp, #12]
   45:Src/tim.c     ****   sConfig.IC1Polarity = TIM_ICPOLARITY_RISING;
   70              		.loc 1 45 3 is_stmt 1 view .LVU18
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 3
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 3
 
 
   71              		.loc 1 45 23 is_stmt 0 view .LVU19
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  111 003c 01A9     		add	r1, sp, #4
  112 003e 0648     		ldr	r0, .L7
  113 0040 FFF7FEFF 		bl	HAL_TIMEx_MasterConfigSynchronization
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 4
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 4
 
 
  114              	.LVL1:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  160 0000 00B5     		push	{lr}
  161              	.LCFI4:
  162              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 5
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 5
 
 
  163              		.cfi_offset 14, -4
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
   81:Src/tim.c     ****   if (HAL_TIMEx_MasterConfigSynchronization(&htim6, &sMasterConfig) != HAL_OK)
  204              		.loc 1 81 3 is_stmt 1 view .LVU68
  205              		.loc 1 81 7 is_stmt 0 view .LVU69
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 6
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 6
 
 
  206 0028 6946     		mov	r1, sp
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  252              		.cfi_startproc
  253              		@ args = 0, pretend = 0, frame = 8
  254              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 7
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 7
 
 
  255 0000 00B5     		push	{lr}
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  102:Src/tim.c     ****   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
  297              		.loc 1 102 3 is_stmt 1 view .LVU93
  298              		.loc 1 102 33 is_stmt 0 view .LVU94
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 8
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 8
 
 
  299 0028 0193     		str	r3, [sp, #4]
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  347              	.LFB134:
  109:Src/tim.c     **** /* TIM8 init function */
  110:Src/tim.c     **** void MX_TIM8_Init(void)
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 9
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 9
 
 
  111:Src/tim.c     **** {
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  165:Src/tim.c     ****   sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_DISABLE;
  166:Src/tim.c     ****   sBreakDeadTimeConfig.OffStateIDLEMode = TIM_OSSI_DISABLE;
  167:Src/tim.c     ****   sBreakDeadTimeConfig.LockLevel = TIM_LOCKLEVEL_OFF;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 10
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 10
 
 
  168:Src/tim.c     ****   sBreakDeadTimeConfig.DeadTime = 0;
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  193:Src/tim.c     ****     /**TIM4 GPIO Configuration    
  194:Src/tim.c     ****     PB6     ------> TIM4_CH1
  195:Src/tim.c     ****     PB7     ------> TIM4_CH2 
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 11
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 11
 
 
  196:Src/tim.c     ****     */
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  192:Src/tim.c     ****     /**TIM4 GPIO Configuration    
  410              		.loc 1 192 5 view .LVU118
  411 003a 196B     		ldr	r1, [r3, #48]
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 12
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 12
 
 
  412 003c 41F00201 		orr	r1, r1, #2
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  451 0064 00080040 		.word	1073743872
  452 0068 00040240 		.word	1073873920
  453              		.cfi_endproc
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 13
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 13
 
 
  454              	.LFE134:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  490 0010 16D0     		beq	.L36
  491              	.LVL18:
  492              	.L31:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 14
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 14
 
 
  229:Src/tim.c     ****   {
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  525              	.LVL20:
  222:Src/tim.c     ****     HAL_NVIC_EnableIRQ(TIM6_DAC_IRQn);
  526              		.loc 1 222 5 is_stmt 0 view .LVU150
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 15
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 15
 
 
  527 0034 FFF7FEFF 		bl	HAL_NVIC_SetPriority
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  571 006c 00140040 		.word	1073746944
  572 0070 00380240 		.word	1073887232
  573              		.cfi_endproc
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 16
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 16
 
 
  574              	.LFE135:
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  618              		.loc 1 254 5 view .LVU170
  619 001e 5B6C     		ldr	r3, [r3, #68]
  620 0020 03F00203 		and	r3, r3, #2
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 17
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 17
 
 
  621 0024 0193     		str	r3, [sp, #4]
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  666 0000 70B5     		push	{r4, r5, r6, lr}
  667              	.LCFI23:
  668              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 18
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 18
 
 
  669              		.cfi_offset 4, -16
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  295:Src/tim.c     ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
  296:Src/tim.c     ****     GPIO_InitStruct.Alternate = GPIO_AF3_TIM8;
  297:Src/tim.c     ****     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 19
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 19
 
 
  298:Src/tim.c     **** 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  726 003c 0194     		str	r4, [sp, #4]
  275:Src/tim.c     ****     __HAL_RCC_GPIOC_CLK_ENABLE();
  727              		.loc 1 275 5 view .LVU193
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 20
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 20
 
 
  728 003e 1A6B     		ldr	r2, [r3, #48]
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  766              		.loc 1 288 5 is_stmt 1 view .LVU209
  288:Src/tim.c     ****     GPIO_InitStruct.Alternate = GPIO_AF3_TIM8;
  767              		.loc 1 288 27 is_stmt 0 view .LVU210
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 21
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 21
 
 
  768 006e 0694     		str	r4, [sp, #24]
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  804              		.loc 1 300 5 is_stmt 1 view .LVU228
  300:Src/tim.c     ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
  805              		.loc 1 300 26 is_stmt 0 view .LVU229
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 22
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 22
 
 
  806 0094 0496     		str	r6, [sp, #16]
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  854              		.cfi_def_cfa_offset 88
  112:Src/tim.c     ****   TIM_OC_InitTypeDef sConfigOC = {0};
  855              		.loc 1 112 3 view .LVU239
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 23
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 23
 
 
  112:Src/tim.c     ****   TIM_OC_InitTypeDef sConfigOC = {0};
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  121:Src/tim.c     ****   htim8.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
  895              		.loc 1 121 3 is_stmt 1 view .LVU255
  121:Src/tim.c     ****   htim8.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 24
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 24
 
 
  896              		.loc 1 121 32 is_stmt 0 view .LVU256
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  935 0060 3CD1     		bne	.L66
  936              	.L57:
  141:Src/tim.c     ****   sConfigOC.Pulse = 0;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 25
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 25
 
 
  937              		.loc 1 141 3 is_stmt 1 view .LVU272
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  973 0082 09A9     		add	r1, sp, #36
  974 0084 1E48     		ldr	r0, .L72
  975 0086 FFF7FEFF 		bl	HAL_TIM_PWM_ConfigChannel
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 26
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 26
 
 
  976              	.LVL43:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  1014              		.loc 1 168 3 is_stmt 1 view .LVU306
  168:Src/tim.c     ****   sBreakDeadTimeConfig.BreakState = TIM_BREAK_DISABLE;
  1015              		.loc 1 168 33 is_stmt 0 view .LVU307
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 27
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 27
 
 
  1016 00b0 0493     		str	r3, [sp, #16]
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  1057              	.LVL49:
  1058 00da B8E7     		b	.L56
  1059              	.L66:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 28
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 28
 
 
  135:Src/tim.c     ****   }
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  314:Src/tim.c     **** {
  1108              		.loc 1 314 1 view -0
  1109              		.cfi_startproc
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 29
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 29
 
 
  1110              		@ args = 0, pretend = 0, frame = 0
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  1141 001a FFF7FEFF 		bl	HAL_GPIO_DeInit
  1142              	.LVL60:
  1143              		.loc 1 334 1 view .LVU336
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 30
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 30
 
 
  1144 001e F4E7     		b	.L74
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  353:Src/tim.c     ****   else if(tim_baseHandle->Instance==TIM7)
  1182              		.loc 1 353 8 is_stmt 1 view .LVU342
  1183              		.loc 1 353 10 is_stmt 0 view .LVU343
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 31
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 31
 
 
  1184 000a 0D4A     		ldr	r2, .L86+4
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  1218              		.loc 1 367 1 view .LVU351
  1219 0038 EAE7     		b	.L80
  1220              	.L87:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 32
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 32
 
 
  1221 003a 00BF     		.align	2
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  1258              		.loc 1 386 1 view .LVU357
  1259 000a 08BD     		pop	{r3, pc}
  1260              	.LVL71:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 33
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 33
 
 
  1261              	.L91:
@@ -1965,48 +1965,48 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 1
  1300              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h"
  1301              		.file 14 "Inc/main.h"
  1302              		.file 15 "<built-in>"
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s 			page 34
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s 			page 34
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 tim.c
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:18     .text.MX_TIM4_Init:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:26     .text.MX_TIM4_Init:00000000 MX_TIM4_Init
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:141    .text.MX_TIM4_Init:00000058 $d
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:18     .text.MX_TIM4_Init:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:26     .text.MX_TIM4_Init:00000000 MX_TIM4_Init
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:141    .text.MX_TIM4_Init:00000058 $d
                             *COM*:00000040 htim4
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:147    .text.MX_TIM6_Init:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:154    .text.MX_TIM6_Init:00000000 MX_TIM6_Init
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:236    .text.MX_TIM6_Init:00000044 $d
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:147    .text.MX_TIM6_Init:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:154    .text.MX_TIM6_Init:00000000 MX_TIM6_Init
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:236    .text.MX_TIM6_Init:00000044 $d
                             *COM*:00000040 htim6
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:242    .text.MX_TIM7_Init:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:249    .text.MX_TIM7_Init:00000000 MX_TIM7_Init
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:332    .text.MX_TIM7_Init:00000048 $d
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:242    .text.MX_TIM7_Init:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:249    .text.MX_TIM7_Init:00000000 MX_TIM7_Init
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:332    .text.MX_TIM7_Init:00000048 $d
                             *COM*:00000040 htim7
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:338    .text.HAL_TIM_Encoder_MspInit:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:345    .text.HAL_TIM_Encoder_MspInit:00000000 HAL_TIM_Encoder_MspInit
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:451    .text.HAL_TIM_Encoder_MspInit:00000064 $d
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:457    .text.HAL_TIM_Base_MspInit:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:464    .text.HAL_TIM_Base_MspInit:00000000 HAL_TIM_Base_MspInit
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:570    .text.HAL_TIM_Base_MspInit:00000068 $d
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:577    .text.HAL_TIM_PWM_MspInit:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:584    .text.HAL_TIM_PWM_MspInit:00000000 HAL_TIM_PWM_MspInit
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:646    .text.HAL_TIM_PWM_MspInit:0000003c $d
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:651    .text.HAL_TIM_MspPostInit:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:658    .text.HAL_TIM_MspPostInit:00000000 HAL_TIM_MspPostInit
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:826    .text.HAL_TIM_MspPostInit:000000a8 $d
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:833    .text.MX_TIM8_Init:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:840    .text.MX_TIM8_Init:00000000 MX_TIM8_Init
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:1092   .text.MX_TIM8_Init:00000100 $d
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:338    .text.HAL_TIM_Encoder_MspInit:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:345    .text.HAL_TIM_Encoder_MspInit:00000000 HAL_TIM_Encoder_MspInit
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:451    .text.HAL_TIM_Encoder_MspInit:00000064 $d
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:457    .text.HAL_TIM_Base_MspInit:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:464    .text.HAL_TIM_Base_MspInit:00000000 HAL_TIM_Base_MspInit
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:570    .text.HAL_TIM_Base_MspInit:00000068 $d
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:577    .text.HAL_TIM_PWM_MspInit:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:584    .text.HAL_TIM_PWM_MspInit:00000000 HAL_TIM_PWM_MspInit
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:646    .text.HAL_TIM_PWM_MspInit:0000003c $d
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:651    .text.HAL_TIM_MspPostInit:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:658    .text.HAL_TIM_MspPostInit:00000000 HAL_TIM_MspPostInit
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:826    .text.HAL_TIM_MspPostInit:000000a8 $d
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:833    .text.MX_TIM8_Init:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:840    .text.MX_TIM8_Init:00000000 MX_TIM8_Init
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:1092   .text.MX_TIM8_Init:00000100 $d
                             *COM*:00000040 htim8
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:1098   .text.HAL_TIM_Encoder_MspDeInit:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:1105   .text.HAL_TIM_Encoder_MspDeInit:00000000 HAL_TIM_Encoder_MspDeInit
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:1148   .text.HAL_TIM_Encoder_MspDeInit:00000020 $d
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:1155   .text.HAL_TIM_Base_MspDeInit:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:1162   .text.HAL_TIM_Base_MspDeInit:00000000 HAL_TIM_Base_MspDeInit
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:1223   .text.HAL_TIM_Base_MspDeInit:0000003c $d
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:1229   .text.HAL_TIM_PWM_MspDeInit:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:1236   .text.HAL_TIM_PWM_MspDeInit:00000000 HAL_TIM_PWM_MspDeInit
-C:\Users\ncer\AppData\Local\Temp\ccgRUFZK.s:1278   .text.HAL_TIM_PWM_MspDeInit:00000020 $d
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:1098   .text.HAL_TIM_Encoder_MspDeInit:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:1105   .text.HAL_TIM_Encoder_MspDeInit:00000000 HAL_TIM_Encoder_MspDeInit
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:1148   .text.HAL_TIM_Encoder_MspDeInit:00000020 $d
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:1155   .text.HAL_TIM_Base_MspDeInit:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:1162   .text.HAL_TIM_Base_MspDeInit:00000000 HAL_TIM_Base_MspDeInit
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:1223   .text.HAL_TIM_Base_MspDeInit:0000003c $d
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:1229   .text.HAL_TIM_PWM_MspDeInit:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:1236   .text.HAL_TIM_PWM_MspDeInit:00000000 HAL_TIM_PWM_MspDeInit
+C:\Users\ncer\AppData\Local\Temp\ccPdw7jV.s:1278   .text.HAL_TIM_PWM_MspDeInit:00000020 $d
 
 UNDEFINED SYMBOLS
 HAL_TIM_Encoder_Init

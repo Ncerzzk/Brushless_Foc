@@ -46,7 +46,6 @@ Src/spi.c \
 Src/tim.c \
 Src/usart.c \
 Src/myfunc.c \
-Src/voice.c \
 mylib/music_and_voice.c \
 mylib/as5047.c \
 mylib/uart_ext.c \

@@ -74,17 +74,7 @@ void get_position(int arg_num,char **s,float *args){
   return ;
 }
 
-extern enum{
-    STOP_MODE,
-    WAIT_MODE,
-    SENSOR_FOC,
-    SENSOR_LESS_FOC,
-    VF_OPENLOOP,
-    MEASURE_R,
-    MEASURE_L,
-    TEST_DIRECTION=0xF1,
-    TEST_POSITION_OFFSET
-}Board_Mode;
+extern enum _board_mode Board_Mode;
 void test_direction(int arg_num,char **s,float *args){
   Board_Mode=TEST_DIRECTION;
   return ;

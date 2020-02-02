@@ -29,7 +29,7 @@ build/music_and_voice.o: mylib/music_and_voice.c mylib/music_and_voice.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h Inc/foc.h \
- Inc/voice.h
+ mylib/uart_ext.h Inc/main.h Inc/usart.h
 
 mylib/music_and_voice.h:
 
@@ -103,4 +103,8 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 
 Inc/foc.h:
 
-Inc/voice.h:
+mylib/uart_ext.h:
+
+Inc/main.h:
+
+Inc/usart.h:

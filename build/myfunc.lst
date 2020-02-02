@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
   27:Src/myfunc.c  **** void set_val(int arg_num,char ** s,float * args){
   28:Src/myfunc.c  ****   void * edit_value;
   29:Src/myfunc.c  ****   if(arg_num!=0x0201){
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 2
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s 			page 2
 
 
   30:Src/myfunc.c  ****     uprintf("error arg_num!\r\n");
@@ -108,38 +108,28 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
   74:Src/myfunc.c  ****   return ;
   75:Src/myfunc.c  **** }
   76:Src/myfunc.c  **** 
-  77:Src/myfunc.c  **** extern enum{
-  78:Src/myfunc.c  ****     STOP_MODE,
-  79:Src/myfunc.c  ****     WAIT_MODE,
-  80:Src/myfunc.c  ****     SENSOR_FOC,
-  81:Src/myfunc.c  ****     SENSOR_LESS_FOC,
-  82:Src/myfunc.c  ****     VF_OPENLOOP,
-  83:Src/myfunc.c  ****     MEASURE_R,
-  84:Src/myfunc.c  ****     MEASURE_L,
-  85:Src/myfunc.c  ****     TEST_DIRECTION=0xF1,
-  86:Src/myfunc.c  ****     TEST_POSITION_OFFSET
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 3
-
-
-  87:Src/myfunc.c  **** }Board_Mode;
-  88:Src/myfunc.c  **** void test_direction(int arg_num,char **s,float *args){
-  30              		.loc 1 88 54 view -0
+  77:Src/myfunc.c  **** extern enum _board_mode Board_Mode;
+  78:Src/myfunc.c  **** void test_direction(int arg_num,char **s,float *args){
+  30              		.loc 1 78 54 view -0
   31              		.cfi_startproc
   32              		@ args = 0, pretend = 0, frame = 0
   33              		@ frame_needed = 0, uses_anonymous_args = 0
   34              		@ link register save eliminated.
-  89:Src/myfunc.c  ****   Board_Mode=TEST_DIRECTION;
-  35              		.loc 1 89 3 view .LVU1
-  36              		.loc 1 89 13 is_stmt 0 view .LVU2
+  79:Src/myfunc.c  ****   Board_Mode=TEST_DIRECTION;
+  35              		.loc 1 79 3 view .LVU1
+  36              		.loc 1 79 13 is_stmt 0 view .LVU2
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s 			page 3
+
+
   37 0000 014B     		ldr	r3, .L2
   38 0002 F122     		movs	r2, #241
   39              	.LVL1:
-  40              		.loc 1 89 13 view .LVU3
+  40              		.loc 1 79 13 view .LVU3
   41 0004 1A70     		strb	r2, [r3]
-  90:Src/myfunc.c  ****   return ;
-  42              		.loc 1 90 3 is_stmt 1 view .LVU4
-  91:Src/myfunc.c  **** }
-  43              		.loc 1 91 1 is_stmt 0 view .LVU5
+  80:Src/myfunc.c  ****   return ;
+  42              		.loc 1 80 3 is_stmt 1 view .LVU4
+  81:Src/myfunc.c  **** }
+  43              		.loc 1 81 1 is_stmt 0 view .LVU5
   44 0006 7047     		bx	lr
   45              	.L3:
   46              		.align	2
@@ -157,30 +147,27 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
   60              	measure_r:
   61              	.LVL2:
   62              	.LFB138:
-  92:Src/myfunc.c  **** 
-  93:Src/myfunc.c  **** void measure_r(int arg_num,char **s,float *args){
-  63              		.loc 1 93 49 is_stmt 1 view -0
+  82:Src/myfunc.c  **** 
+  83:Src/myfunc.c  **** void measure_r(int arg_num,char **s,float *args){
+  63              		.loc 1 83 49 is_stmt 1 view -0
   64              		.cfi_startproc
   65              		@ args = 0, pretend = 0, frame = 0
   66              		@ frame_needed = 0, uses_anonymous_args = 0
   67              		@ link register save eliminated.
-  94:Src/myfunc.c  ****   Board_Mode=MEASURE_R;
-  68              		.loc 1 94 3 view .LVU7
-  69              		.loc 1 94 13 is_stmt 0 view .LVU8
+  84:Src/myfunc.c  ****   Board_Mode=MEASURE_R;
+  68              		.loc 1 84 3 view .LVU7
+  69              		.loc 1 84 13 is_stmt 0 view .LVU8
   70 0000 014B     		ldr	r3, .L5
   71 0002 0522     		movs	r2, #5
   72              	.LVL3:
-  73              		.loc 1 94 13 view .LVU9
+  73              		.loc 1 84 13 view .LVU9
   74 0004 1A70     		strb	r2, [r3]
-  95:Src/myfunc.c  ****   return ;
-  75              		.loc 1 95 3 is_stmt 1 view .LVU10
-  96:Src/myfunc.c  **** }
-  76              		.loc 1 96 1 is_stmt 0 view .LVU11
+  85:Src/myfunc.c  ****   return ;
+  75              		.loc 1 85 3 is_stmt 1 view .LVU10
+  86:Src/myfunc.c  **** }
+  76              		.loc 1 86 1 is_stmt 0 view .LVU11
   77 0006 7047     		bx	lr
   78              	.L6:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 4
-
-
   79              		.align	2
   80              	.L5:
   81 0008 00000000 		.word	Board_Mode
@@ -191,6 +178,9 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
   87              		.align	2
   88              	.LC0:
   89 0000 506F7369 		.ascii	"Position:%f\015\012\000"
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s 			page 4
+
+
   89      74696F6E 
   89      3A25660D 
   89      0A00
@@ -238,9 +228,6 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
  125              		.loc 1 75 1 is_stmt 0 view .LVU18
  126 0014 08BD     		pop	{r3, pc}
  127              	.L10:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 5
-
-
  128 0016 00BF     		.align	2
  129              	.L9:
  130 0018 00000000 		.word	Position_Degree
@@ -251,6 +238,9 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
  136              		.align	2
  137              	.LC1:
  138 0000 74686973 		.ascii	"this is testkk\015\012\000"
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s 			page 5
+
+
  138      20697320 
  138      74657374 
  138      6B6B0D0A 
@@ -298,9 +288,6 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
  169              		.cfi_offset 6, -12
  170              		.cfi_offset 7, -8
  171              		.cfi_offset 14, -4
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 6
-
-
  172 0002 0546     		mov	r5, r0
  173 0004 0E46     		mov	r6, r1
  174 0006 1746     		mov	r7, r2
@@ -311,6 +298,9 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
  177 0008 1148     		ldr	r0, .L18
  178              	.LVL9:
   17:Src/myfunc.c  ****   uprintf("i get %d args\r\n",arg_num);
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s 			page 6
+
+
  179              		.loc 1 17 3 is_stmt 0 view .LVU23
  180 000a FFF7FEFF 		bl	uprintf
  181              	.LVL10:
@@ -358,9 +348,6 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
   19:Src/myfunc.c  ****     uprintf("one is %f\r\n",arg[i]);
  213              		.loc 1 19 28 is_stmt 0 discriminator 3 view .LVU34
  214 0034 F0E7     		b	.L12
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 7
-
-
  215              	.L17:
   22:Src/myfunc.c  ****     uprintf("string_prams is %s\r\n",string_prams[i]);
  216              		.loc 1 22 8 view .LVU35
@@ -371,6 +358,9 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
  220 0038 05E0     		b	.L14
  221              	.LVL17:
  222              	.L15:
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s 			page 7
+
+
   23:Src/myfunc.c  ****   }
  223              		.loc 1 23 5 is_stmt 1 discriminator 3 view .LVU37
  224 003a 56F82410 		ldr	r1, [r6, r4, lsl #2]
@@ -418,9 +408,6 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
  258              		.thumb
  259              		.thumb_func
  260              		.fpu fpv4-sp-d16
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 8
-
-
  262              	set_to_u4:
  263              	.LVL21:
  264              	.LFB135:
@@ -431,6 +418,9 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
  268              		@ frame_needed = 0, uses_anonymous_args = 0
   62:Src/myfunc.c  ****   if(arg_num!=0x0001){
  269              		.loc 1 62 3 view .LVU44
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s 			page 8
+
+
   63:Src/myfunc.c  ****     return ;
  270              		.loc 1 63 3 view .LVU45
   63:Src/myfunc.c  ****     return ;
@@ -478,9 +468,6 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
  304 0026 2146     		mov	r1, r4
  305 0028 0248     		ldr	r0, .L27
  306 002a FFF7FEFF 		bl	uprintf
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 9
-
-
  307              	.LVL26:
   70:Src/myfunc.c  **** 
  308              		.loc 1 70 1 is_stmt 0 view .LVU55
@@ -491,6 +478,9 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
  313 0030 10BD     		pop	{r4, pc}
  314              	.LVL27:
  315              	.L28:
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s 			page 9
+
+
   70:Src/myfunc.c  **** 
  316              		.loc 1 70 1 view .LVU56
  317 0032 00BF     		.align	2
@@ -538,9 +528,6 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
  348              		.fpu fpv4-sp-d16
  350              	set_val:
  351              	.LVL28:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 10
-
-
  352              	.LFB134:
   27:Src/myfunc.c  ****   void * edit_value;
  353              		.loc 1 27 49 is_stmt 1 view -0
@@ -551,6 +538,9 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
  357              		.loc 1 27 49 is_stmt 0 view .LVU58
  358 0000 F0B5     		push	{r4, r5, r6, r7, lr}
  359              	.LCFI5:
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s 			page 10
+
+
  360              		.cfi_def_cfa_offset 20
  361              		.cfi_offset 4, -20
  362              		.cfi_offset 5, -16
@@ -598,9 +588,6 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
   34:Src/myfunc.c  ****     if(compare_string(Var_List[i].var_name,s[0])){
  395              		.loc 1 34 58 is_stmt 1 discriminator 2 view .LVU68
  396 0024 0134     		adds	r4, r4, #1
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 11
-
-
  397              	.LVL31:
   34:Src/myfunc.c  ****     if(compare_string(Var_List[i].var_name,s[0])){
  398              		.loc 1 34 58 is_stmt 0 discriminator 2 view .LVU69
@@ -611,6 +598,9 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
  402              		.loc 1 34 58 discriminator 2 view .LVU70
  403              	.LBE2:
   30:Src/myfunc.c  ****     return ;
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s 			page 11
+
+
  404              		.loc 1 30 5 is_stmt 1 view .LVU71
  405 0028 2048     		ldr	r0, .L41+4
  406              	.LVL33:
@@ -658,9 +648,6 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
  436              		.loc 1 42 41 is_stmt 0 view .LVU83
  437 0042 D7ED007A 		vldr.32	s15, [r7]
   42:Src/myfunc.c  ****     uprintf("ok set %s = %d\r\n",s[0],*(uint8_t *)edit_value);  
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 12
-
-
  438              		.loc 1 42 28 view .LVU84
  439 0046 FCEEE77A 		vcvt.u32.f32	s15, s15
  440 004a CDED017A 		vstr.32	s15, [sp, #4]	@ int
@@ -671,6 +658,9 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
   43:Src/myfunc.c  ****   }else if(compare_string(s[1],"int")){
  444              		.loc 1 43 5 is_stmt 1 view .LVU86
  445 0054 2968     		ldr	r1, [r5]
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s 			page 12
+
+
  446 0056 1748     		ldr	r0, .L41+12
  447 0058 FFF7FEFF 		bl	uprintf
  448              	.LVL39:
@@ -718,9 +708,6 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
  481 007e FFF7FEFF 		bl	uprintf
  482              	.LVL42:
  483 0082 EBE7     		b	.L29
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 13
-
-
  484              	.L36:
   47:Src/myfunc.c  ****     *(float *)edit_value=args[0];
  485              		.loc 1 47 9 view .LVU96
@@ -731,6 +718,9 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
  489 0088 FFF7FEFF 		bl	compare_string
  490              	.LVL43:
   47:Src/myfunc.c  ****     *(float *)edit_value=args[0];
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s 			page 13
+
+
  491              		.loc 1 47 11 view .LVU98
  492 008c 0028     		cmp	r0, #0
  493 008e E5D0     		beq	.L29
@@ -778,9 +768,6 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
  530              	.LC14:
  531 0010 6765745F 		.ascii	"get_p\000"
  531      7000
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 14
-
-
  532 0016 0000     		.align	2
  533              	.LC15:
  534 0018 74657374 		.ascii	"test_direction\000"
@@ -791,6 +778,9 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
  536              	.LC16:
  537 0028 6D656173 		.ascii	"measure_r\000"
  537      7572655F 
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s 			page 14
+
+
  537      7200
  538              		.section	.text.command_init,"ax",%progbits
  539              		.align	1
@@ -801,12 +791,12 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
  544              		.fpu fpv4-sp-d16
  546              	command_init:
  547              	.LFB139:
-  97:Src/myfunc.c  **** 
-  98:Src/myfunc.c  **** /*
-  99:Src/myfunc.c  **** 将要增加的命令与函数写在这里
- 100:Src/myfunc.c  **** */
- 101:Src/myfunc.c  **** void command_init(void){
- 548              		.loc 1 101 24 view -0
+  87:Src/myfunc.c  **** 
+  88:Src/myfunc.c  **** /*
+  89:Src/myfunc.c  **** 将要增加的命令与函数写在这里
+  90:Src/myfunc.c  **** */
+  91:Src/myfunc.c  **** void command_init(void){
+ 548              		.loc 1 91 24 view -0
  549              		.cfi_startproc
  550              		@ args = 0, pretend = 0, frame = 0
  551              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -815,42 +805,42 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
  554              		.cfi_def_cfa_offset 8
  555              		.cfi_offset 3, -8
  556              		.cfi_offset 14, -4
- 102:Src/myfunc.c  ****   add_cmd("test",test);  
- 557              		.loc 1 102 3 view .LVU104
+  92:Src/myfunc.c  ****   add_cmd("test",test);  
+ 557              		.loc 1 92 3 view .LVU104
  558 0002 0A49     		ldr	r1, .L45
  559 0004 0A48     		ldr	r0, .L45+4
  560 0006 FFF7FEFF 		bl	add_cmd
  561              	.LVL46:
- 103:Src/myfunc.c  ****   add_cmd("set_u4",set_to_u4);
- 562              		.loc 1 103 3 view .LVU105
+  93:Src/myfunc.c  ****   add_cmd("set_u4",set_to_u4);
+ 562              		.loc 1 93 3 view .LVU105
  563 000a 0A49     		ldr	r1, .L45+8
  564 000c 0A48     		ldr	r0, .L45+12
  565 000e FFF7FEFF 		bl	add_cmd
  566              	.LVL47:
- 104:Src/myfunc.c  ****   add_cmd("get_p",get_position);
- 567              		.loc 1 104 3 view .LVU106
+  94:Src/myfunc.c  ****   add_cmd("get_p",get_position);
+ 567              		.loc 1 94 3 view .LVU106
  568 0012 0A49     		ldr	r1, .L45+16
  569 0014 0A48     		ldr	r0, .L45+20
  570 0016 FFF7FEFF 		bl	add_cmd
  571              	.LVL48:
- 105:Src/myfunc.c  ****   add_cmd("test_direction",test_direction);
- 572              		.loc 1 105 3 view .LVU107
+  95:Src/myfunc.c  ****   add_cmd("test_direction",test_direction);
+ 572              		.loc 1 95 3 view .LVU107
  573 001a 0A49     		ldr	r1, .L45+24
  574 001c 0A48     		ldr	r0, .L45+28
  575 001e FFF7FEFF 		bl	add_cmd
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 15
-
-
  576              	.LVL49:
- 106:Src/myfunc.c  ****   add_cmd("measure_r",measure_r);
- 577              		.loc 1 106 3 view .LVU108
+  96:Src/myfunc.c  ****   add_cmd("measure_r",measure_r);
+ 577              		.loc 1 96 3 view .LVU108
  578 0022 0A49     		ldr	r1, .L45+32
  579 0024 0A48     		ldr	r0, .L45+36
  580 0026 FFF7FEFF 		bl	add_cmd
  581              	.LVL50:
- 107:Src/myfunc.c  **** }
- 582              		.loc 1 107 1 is_stmt 0 view .LVU109
+  97:Src/myfunc.c  **** }
+ 582              		.loc 1 97 1 is_stmt 0 view .LVU109
  583 002a 08BD     		pop	{r3, pc}
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s 			page 15
+
+
  584              	.L46:
  585              		.align	2
  586              	.L45:
@@ -891,39 +881,39 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 1
  620              		.file 12 "Inc/foc.h"
  621              		.file 13 "mylib/command.h"
  622              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s 			page 16
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s 			page 16
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 myfunc.c
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:18     .text.test_direction:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:26     .text.test_direction:00000000 test_direction
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:48     .text.test_direction:00000008 $d
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:53     .text.measure_r:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:60     .text.measure_r:00000000 measure_r
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:81     .text.measure_r:00000008 $d
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:87     .rodata.get_position.str1.4:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:91     .text.get_position:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:98     .text.get_position:00000000 get_position
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:130    .text.get_position:00000018 $d
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:136    .rodata.test.str1.4:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:149    .text.test:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:155    .text.test:00000000 test
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:243    .text.test:00000050 $d
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:251    .rodata.set_to_u4.str1.4:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:255    .text.set_to_u4:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:262    .text.set_to_u4:00000000 set_to_u4
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:319    .text.set_to_u4:00000034 $d
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:324    .rodata.set_val.str1.4:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:343    .text.set_val:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:350    .text.set_val:00000000 set_val
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:512    .text.set_val:000000a8 $d
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:523    .rodata.command_init.str1.4:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:539    .text.command_init:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:546    .text.command_init:00000000 command_init
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:587    .text.command_init:0000002c $d
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:606    .bss.Var_List:00000000 Var_List
-C:\Users\ncer\AppData\Local\Temp\ccj0JV7h.s:602    .bss.Var_List:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:18     .text.test_direction:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:26     .text.test_direction:00000000 test_direction
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:48     .text.test_direction:00000008 $d
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:53     .text.measure_r:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:60     .text.measure_r:00000000 measure_r
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:81     .text.measure_r:00000008 $d
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:87     .rodata.get_position.str1.4:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:91     .text.get_position:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:98     .text.get_position:00000000 get_position
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:130    .text.get_position:00000018 $d
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:136    .rodata.test.str1.4:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:149    .text.test:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:155    .text.test:00000000 test
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:243    .text.test:00000050 $d
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:251    .rodata.set_to_u4.str1.4:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:255    .text.set_to_u4:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:262    .text.set_to_u4:00000000 set_to_u4
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:319    .text.set_to_u4:00000034 $d
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:324    .rodata.set_val.str1.4:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:343    .text.set_val:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:350    .text.set_val:00000000 set_val
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:512    .text.set_val:000000a8 $d
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:523    .rodata.command_init.str1.4:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:539    .text.command_init:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:546    .text.command_init:00000000 command_init
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:587    .text.command_init:0000002c $d
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:606    .bss.Var_List:00000000 Var_List
+C:\Users\ncer\AppData\Local\Temp\ccZ7XjFh.s:602    .bss.Var_List:00000000 $d
 
 UNDEFINED SYMBOLS
 Board_Mode

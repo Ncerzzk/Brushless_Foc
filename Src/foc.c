@@ -32,20 +32,7 @@ typedef struct
     // 此参数仅在有感模式中(SENSOR_FOC)有用
 } Motor_Info;
 
-enum
-{
-    STOP_MODE,
-    WAIT_MODE,
-    SENSOR_FOC,
-    SENSOR_LESS_FOC,
-    VF_OPENLOOP,
-    MEASURE_R,
-    MEASURE_L,
-    TEST_DIRECTION = 0xF1,
-    TEST_POSITION_OFFSET,
-    SING_MODE, // 唱歌模式
-    VOICE_MODE // 说话模式
-} Board_Mode;
+enum _board_mode Board_Mode;
 
 struct
 {
@@ -93,7 +80,7 @@ static void UVects_Init()
 void Foc_Init(float rps)
 {
     // rps unit is r/s
-    Board_Mode = SING_MODE;
+    Board_Mode = VOICE_MODE;
     TIM8->ARR = 168000000 / TIM8_FREQ / 2;
 
     TIM8->CCR4 = TIM8->ARR - 2;
@@ -244,6 +231,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
         Theta_Handler();
     }
     else if (htim->Instance==TIM6){
+        if(Board_Mode!=VOICE_MODE){
+            return ;
+        }
+        //Voice_Fshz_Handler();
     }
     else if (htim->Instance == TIM8)
     {

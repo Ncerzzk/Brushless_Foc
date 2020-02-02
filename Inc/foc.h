@@ -18,6 +18,22 @@ typedef struct
     float ccrc;
 } CCR_Duty;
 
+enum _board_mode
+{
+    STOP_MODE,
+    WAIT_MODE,
+    SENSOR_FOC,
+    SENSOR_LESS_FOC,
+    VF_OPENLOOP,
+    MEASURE_R,
+    MEASURE_L,
+    TEST_DIRECTION = 0xF1,
+    TEST_POSITION_OFFSET,
+    SING_MODE, // 唱歌模式
+    VOICE_MODE // 说话模式
+};
+
+extern enum _board_mode Board_Mode;
 
 void Foc_Init(float rps);
 

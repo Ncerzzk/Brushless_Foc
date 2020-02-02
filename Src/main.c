@@ -111,8 +111,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_ADC_Start_DMA(&hadc2,(uint32_t *)ADC_Values_Raw2,2);
   Music_Init(&htim7,80,0.15f);
-  debug_uart_init(&huart3,DMA,DMA);
+  debug_uart_init(&huart3,DMA,IT);
   Foc_Init(1);
+  //Voice_Init();
   AS5047_Set_Direction(0);
   Init_OK=1;
   uprintf("hello,world!\r\n");
@@ -197,7 +198,9 @@ void MS_IRQ_Handler(){
 
   
   ms_cnt++;
-  Music_Play_Beat();
+  if(Board_Mode==SING_MODE){
+    Music_Play_Beat();
+  }
   //Theta_Handler();
   if(ms_cnt==2){
     ms_cnt=0;

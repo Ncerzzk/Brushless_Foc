@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 1
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 1
   28:mylib/as5047.c ****   command=Command(reg,1);
   29:mylib/as5047.c ****   Set_CSN(0);
   30:mylib/as5047.c ****   OK=HAL_SPI_TransmitReceive(&SPI_USE,(uint8_t *)&command,(uint8_t *)&AS_5047_Err,1,100);
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 2
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s 			page 2
 
 
   31:mylib/as5047.c ****   Set_CSN(1);
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 1
   40              	.LVL1:
   74:mylib/as5047.c ****   uint16_t temp=0;
   41              		.loc 1 74 3 view .LVU3
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 3
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s 			page 3
 
 
   75:mylib/as5047.c ****   for(int i=0;i<15;++i){
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 1
   87 001e 14F0010F 		tst	r4, #1
   88 0022 04D0     		beq	.L6
   82:mylib/as5047.c ****     return 0;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 4
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s 			page 4
 
 
   83:mylib/as5047.c ****   }else{
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 1
  137              		.cfi_offset 14, -4
   89:mylib/as5047.c ****   uint16_t command=0;
  138              		.loc 1 89 3 is_stmt 1 view .LVU33
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 5
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s 			page 5
 
 
  139              	.LVL12:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 1
  188              		.cfi_offset 14, -4
  189 0004 84B0     		sub	sp, sp, #16
  190              	.LCFI5:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 6
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s 			page 6
 
 
  191              		.cfi_def_cfa_offset 40
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 1
  231 003e 4FF40041 		mov	r1, #32768
  232 0042 2046     		mov	r0, r4
  233 0044 FFF7FEFF 		bl	HAL_GPIO_WritePin
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 7
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s 			page 7
 
 
  234              	.LVL22:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 1
  275              	.LVL27:
   33:mylib/as5047.c ****   Set_CSN(0);
  276              		.loc 1 33 10 view .LVU73
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 8
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s 			page 8
 
 
  277 008c ADF80E00 		strh	r0, [sp, #14]	@ movhi
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 1
  318 00c6 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
  319              	.L13:
  320              	.LCFI7:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 9
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s 			page 9
 
 
  321              		.cfi_restore_state
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 1
  367              		.loc 1 51 11 is_stmt 0 view .LVU96
  368 0010 C0F30D00 		ubfx	r0, r0, #0, #14
  369              	.LVL33:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 10
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s 			page 10
 
 
   52:mylib/as5047.c **** }
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 1
  415              	.LVL39:
   64:mylib/as5047.c ****     result=2*PI*position/16384.0f;
  416              		.loc 1 64 3 is_stmt 1 view .LVU108
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 11
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s 			page 11
 
 
   64:mylib/as5047.c ****     result=2*PI*position/16384.0f;
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 1
  460              		.global	AS5047_Set_Direction
  461              		.syntax unified
  462              		.thumb
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 12
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s 			page 12
 
 
  463              		.thumb_func
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 1
  504 001e FFF7FEFF 		bl	HAL_GPIO_WritePin
  505              	.LVL48:
  506              		.loc 1 108 13 view .LVU130
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 13
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s 			page 13
 
 
  109:mylib/as5047.c ****   HAL_SPI_Transmit(&SPI_USE,(uint8_t *)&command,1,100);
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 1
  116:mylib/as5047.c **** 
  117:mylib/as5047.c ****   direction<<=2;
  554              		.loc 1 117 3 view .LVU142
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 14
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s 			page 14
 
 
  555              		.loc 1 117 12 is_stmt 0 view .LVU143
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 1
  602 00c8 FFF7FEFF 		bl	HAL_GPIO_WritePin
  603              	.LVL62:
  604              		.loc 1 124 13 view .LVU157
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 15
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s 			page 15
 
 
  125:mylib/as5047.c ****   HAL_SPI_TransmitReceive(&SPI_USE,(uint8_t *)&command,(uint8_t *)&result,1,100);   /// 发送NOP�
@@ -898,35 +898,35 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 1
  661              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h"
  662              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
  663              		.file 12 "Inc/spi.h"
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 16
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s 			page 16
 
 
  664              		.file 13 "Inc/usart.h"
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s 			page 17
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s 			page 17
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 as5047.c
-C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s:18     .text.Count_PARC:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s:25     .text.Count_PARC:00000000 Count_PARC
-C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s:119    .text.Command:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s:125    .text.Command:00000000 Command
-C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s:165    .text.Read_Reg:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s:172    .text.Read_Reg:00000000 Read_Reg
-C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s:328    .text.Read_Reg:000000d0 $d
+C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s:18     .text.Count_PARC:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s:25     .text.Count_PARC:00000000 Count_PARC
+C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s:119    .text.Command:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s:125    .text.Command:00000000 Command
+C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s:165    .text.Read_Reg:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s:172    .text.Read_Reg:00000000 Read_Reg
+C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s:328    .text.Read_Reg:000000d0 $d
                             *COM*:00000002 AS_5047_Err
-C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s:336    .text.Get_Position:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s:343    .text.Get_Position:00000000 Get_Position
-C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s:385    .text.Get_Position_Rad_Dgree:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s:392    .text.Get_Position_Rad_Dgree:00000000 Get_Position_Rad_Dgree
-C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s:452    .text.Get_Position_Rad_Dgree:0000003c $d
-C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s:459    .text.AS5047_Set_Direction:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s:466    .text.AS5047_Set_Direction:00000000 AS5047_Set_Direction
-C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s:631    .text.AS5047_Set_Direction:000000f0 $d
-C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s:642    .bss.OK.8477:00000000 OK.8477
-C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s:643    .bss.OK.8477:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s:645    .bss.result.8505:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\cc9FN35S.s:649    .bss.result.8505:00000000 result.8505
+C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s:336    .text.Get_Position:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s:343    .text.Get_Position:00000000 Get_Position
+C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s:385    .text.Get_Position_Rad_Dgree:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s:392    .text.Get_Position_Rad_Dgree:00000000 Get_Position_Rad_Dgree
+C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s:452    .text.Get_Position_Rad_Dgree:0000003c $d
+C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s:459    .text.AS5047_Set_Direction:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s:466    .text.AS5047_Set_Direction:00000000 AS5047_Set_Direction
+C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s:631    .text.AS5047_Set_Direction:000000f0 $d
+C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s:642    .bss.OK.8477:00000000 OK.8477
+C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s:643    .bss.OK.8477:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s:645    .bss.result.8505:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\ccAaVbmX.s:649    .bss.result.8505:00000000 result.8505
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin
