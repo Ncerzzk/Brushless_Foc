@@ -50,6 +50,7 @@ mylib/music_and_voice.c \
 mylib/as5047.c \
 mylib/uart_ext.c \
 mylib/command.c \
+mylib/tim_ext.c \
 Src/arm_common_tables.c \
 Src/arm_sin_cos_f32.c \
 Src/stm32f4xx_it.c \

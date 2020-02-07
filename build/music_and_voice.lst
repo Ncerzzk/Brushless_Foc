@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 1
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 1
   27:mylib/music_and_voice.c ****     SOL = 392,
   28:mylib/music_and_voice.c ****     LA = 440,
   29:mylib/music_and_voice.c ****     SI = 493
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 2
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s 			page 2
 
 
   30:mylib/music_and_voice.c **** } MUSIC_FREQ;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 1
   67 002c 93FBF1F1 		sdiv	r1, r3, r1
   68              	.LVL1:
   69              		.loc 1 46 24 view .LVU13
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 3
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s 			page 3
 
 
   70 0030 024B     		ldr	r3, .L4
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 1
   57:mylib/music_and_voice.c **** 
   58:mylib/music_and_voice.c ****     float result = note;
  116              		.loc 1 58 5 is_stmt 1 view .LVU23
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 4
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s 			page 4
 
 
  117              		.loc 1 58 11 is_stmt 0 view .LVU24
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 1
  163 003a 0B60     		str	r3, [r1]	@ float
   67:mylib/music_and_voice.c ****         break;
  164              		.loc 1 67 9 is_stmt 1 view .LVU36
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 5
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s 			page 5
 
 
  165              	.L7:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 1
  108:mylib/music_and_voice.c ****     }
  109:mylib/music_and_voice.c **** 
  110:mylib/music_and_voice.c ****     return result;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 6
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s 			page 6
 
 
  111:mylib/music_and_voice.c **** }
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 1
  220              	.LVL18:
  221              	.L8:
   78:mylib/music_and_voice.c ****         break;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 7
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s 			page 7
 
 
  222              		.loc 1 78 9 view .LVU54
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 1
  261              		.loc 1 106 9 view .LVU69
  106:mylib/music_and_voice.c ****         break;
  262              		.loc 1 106 16 is_stmt 0 view .LVU70
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 8
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s 			page 8
 
 
  263 0094 DFED037A 		vldr.32	s15, .L21+4
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 1
  311 000c 1324     		movs	r4, #19
  312 000e 8C62     		str	r4, [r1, #40]
  117:mylib/music_and_voice.c ****     Music_Info.USE_TIM->Instance->ARR = Music_Info.TIM_MAX_FREQ/20/ freq - 1;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 9
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s 			page 9
 
 
  313              		.loc 1 117 5 is_stmt 1 view .LVU82
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 1
  362              		.loc 1 124 5 view .LVU92
  363              		.loc 1 124 19 is_stmt 0 view .LVU93
  364 0002 124B     		ldr	r3, .L34
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 10
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s 			page 10
 
 
  365 0004 1B7C     		ldrb	r3, [r3, #16]	@ zero_extendqisi2
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 1
  402 0038 F7E7     		b	.L27
  403              	.L30:
  136:mylib/music_and_voice.c ****     }
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 11
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s 			page 11
 
 
  404              		.loc 1 136 9 view .LVU105
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 1
  147:mylib/music_and_voice.c ****     if (Board_Mode != SING_MODE)
  148:mylib/music_and_voice.c ****     {
  149:mylib/music_and_voice.c ****         return;
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 12
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s 			page 12
 
 
  150:mylib/music_and_voice.c ****     }
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 1
  497 0042 00D2     		bcs	.L43
  498              	.L36:
  160:mylib/music_and_voice.c ****     {                          // 750*1/4
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 13
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s 			page 13
 
 
  161:mylib/music_and_voice.c ****         Music_Info.ms_cnt = 0; // 以下代码1s执行一次
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 1
  524              	.LVL36:
  166:mylib/music_and_voice.c **** 
  525              		.loc 1 166 26 view .LVU132
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 14
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s 			page 14
 
 
  526 0060 FFF7FEFF 		bl	Music_Get_Note
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 1
  172:mylib/music_and_voice.c ****         }
  567              		.loc 1 172 27 is_stmt 0 view .LVU147
  568 009e 0022     		movs	r2, #0
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 15
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s 			page 15
 
 
  569 00a0 6260     		str	r2, [r4, #4]
@@ -854,679 +854,195 @@ ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 1
  579              	.LBE3:
  580              		.cfi_endproc
  581              	.LFE134:
- 583              		.section	.rodata.request_for_bytes.str1.4,"aMS",%progbits,1
- 584              		.align	2
- 585              	.LC0:
- 586 0000 7200     		.ascii	"r\000"
- 587              		.section	.text.request_for_bytes,"ax",%progbits
- 588              		.align	1
- 589              		.global	request_for_bytes
- 590              		.syntax unified
- 591              		.thumb
- 592              		.thumb_func
- 593              		.fpu fpv4-sp-d16
- 595              	request_for_bytes:
- 596              	.LFB138:
- 180:mylib/music_and_voice.c **** 
- 181:mylib/music_and_voice.c **** struct
- 182:mylib/music_and_voice.c **** {
- 183:mylib/music_and_voice.c ****     uint32_t cnt;
- 184:mylib/music_and_voice.c ****     TIM_HandleTypeDef * USE_TIM;
- 185:mylib/music_and_voice.c ****     uint32_t TIM_MAX_FREQ;
- 186:mylib/music_and_voice.c ****     uint16_t Fs;
- 187:mylib/music_and_voice.c ****     float voice_duty;
- 188:mylib/music_and_voice.c **** } Voice_Info;
- 189:mylib/music_and_voice.c **** 
- 190:mylib/music_and_voice.c **** uint8_t Voice_Data[6000];
- 191:mylib/music_and_voice.c **** uint16_t Voice_Data_Head_Index;
- 192:mylib/music_and_voice.c **** uint16_t Voice_Data_End_Index;
- 193:mylib/music_and_voice.c **** uint8_t Voice_Init_OK;
- 194:mylib/music_and_voice.c **** /*
- 195:mylib/music_and_voice.c **** void Voice_Init(TIM_HandleTypeDef * tim,uint16_t fs){
- 196:mylib/music_and_voice.c **** 
- 197:mylib/music_and_voice.c ****     Voice_Info.USE_TIM=tim;
- 198:mylib/music_and_voice.c ****     if(tim->Instance!=TIM1 && tim->Instance!=TIM8){
- 199:mylib/music_and_voice.c ****         Voice_Info.TIM_MAX_FREQ=84000000;
- 200:mylib/music_and_voice.c ****     }else{
- 201:mylib/music_and_voice.c ****         Voice_Info.TIM_MAX_FREQ=168000000;
- 202:mylib/music_and_voice.c ****     }
- 203:mylib/music_and_voice.c ****     Voice_Info.Fs=fs;
- 204:mylib/music_and_voice.c **** 
- 205:mylib/music_and_voice.c ****     tim->Instance->PSC=0;
- 206:mylib/music_and_voice.c ****     tim->Instance->ARR=Voice_Info.TIM_MAX_FREQ/fs;
- 207:mylib/music_and_voice.c **** }
- 208:mylib/music_and_voice.c **** */
- 209:mylib/music_and_voice.c **** #include "string.h"
- 210:mylib/music_and_voice.c **** #include "uart_ext.h"
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 16
+ 583              		.comm	Voice_Init_OK,1,1
+ 584              		.comm	Voice_Data_End_Index,2,2
+ 585              		.comm	Voice_Data_Head_Index,2,2
+ 586              		.comm	Voice_Data,6000,4
+ 587              		.comm	Voice_Info,20,4
+ 588              		.global	Music_Song
+ 589              		.global	Music_Freqs
+ 590              		.comm	Music_Info,36,4
+ 591              		.section	.bss.first_time.8575,"aw",%nobits
+ 592              		.set	.LANCHOR1,. + 0
+ 595              	first_time.8575:
+ 596 0000 00       		.space	1
+ 597              		.section	.data.Music_Freqs,"aw"
+ 598              		.align	2
+ 599              		.set	.LANCHOR0,. + 0
+ 602              	Music_Freqs:
+ 603 0000 204E     		.short	20000
+ 604 0002 0501     		.short	261
+ 605 0004 2501     		.short	293
+ 606 0006 4901     		.short	329
+ 607 0008 5D01     		.short	349
+ 608 000a 8801     		.short	392
+ 609 000c B801     		.short	440
+ 610 000e ED01     		.short	493
+ 611              		.section	.data.Music_Song,"aw"
+ 612              		.align	2
+ 613              		.set	.LANCHOR3,. + 0
+ 616              	Music_Song:
+ 617 0000 0308     		.short	2051
+ 618 0002 0308     		.short	2051
+ 619 0004 0308     		.short	2051
+ 620 0006 0208     		.short	2050
+ 621 0008 0302     		.short	515
+ 622 000a 0208     		.short	2050
+ 623 000c 0308     		.short	2051
+ 624 000e 0208     		.short	2050
+ 625 0010 0208     		.short	2050
+ 626 0012 0634     		.short	13318
+ 627 0014 0638     		.short	14342
+ 628 0016 0738     		.short	14343
+ 629 0018 0104     		.short	1025
+ 630 001a 0208     		.short	2050
+ 631 001c 0108     		.short	2049
+ 632 001e 0734     		.short	13319
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s 			page 16
 
 
- 211:mylib/music_and_voice.c **** void request_for_bytes(){
- 597              		.loc 1 211 25 is_stmt 1 view -0
- 598              		.cfi_startproc
- 599              		@ args = 0, pretend = 0, frame = 0
- 600              		@ frame_needed = 0, uses_anonymous_args = 0
- 601 0000 08B5     		push	{r3, lr}
- 602              	.LCFI7:
- 603              		.cfi_def_cfa_offset 8
- 604              		.cfi_offset 3, -8
- 605              		.cfi_offset 14, -4
- 212:mylib/music_and_voice.c ****     uprintf("r");
- 606              		.loc 1 212 5 view .LVU149
- 607 0002 0248     		ldr	r0, .L49
- 608 0004 FFF7FEFF 		bl	uprintf
- 609              	.LVL40:
- 213:mylib/music_and_voice.c **** }
- 610              		.loc 1 213 1 is_stmt 0 view .LVU150
- 611 0008 08BD     		pop	{r3, pc}
- 612              	.L50:
- 613 000a 00BF     		.align	2
- 614              	.L49:
- 615 000c 00000000 		.word	.LC0
- 616              		.cfi_endproc
- 617              	.LFE138:
- 619              		.section	.text.Voice_Fshz_Handler,"ax",%progbits
- 620              		.align	1
- 621              		.global	Voice_Fshz_Handler
- 622              		.syntax unified
- 623              		.thumb
- 624              		.thumb_func
- 625              		.fpu fpv4-sp-d16
- 627              	Voice_Fshz_Handler:
- 628              	.LFB139:
- 214:mylib/music_and_voice.c **** 
- 215:mylib/music_and_voice.c **** void Voice_Fshz_Handler()
- 216:mylib/music_and_voice.c **** {
- 629              		.loc 1 216 1 is_stmt 1 view -0
- 630              		.cfi_startproc
- 631              		@ args = 0, pretend = 0, frame = 0
- 632              		@ frame_needed = 0, uses_anonymous_args = 0
- 633 0000 08B5     		push	{r3, lr}
- 634              	.LCFI8:
- 635              		.cfi_def_cfa_offset 8
- 636              		.cfi_offset 3, -8
- 637              		.cfi_offset 14, -4
- 217:mylib/music_and_voice.c ****     if(!Voice_Init_OK){
- 638              		.loc 1 217 5 view .LVU152
- 639              		.loc 1 217 8 is_stmt 0 view .LVU153
- 640 0002 224B     		ldr	r3, .L61
- 641 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 642              		.loc 1 217 7 view .LVU154
- 643 0006 002B     		cmp	r3, #0
- 644 0008 33D0     		beq	.L51
- 218:mylib/music_and_voice.c ****         return ;
- 219:mylib/music_and_voice.c ****     }
- 220:mylib/music_and_voice.c ****     if(Voice_Data_Head_Index%1000==0){
- 645              		.loc 1 220 5 is_stmt 1 view .LVU155
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 17
+ 633 0020 0538     		.short	14341
+ 634 0022 0631     		.short	12550
+ 635 0024 0308     		.short	2051
+ 636 0026 0308     		.short	2051
+ 637 0028 0308     		.short	2051
+ 638 002a 0208     		.short	2050
+ 639 002c 0304     		.short	1027
+ 640 002e 0608     		.short	2054
+ 641 0030 0508     		.short	2053
+ 642 0032 0608     		.short	2054
+ 643 0034 0508     		.short	2053
+ 644 0036 0508     		.short	2053
+ 645 0038 0204     		.short	1026
+ 646 003a 0208     		.short	2050
+ 647 003c 0308     		.short	2051
+ 648 003e 0408     		.short	2052
+ 649 0040 0508     		.short	2053
+ 650 0042 0408     		.short	2052
+ 651 0044 0304     		.short	1027
+ 652 0046 0208     		.short	2050
+ 653 0048 0301     		.short	259
+ 654 004a 0604     		.short	1030
+ 655 004c 0738     		.short	14343
+ 656 004e 0638     		.short	14342
+ 657 0050 0504     		.short	1029
+ 658 0052 0308     		.short	2051
+ 659 0054 0501     		.short	261
+ 660 0056 0308     		.short	2051
+ 661 0058 0508     		.short	2053
+ 662 005a 0204     		.short	1026
+ 663 005c 0608     		.short	2054
+ 664 005e 0508     		.short	2053
+ 665 0060 0304     		.short	1027
+ 666 0062 0208     		.short	2050
+ 667 0064 0301     		.short	259
+ 668 0066 0204     		.short	1026
+ 669 0068 0508     		.short	2053
+ 670 006a 0604     		.short	1030
+ 671 006c 0104     		.short	1025
+ 672 006e 0608     		.short	2054
+ 673 0070 0608     		.short	2054
+ 674 0072 0604     		.short	1030
+ 675 0074 0608     		.short	2054
+ 676 0076 0708     		.short	2055
+ 677 0078 0114     		.short	5121
+ 678 007a 0708     		.short	2055
+ 679 007c 0608     		.short	2054
+ 680 007e 0704     		.short	1031
+ 681 0080 0508     		.short	2053
+ 682 0082 0301     		.short	259
+ 683 0084 0604     		.short	1030
+ 684 0086 0708     		.short	2055
+ 685 0088 0608     		.short	2054
+ 686 008a 0504     		.short	1029
+ 687 008c 0308     		.short	2051
+ 688 008e 0501     		.short	261
+ 689 0090 0408     		.short	2052
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s 			page 17
 
 
- 646              		.loc 1 220 34 is_stmt 0 view .LVU156
- 647 000a 214B     		ldr	r3, .L61+4
- 648 000c 1A88     		ldrh	r2, [r3]
- 649 000e 214B     		ldr	r3, .L61+8
- 650 0010 A3FB0213 		umull	r1, r3, r3, r2
- 651 0014 9B09     		lsrs	r3, r3, #6
- 652 0016 4FF47A71 		mov	r1, #1000
- 653 001a 01FB1323 		mls	r3, r1, r3, r2
- 654 001e 9BB2     		uxth	r3, r3
- 655              		.loc 1 220 7 view .LVU157
- 656 0020 43B3     		cbz	r3, .L60
- 657              	.L53:
- 221:mylib/music_and_voice.c ****         request_for_bytes();
- 222:mylib/music_and_voice.c ****     }
- 223:mylib/music_and_voice.c ****     Voice_Data_Head_Index++;
- 658              		.loc 1 223 5 is_stmt 1 view .LVU158
- 659              		.loc 1 223 26 is_stmt 0 view .LVU159
- 660 0022 1B4A     		ldr	r2, .L61+4
- 661 0024 1388     		ldrh	r3, [r2]
- 662 0026 0133     		adds	r3, r3, #1
- 663 0028 9BB2     		uxth	r3, r3
- 664 002a 1380     		strh	r3, [r2]	@ movhi
- 224:mylib/music_and_voice.c ****     if (Voice_Data_Head_Index >= sizeof(Voice_Data))
- 665              		.loc 1 224 5 is_stmt 1 view .LVU160
- 666              		.loc 1 224 8 is_stmt 0 view .LVU161
- 667 002c 41F26F72 		movw	r2, #5999
- 668 0030 9342     		cmp	r3, r2
- 669 0032 02D9     		bls	.L54
- 225:mylib/music_and_voice.c ****     {
- 226:mylib/music_and_voice.c ****         Voice_Data_Head_Index=0;
- 670              		.loc 1 226 9 is_stmt 1 view .LVU162
- 671              		.loc 1 226 30 is_stmt 0 view .LVU163
- 672 0034 164B     		ldr	r3, .L61+4
- 673 0036 0022     		movs	r2, #0
- 674 0038 1A80     		strh	r2, [r3]	@ movhi
- 675              	.L54:
- 227:mylib/music_and_voice.c ****     }
- 228:mylib/music_and_voice.c **** 
- 229:mylib/music_and_voice.c ****     Voice_Info.voice_duty = (float)Voice_Data[Voice_Data_Head_Index] / 255.0f;
- 676              		.loc 1 229 5 is_stmt 1 view .LVU164
- 677              		.loc 1 229 46 is_stmt 0 view .LVU165
- 678 003a 154B     		ldr	r3, .L61+4
- 679 003c 1B88     		ldrh	r3, [r3]
- 680 003e 164A     		ldr	r2, .L61+12
- 681 0040 D35C     		ldrb	r3, [r2, r3]	@ zero_extendqisi2
- 682 0042 07EE103A 		vmov	s14, r3	@ int
- 683              		.loc 1 229 29 view .LVU166
- 684 0046 B8EE477A 		vcvt.f32.u32	s14, s14
- 685              		.loc 1 229 70 view .LVU167
- 686 004a DFED146A 		vldr.32	s13, .L61+16
- 687 004e C7EE267A 		vdiv.f32	s15, s14, s13
- 688              		.loc 1 229 27 view .LVU168
- 689 0052 134B     		ldr	r3, .L61+20
- 690 0054 C3ED047A 		vstr.32	s15, [r3, #16]
- 230:mylib/music_and_voice.c **** 
- 231:mylib/music_and_voice.c ****     if(Voice_Info.voice_duty>0.5f){
- 691              		.loc 1 231 5 is_stmt 1 view .LVU169
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 18
-
-
- 692              		.loc 1 231 7 is_stmt 0 view .LVU170
- 693 0058 B6EE007A 		vmov.f32	s14, #5.0e-1
- 694 005c F4EEC77A 		vcmpe.f32	s15, s14
- 695 0060 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
- 696 0064 09DD     		ble	.L58
- 232:mylib/music_and_voice.c ****        Set_Vector(U4, Voice_Info.voice_duty-0.5f); 
- 697              		.loc 1 232 8 is_stmt 1 view .LVU171
- 698 0066 0F4B     		ldr	r3, .L61+24
- 699 0068 37EEC70A 		vsub.f32	s0, s15, s14
- 700 006c 0FCB     		ldm	r3, {r0, r1, r2, r3}
- 701 006e FFF7FEFF 		bl	Set_Vector
- 702              	.LVL41:
- 703              	.L51:
- 233:mylib/music_and_voice.c ****     }else{
- 234:mylib/music_and_voice.c ****        Set_Vector(U6, Voice_Info.voice_duty-0.5f);  
- 235:mylib/music_and_voice.c ****     }
- 236:mylib/music_and_voice.c **** }
- 704              		.loc 1 236 1 is_stmt 0 view .LVU172
- 705 0072 08BD     		pop	{r3, pc}
- 706              	.L60:
- 221:mylib/music_and_voice.c ****     }
- 707              		.loc 1 221 9 is_stmt 1 view .LVU173
- 708 0074 FFF7FEFF 		bl	request_for_bytes
- 709              	.LVL42:
- 710 0078 D3E7     		b	.L53
- 711              	.L58:
- 234:mylib/music_and_voice.c ****     }
- 712              		.loc 1 234 8 view .LVU174
- 713 007a 0B4B     		ldr	r3, .L61+28
- 714 007c B6EE000A 		vmov.f32	s0, #5.0e-1
- 715 0080 37EEC00A 		vsub.f32	s0, s15, s0
- 716 0084 0FCB     		ldm	r3, {r0, r1, r2, r3}
- 717 0086 FFF7FEFF 		bl	Set_Vector
- 718              	.LVL43:
- 719 008a F2E7     		b	.L51
- 720              	.L62:
- 721              		.align	2
- 722              	.L61:
- 723 008c 00000000 		.word	Voice_Init_OK
- 724 0090 00000000 		.word	Voice_Data_Head_Index
- 725 0094 D34D6210 		.word	274877907
- 726 0098 00000000 		.word	Voice_Data
- 727 009c 00007F43 		.word	1132396544
- 728 00a0 00000000 		.word	Voice_Info
- 729 00a4 00000000 		.word	U4
- 730 00a8 00000000 		.word	U6
- 731              		.cfi_endproc
- 732              	.LFE139:
- 734              		.section	.text.UART_Large_Reveice,"ax",%progbits
- 735              		.align	1
- 736              		.global	UART_Large_Reveice
- 737              		.syntax unified
- 738              		.thumb
- 739              		.thumb_func
- 740              		.fpu fpv4-sp-d16
- 742              	UART_Large_Reveice:
- 743              	.LFB140:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 19
-
-
- 237:mylib/music_and_voice.c **** 
- 238:mylib/music_and_voice.c **** extern uint8_t buffer_rx[];
- 239:mylib/music_and_voice.c **** void UART_Large_Reveice(){
- 744              		.loc 1 239 26 view -0
- 745              		.cfi_startproc
- 746              		@ args = 0, pretend = 0, frame = 0
- 747              		@ frame_needed = 0, uses_anonymous_args = 0
- 748 0000 10B5     		push	{r4, lr}
- 749              	.LCFI9:
- 750              		.cfi_def_cfa_offset 8
- 751              		.cfi_offset 4, -8
- 752              		.cfi_offset 14, -4
- 240:mylib/music_and_voice.c ****     memcpy(Voice_Data+Voice_Data_End_Index,buffer_rx,1000);
- 753              		.loc 1 240 5 view .LVU176
- 754 0002 0E4C     		ldr	r4, .L66
- 755 0004 2388     		ldrh	r3, [r4]
- 756 0006 4FF47A72 		mov	r2, #1000
- 757 000a 0D49     		ldr	r1, .L66+4
- 758 000c 0D48     		ldr	r0, .L66+8
- 759 000e 1844     		add	r0, r0, r3
- 760 0010 FFF7FEFF 		bl	memcpy
- 761              	.LVL44:
- 241:mylib/music_and_voice.c ****     Voice_Data_End_Index+=1000;
- 762              		.loc 1 241 5 view .LVU177
- 763              		.loc 1 241 25 is_stmt 0 view .LVU178
- 764 0014 2388     		ldrh	r3, [r4]
- 765 0016 03F57A73 		add	r3, r3, #1000
- 766 001a 9BB2     		uxth	r3, r3
- 767 001c 2380     		strh	r3, [r4]	@ movhi
- 242:mylib/music_and_voice.c ****     if(Voice_Data_End_Index>=sizeof(Voice_Data)){
- 768              		.loc 1 242 5 is_stmt 1 view .LVU179
- 769              		.loc 1 242 7 is_stmt 0 view .LVU180
- 770 001e 41F26F72 		movw	r2, #5999
- 771 0022 9342     		cmp	r3, r2
- 772 0024 08D9     		bls	.L63
- 243:mylib/music_and_voice.c ****         Voice_Data_End_Index%=sizeof(Voice_Data);
- 773              		.loc 1 243 9 is_stmt 1 view .LVU181
- 774              		.loc 1 243 29 is_stmt 0 view .LVU182
- 775 0026 084A     		ldr	r2, .L66+12
- 776 0028 A2FB0312 		umull	r1, r2, r2, r3
- 777 002c D209     		lsrs	r2, r2, #7
- 778 002e 41F27071 		movw	r1, #6000
- 779 0032 01FB1233 		mls	r3, r1, r2, r3
- 780 0036 2380     		strh	r3, [r4]	@ movhi
- 781              	.L63:
- 244:mylib/music_and_voice.c ****     }
- 245:mylib/music_and_voice.c **** }
- 782              		.loc 1 245 1 view .LVU183
- 783 0038 10BD     		pop	{r4, pc}
- 784              	.L67:
- 785 003a 00BF     		.align	2
- 786              	.L66:
- 787 003c 00000000 		.word	Voice_Data_End_Index
- 788 0040 00000000 		.word	buffer_rx
- 789 0044 00000000 		.word	Voice_Data
- 790 0048 F1197605 		.word	91625969
- 791              		.cfi_endproc
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 20
-
-
- 792              	.LFE140:
- 794              		.section	.text.Voice_Init,"ax",%progbits
- 795              		.align	1
- 796              		.global	Voice_Init
- 797              		.syntax unified
- 798              		.thumb
- 799              		.thumb_func
- 800              		.fpu fpv4-sp-d16
- 802              	Voice_Init:
- 803              	.LFB141:
- 246:mylib/music_and_voice.c **** 
- 247:mylib/music_and_voice.c **** 
- 248:mylib/music_and_voice.c **** 
- 249:mylib/music_and_voice.c **** void Voice_Init(){
- 804              		.loc 1 249 18 is_stmt 1 view -0
- 805              		.cfi_startproc
- 806              		@ args = 0, pretend = 0, frame = 0
- 807              		@ frame_needed = 0, uses_anonymous_args = 0
- 808 0000 10B5     		push	{r4, lr}
- 809              	.LCFI10:
- 810              		.cfi_def_cfa_offset 8
- 811              		.cfi_offset 4, -8
- 812              		.cfi_offset 14, -4
- 250:mylib/music_and_voice.c ****     // 先要他个5000个字节先
- 251:mylib/music_and_voice.c ****     for(int i=0;i<5;++i){
- 813              		.loc 1 251 5 view .LVU185
- 814              	.LBB4:
- 815              		.loc 1 251 9 view .LVU186
- 816              	.LVL45:
- 817              		.loc 1 251 13 is_stmt 0 view .LVU187
- 818 0002 0024     		movs	r4, #0
- 819              	.LVL46:
- 820              	.L69:
- 821              		.loc 1 251 17 is_stmt 1 discriminator 1 view .LVU188
- 822              		.loc 1 251 5 is_stmt 0 discriminator 1 view .LVU189
- 823 0004 042C     		cmp	r4, #4
- 824 0006 07DC     		bgt	.L72
- 252:mylib/music_and_voice.c ****         request_for_bytes();
- 825              		.loc 1 252 9 is_stmt 1 discriminator 3 view .LVU190
- 826 0008 FFF7FEFF 		bl	request_for_bytes
- 827              	.LVL47:
- 253:mylib/music_and_voice.c ****         HAL_Delay(2000);
- 828              		.loc 1 253 9 discriminator 3 view .LVU191
- 829 000c 4FF4FA60 		mov	r0, #2000
- 830 0010 FFF7FEFF 		bl	HAL_Delay
- 831              	.LVL48:
- 251:mylib/music_and_voice.c ****         request_for_bytes();
- 832              		.loc 1 251 21 discriminator 3 view .LVU192
- 833 0014 0134     		adds	r4, r4, #1
- 834              	.LVL49:
- 251:mylib/music_and_voice.c ****         request_for_bytes();
- 835              		.loc 1 251 21 is_stmt 0 discriminator 3 view .LVU193
- 836 0016 F5E7     		b	.L69
- 837              	.L72:
- 251:mylib/music_and_voice.c ****         request_for_bytes();
- 838              		.loc 1 251 21 discriminator 3 view .LVU194
- 839              	.LBE4:
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 21
-
-
- 254:mylib/music_and_voice.c ****     }
- 255:mylib/music_and_voice.c ****     Voice_Init_OK=1;
- 840              		.loc 1 255 5 is_stmt 1 view .LVU195
- 841              		.loc 1 255 18 is_stmt 0 view .LVU196
- 842 0018 014B     		ldr	r3, .L73
- 843 001a 0122     		movs	r2, #1
- 844 001c 1A70     		strb	r2, [r3]
- 256:mylib/music_and_voice.c **** }
- 845              		.loc 1 256 1 view .LVU197
- 846 001e 10BD     		pop	{r4, pc}
- 847              	.LVL50:
- 848              	.L74:
- 849              		.loc 1 256 1 view .LVU198
- 850              		.align	2
- 851              	.L73:
- 852 0020 00000000 		.word	Voice_Init_OK
- 853              		.cfi_endproc
- 854              	.LFE141:
- 856              		.section	.text.HAL_UART_RxCpltCallback,"ax",%progbits
- 857              		.align	1
- 858              		.global	HAL_UART_RxCpltCallback
- 859              		.syntax unified
- 860              		.thumb
- 861              		.thumb_func
- 862              		.fpu fpv4-sp-d16
- 864              	HAL_UART_RxCpltCallback:
- 865              	.LVL51:
- 866              	.LFB142:
- 257:mylib/music_and_voice.c **** #include "usart.h"
- 258:mylib/music_and_voice.c **** #include "uart_ext.h"
- 259:mylib/music_and_voice.c **** extern uint8_t buffer_rx_temp;
- 260:mylib/music_and_voice.c **** void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
- 867              		.loc 1 260 56 is_stmt 1 view -0
- 868              		.cfi_startproc
- 869              		@ args = 0, pretend = 0, frame = 0
- 870              		@ frame_needed = 0, uses_anonymous_args = 0
- 871              		.loc 1 260 56 is_stmt 0 view .LVU200
- 872 0000 10B5     		push	{r4, lr}
- 873              	.LCFI11:
- 874              		.cfi_def_cfa_offset 8
- 875              		.cfi_offset 4, -8
- 876              		.cfi_offset 14, -4
- 877 0002 0446     		mov	r4, r0
- 261:mylib/music_and_voice.c ****     Voice_Info.voice_duty = (float)buffer_rx_temp / 255.0f;
- 878              		.loc 1 261 5 is_stmt 1 view .LVU201
- 879              		.loc 1 261 29 is_stmt 0 view .LVU202
- 880 0004 144B     		ldr	r3, .L82
- 881 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 882 0008 07EE103A 		vmov	s14, r3	@ int
- 883 000c B8EE477A 		vcvt.f32.u32	s14, s14
- 884              		.loc 1 261 51 view .LVU203
- 885 0010 DFED126A 		vldr.32	s13, .L82+4
- 886 0014 C7EE267A 		vdiv.f32	s15, s14, s13
- 887              		.loc 1 261 27 view .LVU204
- 888 0018 114B     		ldr	r3, .L82+8
- 889 001a C3ED047A 		vstr.32	s15, [r3, #16]
- 262:mylib/music_and_voice.c **** 
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 22
-
-
- 263:mylib/music_and_voice.c ****     if(Voice_Info.voice_duty>0.5f){
- 890              		.loc 1 263 5 is_stmt 1 view .LVU205
- 891              		.loc 1 263 7 is_stmt 0 view .LVU206
- 892 001e B6EE007A 		vmov.f32	s14, #5.0e-1
- 893 0022 F4EEC77A 		vcmpe.f32	s15, s14
- 894 0026 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
- 895 002a 0BDD     		ble	.L80
- 264:mylib/music_and_voice.c ****        Set_Vector(U4, Voice_Info.voice_duty-0.5f); 
- 896              		.loc 1 264 8 is_stmt 1 view .LVU207
- 897 002c 0D4B     		ldr	r3, .L82+12
- 898 002e 37EEC70A 		vsub.f32	s0, s15, s14
- 899 0032 0FCB     		ldm	r3, {r0, r1, r2, r3}
- 900              	.LVL52:
- 901              		.loc 1 264 8 is_stmt 0 view .LVU208
- 902 0034 FFF7FEFF 		bl	Set_Vector
- 903              	.LVL53:
- 904              	.L78:
- 265:mylib/music_and_voice.c ****     }else{
- 266:mylib/music_and_voice.c ****        Set_Vector(U6, Voice_Info.voice_duty-0.5f);  
- 267:mylib/music_and_voice.c ****     }
- 268:mylib/music_and_voice.c ****     HAL_UART_Receive_IT(huart,&buffer_rx_temp,1);
- 905              		.loc 1 268 5 is_stmt 1 view .LVU209
- 906 0038 0122     		movs	r2, #1
- 907 003a 0749     		ldr	r1, .L82
- 908 003c 2046     		mov	r0, r4
- 909 003e FFF7FEFF 		bl	HAL_UART_Receive_IT
- 910              	.LVL54:
- 269:mylib/music_and_voice.c **** }...
- 911              		.loc 1 269 1 is_stmt 0 view .LVU210
- 912 0042 10BD     		pop	{r4, pc}
- 913              	.LVL55:
- 914              	.L80:
- 266:mylib/music_and_voice.c ****        Set_Vector(U6, Voice_Info.voice_duty-0.5f);  
- 915              		.loc 1 266 8 is_stmt 1 view .LVU211
- 916 0044 084B     		ldr	r3, .L82+16
- 917 0046 B6EE000A 		vmov.f32	s0, #5.0e-1
- 918 004a 37EEC00A 		vsub.f32	s0, s15, s0
- 919 004e 0FCB     		ldm	r3, {r0, r1, r2, r3}
- 920              	.LVL56:
- 266:mylib/music_and_voice.c ****        Set_Vector(U6, Voice_Info.voice_duty-0.5f);  
- 921              		.loc 1 266 8 is_stmt 0 view .LVU212
- 922 0050 FFF7FEFF 		bl	Set_Vector
- 923              	.LVL57:
- 924 0054 F0E7     		b	.L78
- 925              	.L83:
- 926 0056 00BF     		.align	2
- 927              	.L82:
- 928 0058 00000000 		.word	buffer_rx_temp
- 929 005c 00007F43 		.word	1132396544
- 930 0060 00000000 		.word	Voice_Info
- 931 0064 00000000 		.word	U4
- 932 0068 00000000 		.word	U6
- 933              		.cfi_endproc
- 934              	.LFE142:
- 936              		.comm	Voice_Init_OK,1,1
- 937              		.comm	Voice_Data_End_Index,2,2
- 938              		.comm	Voice_Data_Head_Index,2,2
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 23
-
-
- 939              		.comm	Voice_Data,6000,4
- 940              		.comm	Voice_Info,20,4
- 941              		.global	Music_Song
- 942              		.global	Music_Freqs
- 943              		.comm	Music_Info,36,4
- 944              		.section	.bss.first_time.8576,"aw",%nobits
- 945              		.set	.LANCHOR1,. + 0
- 948              	first_time.8576:
- 949 0000 00       		.space	1
- 950              		.section	.data.Music_Freqs,"aw"
- 951              		.align	2
- 952              		.set	.LANCHOR0,. + 0
- 955              	Music_Freqs:
- 956 0000 204E     		.short	20000
- 957 0002 0501     		.short	261
- 958 0004 2501     		.short	293
- 959 0006 4901     		.short	329
- 960 0008 5D01     		.short	349
- 961 000a 8801     		.short	392
- 962 000c B801     		.short	440
- 963 000e ED01     		.short	493
- 964              		.section	.data.Music_Song,"aw"
- 965              		.align	2
- 966              		.set	.LANCHOR3,. + 0
- 969              	Music_Song:
- 970 0000 0308     		.short	2051
- 971 0002 0308     		.short	2051
- 972 0004 0308     		.short	2051
- 973 0006 0208     		.short	2050
- 974 0008 0302     		.short	515
- 975 000a 0208     		.short	2050
- 976 000c 0308     		.short	2051
- 977 000e 0208     		.short	2050
- 978 0010 0208     		.short	2050
- 979 0012 0634     		.short	13318
- 980 0014 0638     		.short	14342
- 981 0016 0738     		.short	14343
- 982 0018 0104     		.short	1025
- 983 001a 0208     		.short	2050
- 984 001c 0108     		.short	2049
- 985 001e 0734     		.short	13319
- 986 0020 0538     		.short	14341
- 987 0022 0631     		.short	12550
- 988 0024 0308     		.short	2051
- 989 0026 0308     		.short	2051
- 990 0028 0308     		.short	2051
- 991 002a 0208     		.short	2050
- 992 002c 0304     		.short	1027
- 993 002e 0608     		.short	2054
- 994 0030 0508     		.short	2053
- 995 0032 0608     		.short	2054
- 996 0034 0508     		.short	2053
- 997 0036 0508     		.short	2053
- 998 0038 0204     		.short	1026
- 999 003a 0208     		.short	2050
- 1000 003c 0308     		.short	2051
- 1001 003e 0408     		.short	2052
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 24
-
-
- 1002 0040 0508     		.short	2053
- 1003 0042 0408     		.short	2052
- 1004 0044 0304     		.short	1027
- 1005 0046 0208     		.short	2050
- 1006 0048 0301     		.short	259
- 1007 004a 0604     		.short	1030
- 1008 004c 0738     		.short	14343
- 1009 004e 0638     		.short	14342
- 1010 0050 0504     		.short	1029
- 1011 0052 0308     		.short	2051
- 1012 0054 0501     		.short	261
- 1013 0056 0308     		.short	2051
- 1014 0058 0508     		.short	2053
- 1015 005a 0204     		.short	1026
- 1016 005c 0608     		.short	2054
- 1017 005e 0508     		.short	2053
- 1018 0060 0304     		.short	1027
- 1019 0062 0208     		.short	2050
- 1020 0064 0301     		.short	259
- 1021 0066 0204     		.short	1026
- 1022 0068 0508     		.short	2053
- 1023 006a 0604     		.short	1030
- 1024 006c 0104     		.short	1025
- 1025 006e 0608     		.short	2054
- 1026 0070 0608     		.short	2054
- 1027 0072 0604     		.short	1030
- 1028 0074 0608     		.short	2054
- 1029 0076 0708     		.short	2055
- 1030 0078 0114     		.short	5121
- 1031 007a 0708     		.short	2055
- 1032 007c 0608     		.short	2054
- 1033 007e 0704     		.short	1031
- 1034 0080 0508     		.short	2053
- 1035 0082 0301     		.short	259
- 1036 0084 0604     		.short	1030
- 1037 0086 0708     		.short	2055
- 1038 0088 0608     		.short	2054
- 1039 008a 0504     		.short	1029
- 1040 008c 0308     		.short	2051
- 1041 008e 0501     		.short	261
- 1042 0090 0408     		.short	2052
- 1043 0092 0508     		.short	2053
- 1044 0094 0604     		.short	1030
- 1045 0096 0708     		.short	2055
- 1046 0098 0608     		.short	2054
- 1047 009a 0704     		.short	1031
- 1048 009c 0504     		.short	1029
- 1049 009e 060F     		.short	3846
- 1050 00a0 0301     		.short	259
- 1051 00a2 0204     		.short	1026
- 1052 00a4 0508     		.short	2053
- 1053 00a6 0604     		.short	1030
- 1054 00a8 0104     		.short	1025
- 1055 00aa 0608     		.short	2054
- 1056 00ac 0604     		.short	1030
- 1057 00ae 0608     		.short	2054
- 1058 00b0 0708     		.short	2055
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 25
-
-
- 1059 00b2 0114     		.short	5121
- 1060 00b4 0708     		.short	2055
- 1061 00b6 0608     		.short	2054
- 1062 00b8 0704     		.short	1031
- 1063 00ba 0508     		.short	2053
- 1064 00bc 0601     		.short	262
- 1065              		.section	.data.next_time.8579,"aw"
- 1066              		.align	1
- 1067              		.set	.LANCHOR2,. + 0
- 1070              	next_time.8579:
- 1071 0000 EE02     		.short	750
- 1072              		.text
- 1073              	.Letext0:
- 1074              		.file 2 "c:\\arm_gcc\\arm-none-eabi\\include\\machine\\_default_types.h"
- 1075              		.file 3 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_stdint.h"
- 1076              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 1077              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 1078              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
- 1079              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 1080              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 1081              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
- 1082              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 1083              		.file 11 "Inc/tim.h"
- 1084              		.file 12 "Inc/foc.h"
- 1085              		.file 13 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\lock.h"
- 1086              		.file 14 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_types.h"
- 1087              		.file 15 "c:\\arm_gcc\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h"
- 1088              		.file 16 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\reent.h"
- 1089              		.file 17 "c:\\arm_gcc\\arm-none-eabi\\include\\stdlib.h"
- 1090              		.file 18 "mylib/uart_ext.h"
- 1091              		.file 19 "Inc/usart.h"
- 1092              		.file 20 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 1093              		.file 21 "<built-in>"
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 26
+ 690 0092 0508     		.short	2053
+ 691 0094 0604     		.short	1030
+ 692 0096 0708     		.short	2055
+ 693 0098 0608     		.short	2054
+ 694 009a 0704     		.short	1031
+ 695 009c 0504     		.short	1029
+ 696 009e 060F     		.short	3846
+ 697 00a0 0301     		.short	259
+ 698 00a2 0204     		.short	1026
+ 699 00a4 0508     		.short	2053
+ 700 00a6 0604     		.short	1030
+ 701 00a8 0104     		.short	1025
+ 702 00aa 0608     		.short	2054
+ 703 00ac 0604     		.short	1030
+ 704 00ae 0608     		.short	2054
+ 705 00b0 0708     		.short	2055
+ 706 00b2 0114     		.short	5121
+ 707 00b4 0708     		.short	2055
+ 708 00b6 0608     		.short	2054
+ 709 00b8 0704     		.short	1031
+ 710 00ba 0508     		.short	2053
+ 711 00bc 0601     		.short	262
+ 712              		.section	.data.next_time.8578,"aw"
+ 713              		.align	1
+ 714              		.set	.LANCHOR2,. + 0
+ 717              	next_time.8578:
+ 718 0000 EE02     		.short	750
+ 719              		.text
+ 720              	.Letext0:
+ 721              		.file 2 "c:\\arm_gcc\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 722              		.file 3 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 723              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 724              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 725              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 726              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 727              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 728              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 729              		.file 10 "Inc/tim.h"
+ 730              		.file 11 "Inc/foc.h"
+ 731              		.file 12 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\lock.h"
+ 732              		.file 13 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_types.h"
+ 733              		.file 14 "c:\\arm_gcc\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h"
+ 734              		.file 15 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\reent.h"
+ 735              		.file 16 "c:\\arm_gcc\\arm-none-eabi\\include\\stdlib.h"
+ 736              		.file 17 "mylib/uart_ext.h"
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s 			page 18
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 music_and_voice.c
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:18     .text.Music_Init:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:26     .text.Music_Init:00000000 Music_Init
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:80     .text.Music_Init:0000003c $d
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:18     .text.Music_Init:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:26     .text.Music_Init:00000000 Music_Init
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:80     .text.Music_Init:0000003c $d
                             *COM*:00000024 Music_Info
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:87     .text.Music_Get_Note:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:94     .text.Music_Get_Note:00000000 Music_Get_Note
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:141    .text.Music_Get_Note:00000026 $d
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:273    .text.Music_Get_Note:000000a0 $d
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:279    .text.Music_Play_Note:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:286    .text.Music_Play_Note:00000000 Music_Play_Note
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:337    .text.Music_Play_Note:0000002c $d
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:343    .text.Muisc_Play_TIM_IRQ_Handler:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:350    .text.Muisc_Play_TIM_IRQ_Handler:00000000 Muisc_Play_TIM_IRQ_Handler
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:415    .text.Muisc_Play_TIM_IRQ_Handler:0000004c $d
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:429    .text.Music_Play_Beat:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:436    .text.Music_Play_Beat:00000000 Music_Play_Beat
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:574    .text.Music_Play_Beat:000000a8 $d
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:584    .rodata.request_for_bytes.str1.4:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:588    .text.request_for_bytes:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:595    .text.request_for_bytes:00000000 request_for_bytes
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:615    .text.request_for_bytes:0000000c $d
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:620    .text.Voice_Fshz_Handler:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:627    .text.Voice_Fshz_Handler:00000000 Voice_Fshz_Handler
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:723    .text.Voice_Fshz_Handler:0000008c $d
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:87     .text.Music_Get_Note:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:94     .text.Music_Get_Note:00000000 Music_Get_Note
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:141    .text.Music_Get_Note:00000026 $d
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:273    .text.Music_Get_Note:000000a0 $d
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:279    .text.Music_Play_Note:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:286    .text.Music_Play_Note:00000000 Music_Play_Note
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:337    .text.Music_Play_Note:0000002c $d
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:343    .text.Muisc_Play_TIM_IRQ_Handler:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:350    .text.Muisc_Play_TIM_IRQ_Handler:00000000 Muisc_Play_TIM_IRQ_Handler
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:415    .text.Muisc_Play_TIM_IRQ_Handler:0000004c $d
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:429    .text.Music_Play_Beat:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:436    .text.Music_Play_Beat:00000000 Music_Play_Beat
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:574    .text.Music_Play_Beat:000000a8 $d
                             *COM*:00000001 Voice_Init_OK
+                            *COM*:00000002 Voice_Data_End_Index
                             *COM*:00000002 Voice_Data_Head_Index
                             *COM*:00001770 Voice_Data
                             *COM*:00000014 Voice_Info
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:735    .text.UART_Large_Reveice:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:742    .text.UART_Large_Reveice:00000000 UART_Large_Reveice
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:787    .text.UART_Large_Reveice:0000003c $d
-                            *COM*:00000002 Voice_Data_End_Index
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:795    .text.Voice_Init:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:802    .text.Voice_Init:00000000 Voice_Init
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:852    .text.Voice_Init:00000020 $d
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:857    .text.HAL_UART_RxCpltCallback:00000000 $t
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:864    .text.HAL_UART_RxCpltCallback:00000000 HAL_UART_RxCpltCallback
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:928    .text.HAL_UART_RxCpltCallback:00000058 $d
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:969    .data.Music_Song:00000000 Music_Song
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:955    .data.Music_Freqs:00000000 Music_Freqs
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:948    .bss.first_time.8576:00000000 first_time.8576
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:949    .bss.first_time.8576:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:951    .data.Music_Freqs:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:965    .data.Music_Song:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:1066   .data.next_time.8579:00000000 $d
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:1070   .data.next_time.8579:00000000 next_time.8579
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:156    .text.Music_Get_Note:00000035 $d
-C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s:156    .text.Music_Get_Note:00000036 $t
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:616    .data.Music_Song:00000000 Music_Song
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:602    .data.Music_Freqs:00000000 Music_Freqs
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:595    .bss.first_time.8575:00000000 first_time.8575
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:596    .bss.first_time.8575:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:598    .data.Music_Freqs:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:612    .data.Music_Song:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:713    .data.next_time.8578:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:717    .data.next_time.8578:00000000 next_time.8578
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:156    .text.Music_Get_Note:00000035 $d
+C:\Users\ncer\AppData\Local\Temp\cci0xsOK.s:156    .text.Music_Get_Note:00000036 $t
 
 UNDEFINED SYMBOLS
 Set_Vector
@@ -1534,15 +1050,6 @@ U4
 U0
 U6
 __aeabi_ui2d
-ARM GAS  C:\Users\ncer\AppData\Local\Temp\ccYNhntL.s 			page 27
-
-
 __aeabi_i2d
 __aeabi_dmul
 __aeabi_dcmpge
-uprintf
-memcpy
-buffer_rx
-HAL_Delay
-HAL_UART_Receive_IT
-buffer_rx_temp

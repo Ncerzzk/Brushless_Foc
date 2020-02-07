@@ -85,6 +85,11 @@ void measure_r(int arg_num,char **s,float *args){
   return ;
 }
 
+void Measure_L(float duty);
+void measure_l(int arg_num,char **s,float *args){
+  Measure_L(1);
+}
+
 /*
 将要增加的命令与函数写在这里
 */
@@ -94,6 +99,7 @@ void command_init(void){
   add_cmd("get_p",get_position);
   add_cmd("test_direction",test_direction);
   add_cmd("measure_r",measure_r);
+  add_cmd("measure_l",measure_l);
 }
 
 

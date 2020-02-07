@@ -1,0 +1,341 @@
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"tim_ext.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.Time_Counter_Start,"ax",%progbits
+  18              		.align	1
+  19              		.global	Time_Counter_Start
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv4-sp-d16
+  26              	Time_Counter_Start:
+  27              	.LVL0:
+  28              	.LFB130:
+  29              		.file 1 "mylib/tim_ext.c"
+   1:mylib/tim_ext.c **** #include "tim_ext.h"
+   2:mylib/tim_ext.c **** 
+   3:mylib/tim_ext.c **** 
+   4:mylib/tim_ext.c **** 
+   5:mylib/tim_ext.c **** 
+   6:mylib/tim_ext.c **** static TIM_HandleTypeDef *Timer_Tim;
+   7:mylib/tim_ext.c **** uint32_t TIM_MAX_FREQ;
+   8:mylib/tim_ext.c **** static uint32_t Pass_Time_ms;
+   9:mylib/tim_ext.c **** 
+  10:mylib/tim_ext.c **** void Time_Counter_Start(Time_Counter * time_counter){
+  30              		.loc 1 10 53 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  11:mylib/tim_ext.c ****     time_counter->start_cnt=Timer_Tim->Instance->CNT;
+  35              		.loc 1 11 5 view .LVU1
+  36              		.loc 1 11 38 is_stmt 0 view .LVU2
+  37 0000 044B     		ldr	r3, .L2
+  38 0002 1B68     		ldr	r3, [r3]
+  39 0004 1B68     		ldr	r3, [r3]
+  40              		.loc 1 11 48 view .LVU3
+  41 0006 5B6A     		ldr	r3, [r3, #36]
+  42              		.loc 1 11 28 view .LVU4
+  43 0008 0360     		str	r3, [r0]
+  12:mylib/tim_ext.c ****     time_counter->start_ms=Pass_Time_ms;
+  44              		.loc 1 12 5 is_stmt 1 view .LVU5
+  45              		.loc 1 12 27 is_stmt 0 view .LVU6
+  46 000a 034B     		ldr	r3, .L2+4
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s 			page 2
+
+
+  47 000c 1B68     		ldr	r3, [r3]
+  48 000e 4360     		str	r3, [r0, #4]
+  13:mylib/tim_ext.c **** }
+  49              		.loc 1 13 1 view .LVU7
+  50 0010 7047     		bx	lr
+  51              	.L3:
+  52 0012 00BF     		.align	2
+  53              	.L2:
+  54 0014 00000000 		.word	.LANCHOR0
+  55 0018 00000000 		.word	.LANCHOR1
+  56              		.cfi_endproc
+  57              	.LFE130:
+  59              		.section	.text.Time_Counter_Stop,"ax",%progbits
+  60              		.align	1
+  61              		.global	Time_Counter_Stop
+  62              		.syntax unified
+  63              		.thumb
+  64              		.thumb_func
+  65              		.fpu fpv4-sp-d16
+  67              	Time_Counter_Stop:
+  68              	.LVL1:
+  69              	.LFB131:
+  14:mylib/tim_ext.c **** 
+  15:mylib/tim_ext.c **** uint32_t Time_Counter_Stop(Time_Counter * time_counter){
+  70              		.loc 1 15 56 is_stmt 1 view -0
+  71              		.cfi_startproc
+  72              		@ args = 0, pretend = 0, frame = 0
+  73              		@ frame_needed = 0, uses_anonymous_args = 0
+  74              		@ link register save eliminated.
+  16:mylib/tim_ext.c ****     uint32_t cnt_sub=Timer_Tim->Instance->CNT-time_counter->start_cnt;
+  75              		.loc 1 16 5 view .LVU9
+  76              		.loc 1 16 31 is_stmt 0 view .LVU10
+  77 0000 074B     		ldr	r3, .L5
+  78 0002 1B68     		ldr	r3, [r3]
+  79 0004 1B68     		ldr	r3, [r3]
+  80              		.loc 1 16 41 view .LVU11
+  81 0006 5B6A     		ldr	r3, [r3, #36]
+  82              		.loc 1 16 59 view .LVU12
+  83 0008 0268     		ldr	r2, [r0]
+  84              		.loc 1 16 14 view .LVU13
+  85 000a 9B1A     		subs	r3, r3, r2
+  86              	.LVL2:
+  17:mylib/tim_ext.c ****     uint32_t ms_sub=Pass_Time_ms-time_counter->start_ms;
+  87              		.loc 1 17 5 is_stmt 1 view .LVU14
+  88              		.loc 1 17 33 is_stmt 0 view .LVU15
+  89 000c 054A     		ldr	r2, .L5+4
+  90 000e 1268     		ldr	r2, [r2]
+  91              		.loc 1 17 46 view .LVU16
+  92 0010 4068     		ldr	r0, [r0, #4]
+  93              	.LVL3:
+  94              		.loc 1 17 14 view .LVU17
+  95 0012 121A     		subs	r2, r2, r0
+  96              	.LVL4:
+  18:mylib/tim_ext.c ****     uint32_t result;
+  97              		.loc 1 18 5 is_stmt 1 view .LVU18
+  19:mylib/tim_ext.c **** 
+  20:mylib/tim_ext.c ****     result=ms_sub*1000+cnt_sub;
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s 			page 3
+
+
+  98              		.loc 1 20 5 view .LVU19
+  21:mylib/tim_ext.c ****     return result;
+  99              		.loc 1 21 5 view .LVU20
+  22:mylib/tim_ext.c **** }
+ 100              		.loc 1 22 1 is_stmt 0 view .LVU21
+ 101 0014 4FF47A70 		mov	r0, #1000
+ 102 0018 00FB0230 		mla	r0, r0, r2, r3
+ 103              	.LVL5:
+ 104              		.loc 1 22 1 view .LVU22
+ 105 001c 7047     		bx	lr
+ 106              	.L6:
+ 107 001e 00BF     		.align	2
+ 108              	.L5:
+ 109 0020 00000000 		.word	.LANCHOR0
+ 110 0024 00000000 		.word	.LANCHOR1
+ 111              		.cfi_endproc
+ 112              	.LFE131:
+ 114              		.section	.text.Timer_Init,"ax",%progbits
+ 115              		.align	1
+ 116              		.global	Timer_Init
+ 117              		.syntax unified
+ 118              		.thumb
+ 119              		.thumb_func
+ 120              		.fpu fpv4-sp-d16
+ 122              	Timer_Init:
+ 123              	.LVL6:
+ 124              	.LFB132:
+  23:mylib/tim_ext.c **** 
+  24:mylib/tim_ext.c **** void Timer_Init(TIM_HandleTypeDef *tim)
+  25:mylib/tim_ext.c **** {
+ 125              		.loc 1 25 1 is_stmt 1 view -0
+ 126              		.cfi_startproc
+ 127              		@ args = 0, pretend = 0, frame = 0
+ 128              		@ frame_needed = 0, uses_anonymous_args = 0
+ 129              		.loc 1 25 1 is_stmt 0 view .LVU24
+ 130 0000 08B5     		push	{r3, lr}
+ 131              	.LCFI0:
+ 132              		.cfi_def_cfa_offset 8
+ 133              		.cfi_offset 3, -8
+ 134              		.cfi_offset 14, -4
+  26:mylib/tim_ext.c ****     Timer_Tim = tim;
+ 135              		.loc 1 26 5 is_stmt 1 view .LVU25
+ 136              		.loc 1 26 15 is_stmt 0 view .LVU26
+ 137 0002 134B     		ldr	r3, .L11
+ 138 0004 1860     		str	r0, [r3]
+  27:mylib/tim_ext.c ****     if (tim->Instance != TIM1 && tim->Instance != TIM8)
+ 139              		.loc 1 27 5 is_stmt 1 view .LVU27
+ 140              		.loc 1 27 12 is_stmt 0 view .LVU28
+ 141 0006 0368     		ldr	r3, [r0]
+ 142              		.loc 1 27 8 view .LVU29
+ 143 0008 124A     		ldr	r2, .L11+4
+ 144 000a 9342     		cmp	r3, r2
+ 145 000c 0AD0     		beq	.L8
+ 146              		.loc 1 27 31 discriminator 1 view .LVU30
+ 147 000e 02F58062 		add	r2, r2, #1024
+ 148 0012 9342     		cmp	r3, r2
+ 149 0014 06D0     		beq	.L8
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s 			page 4
+
+
+  28:mylib/tim_ext.c ****     {
+  29:mylib/tim_ext.c ****         TIM_MAX_FREQ = 84000000;
+ 150              		.loc 1 29 9 is_stmt 1 view .LVU31
+ 151              		.loc 1 29 22 is_stmt 0 view .LVU32
+ 152 0016 104B     		ldr	r3, .L11+8
+ 153 0018 02F14542 		add	r2, r2, #-989855744
+ 154 001c 02F53942 		add	r2, r2, #47360
+ 155 0020 1A60     		str	r2, [r3]
+ 156 0022 02E0     		b	.L9
+ 157              	.L8:
+  30:mylib/tim_ext.c ****     }
+  31:mylib/tim_ext.c ****     else
+  32:mylib/tim_ext.c ****     {
+  33:mylib/tim_ext.c ****         TIM_MAX_FREQ = 168000000;
+ 158              		.loc 1 33 9 is_stmt 1 view .LVU33
+ 159              		.loc 1 33 22 is_stmt 0 view .LVU34
+ 160 0024 0C4B     		ldr	r3, .L11+8
+ 161 0026 0D4A     		ldr	r2, .L11+12
+ 162 0028 1A60     		str	r2, [r3]
+ 163              	.L9:
+  34:mylib/tim_ext.c ****     }
+  35:mylib/tim_ext.c **** 
+  36:mylib/tim_ext.c ****     tim->Instance->PSC=83;
+ 164              		.loc 1 36 5 is_stmt 1 view .LVU35
+ 165              		.loc 1 36 8 is_stmt 0 view .LVU36
+ 166 002a 0368     		ldr	r3, [r0]
+ 167              		.loc 1 36 23 view .LVU37
+ 168 002c 5322     		movs	r2, #83
+ 169 002e 9A62     		str	r2, [r3, #40]
+  37:mylib/tim_ext.c ****     tim->Instance->ARR=TIM_MAX_FREQ/(tim->Instance->PSC+1)/1000-1;
+ 170              		.loc 1 37 5 is_stmt 1 view .LVU38
+ 171              		.loc 1 37 41 is_stmt 0 view .LVU39
+ 172 0030 0168     		ldr	r1, [r0]
+ 173              		.loc 1 37 51 view .LVU40
+ 174 0032 8A6A     		ldr	r2, [r1, #40]
+ 175              		.loc 1 37 56 view .LVU41
+ 176 0034 0132     		adds	r2, r2, #1
+ 177              		.loc 1 37 36 view .LVU42
+ 178 0036 084B     		ldr	r3, .L11+8
+ 179 0038 1B68     		ldr	r3, [r3]
+ 180 003a B3FBF2F3 		udiv	r3, r3, r2
+ 181              		.loc 1 37 59 view .LVU43
+ 182 003e 084A     		ldr	r2, .L11+16
+ 183 0040 A2FB0323 		umull	r2, r3, r2, r3
+ 184 0044 9B09     		lsrs	r3, r3, #6
+ 185              		.loc 1 37 64 view .LVU44
+ 186 0046 013B     		subs	r3, r3, #1
+ 187              		.loc 1 37 23 view .LVU45
+ 188 0048 CB62     		str	r3, [r1, #44]
+  38:mylib/tim_ext.c **** 
+  39:mylib/tim_ext.c ****     HAL_TIM_Base_Start_IT(tim);
+ 189              		.loc 1 39 5 is_stmt 1 view .LVU46
+ 190 004a FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
+ 191              	.LVL7:
+  40:mylib/tim_ext.c **** }
+ 192              		.loc 1 40 1 is_stmt 0 view .LVU47
+ 193 004e 08BD     		pop	{r3, pc}
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s 			page 5
+
+
+ 194              	.L12:
+ 195              		.align	2
+ 196              	.L11:
+ 197 0050 00000000 		.word	.LANCHOR0
+ 198 0054 00000140 		.word	1073807360
+ 199 0058 00000000 		.word	TIM_MAX_FREQ
+ 200 005c 007A030A 		.word	168000000
+ 201 0060 D34D6210 		.word	274877907
+ 202              		.cfi_endproc
+ 203              	.LFE132:
+ 205              		.section	.text.Timer_1ms_IRQ_Handler,"ax",%progbits
+ 206              		.align	1
+ 207              		.global	Timer_1ms_IRQ_Handler
+ 208              		.syntax unified
+ 209              		.thumb
+ 210              		.thumb_func
+ 211              		.fpu fpv4-sp-d16
+ 213              	Timer_1ms_IRQ_Handler:
+ 214              	.LFB133:
+  41:mylib/tim_ext.c **** 
+  42:mylib/tim_ext.c **** void Timer_1ms_IRQ_Handler(){
+ 215              		.loc 1 42 29 is_stmt 1 view -0
+ 216              		.cfi_startproc
+ 217              		@ args = 0, pretend = 0, frame = 0
+ 218              		@ frame_needed = 0, uses_anonymous_args = 0
+ 219              		@ link register save eliminated.
+  43:mylib/tim_ext.c ****     Pass_Time_ms++;
+ 220              		.loc 1 43 5 view .LVU49
+ 221              		.loc 1 43 17 is_stmt 0 view .LVU50
+ 222 0000 024A     		ldr	r2, .L14
+ 223 0002 1368     		ldr	r3, [r2]
+ 224 0004 0133     		adds	r3, r3, #1
+ 225 0006 1360     		str	r3, [r2]
+  44:mylib/tim_ext.c **** }
+ 226              		.loc 1 44 1 view .LVU51
+ 227 0008 7047     		bx	lr
+ 228              	.L15:
+ 229 000a 00BF     		.align	2
+ 230              	.L14:
+ 231 000c 00000000 		.word	.LANCHOR1
+ 232              		.cfi_endproc
+ 233              	.LFE133:
+ 235              		.comm	TIM_MAX_FREQ,4,4
+ 236              		.section	.bss.Pass_Time_ms,"aw",%nobits
+ 237              		.align	2
+ 238              		.set	.LANCHOR1,. + 0
+ 241              	Pass_Time_ms:
+ 242 0000 00000000 		.space	4
+ 243              		.section	.bss.Timer_Tim,"aw",%nobits
+ 244              		.align	2
+ 245              		.set	.LANCHOR0,. + 0
+ 248              	Timer_Tim:
+ 249 0000 00000000 		.space	4
+ 250              		.text
+ 251              	.Letext0:
+ 252              		.file 2 "c:\\arm_gcc\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 253              		.file 3 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\lock.h"
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s 			page 6
+
+
+ 254              		.file 4 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_types.h"
+ 255              		.file 5 "c:\\arm_gcc\\lib\\gcc\\arm-none-eabi\\9.2.1\\include\\stddef.h"
+ 256              		.file 6 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\reent.h"
+ 257              		.file 7 "c:\\arm_gcc\\arm-none-eabi\\include\\stdlib.h"
+ 258              		.file 8 "c:\\arm_gcc\\arm-none-eabi\\include\\sys\\_stdint.h"
+ 259              		.file 9 "Drivers/CMSIS/Include/core_cm4.h"
+ 260              		.file 10 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 261              		.file 11 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h"
+ 262              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 263              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 264              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 265              		.file 15 "Inc/tim.h"
+ 266              		.file 16 "mylib/tim_ext.h"
+ARM GAS  C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 tim_ext.c
+C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s:18     .text.Time_Counter_Start:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s:26     .text.Time_Counter_Start:00000000 Time_Counter_Start
+C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s:54     .text.Time_Counter_Start:00000014 $d
+C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s:60     .text.Time_Counter_Stop:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s:67     .text.Time_Counter_Stop:00000000 Time_Counter_Stop
+C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s:109    .text.Time_Counter_Stop:00000020 $d
+C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s:115    .text.Timer_Init:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s:122    .text.Timer_Init:00000000 Timer_Init
+C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s:197    .text.Timer_Init:00000050 $d
+                            *COM*:00000004 TIM_MAX_FREQ
+C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s:206    .text.Timer_1ms_IRQ_Handler:00000000 $t
+C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s:213    .text.Timer_1ms_IRQ_Handler:00000000 Timer_1ms_IRQ_Handler
+C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s:231    .text.Timer_1ms_IRQ_Handler:0000000c $d
+C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s:237    .bss.Pass_Time_ms:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s:241    .bss.Pass_Time_ms:00000000 Pass_Time_ms
+C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s:244    .bss.Timer_Tim:00000000 $d
+C:\Users\ncer\AppData\Local\Temp\cc1Wmwlc.s:248    .bss.Timer_Tim:00000000 Timer_Tim
+
+UNDEFINED SYMBOLS
+HAL_TIM_Base_Start_IT

@@ -7,12 +7,13 @@
 #include "uart_ext.h"
 
 #include "music_and_voice.h"
+#include "tim_ext.h"
 
 static void SVPWM(float Target_U, float duty);
 static void Test_Direction();
 static void Measure_R_MS_Handler(float duty);
-static void Measure_R_20Khz_Handler();
-
+static void Measure_R_20Khz_Handler(float ia,float ib);
+static void Measure_L_20Khz_Handler(float max_current,float Ialpha);
 static void SVPWM_Step(CCR_Duty duty);
 
 #define MIN(a, b) a < b ? a : b
@@ -40,6 +41,18 @@ struct
     float last_position;
     int direction_result;
 } Test_Direction_Info;
+
+struct
+{
+    uint32_t time; //unit:ms
+    Uvect_Mos *Used_Mos;
+    uint32_t cnt;
+    uint32_t USELESS_CNT;
+    uint32_t CNT_MAX;
+    float current_sum;
+    float current_avg;
+} Measure_R_Info;
+
 
 Motor_Info Motor = {7, 0, 0};
 
@@ -80,7 +93,7 @@ static void UVects_Init()
 void Foc_Init(float rps)
 {
     // rps unit is r/s
-    Board_Mode = VOICE_MODE;
+    Board_Mode = SENSOR_FOC;
     TIM8->ARR = 168000000 / TIM8_FREQ / 2;
 
     TIM8->CCR4 = TIM8->ARR - 2;
@@ -95,14 +108,14 @@ void Foc_Init(float rps)
     HAL_TIMEx_PWMN_Start(&htim8, TIM_CHANNEL_2);
     HAL_TIMEx_PWMN_Start(&htim8, TIM_CHANNEL_3);
 #endif
-    TIM7->PSC = 6;
-    TIM7->ARR = 12000000 / 250 - 1;
 
-    //TIM7->PSC = 1;
-    //TIM7->ARR = 42000000 / TIM7_FREQ - 1;
+    // 此处设置TIM7 用于普通模式（除了SING、VOICE以外的模式
+    // 在SING模式中，会重新设置TIM7
+    TIM7->PSC = 1;
+    TIM7->ARR = 42000000 / TIM7_FREQ - 1;
 
     HAL_TIM_Base_Start_IT(&htim7);
-    HAL_TIM_Base_Start_IT(&htim6);
+    //HAL_TIM_Base_Start_IT(&htim6);
     HAL_TIM_Base_Start(&htim8);
 }
 
@@ -234,7 +247,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
         if(Board_Mode!=VOICE_MODE){
             return ;
         }
-        //Voice_Fshz_Handler();
+        Timer_1ms_IRQ_Handler();
     }
     else if (htim->Instance == TIM8)
     {
@@ -298,6 +311,8 @@ void Theta_Handler()
     case MEASURE_R:
         Measure_R_MS_Handler(1);
         break;
+    case MEASURE_L:
+        break; 
     case VOICE_MODE:
         break;
     case SING_MODE:
@@ -325,13 +340,12 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
     }
     else if (hadc->Instance == ADC2)
     {
-        if (Board_Mode == SENSOR_FOC)
-        {
-            ia = ADC_RAW2_CURRENT(ADC_Values_Raw2[0]);
-            ib = ADC_RAW2_CURRENT(ADC_Values_Raw2[1]);
-            Park_Conv(ia, ib, &Ialpha, &Ibeta);
-        }
-        Measure_R_20Khz_Handler();
+        ia = ADC_RAW2_CURRENT(ADC_Values_Raw2[0]);
+        ib = ADC_RAW2_CURRENT(ADC_Values_Raw2[1]);
+        Park_Conv(ia, ib, &Ialpha, &Ibeta);
+        Measure_R_20Khz_Handler(ia,ib);
+        Measure_L_20Khz_Handler(Measure_R_Info.current_avg,Ialpha); 
+        send_wave(Ialpha,Ibeta,ia,ib);
     }
 }
 
@@ -356,7 +370,7 @@ void Foc()
 
     sub %= 360;
 
-    SVPWM(sub, 1);
+    SVPWM(sub, 0.5f);
 }
 
 // Target_U 期望电压矢量的角度 单位° 0-360
@@ -430,15 +444,7 @@ static void Test_Direction()
     }
 }
 
-struct
-{
-    uint32_t time; //unit:ms
-    Uvect_Mos *Used_Mos;
-    uint32_t cnt;
-    uint32_t USELESS_CNT;
-    uint32_t CNT_MAX;
-    float current_sum;
-} Measure_R_Info;
+
 
 void Set_Vector(Uvect_Mos u, float duty)
 {
@@ -459,19 +465,20 @@ static void Measure_R_MS_Handler(float duty)
     CCR_Duty temp_duty = {0};
     static float current1 = 0;
     static float current2 = 0;
-    float cur_avg = 0;
     if (Measure_R_Info.time == 0)
     {
         Measure_R_Info.Used_Mos = &U5;
         Measure_R_Info.USELESS_CNT = 2;
         Measure_R_Info.CNT_MAX = 30;
 
+        /*
         temp_duty.ccra = Measure_R_Info.Used_Mos->a * duty; //011
         temp_duty.ccrb = Measure_R_Info.Used_Mos->b * duty;
         temp_duty.ccrc = Measure_R_Info.Used_Mos->c * duty;
         SVPWM_Step(temp_duty);
+        */
 
-        //Set_Vector(*Measure_R_Info.Used_Mos,duty);
+        Set_Vector(*Measure_R_Info.Used_Mos,duty);
         Measure_R_Info.time = 1;
 
         return;
@@ -497,15 +504,16 @@ static void Measure_R_MS_Handler(float duty)
         }
         else
         {
-            cur_avg = Measure_R_Info.current_sum / (Measure_R_Info.CNT_MAX - Measure_R_Info.USELESS_CNT + 1);
-            uprintf_polling("current_avg:%f cnt:%d \r\n", cur_avg, Measure_R_Info.cnt);
+            
+            Measure_R_Info.current_avg= Measure_R_Info.current_sum / (Measure_R_Info.CNT_MAX - Measure_R_Info.USELESS_CNT + 1);
+            uprintf_polling("current_avg:%f cnt:%d \r\n", Measure_R_Info.current_avg, Measure_R_Info.cnt);
         }
         Measure_R_Info.current_sum = 0;
         Measure_R_Info.cnt = 0;
     }
 }
 
-static void Measure_R_20Khz_Handler()
+static void Measure_R_20Khz_Handler(float ia,float ib)
 {
     if (Board_Mode != MEASURE_R)
     {
@@ -523,15 +531,41 @@ static void Measure_R_20Khz_Handler()
     // so times is CNT_MAX-USELESS_CNT+1
     if (Measure_R_Info.cnt >= Measure_R_Info.USELESS_CNT && Measure_R_Info.cnt <= Measure_R_Info.CNT_MAX)
     {
-        if (Measure_R_Info.Used_Mos == &U3)
+        if (Measure_R_Info.Used_Mos == &U3)  // u3 011
         { //011
-            Measure_R_Info.current_sum += ADC_RAW2_CURRENT(ADC_Values_Raw2[0]);
+            Measure_R_Info.current_sum += ia;
         }
         else if (Measure_R_Info.Used_Mos == &U5)
         {
-            Measure_R_Info.current_sum += ADC_RAW2_CURRENT(ADC_Values_Raw2[1]);
+            Measure_R_Info.current_sum += ib;
         }
     }
+}
+
+Time_Counter Measure_L_Time_Counter;
+void Measure_L(float duty){
+    Board_Mode = MEASURE_L;
+    Set_Vector(U4,duty);
+    Time_Counter_Start(&Measure_L_Time_Counter);
+    HAL_Delay(3);
+
+    uprintf_polling("3ms pass!\r\n");
+    Board_Mode=STOP_MODE;
+
+}
+
+static void Measure_L_20Khz_Handler(float max_current,float Ialpha){
+    uint32_t  time;
+    if(Board_Mode!=MEASURE_L){
+        return ;
+    }
+
+    if(Ialpha>max_current*0.632f){
+        Board_Mode=STOP_MODE;
+        time=Time_Counter_Stop(&Measure_L_Time_Counter);
+        uprintf_polling("finish!   time:%d\r\n",time);
+    }
+
 }
 
 

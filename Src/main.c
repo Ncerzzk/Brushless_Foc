@@ -34,6 +34,7 @@
 #include "as5047.h"
 #include "uart_ext.h"
 #include "music_and_voice.h"
+#include "tim_ext.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -111,9 +112,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_ADC_Start_DMA(&hadc2,(uint32_t *)ADC_Values_Raw2,2);
   Music_Init(&htim7,80,0.15f);
-  debug_uart_init(&huart3,DMA,IT);
+  debug_uart_init(&huart3,DMA,DMA);
+  Timer_Init(&htim6);
   Foc_Init(1);
-  //Voice_Init();
   AS5047_Set_Direction(0);
   Init_OK=1;
   uprintf("hello,world!\r\n");
@@ -139,7 +140,7 @@ int main(void)
         HAL_ADC_Stop(&hadc1);
         HAL_ADC_Stop(&hadc2);
         */
-      //send_wave(Ialpha,Ibeta,ADC_Values_Raw2[2],Position_Degree);
+        //send_wave(Ialpha,Ibeta,ADC_Values_Raw2[2],Position_Degree);
       }
     /* USER CODE BEGIN 3 */
   }

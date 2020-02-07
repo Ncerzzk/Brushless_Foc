@@ -1,4 +1,4 @@
-build/main.o: Src/main.c Inc/main.h \
+build/tim_ext.o: mylib/tim_ext.c mylib/tim_ext.h Inc/tim.h Inc/main.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  Inc/stm32f4xx_hal_conf.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -28,10 +28,11 @@ build/main.o: Src/main.c Inc/main.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
- Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h Inc/adc.h \
- Inc/main.h Inc/can.h Inc/dma.h Inc/spi.h Inc/tim.h Inc/usart.h \
- Inc/gpio.h Inc/foc.h mylib/as5047.h mylib/uart_ext.h \
- mylib/music_and_voice.h mylib/tim_ext.h
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+
+mylib/tim_ext.h:
+
+Inc/tim.h:
 
 Inc/main.h:
 
@@ -98,29 +99,3 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-
-Inc/adc.h:
-
-Inc/main.h:
-
-Inc/can.h:
-
-Inc/dma.h:
-
-Inc/spi.h:
-
-Inc/tim.h:
-
-Inc/usart.h:
-
-Inc/gpio.h:
-
-Inc/foc.h:
-
-mylib/as5047.h:
-
-mylib/uart_ext.h:
-
-mylib/music_and_voice.h:
-
-mylib/tim_ext.h:
